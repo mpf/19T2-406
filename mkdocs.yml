@@ -1,1 +1,60 @@
-site_name: My Docs
+# Project information
+site_name: CPSC406 &mdash; Computational Optimization
+site_description: Home page for CPSC406 Term 2 2019
+site_author: Michael P. Friedlander and Bahbru Joshi
+site_url: https://friedlander.io/19T2-406
+
+# Repository
+repo_name: mpf/19T2-406
+repo_url: https://github.com/mpf/19T2-406
+
+# Copyright
+copyright: 'Copyright &copy; 2020 Michael Friedlander and Bahbru Joshi'
+
+# Configuration
+theme:
+  name: 'material'  
+  features:
+    tabs: true 
+
+# Extensions
+markdown_extensions:
+  - markdown.extensions.admonition
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - markdown.extensions.def_list
+  - markdown.extensions.footnotes
+  - markdown.extensions.meta
+  - markdown.extensions.toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:pymdownx.emoji.twemoji
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra_javascript:
+  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+
+
+# Page tree
+nav:
+  - Home Page: index.md
+  - Lecture notes:
+      - Introduction: notes/introduction.md
+      - Mathematical background: notes/background.md
+  - Homework:
+      - Homework 1: homework/hw1.md

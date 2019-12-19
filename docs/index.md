@@ -1,4 +1,4 @@
-# Welcome to MkDocs
+# Computational Optimization
 
 For full documentation visit [mkdocs.org](https://mkdocs.org).
 
