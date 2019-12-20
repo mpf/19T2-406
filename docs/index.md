@@ -1,6 +1,7 @@
 # Computational Optimization
 
-For full documentation visit [mkdocs.org](https://mkdocs.org).
+Welcome to CPSC 406! 
+
 
 ## Commands
 

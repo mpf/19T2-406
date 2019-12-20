@@ -14,8 +14,8 @@ copyright: 'Copyright &copy; 2020 Michael Friedlander and Bahbru Joshi'
 # Configuration
 theme:
   name: 'material'  
-  features:
-    tabs: true 
+  feature:
+    tabs: true
 
 # Extensions
 markdown_extensions:
@@ -47,8 +47,8 @@ markdown_extensions:
   - pymdownx.tilde
 
 extra_javascript:
+  - 'javascripts/extra.js'
   - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
-
 
 # Page tree
 nav:
