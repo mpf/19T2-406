@@ -103,7 +103,14 @@ window.MathJax = {
 
             trace: ["\\textbf{tr}(#1)",1],
 
-            vec: ["\\textbf{vec}(#1)",1]
+            vec: ["\\textbf{vec}(#1)",1],
+
+            proof: ["\\textit{Proof:}"],
+
+            prop: ["\\textbf{Proposition:}"],
+
+
+            func: ["\\mathcal{#1}",1]
 
 
 

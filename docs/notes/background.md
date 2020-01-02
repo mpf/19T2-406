@@ -103,17 +103,45 @@ $$
 
 ## **Norms**
 
-The most common norm is the "Euclidean norm", i.e. 2-norm:
+Norms are a measure of distances of a vector from the origin. The most common norm is the "Euclidean norm", i.e. 2-norm:
 
 $$
-\|\vx\|_2 = \sqrt{x_1^2+\dots+x_n^2} = \sqrt{\vx^\intercal\vx}
+\|\vx\|_2 = \sqrt{x_1^2+\dots+x_n^2}
 $$
 
-Suppose that $\va, \vb, \vc$ are vectors. Then 
+This 2-norm is the norm induced by the Euclidean inner product on $\R^n$, where $\|\vx\|_2 = \sqrt{\vx^\intercal\vx}$. The 2-norm reults in the familiar pythagorean idenity, i.e. for any vectors $\va, \vb,$ and $\vc$,
 
 $$ \|(\va,\vb,\vc)\|_2^2 = \|\va\|_2^2+\|\vb\|_2^2+\|\vc\|_2^2.$$
 
-This relation is the Pythagorean identity. More generally, norms are any function $\|\cdot\|:\R^n \rightarrow \R$ that satisfy for all $\vx,\vy \in\R^n$ and $\beta \in \R$:
+An important inequlity that relate the inner product of two vectors and the norms of those vectors induced by the inner product is the Cauchy-Schwartz inequality. In the case of $\R^n$, the Cauchy-Schwartz inequality states that for all $\vx, \vy \in \R^n$, we have
+
+$$
+\vx^\intercal\vy \leq \|\vx\|_2\|\vy\|_2.
+$$
+
+For $\R^n$, the Cauchy Schwartz inequality follows from the Cosine inequality, i.e. for any vectors $\vx, \vy$ with angle $\theta$ between $\vx$ and $\vy$, we have $\vx^\intercal \vy = \|\vx\|_2\|\vy\|_2\cos(\theta)$. So, the Cauchy-Schwartz inequality attains the equality if and only if the two vectors are co-linear. 
+
+The Cauchy-Schwartz inequality gives us another inequailty that induced norms, in general, satisfy. This inequailty is the triangle inequality and states that
+
+\begin{equation}\label{background:triangle}
+\text{for any vectors } \vx, \vy \in \R^n,\ \|\vx+\vy\|_2\leq \|\vx\|_2+\|\vy\|_2
+\end{equation}
+
+$\proof$ We will use Cauchy-Schwartz inequality to prove \eqref{background:triangle}. Consider
+
+$$
+\begin{align*}
+\|\vx+\vy\|_2^2 &= (\vx+\vy)^\intercal(\vx+\vy)\\
+& = \vx^\intercal\vx + 2\vx^\intercal\vy+\vy^\intercal\vy\\
+& = \|\vx\|_2^2 + 2\vx^\intercal\vy + \|\vy\|_2^2\\
+& \leq \|\vx\|_2^2 + 2\|\vx\|_2\|\vy\|_2+\|\vy\|_2^2\\
+& = (\|\vx\|_2+\|\vy\|_2)^2,
+\end{align*}
+$$
+
+where the second equality follows from linearty of inner product and the inequality follows from the Cauchy-Schwartz inequality. q.e.d.
+
+More generally, norms are any function $\|\cdot\|:\R^n \rightarrow \R$ that satisfy the following conditions for all $\vx,\vy \in\R^n$ and $\beta \in \R$:
 
 1. Homogeneity: $\|\beta\vx\| = |\beta|\cdot\|\vx\|$.
 2. Triangle inequality: $\|\vx+\vy\|\leq \|\vx\|+\|\vy\|$.
@@ -126,6 +154,43 @@ Other useful norms that satify the above conditions are:
 3. p-norm: For $p\geq 1$, the p-norm of $\vx$ is $\|\vx\|_p = \left(\sum_{j=1}^n|x_j|^p\right)^\tfrac{1}{p}$.
 
 <!-- figure -->
+
+
+## **Linear functions**
+
+Linear function in a mapping between two Eucliean spaces that preserve the operations of addition and scalar multiplication. Specifially, a function $\func{f}:\R^n\rightarrow\R^m$ is linear if for all $\vx,\vy\in\R^n$ and $\alpha\in\R$, we have
+
+$$
+\func{f}(\alpha\vx+\vy) = \alpha\func{f}(\vx)+\func{f}(\vy)
+$$
+
+Here, $\func{f}$ takes a vector of dimension $n$ as its input and outpu a vector of dimension of $m$. If $m=1$, then we say the function $\func{f}$ is a real valued function.
+
+$\prop$ A real valued function $\func{f}:\R^n\rightarrow \R$ is linear if and only if $\func{f} = \va^\intercal\vx$ for some $\va \in\R^n$.
+
+$\proof$ We will first prove the forward direction, i.e. if $\func{f}:\R^n\rightarrow\R$ is a linear function then $\func{f}(\vx)=\va^\intercal\vx$. For $i\in\{1,\dots,n\}$, let $a_{i} = \func{f}(\ve_i)$. Then since $\vx = x_1\ve_1+\dots+x_n\ve_n$, we have
+
+$$
+\begin{align*}
+\func{f}(\vx) &= \func{f}(x_1\ve_1+\dots+x_n\ve_n)\\
+&=x_1\func{f}(\ve_1)+\dots+x_n\func{f}(\ve_n)\\
+&= x_1\va_1+\dots+x_n\va_n\\
+&= \va^\intercal\vx.
+\end{align*}
+$$
+
+Second, we prove the reverse direction, i.e. if $\func{f}(\vx) = \va^\intercal\vx$ for some $\va \in \R^n$ then $\func{f}$ is a real valued linea function. Clearly, $\func{f}(x)$ is a real valued function. Let $\vx,\vy\in \R^n$ and $\alpha \in \R$. Consider
+
+$$
+\begin{align*}
+\func{f}(\alpha\vx+\vy) &= \va^\intercal(\alpha\vx+\vy)\\
+&=\va^\intercal(\alpha\vx)+\va^\intercal\vy\\
+& = \alpha \va^\intercal\vx+\va^\intercal\vy\\
+& = \alpha\func{f}(\vx)+\func{f}(\vy)
+\end{align*}
+$$
+
+where the second inequality follows from linearity of inner product. q.e.d.
 
 <!-- This is a matrix
 \begin{equation} \label{eq-1}
