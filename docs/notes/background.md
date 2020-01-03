@@ -9,7 +9,7 @@ $$\vx \in \R^n,\quad \vx = \begin{bmatrix} x_1\\ x_2\\ \vdots\\ x_n \end{bmatrix
 Some special vectors that are commonly used are the zero vector, ones vector, and the standard basis vectors. These are defined next:
 
 1. Zero vector: A vector $\vx$ is the zero vector if all of its entries are zero. The zero vector is denoted by $\vzero$. 
-2. Ones vector: A vector $\vx$ is the oens vector if all of its entries are 1. The ones vector is denoted by $\ve$.
+2. Ones vector: A vector $\vx$ is the ones vector if all of its entries are one. The ones vector is denoted by $\ve$.
 3. $i$th standard basis vector: A vector $\vx \in \R^n$ is the $i$th standard basis vector if $x_j = \Big\{\begin{array}{cc}1 & i = j\\0 & \text{otherwise}\end{array}$. The $i$th standard basis vector is denoted by $\ve_i$. For example, in $\R^3$, the $2$nd standard basis vector is $\ve_2 = \begin{bmatrix}0\\1\\0\end{bmatrix}$.
 
 A vector $\vx \in \R^n$ is equal to another vector $\vy \in \R^n$ if $x_i = y_i$ for all $i \in \{1,2,\dots,n\}$. Similarly, if all of the entries of a vector $\vx$ is equal to a scalar $c \in \R$, then we write $\vx = c$. These notions can be extended to inequalites in the following way:

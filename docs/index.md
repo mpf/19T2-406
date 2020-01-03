@@ -1,7 +1,40 @@
 # Computational Optimization
 
-Welcome to CPSC 406! 
+Welcome to course webpage for CPSC 406! 
 
+## **Lectures**
+Monday, Wednesday, and Friday, 2-3 pm, DMP 110
+
+## **Teaching staff** 
+* Professor Michael P. Friedlander 
+* Babhru Joshi
+* Zhenan Fan
+* Huang Fang
+
+## **Textbook**
+Introduction to Nonlinear Optimization: Theory, Alogrithms, and Applications with MATLAB, Amir Beck (SIAM, 2014). This book is available online through the UBC l=Library,
+
+## **Course requirements**
+
+One of CPSC 302, CPSC 303, or MATH 307.
+
+## **Course discussion board**
+
+
+## **Grades**
+
+###  **Distribution**
+
+* assignments (approximately 5-6): 30%
+* midterm exam: 30%
+* final exam: 40%
+
+###  **Polcies**
+
+* No makeup exam for the midterm of final. If you missed the midterm exam you must document a justification.
+* Midterm exam grade will not be counted if it is lower than your final exam grade.
+* To pass the course you must do the assigned coursework, write the midterm and final exams, pass the final exam, and obtain an overall pass average according to the grading scheme.
+* The instructors reserve the right to modify the grading scheme at any time.
 
 <!-- ## Commands
 
