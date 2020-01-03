@@ -1,18 +1,18 @@
 # Computational Optimization
 
-Welcome to course webpage for CPSC 406! 
+Welcome to the course webpage for CPSC 406! 
 
 ## **Lectures**
 Monday, Wednesday, and Friday, 2-3 pm, DMP 110
 
-## **Teaching staff** 
-* Professor Michael P. Friedlander 
+## **Teaching staff (2019 Term 2)** 
+* Professor [Michael P. Friedlander](http://friedlander.io/)
 * Babhru Joshi
 * Zhenan Fan
 * Huang Fang
 
 ## **Textbook**
-Introduction to Nonlinear Optimization: Theory, Alogrithms, and Applications with MATLAB, Amir Beck (SIAM, 2014). This book is available online through the UBC l=Library,
+[*Introduction to Nonlinear Optimization: Theory, Alogrithms, and Applications with MATLAB*](https://epubs.siam.org/doi/book/10.1137/1.9781611973655), Amir Beck (SIAM, 2014). This book is available online through the UBC Library.
 
 ## **Course requirements**
 
