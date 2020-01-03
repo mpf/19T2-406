@@ -353,6 +353,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#inner-products" class="md-nav__link">
+    Inner products
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#norms" class="md-nav__link">
+    Norms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-functions" class="md-nav__link">
+    Linear functions
+  </a>
+  
+</li>
+      
       
       
       
@@ -361,6 +382,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../unconstrained/" title="Unconstrained optimization" class="md-nav__link">
+      Unconstrained optimization
+    </a>
   </li>
 
         
@@ -439,6 +472,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#inner-products" class="md-nav__link">
+    Inner products
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#norms" class="md-nav__link">
+    Norms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-functions" class="md-nav__link">
+    Linear functions
+  </a>
+  
+</li>
+      
       
       
       
@@ -458,30 +512,255 @@
                   <a href="https://github.com/mpf/19T2-406/edit/master/docs/notes/background.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="mathematical-background">Mathematical background<a class="headerlink" href="#mathematical-background" title="Permanent link">&para;</a></h1>
-<h2 id="vectors">Vectors<a class="headerlink" href="#vectors" title="Permanent link">&para;</a></h2>
-<p>Vectors are arrays of numbers ordered as a column:</p>
+                <h1 id="mathematical-background"><strong>Mathematical background</strong><a class="headerlink" href="#mathematical-background" title="Permanent link">&para;</a></h1>
+<h2 id="vectors"><strong>Vectors</strong><a class="headerlink" href="#vectors" title="Permanent link">&para;</a></h2>
+<p>Vectors are arrays of numbers ordered as a column. For example, a vector <span><span class="MathJax_Preview">\vx \in \R^n</span><script type="math/tex">\vx \in \R^n</script></span> contain <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> entries with <span><span class="MathJax_Preview">x_i</span><script type="math/tex">x_i</script></span> as its <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>th entry:</p>
+<div>
+<div class="MathJax_Preview">\vx \in \R^n,\quad \vx = \begin{bmatrix} x_1\\ x_2\\ \vdots\\ x_n \end{bmatrix},\quad \vx = \begin{pmatrix}x_1, x_2,\dots,x_n\end{pmatrix}.</div>
+<script type="math/tex; mode=display">\vx \in \R^n,\quad \vx = \begin{bmatrix} x_1\\ x_2\\ \vdots\\ x_n \end{bmatrix},\quad \vx = \begin{pmatrix}x_1, x_2,\dots,x_n\end{pmatrix}.</script>
+</div>
+<p>Some special vectors that are commonly used are the zero vector, ones vector, and the standard basis vectors. These are defined next:</p>
+<ol>
+<li>Zero vector: A vector <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> is the zero vector if all of its entries are zero. The zero vector is denoted by <span><span class="MathJax_Preview">\vzero</span><script type="math/tex">\vzero</script></span>. </li>
+<li>Ones vector: A vector <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> is the ones vector if all of its entries are one. The ones vector is denoted by <span><span class="MathJax_Preview">\ve</span><script type="math/tex">\ve</script></span>.</li>
+<li><span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>th standard basis vector: A vector <span><span class="MathJax_Preview">\vx \in \R^n</span><script type="math/tex">\vx \in \R^n</script></span> is the <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>th standard basis vector if <span><span class="MathJax_Preview">x_j = \Big\{\begin{array}{cc}1 &amp; i = j\\0 &amp; \text{otherwise}\end{array}</span><script type="math/tex">x_j = \Big\{\begin{array}{cc}1 & i = j\\0 & \text{otherwise}\end{array}</script></span>. The <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>th standard basis vector is denoted by <span><span class="MathJax_Preview">\ve_i</span><script type="math/tex">\ve_i</script></span>. For example, in <span><span class="MathJax_Preview">\R^3</span><script type="math/tex">\R^3</script></span>, the <span><span class="MathJax_Preview">2</span><script type="math/tex">2</script></span>nd standard basis vector is <span><span class="MathJax_Preview">\ve_2 = \begin{bmatrix}0\\1\\0\end{bmatrix}</span><script type="math/tex">\ve_2 = \begin{bmatrix}0\\1\\0\end{bmatrix}</script></span>.</li>
+</ol>
+<p>A vector <span><span class="MathJax_Preview">\vx \in \R^n</span><script type="math/tex">\vx \in \R^n</script></span> is equal to another vector <span><span class="MathJax_Preview">\vy \in \R^n</span><script type="math/tex">\vy \in \R^n</script></span> if <span><span class="MathJax_Preview">x_i = y_i</span><script type="math/tex">x_i = y_i</script></span> for all <span><span class="MathJax_Preview">i \in \{1,2,\dots,n\}</span><script type="math/tex">i \in \{1,2,\dots,n\}</script></span>. Similarly, if all of the entries of a vector <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> is equal to a scalar <span><span class="MathJax_Preview">c \in \R</span><script type="math/tex">c \in \R</script></span>, then we write <span><span class="MathJax_Preview">\vx = c</span><script type="math/tex">\vx = c</script></span>. These notions can be extended to inequalites in the following way:</p>
+<ol>
+<li>A vector <span><span class="MathJax_Preview">\vx \in \R^n</span><script type="math/tex">\vx \in \R^n</script></span> and a scalar <span><span class="MathJax_Preview">c \in \R</span><script type="math/tex">c \in \R</script></span> satisfy <span><span class="MathJax_Preview">\vx \geq c</span><script type="math/tex">\vx \geq c</script></span> if and only if <span><span class="MathJax_Preview">x_i \geq c</span><script type="math/tex">x_i \geq c</script></span> for all <span><span class="MathJax_Preview">i \in \{1,2,\dots, n\}</span><script type="math/tex">i \in \{1,2,\dots, n\}</script></span>.</li>
+<li>A vector <span><span class="MathJax_Preview">\vx \in \R^n</span><script type="math/tex">\vx \in \R^n</script></span> and a scalar <span><span class="MathJax_Preview">c \in \R</span><script type="math/tex">c \in \R</script></span> satisfy <span><span class="MathJax_Preview">\vx &gt; c</span><script type="math/tex">\vx > c</script></span> if and only if <span><span class="MathJax_Preview">x_i &gt; c</span><script type="math/tex">x_i > c</script></span> for all <span><span class="MathJax_Preview">i \in \{1,2,\dots, n\}</span><script type="math/tex">i \in \{1,2,\dots, n\}</script></span>.</li>
+<li>Vectors <span><span class="MathJax_Preview">\vx, \vy \in \R^n</span><script type="math/tex">\vx, \vy \in \R^n</script></span> satisfy <span><span class="MathJax_Preview">\vx \geq \vy</span><script type="math/tex">\vx \geq \vy</script></span> if and only if <span><span class="MathJax_Preview">x_i \geq y_i</span><script type="math/tex">x_i \geq y_i</script></span> for all <span><span class="MathJax_Preview">i \in \{1,2,\dots, n\}</span><script type="math/tex">i \in \{1,2,\dots, n\}</script></span>.</li>
+<li>Vectors <span><span class="MathJax_Preview">\vx, \vy \in \R^n</span><script type="math/tex">\vx, \vy \in \R^n</script></span> satisfy <span><span class="MathJax_Preview">\vx \geq \vy</span><script type="math/tex">\vx \geq \vy</script></span> if and only if <span><span class="MathJax_Preview">x_i \geq y_i</span><script type="math/tex">x_i \geq y_i</script></span> for all <span><span class="MathJax_Preview">i \in \{1,2,\dots, n\}</span><script type="math/tex">i \in \{1,2,\dots, n\}</script></span>.</li>
+</ol>
+<p>Block vector is a concise representation of a vector obtained by stacking vectors. For example, if <span><span class="MathJax_Preview">\vx \in \R^m</span><script type="math/tex">\vx \in \R^m</script></span>, <span><span class="MathJax_Preview">\vy \in \R^n</span><script type="math/tex">\vy \in \R^n</script></span>, and <span><span class="MathJax_Preview">\vz \in \R^p</span><script type="math/tex">\vz \in \R^p</script></span>, then </p>
 <div>
 <div class="MathJax_Preview">
-x = \begin{bmatrix}x_1 \\ x_2\end{bmatrix}
+\va = \begin{bmatrix} \vx \\ \dots \\ \vy \\ \dots \\ \vz\end{bmatrix}\in \R^{m+n+p}</div>
+<script type="math/tex; mode=display">
+\va = \begin{bmatrix} \vx \\ \dots \\ \vy \\ \dots \\ \vz\end{bmatrix}\in \R^{m+n+p}</script>
+</div>
+<p>is a block vector (also called stacked vector or conncatenated vector) obtained by stacking <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span>, <span><span class="MathJax_Preview">\vy</span><script type="math/tex">\vy</script></span>, and <span><span class="MathJax_Preview">\vz</span><script type="math/tex">\vz</script></span> vertically.  This block vector <span><span class="MathJax_Preview">\va</span><script type="math/tex">\va</script></span> can also be written as <span><span class="MathJax_Preview">\begin{pmatrix}\vx,\vy,\vz \end{pmatrix}</span><script type="math/tex">\begin{pmatrix}\vx,\vy,\vz \end{pmatrix}</script></span>. If the dimension of the vectors are equal (i.e. <span><span class="MathJax_Preview">m = n = p</span><script type="math/tex">m = n = p</script></span>), then these vector can be stacked horizontally as well. This will produce a matrix </p>
+<div>
+<div class="MathJax_Preview">\mB = \begin{bmatrix} \vx &amp; \vy &amp; \vz\end{bmatrix} \in \R^{n\times 3}</div>
+<script type="math/tex; mode=display">\mB = \begin{bmatrix} \vx & \vy & \vz\end{bmatrix} \in \R^{n\times 3}</script>
+</div>
+<p>where <span><span class="MathJax_Preview">\vx,\vy</span><script type="math/tex">\vx,\vy</script></span>, and <span><span class="MathJax_Preview">\vz</span><script type="math/tex">\vz</script></span> are the first, second, and third columns of <span><span class="MathJax_Preview">\mB</span><script type="math/tex">\mB</script></span>, respectively.</p>
+<h2 id="matrices"><strong>Matrices</strong><a class="headerlink" href="#matrices" title="Permanent link">&para;</a></h2>
+<p>A matrix is an array of numbers and is another way of collecting numbers. For example, a matrix <span><span class="MathJax_Preview">\mA \in \R^{m\times n}</span><script type="math/tex">\mA \in \R^{m\times n}</script></span> contain <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> rows and <span><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> columns with a total of <span><span class="MathJax_Preview">m\cdot n</span><script type="math/tex">m\cdot n</script></span> number of entries:</p>
+<div>
+<div class="MathJax_Preview">
+\mA \in \R^{m\times n}, \quad \mA = \begin{bmatrix}A_{1,1}&amp; \dots &amp; A_{1,n}\\\vdots&amp;\ddots &amp;\vdots\\A_{m,1}&amp;\dots&amp;A_{m,n}\end{bmatrix}.
 </div>
 <script type="math/tex; mode=display">
-x = \begin{bmatrix}x_1 \\ x_2\end{bmatrix}
+\mA \in \R^{m\times n}, \quad \mA = \begin{bmatrix}A_{1,1}& \dots & A_{1,n}\\\vdots&\ddots &\vdots\\A_{m,1}&\dots&A_{m,n}\end{bmatrix}.
 </script>
 </div>
-<p>This is <span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span></p>
-<h2 id="matrices">Matrices<a class="headerlink" href="#matrices" title="Permanent link">&para;</a></h2>
-<p>This is a matrix
+<p>The tranpose of this matrix <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> is denoted by <span><span class="MathJax_Preview">\mA^\intercal\in\R^{n\times m}</span><script type="math/tex">\mA^\intercal\in\R^{n\times m}</script></span> where</p>
+<div>
+<div class="MathJax_Preview">
+\mA^\intercal =\begin{bmatrix}A_{1,1}&amp; \dots &amp; A_{m,1}\\\vdots&amp;\ddots &amp;\vdots\\A_{1,n}&amp;\dots&amp;A_{m,n}\end{bmatrix}
+</div>
+<script type="math/tex; mode=display">
+\mA^\intercal =\begin{bmatrix}A_{1,1}& \dots & A_{m,1}\\\vdots&\ddots &\vdots\\A_{1,n}&\dots&A_{m,n}\end{bmatrix}
+</script>
+</div>
+<p>A matrix <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> is the zero matrix if all of its entrie are zero. The zero matrix is denoted by <span><span class="MathJax_Preview">\mzero</span><script type="math/tex">\mzero</script></span>. For a matrix <span><span class="MathJax_Preview">\mA \in \R^{m\times n}</span><script type="math/tex">\mA \in \R^{m\times n}</script></span>,</p>
+<ol>
+<li>if <span><span class="MathJax_Preview">m&gt;n</span><script type="math/tex">m>n</script></span> then the matrix <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> is a tall matrix,</li>
+<li>if <span><span class="MathJax_Preview">m&lt; n</span><script type="math/tex">m< n</script></span> then the matrix <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> is a wide matrix, and</li>
+<li>if <span><span class="MathJax_Preview">m = n</span><script type="math/tex">m = n</script></span> then the matrix <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> is a square matrix.
+<!-- add figure --></li>
+</ol>
+<p>Matrices <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> and <span><span class="MathJax_Preview">\mB</span><script type="math/tex">\mB</script></span> are equal if these matrices are of same size and every element is equal:
+$$
+\mA = \mB \iff A_{ij} = B_{ij},\quad \forall i = 1,\dots,m, \quad j = 1,\dots,n.
+$$
+<!-- add array on equation -->
+If all of the entries of a matrix <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> are a scalar <span><span class="MathJax_Preview">c \in \R</span><script type="math/tex">c \in \R</script></span> then we write <span><span class="MathJax_Preview">\mA = c</span><script type="math/tex">\mA = c</script></span>. These notions are extended to inequalities in the following way:</p>
+<ol>
+<li><span><span class="MathJax_Preview">\mA \geq c</span><script type="math/tex">\mA \geq c</script></span>  if and only if <span><span class="MathJax_Preview">A_{ij} \geq c</span><script type="math/tex">A_{ij} \geq c</script></span> for all  <span><span class="MathJax_Preview">i = 1,\dots,m</span><script type="math/tex">i = 1,\dots,m</script></span> and <span><span class="MathJax_Preview">j = 1,\dots,n.</span><script type="math/tex">j = 1,\dots,n.</script></span></li>
+<li><span><span class="MathJax_Preview">\mA &gt; c</span><script type="math/tex">\mA > c</script></span>  if and only if <span><span class="MathJax_Preview">A_{ij} &gt; c</span><script type="math/tex">A_{ij} > c</script></span> for all  <span><span class="MathJax_Preview">i = 1,\dots,m</span><script type="math/tex">i = 1,\dots,m</script></span> and <span><span class="MathJax_Preview">j = 1,\dots,n.</span><script type="math/tex">j = 1,\dots,n.</script></span></li>
+<li><span><span class="MathJax_Preview">\mA \geq \mB</span><script type="math/tex">\mA \geq \mB</script></span>  if and only if these matrices are of same size and <span><span class="MathJax_Preview">A_{ij} \geq B_{ij}</span><script type="math/tex">A_{ij} \geq B_{ij}</script></span> for all  <span><span class="MathJax_Preview">i = 1,\dots,m</span><script type="math/tex">i = 1,\dots,m</script></span> and <span><span class="MathJax_Preview">j = 1,\dots,n.</span><script type="math/tex">j = 1,\dots,n.</script></span></li>
+<li><span><span class="MathJax_Preview">\mA &gt; \mB</span><script type="math/tex">\mA > \mB</script></span>  if and only if these matrices are of same size and <span><span class="MathJax_Preview">A_{ij} &gt; B_{ij}</span><script type="math/tex">A_{ij} > B_{ij}</script></span> for all  <span><span class="MathJax_Preview">i = 1,\dots,m</span><script type="math/tex">i = 1,\dots,m</script></span> and <span><span class="MathJax_Preview">j = 1,\dots,n.</span><script type="math/tex">j = 1,\dots,n.</script></span></li>
+</ol>
+<h2 id="inner-products"><strong>Inner products</strong><a class="headerlink" href="#inner-products" title="Permanent link">&para;</a></h2>
+<p><!-- Is inner product unique? -->
+Inner product is a way to multiply two vectors and matrices to produce a scalar. For <span><span class="MathJax_Preview">\setV = \R^n\text{ or } \R^{m\times n}</span><script type="math/tex">\setV = \R^n\text{ or } \R^{m\times n}</script></span>, inner product is a map <span><span class="MathJax_Preview">\langle\cdot,\cdot\rangle:\setV\times \setV\rightarrow \R</span><script type="math/tex">\langle\cdot,\cdot\rangle:\setV\times \setV\rightarrow \R</script></span> that satisfies the following properties for all <span><span class="MathJax_Preview">\vx, \vy, \vz \in \setV</span><script type="math/tex">\vx, \vy, \vz \in \setV</script></span> and <span><span class="MathJax_Preview">\alpha \in \R</span><script type="math/tex">\alpha \in \R</script></span>:</p>
+<ol>
+<li>Non-negativity: <span><span class="MathJax_Preview">\langle \vx,\vx\rangle \geq 0</span><script type="math/tex">\langle \vx,\vx\rangle \geq 0</script></span> and <span><span class="MathJax_Preview">\langle \vx,\vx\rangle = 0</span><script type="math/tex">\langle \vx,\vx\rangle = 0</script></span> if and only if <span><span class="MathJax_Preview">\vx = 0</span><script type="math/tex">\vx = 0</script></span>.</li>
+<li>Symmetry: <span><span class="MathJax_Preview">\langle \vx, \vy\rangle = \langle \vy,\vx\rangle</span><script type="math/tex">\langle \vx, \vy\rangle = \langle \vy,\vx\rangle</script></span>.</li>
+<li>Linearity: <span><span class="MathJax_Preview">\langle\alpha \vx, \vy\rangle = \alpha \langle\vx,\vy\rangle</span><script type="math/tex">\langle\alpha \vx, \vy\rangle = \alpha \langle\vx,\vy\rangle</script></span> and <span><span class="MathJax_Preview">\langle \vx+\vy,\vz\rangle = \langle\vx,\vz\rangle + \langle\vy,\vz\rangle</span><script type="math/tex">\langle \vx+\vy,\vz\rangle = \langle\vx,\vz\rangle + \langle\vy,\vz\rangle</script></span>.</li>
+</ol>
+<p>For <span><span class="MathJax_Preview">\setV = \R^n</span><script type="math/tex">\setV = \R^n</script></span>, the Euclidean inner product between two vector <span><span class="MathJax_Preview">\vx, \vy\in\R^n</span><script type="math/tex">\vx, \vy\in\R^n</script></span> is also denoted as <span><span class="MathJax_Preview">\vx^\intercal\vy</span><script type="math/tex">\vx^\intercal\vy</script></span> and </p>
+<div>
+<div class="MathJax_Preview">
+\vx^\intercal\vy = x_1y_1+x_2+y_2+\dots+x_ny_n.
+</div>
+<script type="math/tex; mode=display">
+\vx^\intercal\vy = x_1y_1+x_2+y_2+\dots+x_ny_n.
+</script>
+</div>
+<p><span><span class="MathJax_Preview">\exa{1}</span><script type="math/tex">\exa{1}</script></span> Fix <span><span class="MathJax_Preview">i \in \{1,\dots,n\}</span><script type="math/tex">i \in \{1,\dots,n\}</script></span>. The inner product of <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>th standard basis vector <span><span class="MathJax_Preview">\ve_i</span><script type="math/tex">\ve_i</script></span> with an arbitary vector <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> is the <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>th entry of <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span>, i.e. <span><span class="MathJax_Preview">\ve_i^\intercal\vx = x_i</span><script type="math/tex">\ve_i^\intercal\vx = x_i</script></span>.</p>
+<p><span><span class="MathJax_Preview">\exa{2}</span><script type="math/tex">\exa{2}</script></span> The inner product of the vector of ones <span><span class="MathJax_Preview">\ve</span><script type="math/tex">\ve</script></span> with an arbitary vector <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> is in the sum of entres of <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span>, i.e. <span><span class="MathJax_Preview">\ve^\intercal\vx = x_1+x_2+\dots+x_n</span><script type="math/tex">\ve^\intercal\vx = x_1+x_2+\dots+x_n</script></span>.</p>
+<p><span><span class="MathJax_Preview">\exa{3}</span><script type="math/tex">\exa{3}</script></span> The inner product on an arbitary vector <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> with itself is the sum
+ of squares of the entries of <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span>, i.e. <span><span class="MathJax_Preview">\vx^\intercal\vx =x_1^2+x_2^2+\dots+x_n^2</span><script type="math/tex">\vx^\intercal\vx =x_1^2+x_2^2+\dots+x_n^2</script></span>.</p>
+<p><span><span class="MathJax_Preview">\exa{4}</span><script type="math/tex">\exa{4}</script></span> Let <span><span class="MathJax_Preview">\vp = (p_1,p_2,\dots,p_n)</span><script type="math/tex">\vp = (p_1,p_2,\dots,p_n)</script></span> be a vector of prices and <span><span class="MathJax_Preview">\vq = (q_1,q_2,\dots,q_n)</span><script type="math/tex">\vq = (q_1,q_2,\dots,q_n)</script></span> be the corresponding vector of quantities. The total cost is the inner product of <span><span class="MathJax_Preview">\vp</span><script type="math/tex">\vp</script></span> and <span><span class="MathJax_Preview">\vq</span><script type="math/tex">\vq</script></span>, i.e. <span><span class="MathJax_Preview">\vp^\intercal\vq = \sum_{i = 1}^np_iq_i</span><script type="math/tex">\vp^\intercal\vq = \sum_{i = 1}^np_iq_i</script></span>.</p>
+<p><span><span class="MathJax_Preview">\exa{5}</span><script type="math/tex">\exa{5}</script></span> Let <span><span class="MathJax_Preview">\vw</span><script type="math/tex">\vw</script></span> be a vector of assest allocations (<span><span class="MathJax_Preview">\ve^\intercal\vw = 1, \vw\geq 0</span><script type="math/tex">\ve^\intercal\vw = 1, \vw\geq 0</script></span>) and <span><span class="MathJax_Preview">\vp</span><script type="math/tex">\vp</script></span> be the corresponding vector of asset prices. The total portfolio value is <span><span class="MathJax_Preview">\vw^\intercal\vp</span><script type="math/tex">\vw^\intercal\vp</script></span>.</p>
+<p>For <span><span class="MathJax_Preview">\setV = \R^{m\times n}</span><script type="math/tex">\setV = \R^{m\times n}</script></span>, the trace inner product between two matrices <span><span class="MathJax_Preview">\mA, \mB \in \R^{m\times n}</span><script type="math/tex">\mA, \mB \in \R^{m\times n}</script></span> is also denoted as <span><span class="MathJax_Preview">\text{tr}(\mA^\intercal\mB)</span><script type="math/tex">\text{tr}(\mA^\intercal\mB)</script></span> and</p>
+<div>
+<div class="MathJax_Preview">
+\trace{\mA^\intercal\mB} = \sum_{i=1}^m\sum_{j=1}^nA_{ij}B_{ij} =\vec{\mA}^\intercal\vec{\mB},
+</div>
+<script type="math/tex; mode=display">
+\trace{\mA^\intercal\mB} = \sum_{i=1}^m\sum_{j=1}^nA_{ij}B_{ij} =\vec{\mA}^\intercal\vec{\mB},
+</script>
+</div>
+<p>where for a square matrix <span><span class="MathJax_Preview">\mS \in \R^{n\times n}</span><script type="math/tex">\mS \in \R^{n\times n}</script></span>, <span><span class="MathJax_Preview">\trace{\mS} =\sum_{i=1}^n S_{ii}</span><script type="math/tex">\trace{\mS} =\sum_{i=1}^n S_{ii}</script></span>, and for a matrix <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> with columns <span><span class="MathJax_Preview">\va_1,\va_2,\dots,\va_n \in \R^m</span><script type="math/tex">\va_1,\va_2,\dots,\va_n \in \R^m</script></span>, </p>
+<div>
+<div class="MathJax_Preview">
+\vec{\mA} = \begin{bmatrix}\va_1 \\\va_2\\\vdots\\\va_n \end{bmatrix}. 
+</div>
+<script type="math/tex; mode=display">
+\vec{\mA} = \begin{bmatrix}\va_1 \\\va_2\\\vdots\\\va_n \end{bmatrix}. 
+</script>
+</div>
+<h2 id="norms"><strong>Norms</strong><a class="headerlink" href="#norms" title="Permanent link">&para;</a></h2>
+<p>Norms are a measure of distances of a vector from the origin. The most common norm is the "Euclidean norm", i.e. 2-norm:</p>
+<div>
+<div class="MathJax_Preview">
+\|\vx\|_2 = \sqrt{x_1^2+\dots+x_n^2}
+</div>
+<script type="math/tex; mode=display">
+\|\vx\|_2 = \sqrt{x_1^2+\dots+x_n^2}
+</script>
+</div>
+<p>This 2-norm is the norm induced by the Euclidean inner product on <span><span class="MathJax_Preview">\R^n</span><script type="math/tex">\R^n</script></span>, where <span><span class="MathJax_Preview">\|\vx\|_2 = \sqrt{\vx^\intercal\vx}</span><script type="math/tex">\|\vx\|_2 = \sqrt{\vx^\intercal\vx}</script></span>. The 2-norm reults in the familiar pythagorean identity, i.e. for any vectors <span><span class="MathJax_Preview">\va, \vb,</span><script type="math/tex">\va, \vb,</script></span> and <span><span class="MathJax_Preview">\vc</span><script type="math/tex">\vc</script></span>,</p>
+<div>
+<div class="MathJax_Preview"> \|(\va,\vb,\vc)\|_2^2 = \|\va\|_2^2+\|\vb\|_2^2+\|\vc\|_2^2.</div>
+<script type="math/tex; mode=display"> \|(\va,\vb,\vc)\|_2^2 = \|\va\|_2^2+\|\vb\|_2^2+\|\vc\|_2^2.</script>
+</div>
+<p>An important inequlity that relates the inner product of two arbitary vectors with the norms of those vectors induced by the inner product is the Cauchy-Schwartz inequality. In the case of <span><span class="MathJax_Preview">\R^n</span><script type="math/tex">\R^n</script></span>, the Cauchy-Schwartz inequality states that for all <span><span class="MathJax_Preview">\vx, \vy \in \R^n</span><script type="math/tex">\vx, \vy \in \R^n</script></span>, we have</p>
+<div>
+<div class="MathJax_Preview">
+\vx^\intercal\vy \leq \|\vx\|_2\|\vy\|_2.
+</div>
+<script type="math/tex; mode=display">
+\vx^\intercal\vy \leq \|\vx\|_2\|\vy\|_2.
+</script>
+</div>
+<p>For <span><span class="MathJax_Preview">\R^n</span><script type="math/tex">\R^n</script></span>, the Cauchy Schwartz inequality follows from the Cosine inequality, i.e. for any vectors <span><span class="MathJax_Preview">\vx, \vy</span><script type="math/tex">\vx, \vy</script></span> with angle <span><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span> between <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> and <span><span class="MathJax_Preview">\vy</span><script type="math/tex">\vy</script></span>, we have <span><span class="MathJax_Preview">\vx^\intercal \vy = \|\vx\|_2\|\vy\|_2\cos(\theta)</span><script type="math/tex">\vx^\intercal \vy = \|\vx\|_2\|\vy\|_2\cos(\theta)</script></span>. So, the Cauchy-Schwartz inequality attains the equality if and only if the two vectors are co-linear. </p>
+<p>The Cauchy-Schwartz inequality gives us another inequailty that norms, in general, satisfy. This inequailty is the triangle inequality and states that</p>
+<div>
+<div class="MathJax_Preview">\begin{equation}\label{background:triangle}
+\text{for any vectors } \vx, \vy \in \R^n,\ \|\vx+\vy\|_2\leq \|\vx\|_2+\|\vy\|_2
+\end{equation}</div>
+<script type="math/tex; mode=display">\begin{equation}\label{background:triangle}
+\text{for any vectors } \vx, \vy \in \R^n,\ \|\vx+\vy\|_2\leq \|\vx\|_2+\|\vy\|_2
+\end{equation}</script>
+</div>
+<p><span><span class="MathJax_Preview">\proof</span><script type="math/tex">\proof</script></span> We will use Cauchy-Schwartz inequality to prove \eqref{background:triangle}. Consider</p>
+<div>
+<div class="MathJax_Preview">
+\begin{align*}
+\|\vx+\vy\|_2^2 &amp;= (\vx+\vy)^\intercal(\vx+\vy)\\
+&amp; = \vx^\intercal\vx + 2\vx^\intercal\vy+\vy^\intercal\vy\\
+&amp; = \|\vx\|_2^2 + 2\vx^\intercal\vy + \|\vy\|_2^2\\
+&amp; \leq \|\vx\|_2^2 + 2\|\vx\|_2\|\vy\|_2+\|\vy\|_2^2\\
+&amp; = (\|\vx\|_2+\|\vy\|_2)^2,
+\end{align*}
+</div>
+<script type="math/tex; mode=display">
+\begin{align*}
+\|\vx+\vy\|_2^2 &= (\vx+\vy)^\intercal(\vx+\vy)\\
+& = \vx^\intercal\vx + 2\vx^\intercal\vy+\vy^\intercal\vy\\
+& = \|\vx\|_2^2 + 2\vx^\intercal\vy + \|\vy\|_2^2\\
+& \leq \|\vx\|_2^2 + 2\|\vx\|_2\|\vy\|_2+\|\vy\|_2^2\\
+& = (\|\vx\|_2+\|\vy\|_2)^2,
+\end{align*}
+</script>
+</div>
+<p>where the second equality follows from linearty of inner product and the inequality follows from the Cauchy-Schwartz inequality. q.e.d.</p>
+<p>More generally, norms are any function <span><span class="MathJax_Preview">\|\cdot\|:\R^n \rightarrow \R</span><script type="math/tex">\|\cdot\|:\R^n \rightarrow \R</script></span> that satisfy the following conditions for all <span><span class="MathJax_Preview">\vx,\vy \in\R^n</span><script type="math/tex">\vx,\vy \in\R^n</script></span> and <span><span class="MathJax_Preview">\beta \in \R</span><script type="math/tex">\beta \in \R</script></span>:</p>
+<ol>
+<li>Homogeneity: <span><span class="MathJax_Preview">\|\beta\vx\| = |\beta|\cdot\|\vx\|</span><script type="math/tex">\|\beta\vx\| = |\beta|\cdot\|\vx\|</script></span>.</li>
+<li>Triangle inequality: <span><span class="MathJax_Preview">\|\vx+\vy\|\leq \|\vx\|+\|\vy\|</span><script type="math/tex">\|\vx+\vy\|\leq \|\vx\|+\|\vy\|</script></span>.</li>
+<li>Non-negativity: <span><span class="MathJax_Preview">\|\vx\|\geq 0</span><script type="math/tex">\|\vx\|\geq 0</script></span> and <span><span class="MathJax_Preview">\|\vx\|=0</span><script type="math/tex">\|\vx\|=0</script></span> if and only if <span><span class="MathJax_Preview">\vx = \vzero</span><script type="math/tex">\vx = \vzero</script></span>.</li>
+</ol>
+<p>Other useful norms that satify the above conditions are:</p>
+<ol>
+<li>1-norm: The 1-norm of <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> is <span><span class="MathJax_Preview">\|\vx\|_1:=|x_1|+\dots+|x_n|</span><script type="math/tex">\|\vx\|_1:=|x_1|+\dots+|x_n|</script></span>.</li>
+<li>Sup-norm: The sup-norm of <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> is the largest entry of <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> in absolute value, i.e. <span><span class="MathJax_Preview">\|\vx\|_\infty = \max_{j}|x_j|</span><script type="math/tex">\|\vx\|_\infty = \max_{j}|x_j|</script></span>.</li>
+<li>p-norm: For <span><span class="MathJax_Preview">p\geq 1</span><script type="math/tex">p\geq 1</script></span>, the p-norm of <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> is <span><span class="MathJax_Preview">\|\vx\|_p = \left(\sum_{j=1}^n|x_j|^p\right)^\tfrac{1}{p}</span><script type="math/tex">\|\vx\|_p = \left(\sum_{j=1}^n|x_j|^p\right)^\tfrac{1}{p}</script></span>.</li>
+</ol>
+<p><center>
+<img src="../img/lec1/unit-balls.png" width = "700">
+</center></p>
+<!-- ![norms-dist](img/lec1/norms-dist.png =100x20) -->
+
+<h2 id="linear-functions"><strong>Linear functions</strong><a class="headerlink" href="#linear-functions" title="Permanent link">&para;</a></h2>
+<p>Linear function in a mapping between two Eucliean spaces that preserve the operations of addition and scalar multiplication. Specifially, a function <span><span class="MathJax_Preview">\func{f}:\R^n\rightarrow\R^m</span><script type="math/tex">\func{f}:\R^n\rightarrow\R^m</script></span> is linear if for all <span><span class="MathJax_Preview">\vx,\vy\in\R^n</span><script type="math/tex">\vx,\vy\in\R^n</script></span> and <span><span class="MathJax_Preview">\alpha\in\R</span><script type="math/tex">\alpha\in\R</script></span>, we have</p>
+<div>
+<div class="MathJax_Preview">
+\func{f}(\alpha\vx+\vy) = \alpha\func{f}(\vx)+\func{f}(\vy)
+</div>
+<script type="math/tex; mode=display">
+\func{f}(\alpha\vx+\vy) = \alpha\func{f}(\vx)+\func{f}(\vy)
+</script>
+</div>
+<p>Here, <span><span class="MathJax_Preview">\func{f}</span><script type="math/tex">\func{f}</script></span> takes a vector of dimension <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> as its input and outputs a vector of dimension of <span><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span>. If <span><span class="MathJax_Preview">m=1</span><script type="math/tex">m=1</script></span>, then we say the function <span><span class="MathJax_Preview">\func{f}</span><script type="math/tex">\func{f}</script></span> is a real valued function.</p>
+<p><span><span class="MathJax_Preview">\prop</span><script type="math/tex">\prop</script></span> A real valued function <span><span class="MathJax_Preview">\func{f}:\R^n\rightarrow \R</span><script type="math/tex">\func{f}:\R^n\rightarrow \R</script></span> is linear if and only if <span><span class="MathJax_Preview">\func{f} = \va^\intercal\vx</span><script type="math/tex">\func{f} = \va^\intercal\vx</script></span> for some <span><span class="MathJax_Preview">\va \in\R^n</span><script type="math/tex">\va \in\R^n</script></span>.</p>
+<p><span><span class="MathJax_Preview">\proof</span><script type="math/tex">\proof</script></span> We will first prove the forward direction, i.e. if <span><span class="MathJax_Preview">\func{f}:\R^n\rightarrow\R</span><script type="math/tex">\func{f}:\R^n\rightarrow\R</script></span> is a linear function then <span><span class="MathJax_Preview">\func{f}(\vx)=\va^\intercal\vx</span><script type="math/tex">\func{f}(\vx)=\va^\intercal\vx</script></span>. For <span><span class="MathJax_Preview">i\in\{1,\dots,n\}</span><script type="math/tex">i\in\{1,\dots,n\}</script></span>, let <span><span class="MathJax_Preview">a_{i} = \func{f}(\ve_i)</span><script type="math/tex">a_{i} = \func{f}(\ve_i)</script></span>. Then since <span><span class="MathJax_Preview">\vx = x_1\ve_1+\dots+x_n\ve_n</span><script type="math/tex">\vx = x_1\ve_1+\dots+x_n\ve_n</script></span>, we have</p>
+<div>
+<div class="MathJax_Preview">
+\begin{align*}
+\func{f}(\vx) &amp;= \func{f}(x_1\ve_1+\dots+x_n\ve_n)\\
+&amp;=x_1\func{f}(\ve_1)+\dots+x_n\func{f}(\ve_n)\\
+&amp;= x_1\va_1+\dots+x_n\va_n\\
+&amp;= \va^\intercal\vx.
+\end{align*}
+</div>
+<script type="math/tex; mode=display">
+\begin{align*}
+\func{f}(\vx) &= \func{f}(x_1\ve_1+\dots+x_n\ve_n)\\
+&=x_1\func{f}(\ve_1)+\dots+x_n\func{f}(\ve_n)\\
+&= x_1\va_1+\dots+x_n\va_n\\
+&= \va^\intercal\vx.
+\end{align*}
+</script>
+</div>
+<p>Second, we prove the reverse direction, i.e. if <span><span class="MathJax_Preview">\func{f}(\vx) = \va^\intercal\vx</span><script type="math/tex">\func{f}(\vx) = \va^\intercal\vx</script></span> for some <span><span class="MathJax_Preview">\va \in \R^n</span><script type="math/tex">\va \in \R^n</script></span> then <span><span class="MathJax_Preview">\func{f}</span><script type="math/tex">\func{f}</script></span> is a real valued linear function. Clearly, <span><span class="MathJax_Preview">\func{f}(x)</span><script type="math/tex">\func{f}(x)</script></span> is a real valued function. Let <span><span class="MathJax_Preview">\vx,\vy\in \R^n</span><script type="math/tex">\vx,\vy\in \R^n</script></span> and <span><span class="MathJax_Preview">\alpha \in \R</span><script type="math/tex">\alpha \in \R</script></span>. Consider</p>
+<div>
+<div class="MathJax_Preview">
+\begin{align*}
+\func{f}(\alpha\vx+\vy) &amp;= \va^\intercal(\alpha\vx+\vy)\\
+&amp;=\va^\intercal(\alpha\vx)+\va^\intercal\vy\\
+&amp; = \alpha \va^\intercal\vx+\va^\intercal\vy\\
+&amp; = \alpha\func{f}(\vx)+\func{f}(\vy)
+\end{align*}
+</div>
+<script type="math/tex; mode=display">
+\begin{align*}
+\func{f}(\alpha\vx+\vy) &= \va^\intercal(\alpha\vx+\vy)\\
+&=\va^\intercal(\alpha\vx)+\va^\intercal\vy\\
+& = \alpha \va^\intercal\vx+\va^\intercal\vy\\
+& = \alpha\func{f}(\vx)+\func{f}(\vy)
+\end{align*}
+</script>
+</div>
+<p>where the second inequality follows from linearity of inner product. q.e.d.</p>
+<!-- This is a matrix
 \begin{equation} \label{eq-1}
   x = 1 
 \end{equation}
-Please see \eqref{eq-1}</p>
-<p>See the <a href="../introduction/#modelling">model</a></p>
-<p>This is another
+Please see \eqref{eq-1}
+
+See the [model](introduction.md#modelling)
+
+This is another
 \begin{equation} \label{optimality}
   \nabla f(x)=0
 \end{equation}
-THis is referenced by \eqref{optimality}.</p>
+THis is referenced by \eqref{optimality}. -->
                 
                   
                 
@@ -518,13 +797,13 @@ THis is referenced by \eqref{optimality}.</p>
           </a>
         
         
-          <a href="../../homework/hw1/" title="Homework 1" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../unconstrained/" title="Unconstrained optimization" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Homework 1
+                Unconstrained optimization
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
