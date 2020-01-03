@@ -48,7 +48,7 @@ A matrix $\mA$ is the zero matrix if all of its entrie are zero. The zero matrix
 
 1. if $m>n$ then the matrix $\mA$ is a tall matrix,
 2. if $m< n$ then the matrix $\mA$ is a wide matrix, and
-3. if $m = n$ then the matrix $mA$ is a square matrix.
+3. if $m = n$ then the matrix $\mA$ is a square matrix.
 <!-- add figure -->
 
 Matrices $\mA$ and $\mB$ are equal if these matrices are of same size and every element is equal:
@@ -60,8 +60,8 @@ If all of the entries of a matrix $\mA$ are a scalar $c \in \R$ then we write $\
 
 1. $\mA \geq c$  if and only if $A_{ij} \geq c$ for all  $i = 1,\dots,m$ and $j = 1,\dots,n.$
 2. $\mA > c$  if and only if $A_{ij} > c$ for all  $i = 1,\dots,m$ and $j = 1,\dots,n.$
-3. $\mA \geq B$  if and only if these matrices are of same size and $A_{ij} \geq B_{ij}$ for all  $i = 1,\dots,m$ and $j = 1,\dots,n.$
-4. $\mA > B$  if and only if these matrices are of same size and $A_{ij} > B_{ij}$ for all  $i = 1,\dots,m$ and $j = 1,\dots,n.$
+3. $\mA \geq \mB$  if and only if these matrices are of same size and $A_{ij} \geq B_{ij}$ for all  $i = 1,\dots,m$ and $j = 1,\dots,n.$
+4. $\mA > \mB$  if and only if these matrices are of same size and $A_{ij} > B_{ij}$ for all  $i = 1,\dots,m$ and $j = 1,\dots,n.$
 
 ## **Inner products**
 <!-- Is inner product unique? -->
@@ -167,7 +167,7 @@ $$
 \func{f}(\alpha\vx+\vy) = \alpha\func{f}(\vx)+\func{f}(\vy)
 $$
 
-Here, $\func{f}$ takes a vector of dimension $n$ as its input and outpu a vector of dimension of $m$. If $m=1$, then we say the function $\func{f}$ is a real valued function.
+Here, $\func{f}$ takes a vector of dimension $n$ as its input and outputs a vector of dimension of $m$. If $m=1$, then we say the function $\func{f}$ is a real valued function.
 
 $\prop$ A real valued function $\func{f}:\R^n\rightarrow \R$ is linear if and only if $\func{f} = \va^\intercal\vx$ for some $\va \in\R^n$.
 
@@ -182,7 +182,7 @@ $$
 \end{align*}
 $$
 
-Second, we prove the reverse direction, i.e. if $\func{f}(\vx) = \va^\intercal\vx$ for some $\va \in \R^n$ then $\func{f}$ is a real valued linea function. Clearly, $\func{f}(x)$ is a real valued function. Let $\vx,\vy\in \R^n$ and $\alpha \in \R$. Consider
+Second, we prove the reverse direction, i.e. if $\func{f}(\vx) = \va^\intercal\vx$ for some $\va \in \R^n$ then $\func{f}$ is a real valued linear function. Clearly, $\func{f}(x)$ is a real valued function. Let $\vx,\vy\in \R^n$ and $\alpha \in \R$. Consider
 
 $$
 \begin{align*}
