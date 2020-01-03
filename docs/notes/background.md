@@ -109,11 +109,11 @@ $$
 \|\vx\|_2 = \sqrt{x_1^2+\dots+x_n^2}
 $$
 
-This 2-norm is the norm induced by the Euclidean inner product on $\R^n$, where $\|\vx\|_2 = \sqrt{\vx^\intercal\vx}$. The 2-norm reults in the familiar pythagorean idenity, i.e. for any vectors $\va, \vb,$ and $\vc$,
+This 2-norm is the norm induced by the Euclidean inner product on $\R^n$, where $\|\vx\|_2 = \sqrt{\vx^\intercal\vx}$. The 2-norm reults in the familiar pythagorean identity, i.e. for any vectors $\va, \vb,$ and $\vc$,
 
 $$ \|(\va,\vb,\vc)\|_2^2 = \|\va\|_2^2+\|\vb\|_2^2+\|\vc\|_2^2.$$
 
-An important inequlity that relate the inner product of two vectors and the norms of those vectors induced by the inner product is the Cauchy-Schwartz inequality. In the case of $\R^n$, the Cauchy-Schwartz inequality states that for all $\vx, \vy \in \R^n$, we have
+An important inequlity that relates the inner product of two arbitary vectors with the norms of those vectors induced by the inner product is the Cauchy-Schwartz inequality. In the case of $\R^n$, the Cauchy-Schwartz inequality states that for all $\vx, \vy \in \R^n$, we have
 
 $$
 \vx^\intercal\vy \leq \|\vx\|_2\|\vy\|_2.
@@ -121,7 +121,7 @@ $$
 
 For $\R^n$, the Cauchy Schwartz inequality follows from the Cosine inequality, i.e. for any vectors $\vx, \vy$ with angle $\theta$ between $\vx$ and $\vy$, we have $\vx^\intercal \vy = \|\vx\|_2\|\vy\|_2\cos(\theta)$. So, the Cauchy-Schwartz inequality attains the equality if and only if the two vectors are co-linear. 
 
-The Cauchy-Schwartz inequality gives us another inequailty that induced norms, in general, satisfy. This inequailty is the triangle inequality and states that
+The Cauchy-Schwartz inequality gives us another inequailty that norms, in general, satisfy. This inequailty is the triangle inequality and states that
 
 \begin{equation}\label{background:triangle}
 \text{for any vectors } \vx, \vy \in \R^n,\ \|\vx+\vy\|_2\leq \|\vx\|_2+\|\vy\|_2
@@ -153,8 +153,11 @@ Other useful norms that satify the above conditions are:
 2. Sup-norm: The sup-norm of $\vx$ is the largest entry of $\vx$ in absolute value, i.e. $\|\vx\|_\infty = \max_{j}|x_j|$.
 3. p-norm: For $p\geq 1$, the p-norm of $\vx$ is $\|\vx\|_p = \left(\sum_{j=1}^n|x_j|^p\right)^\tfrac{1}{p}$.
 
-<!-- figure -->
+<center>
+<img src="../img/lec1/unit-balls.png" width = "700">
+</center>
 
+<!-- ![norms-dist](img/lec1/norms-dist.png =100x20) -->
 
 ## **Linear functions**
 
