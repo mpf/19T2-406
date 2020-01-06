@@ -5,8 +5,8 @@ site_author: Michael P. Friedlander and Bahbru Joshi
 site_url: https://friedlander.io/19T2-406
 
 # Repository
-repo_name: mpf/19T2-406
-repo_url: https://github.com/mpf/19T2-406
+# repo_name: mpf/19T2-406
+# repo_url: https://github.com/mpf/19T2-406
 
 # Copyright
 copyright: 'Copyright &copy; 2020 Michael Friedlander and Bahbru Joshi'
@@ -53,9 +53,10 @@ extra_javascript:
 # Page tree
 nav:
   - Home Page: index.md
+  - Grades: grades.md
+  - Schedule: schedule.md
   - Lecture notes:
       # - Introduction: notes/introduction.md
       - Mathematical background: notes/background.md
-      - Unconstrained optimization: notes/unconstrained.md
   # - Homework:
   #     - Homework 1: homework/hw1.md
