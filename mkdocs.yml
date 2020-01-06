@@ -57,5 +57,5 @@ nav:
       # - Introduction: notes/introduction.md
       - Mathematical background: notes/background.md
       - Unconstrained optimization: notes/unconstrained.md
-  - Homework:
-      - Homework 1: homework/hw1.md
+  # - Homework:
+  #     - Homework 1: homework/hw1.md
