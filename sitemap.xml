@@ -6,12 +6,17 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://friedlander.io/19T2-406/notes/background/</loc>
+     <loc>https://friedlander.io/19T2-406/grades/</loc>
      <lastmod>2020-01-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://friedlander.io/19T2-406/notes/unconstrained/</loc>
+     <loc>https://friedlander.io/19T2-406/schedule/</loc>
+     <lastmod>2020-01-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://friedlander.io/19T2-406/notes/background/</loc>
      <lastmod>2020-01-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
