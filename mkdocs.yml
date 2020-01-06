@@ -54,7 +54,7 @@ extra_javascript:
 nav:
   - Home Page: index.md
   - Lecture notes:
-      - Introduction: notes/introduction.md
+      # - Introduction: notes/introduction.md
       - Mathematical background: notes/background.md
       - Unconstrained optimization: notes/unconstrained.md
   - Homework:

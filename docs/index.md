@@ -18,7 +18,7 @@ Monday, Wednesday, and Friday, 2-3 pm, DMP 110
 
 One of CPSC 302, CPSC 303, or MATH 307.
 
-## **Course discussion board**
+<!-- ## **Course discussion board** -->
 
 
 ## **Grades**
@@ -36,6 +36,24 @@ One of CPSC 302, CPSC 303, or MATH 307.
 * To pass the course you must do the assigned coursework, write the midterm and final exams, pass the final exam, and obtain an overall pass average according to the grading scheme.
 * The instructors reserve the right to modify the grading scheme at any time.
 
+### **Schedule**
+
+| Lecture | Date | Topic | Notes | Homework |
+| ------- | ---- | ----- | ----- | -------- |
+| 1 | 06 Jan | Least Squares | | |
+| 2 | 08 Jan | Regularized Least Squares | | |
+| 3 | 10 Jan | Non-linear Least Squares | | |
+| 4 | | Unconstrained Optimization | | |
+| 5 | | Descent Methods | | |
+| 6 | | Newton's Method | | |
+| 7 | | Quasi-Newton's Methods | | |
+| 8 | | Convex Functions | | |
+| 9 | | Constrained Optimzation | | |
+| 10 | | Linear Programming applications | | |
+| 11 | | Simplex Methods | | |
+| 12 | | Duality | | |
+| 13 | | Interrior Point Method | | |
+ 
 <!-- ## Commands
 
 * `mkdocs new [dir-name]` - Create a new project.
