@@ -1,35 +1,18 @@
 # **Least Squares**
 
+In this lecture, we will cover least squares for data fitting, linear systems, properties of least squares and QR factorization.
+
+## **Least squares for data fitting**
+
+Consider the problem of fitting a line to observations $y_i$ gven input $z_i,\ i = 1,\dots, n$.
 
 
 
-This an example of a julia script that can be published using
-[Weave](http://mpastell.github.io/Weave.jl/latest/usage/).
-The script can be executed normally using Julia
-or published to HTML or pdf with Weave.
-Text is written in markdown in lines starting with "`#'` " and code
-is executed and results are included in the published document.
+<center>
+![](figures/Least_squares_2_1.png)
 
 
-Notice that you don't need to define chunk options, but you can using
-`#+`. just before code e.g. `#+ term=True, caption='Fancy plots.'`.
-If you're viewing the published version have a look at the
-[source](FIR_design_plots.jl) to see the markup.
-
-$$\vx$$
-
-# FIR Filter Design
-
-
-We'll implement lowpass, highpass and ' bandpass FIR filters. If
-you want to read more about DSP I highly recommend [The Scientist
-and Engineer's Guide to Digital Signal
-Processing](http://www.dspguide.com/) which is freely available
-online.
-
-
-## Calculating frequency response
-
+</center>
 
 DSP.jl package doesn't (yet) have a method to calculate the
 the frequency response of a FIR filter so we define it:
@@ -129,7 +112,7 @@ plot(ws, h_db,
 ````
 
 
-![](figures/Least_squares_4_1.png)
+![](figures/Least_squares_6_1.png)
 
 
 
@@ -142,4 +125,4 @@ plot(ws, h_phase,
 ````
 
 
-![](figures/Least_squares_5_1.png)
+![](figures/Least_squares_7_1.png)

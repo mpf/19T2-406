@@ -20,5 +20,4 @@ One of CPSC 302, CPSC 303, or MATH 307.
 
 ## Course discussion board
 
-* Discussion board is hosted on [Piazza](http://piazza.com/ubc.ca/winterterm22020/cpsc406/home). Here is the [link](http://piazza.com/ubc.ca/winterterm22020/cpsc406) to enroll.<br>
- Note: The URL contains Winter 2020 instead of Winter 2019. We will provide an update when this is fixed. For now, use the above link to join the class on Piazza.
+* Discussion board is hosted on [Piazza](http://piazza.com/ubc.ca/winterterm22019/cpsc406/home). Here is the [link](http://piazza.com/ubc.ca/winterterm22019/cpsc406) to enroll.
