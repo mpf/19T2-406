@@ -19,7 +19,31 @@ y = m.*z.+b + noise
 plot(z,y,seriestype=:scatter,xlabel="z",ylabel="y")
 ```
 
-In the figure above, the data points seem to follow a linear trend. The question we would like address is what is the best 
+In the figure above, the data points seem to follow a linear trend. One way to find the parameters $c,s \in \R$ of the linear 
+model $f(z) = s\cdot z + c$ that coresponds to a line of best fit is to minimize the following squared distance subject to a 
+linear constraint:
+
+$$
+\begin{align*}
+\min_{s,c \in \R} &\sum_{i=1}^n (y_i - \hat{y}_i)^2\\
+ \text{subject to } &s\cdot z_i+c = \hat{y}_i
+\end{align*}
+$$
+
+The above minimization program can be reformulated as a linear least squares problem:
+
+$$
+\min_{\vx} \|\mA \vx - \vb\|_2^2 = \sum_{i=1}^n(\va_{i}^\intercal\vx-b_i)^2
+$$
+
+where,
+
+$$
+\mA = \begin{bmatrix}z_1 & 1\\ z_2 & 1\\ \vdots&\vdots\\z_n & 1\end{bmatrix}, \ \vb = \begin{bmatrix}y_1\\y_2\\\vdots
+\\y_n\end{bmatrix}, \text{ and } \vx = \begin{bmatrix}s\\c\end{bmatrix}.
+$$
+
+So, to find the line of best fit, it suffices to comp
 
 
 ```julia; echo=false

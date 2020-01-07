@@ -4,12 +4,42 @@ In this lecture, we will cover least squares for data fitting, linear systems, p
 
 ## **Least squares for data fitting**
 
-Consider the problem of fitting a line to observations $y_i$ gven input $z_i,\ i = 1,\dots, n$.
+Consider the problem of fitting a line to observations $y_i$ gven input $z_i$ for $i = 1,\dots, n$. 
+
+![](figures/Least_squares_1_1.png)
+
+
+
+In the figure above, the data points seem to follow a linear trend. One way to find the parameters $c,s \in \R$ of the linear 
+model $f(z) = s\cdot z + c$ that coresponds to a line of best fit is to minimize the following squared distance subject to a 
+linear constraint:
+
+$$
+\begin{align*}
+\min_{s,c \in \R} &\sum_{i=1}^n (y_i - \hat{y}_i)^2\\
+ \text{subject to } &s\cdot z_i+c = \hat{y}_i
+\end{align*}
+$$
+
+The above minimization program can be reformulated as a linear least squares problem:
+
+$$
+\min_{\vx} \|\mA \vx - \vb\|_2^2 = \sum_{i=1}^n(\va_{i}^\intercal\vx-b_i)^2
+$$
+
+where,
+
+$$
+\mA = \begin{bmatrix}z_1 & 1\\ z_2 & 1\\ \vdots&\vdots\\z_n & 1\end{bmatrix}, \ \vb = \begin{bmatrix}y_1\\y_2\\\vdots
+\\y_n\end{bmatrix}, \text{ and } \vx = \begin{bmatrix}s\\c\end{bmatrix}.
+$$
+
+
 
 
 
 <center>
-![](figures/Least_squares_2_1.png)
+![](figures/Least_squares_3_1.png)
 
 
 </center>
@@ -112,7 +142,7 @@ plot(ws, h_db,
 ````
 
 
-![](figures/Least_squares_6_1.png)
+![](figures/Least_squares_7_1.png)
 
 
 
@@ -125,4 +155,4 @@ plot(ws, h_phase,
 ````
 
 
-![](figures/Least_squares_7_1.png)
+![](figures/Least_squares_8_1.png)
