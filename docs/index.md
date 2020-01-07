@@ -20,18 +20,5 @@ One of CPSC 302, CPSC 303, or MATH 307.
 
 ## Course discussion board
 
-* Discussion board is hosted on [Piazza](html://piazza.com/ubc.ca/winterterm22020/cpsc406/home)
-
-<!-- ## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files. -->
+* Discussion board is hosted on [Piazza](http://piazza.com/ubc.ca/winterterm22020/cpsc406/home). <br>
+ Note: The URL contains Winter 2020 instead of Winter 2019. We will provide an update when this is fixed. For now, use the above link to join the class on Piazza.
