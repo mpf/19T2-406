@@ -18,7 +18,9 @@ Monday, Wednesday, and Friday, 2-3 pm, DMP 110
 
 One of CPSC 302, CPSC 303, or MATH 307.
 
-<!-- ## **Course discussion board** -->
+## Course discussion board
+
+* Discussion board is hosted on [Piazza](html://piazza.com/ubc.ca/winterterm22020/cpsc406/home)
 
 <!-- ## Commands
 
