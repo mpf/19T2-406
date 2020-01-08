@@ -418,13 +418,13 @@ linear constraint:</p>
 <div>
 <div class="MathJax_Preview">
 \begin{align*}
-\min_{s,c \in \R} &amp;\sum_{i=1}^n (y_i - \hat{y}_i)^2\\
+\min{s,\,c,\,\hat{y}_i \in \R} &amp;\sum_{i=1}^n (y_i - \hat{y}_i)^2\\
  \text{subject to } &amp;s\cdot z_i+c = \hat{y}_i
 \end{align*}
 </div>
 <script type="math/tex; mode=display">
 \begin{align*}
-\min_{s,c \in \R} &\sum_{i=1}^n (y_i - \hat{y}_i)^2\\
+\min{s,\,c,\,\hat{y}_i \in \R} &\sum_{i=1}^n (y_i - \hat{y}_i)^2\\
  \text{subject to } &s\cdot z_i+c = \hat{y}_i
 \end{align*}
 </script>
@@ -432,13 +432,13 @@ linear constraint:</p>
 <p>The above minimization program can be reformulated as a linear least squares problem:</p>
 <div>
 <div class="MathJax_Preview">
-\min_{\vx} \|\mA \vx - \vb\|_2^2 = \sum_{i=1}^n(\va_{i}^\intercal\vx-b_i)^2
+\min_{\vx} \|\mA \vx - \vb\|_2^2 = \sum_{i=1}^n(\va_{i}^\intercal\vx-b_i)^2,
 </div>
 <script type="math/tex; mode=display">
-\min_{\vx} \|\mA \vx - \vb\|_2^2 = \sum_{i=1}^n(\va_{i}^\intercal\vx-b_i)^2
+\min_{\vx} \|\mA \vx - \vb\|_2^2 = \sum_{i=1}^n(\va_{i}^\intercal\vx-b_i)^2,
 </script>
 </div>
-<p>where,</p>
+<p>where</p>
 <div>
 <div class="MathJax_Preview">
 \mA = \begin{bmatrix}z_1 &amp; 1\\ z_2 &amp; 1\\ \vdots&amp;\vdots\\z_n &amp; 1\end{bmatrix}, \ \vb = \begin{bmatrix}y_1\\y_2\\\vdots
@@ -471,7 +471,7 @@ linear constraint:</p>
 \nabla\func{f}(\vx) = \mA^\intercal(\mA\vx-\vb), \text{ and } \nabla^2\func{f}(\vx) = \mA^\intercal\mA,
 </script>
 </div>
-<p>respectively. The Hessian is positive semidefinite for every <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> (and is positive definite if <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> has ful row rank). This 
+<p>respectively. The Hessian is positive semidefinite for every <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> (and is positive definite if <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> has full row rank). This 
 implies that the function <span><span class="MathJax_Preview">\func{f}(\vx)</span><script type="math/tex">\func{f}(\vx)</script></span> is convex. Additionally, <span><span class="MathJax_Preview">\vx = \vx^{*}</span><script type="math/tex">\vx = \vx^{*}</script></span> is a critical point if </p>
 <div>
 <div class="MathJax_Preview">
@@ -570,27 +570,27 @@ with <span><span class="MathJax_Preview">\va_i \in \R^m</span><script type="math
 \mA\vx_{LS} \in \set{R}(\mA) \text{ and } \vr \in \set{N}(\mA^\intercal)
 </script>
 </div>
-<p><span><span class="MathJax_Preview">\exa{1}</span><script type="math/tex">\exa{1}</script></span> What is the least squares solution <span><span class="MathJax_Preview">\vx^*</span><script type="math/tex">\vx^*</script></span> for following problem:</p>
+<p><span><span class="MathJax_Preview">\exa{1}</span><script type="math/tex">\exa{1}</script></span> What is the least-squares solution <span><span class="MathJax_Preview">\vx^*</span><script type="math/tex">\vx^*</script></span> for the problem</p>
 <div>
 <div class="MathJax_Preview">
-\min_{\vx} \frac{1}{2} \|\mA\vx - \vb\|_2^2
+\min_{\vx} \frac{1}{2} \|\mA\vx - \vb\|_2^2,
 </div>
 <script type="math/tex; mode=display">
-\min_{\vx} \frac{1}{2} \|\mA\vx - \vb\|_2^2
+\min_{\vx} \frac{1}{2} \|\mA\vx - \vb\|_2^2,
 </script>
 </div>
 <p>where </p>
 <div>
 <div class="MathJax_Preview">
 \mA = \begin{bmatrix} 1 \\ \vdots \\ 1 \end{bmatrix} = \ve \in \R^m \quad \text{ and } \quad 
-\vb = \begin{bmatrix} b_1 \\ \vdots \\ b_m \end{bmatrix}
+\vb = \begin{bmatrix} b_1 \\ \vdots \\ b_m \end{bmatrix}.
 </div>
 <script type="math/tex; mode=display">
 \mA = \begin{bmatrix} 1 \\ \vdots \\ 1 \end{bmatrix} = \ve \in \R^m \quad \text{ and } \quad 
-\vb = \begin{bmatrix} b_1 \\ \vdots \\ b_m \end{bmatrix}
+\vb = \begin{bmatrix} b_1 \\ \vdots \\ b_m \end{bmatrix}.
 </script>
 </div>
-<p><span><span class="MathJax_Preview">\text{Solution:}</span><script type="math/tex">\text{Solution:}</script></span> First setup the normal equations. So,</p>
+<p><span><span class="MathJax_Preview">\text{Solution:}</span><script type="math/tex">\text{Solution:}</script></span> First setup the normal equations:</p>
 <div>
 <div class="MathJax_Preview">
 \mA^\intercal\mA\vx = \begin{bmatrix}1&amp;\dots&amp;1\end{bmatrix} \begin{bmatrix} 1 \\ \vdots \\ 1 \end{bmatrix}\vx = m\vx
