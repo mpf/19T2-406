@@ -7,9 +7,9 @@ Monday, Wednesday, and Friday, 2-3 pm, DMP 110
 
 ## Teaching staff (2019 Term 2) 
 * Co-instructor: [Michael P. Friedlander](http://friedlander.io/). Office hours: Monday, 3-4p (ICCS X150)
-* Co-instructor: Babhru Joshi. Office hours: TBD
-* Teaching assistant: Zhenan Fan. Office hours: TBD
-* Teaching Assistant: Huang Fang. Office hours: TBD
+* Co-instructor: Babhru Joshi. Office hours: Office hours: Friday, 3-4p (ICCS X150)
+* Teaching assistant: Zhenan Fan. Office hours: Office hours: Tuesday, 2-3p (ICCS X150) 
+* Teaching Assistant: Huang Fang. Office hours: Office hours: Thursday 2-3p (ICCS X150)
 
 ## Textbook
 [*Introduction to Nonlinear Optimization: Theory, Algorithms, and Applications with MATLAB*](https://epubs.siam.org/doi/book/10.1137/1.9781611973655), Amir Beck (SIAM, 2014). This book is available online through the UBC Library.
