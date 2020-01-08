@@ -6,7 +6,7 @@ This is a tentative schedule. It will change often.
 | ------- | ---- | ----- | ----- | -------- |
 | 1 | 06 Jan | Introduction |||
 | 2 | 08 Jan | Least squares | [Link](notes/Least_squares.md#LeastSquares) | |
-| 3 | 10 Jan | Least squares using QR | | |
+| 3 | 10 Jan | QR factorization | | |
 | 4 | 13 Jan | Regularized least squares | | |
 | 5 | 15 Jan| Non-linear least squares  | | |
 | 6 | 17 Jan | Unconstrained mptimization | | |
