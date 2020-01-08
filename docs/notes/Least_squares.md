@@ -6,9 +6,13 @@ In this lecture, we will cover least squares for data fitting, linear systems, p
 
 Consider the problem of fitting a line to observations $y_i$ gven input $z_i$ for $i = 1,\dots, n$. 
 
-![](figures/Least_squares_1_1.png)
 
 
+<center>
+![](figures/Least_squares_2_1.png)
+
+
+</center>
 
 In the figure above, the data points seem to follow a linear trend. One way to find the parameters $c,s \in \R$ of the linear 
 model $f(z) = s\cdot z + c$ that coresponds to a line of best fit is to minimize the following squared distance subject to a 
@@ -34,125 +38,135 @@ $$
 \\y_n\end{bmatrix}, \text{ and } \vx = \begin{bmatrix}s\\c\end{bmatrix}.
 $$
 
+Let 
 
+$$
+\begin{equation}\label{least_squares_problem}
+\func{f}(\vx):=\frac{1}{2}\|\mA\vx-\vb\|_2^2 = \frac{1}{2}\sum_{i=1}^n(\va_{i}^\intercal\vx-b_i)^2.
+\end{equation}
+$$ 
+
+The gradient and hessian of $\func{f}(\vx)$ are:
+
+$$
+\nabla\func{f}(\vx) = \mA^\intercal(\mA\vx-\vb), \text{ and } \nabla^2\func{f}(\vx) = \mA^\intercal\mA,
+$$
+
+respectively. The Hessian is positive semidefinite for every $\vx$ (and is positive definite if $\mA$ has ful row rank). This 
+implies that the function $\func{f}(\vx)$ is convex. Additionally, $\vx = \vx^{*}$ is a critical point if 
+
+$$
+\begin{equation}\label{least_square_normal_eqn}
+\mA^\intercal(\mA\vx^*-b) = \vzero.
+\end{equation}
+$$
+
+Since $\func{f}(\vx)$ is convex, $\vx^{*}$ is a global minimizer. Equation \eqref{least_square_normal_eqn} is called the normal 
+equations of the least squares problem \eqref{least_squares_problem}. Solving the normal equations, we get the following line of 
+best fit.
 
 
 
 <center>
-![](figures/Least_squares_3_1.png)
+![](figures/Least_squares_4_1.png)
 
 
 </center>
 
-DSP.jl package doesn't (yet) have a method to calculate the
-the frequency response of a FIR filter so we define it:
+## **Linear systems**
 
-````julia
-using Plots, DSP
-gr()
+Consider the problem of solving a linear system of equations. For $\mA \in \R^{m\times n}$ and $\vb\in\R^{m}$, the linear system
+ of equations $\mA\vx = \vb$ is:
 
-function FIRfreqz(b::Array, w = range(0, stop=π, length=1024))
-    n = length(w)
-    h = Array{ComplexF32}(undef, n)
-    sw = 0
-    for i = 1:n
-      for j = 1:length(b)
-        sw += b[j]*exp(-im*w[i])^-j
-      end
-      h[i] = sw
-      sw = 0
-    end
-    return h
-end
-````
+ 1. overdetermined if $m>n$,
+ 2. underdetermined if $m< n$, or
+ 3. square if $m = n$.
 
+ <center>
+<img src="../img/lec2/sizeA.png" width = "700">
+</center>
 
-````
-FIRfreqz (generic function with 2 methods)
-````
+A linear system can have exactly one solution, many solutions, or no solutions:
 
+<center>
+<img src="../img/lec2/leastsquares_datafitting.png" width = "700">
+</center>
 
+In general, a linear system $\mA\vx=\vb$ has a solution if $\vb \in \text{range} (\mA)$.
 
+## **Properties of linear least squares**
+Recall that the minimizer $\vx^*$ to the linear least squares poblem satisfies the normal equations:
 
+$$
+\mA^\intercal \mA \vx^* = \mA^\intercal\vb
+$$
 
-## Design Lowpass FIR filter
+with the residual
 
+$$
+\vr^* = \mA\vx^* -\vb, 
+$$
+ 
+satisfying $\mA^\intercal\vr^* = \vzero.$ Here, $\mA \in \R^{m\times n}$. The minimzer of the linear least squares problem is 
+unique if $\mA^\intercal\mA$ is invertible. However, the vector in the range of $\mA$ closest to $\vb$ is unique, i.e. 
+$\vb^* = \mA\vx*$ is unique. Recall that range space of $\mA$ and the null space of $\mA^\intercal$ is:
 
-Designing a lowpass FIR filter is very simple to do with DSP.jl, all you
-need to do is to define the window length, cut off frequency and the
-window. We will define a lowpass filter with cut off frequency at 5Hz for a signal
-sampled at 20 Hz.
-We will use the Hamming window, which is defined as:
-$w(n) = \alpha - \beta\cos\frac{2\pi n}{N-1}$, where $\alpha=0.54$ and $\beta=0.46$
+$$
+\text{range}(\mA) = \set{R}(\mA) = \{\vy : \vy = \mA \vx \text{ for some } \vx \}\\
+\text{null}(\mA^\intercal)= \set{N}(\mA^\intercal) = \{\vz: \mA^\intercal\vz = \vzero\}
+$$
 
-````julia
-fs = 20
-f = digitalfilter(Lowpass(5, fs = fs), FIRWindow(hamming(61)))
-w = range(0, stop=pi, length=1024)
-h = FIRfreqz(f, w)
-````
+By fundamental theorem of linear algebra, we have
+$$
+\begin{equation}\label{least_squares_FTLA}
+\set{R}(\mA) \oplus \set{N}(\mA^\intercal) = \R^m.
+\end{equation}
+$$
+Thus, for all $\vx \in \R^m$, we have
 
+$$
+\vx = \vu + \vv, \quad \vu \in \set{R}(\mA), \quad \vv\in\set{N}(\mA^\intercal)
+$$
 
-````
-1024-element Array{Complex{Float32},1}:
-                      1.0f0 + 0.0f0im          
-               0.99546844f0 + 0.095055714f0im  
-               0.98191506f0 + 0.1892486f0im    
-               0.95946306f0 + 0.28172377f0im   
-                0.9283168f0 + 0.37164196f0im   
-                0.8887594f0 + 0.45818728f0im   
-               0.84115064f0 + 0.54057467f0im   
-                0.7859234f0 + 0.618057f0im     
-               0.72357976f0 + 0.6899319f0im    
-               0.65468615f0 + 0.7555481f0im    
-                            ⋮                  
-            0.00043952762f0 - 0.00041908873f0im
-             0.0005152718f0 - 0.00040521423f0im
-             0.0005873293f0 - 0.00037745363f0im
-             0.0006531789f0 - 0.0003367371f0im 
-             0.0007105166f0 - 0.00028444792f0im
-             0.0007573364f0 - 0.00022237403f0im
-             0.0007920005f0 - 0.00015264557f0im
-  0.0008132961f0 - 7.766036f-5im               
- 0.0008204784f0 - 3.1148685f-18im
-````
+with $\vu$ and $\vv$ uniquely determined. This is illustrated in the figure below: 
 
+<center>
+<img src="../img/lec2/leastsquares-geometry.png" width = "400">
+</center>
 
+Here, $\vx_{LS}$ is the least squares solution, $\mA = \begin{bmatrix}\va_1&\va_2&\dots&\va_n\end{bmatrix}$, 
+with $\va_i \in \R^m$ for all $i$. Comparing with \eqref{least_squares_FTLA}, we get 
+ 
+$$
+\vb = \mA\vx_{LS}+r  \text{ with } 
+\mA\vx_{LS} \in \set{R}(\mA) \text{ and } \vr \in \set{N}(\mA^\intercal)
+$$
+ 
+$\exa{1}$ What is the least squares solution $\vx^*$ for following problem:
+ 
+$$
+\min_{\vx} \frac{1}{2} \|\mA\vx - \vb\|_2^2
+$$
 
+where 
 
+$$
+\mA = \begin{bmatrix} 1 \\ \vdots \\ 1 \end{bmatrix} = \ve \in \R^m \quad \text{ and } \quad 
+\vb = \begin{bmatrix} b_1 \\ \vdots \\ b_m \end{bmatrix}
+$$
 
-## Plot the frequency and impulse response
+$\text{Solution:}$ First setup the normal equations. So,
 
+$$
+\mA^\intercal\mA\vx = \begin{bmatrix}1&\dots&1\end{bmatrix} \begin{bmatrix} 1 \\ \vdots \\ 1 \end{bmatrix}\vx = m\vx
+\quad \text {and} \quad \mA^\intercal\vb = \begin{bmatrix}1&\dots&1\end{bmatrix} \begin{bmatrix} b_1 \\ \vdots \\ b_m 
+\end{bmatrix} =\ve^\intercal\vb
+$$
 
-The next code chunk is executed in term mode, see the [script](FIR_design.jl) for syntax.
+Solving the normal equations, we get 
 
-````julia
-julia> h_db = log10.(abs.(h));
+$$
+\mA^\intercal\mA\vx^* = \mA^\intercal\vb \iff m\vx^* = \ve^\intercal\vb \iff \vx^* = \frac{1}{m}\ve^\intercal\vb
+$$
 
-julia> ws = w/pi*(fs/2)
-0.0:0.009775171065493646:10.0
-
-````
-
-
-
-````julia
-plot(ws, h_db,
-      xlabel = "Frequency (Hz)", ylabel = "Magnitude (db)")
-````
-
-
-![](figures/Least_squares_7_1.png)
-
-
-
-And again with default options
-
-````julia
-h_phase = unwrap(-atan.(imag.(h),real.(h)))
-plot(ws, h_phase,
-    xlabel = "Frequency (Hz)", ylabel = "Phase (radians)")
-````
-
-
-![](figures/Least_squares_8_1.png)
+So, the least squares solution $\vx^*$ is the mean value of the elements in $\vb$.
