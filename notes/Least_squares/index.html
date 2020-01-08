@@ -42,7 +42,7 @@
     
     
       
-        <title>**Least Squares** - CPSC406 &mdash; Computational Optimization</title>
+        <title>Least Squares - CPSC406 &mdash; Computational Optimization</title>
       
     
     
@@ -107,7 +107,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                **Least Squares**
+                Least Squares
               
             </span>
           
@@ -153,14 +153,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../.." class="md-tabs__link md-tabs__link--active">
+      <a href="../.." class="md-tabs__link">
         Home Page
       </a>
     
@@ -176,7 +178,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../background/" class="md-tabs__link">
+        <a href="../background/" class="md-tabs__link md-tabs__link--active">
           Lecture notes
         </a>
       
@@ -247,10 +249,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       Lecture notes
@@ -271,6 +275,70 @@
     <a href="../background/" title="Mathematical background" class="md-nav__link">
       Mathematical background
     </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Least Squares
+      </label>
+    
+    <a href="./" title="Least Squares" class="md-nav__link md-nav__link--active">
+      Least Squares
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#least-squares-for-data-fitting" class="md-nav__link">
+    Least squares for data fitting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-systems" class="md-nav__link">
+    Linear systems
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#properties-of-linear-least-squares" class="md-nav__link">
+    Properties of linear least squares
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -307,15 +375,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#design-lowpass-fir-filter" class="md-nav__link">
-    Design Lowpass FIR filter
+  <a href="#linear-systems" class="md-nav__link">
+    Linear systems
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#plot-the-frequency-and-impulse-response" class="md-nav__link">
-    Plot the frequency and impulse response
+  <a href="#properties-of-linear-least-squares" class="md-nav__link">
+    Properties of linear least squares
   </a>
   
 </li>
@@ -340,89 +408,211 @@
                 <h1 id="least-squares"><strong>Least Squares</strong><a class="headerlink" href="#least-squares" title="Permanent link">&para;</a></h1>
 <p>In this lecture, we will cover least squares for data fitting, linear systems, properties of least squares and QR factorization.</p>
 <h2 id="least-squares-for-data-fitting"><strong>Least squares for data fitting</strong><a class="headerlink" href="#least-squares-for-data-fitting" title="Permanent link">&para;</a></h2>
-<p>Consider the problem of fitting a line to observations <span><span class="MathJax_Preview">y_i</span><script type="math/tex">y_i</script></span> gven input <span><span class="MathJax_Preview">z_i,\ i = 1,\dots, n</span><script type="math/tex">z_i,\ i = 1,\dots, n</script></span>.</p>
+<p>Consider the problem of fitting a line to observations <span><span class="MathJax_Preview">y_i</span><script type="math/tex">y_i</script></span> gven input <span><span class="MathJax_Preview">z_i</span><script type="math/tex">z_i</script></span> for <span><span class="MathJax_Preview">i = 1,\dots, n</span><script type="math/tex">i = 1,\dots, n</script></span>. </p>
 <p><center>
 <img alt="" src="../figures/Least_squares_2_1.png" /></p>
 <p></center></p>
-<p>DSP.jl package doesn't (yet) have a method to calculate the
-the frequency response of a FIR filter so we define it:</p>
-<div class="codehilite"><pre><span></span><span class="k">using</span> <span class="n">Plots</span><span class="p">,</span> <span class="n">DSP</span>
-<span class="n">gr</span><span class="p">()</span>
-
-<span class="k">function</span> <span class="n">FIRfreqz</span><span class="p">(</span><span class="n">b</span><span class="o">::</span><span class="kt">Array</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="nb">π</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">1024</span><span class="p">))</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="n">length</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
-    <span class="n">h</span> <span class="o">=</span> <span class="kt">Array</span><span class="p">{</span><span class="n">ComplexF32</span><span class="p">}(</span><span class="n">undef</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
-    <span class="n">sw</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="n">n</span>
-      <span class="k">for</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="n">length</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-        <span class="n">sw</span> <span class="o">+=</span> <span class="n">b</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="nb">im</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">^-</span><span class="n">j</span>
-      <span class="k">end</span>
-      <span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">sw</span>
-      <span class="n">sw</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">end</span>
-    <span class="k">return</span> <span class="n">h</span>
-<span class="k">end</span>
-</pre></div>
-
-<div class="codehilite"><pre><span></span>FIRfreqz (generic function with 2 methods)
-</pre></div>
-
-<h2 id="design-lowpass-fir-filter">Design Lowpass FIR filter<a class="headerlink" href="#design-lowpass-fir-filter" title="Permanent link">&para;</a></h2>
-<p>Designing a lowpass FIR filter is very simple to do with DSP.jl, all you
-need to do is to define the window length, cut off frequency and the
-window. We will define a lowpass filter with cut off frequency at 5Hz for a signal
-sampled at 20 Hz.
-We will use the Hamming window, which is defined as:
-<span><span class="MathJax_Preview">w(n) = \alpha - \beta\cos\frac{2\pi n}{N-1}</span><script type="math/tex">w(n) = \alpha - \beta\cos\frac{2\pi n}{N-1}</script></span>, where <span><span class="MathJax_Preview">\alpha=0.54</span><script type="math/tex">\alpha=0.54</script></span> and <span><span class="MathJax_Preview">\beta=0.46</span><script type="math/tex">\beta=0.46</script></span></p>
-<div class="codehilite"><pre><span></span><span class="n">fs</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">digitalfilter</span><span class="p">(</span><span class="n">Lowpass</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">fs</span> <span class="o">=</span> <span class="n">fs</span><span class="p">),</span> <span class="n">FIRWindow</span><span class="p">(</span><span class="n">hamming</span><span class="p">(</span><span class="mi">61</span><span class="p">)))</span>
-<span class="n">w</span> <span class="o">=</span> <span class="n">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="nb">pi</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span>
-<span class="n">h</span> <span class="o">=</span> <span class="n">FIRfreqz</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
-</pre></div>
-
-<div class="codehilite"><pre><span></span>1024-element Array{Complex{Float32},1}:
-                      1.0f0 + 0.0f0im          
-               0.99546844f0 + 0.095055714f0im  
-               0.98191506f0 + 0.1892486f0im    
-               0.95946306f0 + 0.28172377f0im   
-                0.9283168f0 + 0.37164196f0im   
-                0.8887594f0 + 0.45818728f0im   
-               0.84115064f0 + 0.54057467f0im   
-                0.7859234f0 + 0.618057f0im     
-               0.72357976f0 + 0.6899319f0im    
-               0.65468615f0 + 0.7555481f0im    
-                            ⋮                  
-            0.00043952762f0 - 0.00041908873f0im
-             0.0005152718f0 - 0.00040521423f0im
-             0.0005873293f0 - 0.00037745363f0im
-             0.0006531789f0 - 0.0003367371f0im 
-             0.0007105166f0 - 0.00028444792f0im
-             0.0007573364f0 - 0.00022237403f0im
-             0.0007920005f0 - 0.00015264557f0im
-  0.0008132961f0 - 7.766036f-5im               
- 0.0008204784f0 - 3.1148685f-18im
-</pre></div>
-
-<h2 id="plot-the-frequency-and-impulse-response">Plot the frequency and impulse response<a class="headerlink" href="#plot-the-frequency-and-impulse-response" title="Permanent link">&para;</a></h2>
-<p>The next code chunk is executed in term mode, see the <a href="FIR_design.jl">script</a> for syntax.</p>
-<div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">h_db</span> <span class="o">=</span> <span class="n">log10</span><span class="o">.</span><span class="p">(</span><span class="n">abs</span><span class="o">.</span><span class="p">(</span><span class="n">h</span><span class="p">));</span>
-
-<span class="n">julia</span><span class="o">&gt;</span> <span class="n">ws</span> <span class="o">=</span> <span class="n">w</span><span class="o">/</span><span class="nb">pi</span><span class="o">*</span><span class="p">(</span><span class="n">fs</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-<span class="mf">0.0</span><span class="o">:</span><span class="mf">0.009775171065493646</span><span class="o">:</span><span class="mf">10.0</span>
-</pre></div>
-
-<div class="codehilite"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">ws</span><span class="p">,</span> <span class="n">h_db</span><span class="p">,</span>
-      <span class="n">xlabel</span> <span class="o">=</span> <span class="s">&quot;Frequency (Hz)&quot;</span><span class="p">,</span> <span class="n">ylabel</span> <span class="o">=</span> <span class="s">&quot;Magnitude (db)&quot;</span><span class="p">)</span>
-</pre></div>
-
-<p><img alt="" src="../figures/Least_squares_6_1.png" /></p>
-<p>And again with default options</p>
-<div class="codehilite"><pre><span></span><span class="n">h_phase</span> <span class="o">=</span> <span class="n">unwrap</span><span class="p">(</span><span class="o">-</span><span class="n">atan</span><span class="o">.</span><span class="p">(</span><span class="n">imag</span><span class="o">.</span><span class="p">(</span><span class="n">h</span><span class="p">),</span><span class="n">real</span><span class="o">.</span><span class="p">(</span><span class="n">h</span><span class="p">)))</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">ws</span><span class="p">,</span> <span class="n">h_phase</span><span class="p">,</span>
-    <span class="n">xlabel</span> <span class="o">=</span> <span class="s">&quot;Frequency (Hz)&quot;</span><span class="p">,</span> <span class="n">ylabel</span> <span class="o">=</span> <span class="s">&quot;Phase (radians)&quot;</span><span class="p">)</span>
-</pre></div>
-
-<p><img alt="" src="../figures/Least_squares_7_1.png" /></p>
+<p>In the figure above, the data points seem to follow a linear trend. One way to find the parameters <span><span class="MathJax_Preview">c,s \in \R</span><script type="math/tex">c,s \in \R</script></span> of the linear 
+model <span><span class="MathJax_Preview">f(z) = s\cdot z + c</span><script type="math/tex">f(z) = s\cdot z + c</script></span> that coresponds to a line of best fit is to minimize the following squared distance subject to a 
+linear constraint:</p>
+<div>
+<div class="MathJax_Preview">
+\begin{align*}
+\min_{s,c \in \R} &amp;\sum_{i=1}^n (y_i - \hat{y}_i)^2\\
+ \text{subject to } &amp;s\cdot z_i+c = \hat{y}_i
+\end{align*}
+</div>
+<script type="math/tex; mode=display">
+\begin{align*}
+\min_{s,c \in \R} &\sum_{i=1}^n (y_i - \hat{y}_i)^2\\
+ \text{subject to } &s\cdot z_i+c = \hat{y}_i
+\end{align*}
+</script>
+</div>
+<p>The above minimization program can be reformulated as a linear least squares problem:</p>
+<div>
+<div class="MathJax_Preview">
+\min_{\vx} \|\mA \vx - \vb\|_2^2 = \sum_{i=1}^n(\va_{i}^\intercal\vx-b_i)^2
+</div>
+<script type="math/tex; mode=display">
+\min_{\vx} \|\mA \vx - \vb\|_2^2 = \sum_{i=1}^n(\va_{i}^\intercal\vx-b_i)^2
+</script>
+</div>
+<p>where,</p>
+<div>
+<div class="MathJax_Preview">
+\mA = \begin{bmatrix}z_1 &amp; 1\\ z_2 &amp; 1\\ \vdots&amp;\vdots\\z_n &amp; 1\end{bmatrix}, \ \vb = \begin{bmatrix}y_1\\y_2\\\vdots
+\\y_n\end{bmatrix}, \text{ and } \vx = \begin{bmatrix}s\\c\end{bmatrix}.
+</div>
+<script type="math/tex; mode=display">
+\mA = \begin{bmatrix}z_1 & 1\\ z_2 & 1\\ \vdots&\vdots\\z_n & 1\end{bmatrix}, \ \vb = \begin{bmatrix}y_1\\y_2\\\vdots
+\\y_n\end{bmatrix}, \text{ and } \vx = \begin{bmatrix}s\\c\end{bmatrix}.
+</script>
+</div>
+<p>Let </p>
+<div>
+<div class="MathJax_Preview">
+\begin{equation}\label{least_squares_problem}
+\func{f}(\vx):=\frac{1}{2}\|\mA\vx-\vb\|_2^2 = \frac{1}{2}\sum_{i=1}^n(\va_{i}^\intercal\vx-b_i)^2.
+\end{equation}
+</div>
+<script type="math/tex; mode=display">
+\begin{equation}\label{least_squares_problem}
+\func{f}(\vx):=\frac{1}{2}\|\mA\vx-\vb\|_2^2 = \frac{1}{2}\sum_{i=1}^n(\va_{i}^\intercal\vx-b_i)^2.
+\end{equation}
+</script>
+</div>
+<p>The gradient and hessian of <span><span class="MathJax_Preview">\func{f}(\vx)</span><script type="math/tex">\func{f}(\vx)</script></span> are:</p>
+<div>
+<div class="MathJax_Preview">
+\nabla\func{f}(\vx) = \mA^\intercal(\mA\vx-\vb), \text{ and } \nabla^2\func{f}(\vx) = \mA^\intercal\mA,
+</div>
+<script type="math/tex; mode=display">
+\nabla\func{f}(\vx) = \mA^\intercal(\mA\vx-\vb), \text{ and } \nabla^2\func{f}(\vx) = \mA^\intercal\mA,
+</script>
+</div>
+<p>respectively. The Hessian is positive semidefinite for every <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> (and is positive definite if <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> has ful row rank). This 
+implies that the function <span><span class="MathJax_Preview">\func{f}(\vx)</span><script type="math/tex">\func{f}(\vx)</script></span> is convex. Additionally, <span><span class="MathJax_Preview">\vx = \vx^{*}</span><script type="math/tex">\vx = \vx^{*}</script></span> is a critical point if </p>
+<div>
+<div class="MathJax_Preview">
+\begin{equation}\label{least_square_normal_eqn}
+\mA^\intercal(\mA\vx^*-b) = \vzero.
+\end{equation}
+</div>
+<script type="math/tex; mode=display">
+\begin{equation}\label{least_square_normal_eqn}
+\mA^\intercal(\mA\vx^*-b) = \vzero.
+\end{equation}
+</script>
+</div>
+<p>Since <span><span class="MathJax_Preview">\func{f}(\vx)</span><script type="math/tex">\func{f}(\vx)</script></span> is convex, <span><span class="MathJax_Preview">\vx^{*}</span><script type="math/tex">\vx^{*}</script></span> is a global minimizer. Equation \eqref{least_square_normal_eqn} is called the normal 
+equations of the least squares problem \eqref{least_squares_problem}. Solving the normal equations, we get the following line of 
+best fit.</p>
+<p><center>
+<img alt="" src="../figures/Least_squares_4_1.png" /></p>
+<p></center></p>
+<h2 id="linear-systems"><strong>Linear systems</strong><a class="headerlink" href="#linear-systems" title="Permanent link">&para;</a></h2>
+<p>Consider the problem of solving a linear system of equations. For <span><span class="MathJax_Preview">\mA \in \R^{m\times n}</span><script type="math/tex">\mA \in \R^{m\times n}</script></span> and <span><span class="MathJax_Preview">\vb\in\R^{m}</span><script type="math/tex">\vb\in\R^{m}</script></span>, the linear system
+ of equations <span><span class="MathJax_Preview">\mA\vx = \vb</span><script type="math/tex">\mA\vx = \vb</script></span> is:</p>
+<ol>
+<li>overdetermined if <span><span class="MathJax_Preview">m&gt;n</span><script type="math/tex">m>n</script></span>,</li>
+<li>underdetermined if <span><span class="MathJax_Preview">m&lt; n</span><script type="math/tex">m< n</script></span>, or</li>
+<li>square if <span><span class="MathJax_Preview">m = n</span><script type="math/tex">m = n</script></span>.</li>
+</ol>
+<p><center>
+<img src="../img/lec2/sizeA.png" width = "700">
+</center></p>
+<p>A linear system can have exactly one solution, many solutions, or no solutions:</p>
+<p><center>
+<img src="../img/lec2/leastsquares_datafitting.png" width = "700">
+</center></p>
+<p>In general, a linear system <span><span class="MathJax_Preview">\mA\vx=\vb</span><script type="math/tex">\mA\vx=\vb</script></span> has a solution if <span><span class="MathJax_Preview">\vb \in \text{range} (\mA)</span><script type="math/tex">\vb \in \text{range} (\mA)</script></span>.</p>
+<h2 id="properties-of-linear-least-squares"><strong>Properties of linear least squares</strong><a class="headerlink" href="#properties-of-linear-least-squares" title="Permanent link">&para;</a></h2>
+<p>Recall that the minimizer <span><span class="MathJax_Preview">\vx^*</span><script type="math/tex">\vx^*</script></span> to the linear least squares poblem satisfies the normal equations:</p>
+<div>
+<div class="MathJax_Preview">
+\mA^\intercal \mA \vx^* = \mA^\intercal\vb
+</div>
+<script type="math/tex; mode=display">
+\mA^\intercal \mA \vx^* = \mA^\intercal\vb
+</script>
+</div>
+<p>with the residual</p>
+<div>
+<div class="MathJax_Preview">
+\vr^* = \mA\vx^* -\vb, 
+</div>
+<script type="math/tex; mode=display">
+\vr^* = \mA\vx^* -\vb, 
+</script>
+</div>
+<p>satisfying <span><span class="MathJax_Preview">\mA^\intercal\vr^* = \vzero.</span><script type="math/tex">\mA^\intercal\vr^* = \vzero.</script></span> Here, <span><span class="MathJax_Preview">\mA \in \R^{m\times n}</span><script type="math/tex">\mA \in \R^{m\times n}</script></span>. The minimzer of the linear least squares problem is 
+unique if <span><span class="MathJax_Preview">\mA^\intercal\mA</span><script type="math/tex">\mA^\intercal\mA</script></span> is invertible. However, the vector in the range of <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> closest to <span><span class="MathJax_Preview">\vb</span><script type="math/tex">\vb</script></span> is unique, i.e. 
+<span><span class="MathJax_Preview">\vb^* = \mA\vx*</span><script type="math/tex">\vb^* = \mA\vx*</script></span> is unique. Recall that range space of <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> and the null space of <span><span class="MathJax_Preview">\mA^\intercal</span><script type="math/tex">\mA^\intercal</script></span> is:</p>
+<div>
+<div class="MathJax_Preview">
+\text{range}(\mA) = \set{R}(\mA) = \{\vy : \vy = \mA \vx \text{ for some } \vx \}\\
+\text{null}(\mA^\intercal)= \set{N}(\mA^\intercal) = \{\vz: \mA^\intercal\vz = \vzero\}
+</div>
+<script type="math/tex; mode=display">
+\text{range}(\mA) = \set{R}(\mA) = \{\vy : \vy = \mA \vx \text{ for some } \vx \}\\
+\text{null}(\mA^\intercal)= \set{N}(\mA^\intercal) = \{\vz: \mA^\intercal\vz = \vzero\}
+</script>
+</div>
+<p>By fundamental theorem of linear algebra, we have
+$$
+\begin{equation}\label{least_squares_FTLA}
+\set{R}(\mA) \oplus \set{N}(\mA^\intercal) = \R^m.
+\end{equation}
+$$
+Thus, for all <span><span class="MathJax_Preview">\vx \in \R^m</span><script type="math/tex">\vx \in \R^m</script></span>, we have</p>
+<div>
+<div class="MathJax_Preview">
+\vx = \vu + \vv, \quad \vu \in \set{R}(\mA), \quad \vv\in\set{N}(\mA^\intercal)
+</div>
+<script type="math/tex; mode=display">
+\vx = \vu + \vv, \quad \vu \in \set{R}(\mA), \quad \vv\in\set{N}(\mA^\intercal)
+</script>
+</div>
+<p>with <span><span class="MathJax_Preview">\vu</span><script type="math/tex">\vu</script></span> and <span><span class="MathJax_Preview">\vv</span><script type="math/tex">\vv</script></span> uniquely determined. This is illustrated in the figure below: </p>
+<p><center>
+<img src="../img/lec2/leastsquares-geometry.png" width = "400">
+</center></p>
+<p>Here, <span><span class="MathJax_Preview">\vx_{LS}</span><script type="math/tex">\vx_{LS}</script></span> is the least squares solution, <span><span class="MathJax_Preview">\mA = \begin{bmatrix}\va_1&amp;\va_2&amp;\dots&amp;\va_n\end{bmatrix}</span><script type="math/tex">\mA = \begin{bmatrix}\va_1&\va_2&\dots&\va_n\end{bmatrix}</script></span>, 
+with <span><span class="MathJax_Preview">\va_i \in \R^m</span><script type="math/tex">\va_i \in \R^m</script></span> for all <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>. Comparing with \eqref{least_squares_FTLA}, we get </p>
+<div>
+<div class="MathJax_Preview">
+\vb = \mA\vx_{LS}+r  \text{ with } 
+\mA\vx_{LS} \in \set{R}(\mA) \text{ and } \vr \in \set{N}(\mA^\intercal)
+</div>
+<script type="math/tex; mode=display">
+\vb = \mA\vx_{LS}+r  \text{ with } 
+\mA\vx_{LS} \in \set{R}(\mA) \text{ and } \vr \in \set{N}(\mA^\intercal)
+</script>
+</div>
+<p><span><span class="MathJax_Preview">\exa{1}</span><script type="math/tex">\exa{1}</script></span> What is the least squares solution <span><span class="MathJax_Preview">\vx^*</span><script type="math/tex">\vx^*</script></span> for following problem:</p>
+<div>
+<div class="MathJax_Preview">
+\min_{\vx} \frac{1}{2} \|\mA\vx - \vb\|_2^2
+</div>
+<script type="math/tex; mode=display">
+\min_{\vx} \frac{1}{2} \|\mA\vx - \vb\|_2^2
+</script>
+</div>
+<p>where </p>
+<div>
+<div class="MathJax_Preview">
+\mA = \begin{bmatrix} 1 \\ \vdots \\ 1 \end{bmatrix} = \ve \in \R^m \quad \text{ and } \quad 
+\vb = \begin{bmatrix} b_1 \\ \vdots \\ b_m \end{bmatrix}
+</div>
+<script type="math/tex; mode=display">
+\mA = \begin{bmatrix} 1 \\ \vdots \\ 1 \end{bmatrix} = \ve \in \R^m \quad \text{ and } \quad 
+\vb = \begin{bmatrix} b_1 \\ \vdots \\ b_m \end{bmatrix}
+</script>
+</div>
+<p><span><span class="MathJax_Preview">\text{Solution:}</span><script type="math/tex">\text{Solution:}</script></span> First setup the normal equations. So,</p>
+<div>
+<div class="MathJax_Preview">
+\mA^\intercal\mA\vx = \begin{bmatrix}1&amp;\dots&amp;1\end{bmatrix} \begin{bmatrix} 1 \\ \vdots \\ 1 \end{bmatrix}\vx = m\vx
+\quad \text {and} \quad \mA^\intercal\vb = \begin{bmatrix}1&amp;\dots&amp;1\end{bmatrix} \begin{bmatrix} b_1 \\ \vdots \\ b_m 
+\end{bmatrix} =\ve^\intercal\vb
+</div>
+<script type="math/tex; mode=display">
+\mA^\intercal\mA\vx = \begin{bmatrix}1&\dots&1\end{bmatrix} \begin{bmatrix} 1 \\ \vdots \\ 1 \end{bmatrix}\vx = m\vx
+\quad \text {and} \quad \mA^\intercal\vb = \begin{bmatrix}1&\dots&1\end{bmatrix} \begin{bmatrix} b_1 \\ \vdots \\ b_m 
+\end{bmatrix} =\ve^\intercal\vb
+</script>
+</div>
+<p>Solving the normal equations, we get </p>
+<div>
+<div class="MathJax_Preview">
+\mA^\intercal\mA\vx^* = \mA^\intercal\vb \iff m\vx^* = \ve^\intercal\vb \iff \vx^* = \frac{1}{m}\ve^\intercal\vb
+</div>
+<script type="math/tex; mode=display">
+\mA^\intercal\mA\vx^* = \mA^\intercal\vb \iff m\vx^* = \ve^\intercal\vb \iff \vx^* = \frac{1}{m}\ve^\intercal\vb
+</script>
+</div>
+<p>So, the least squares solution <span><span class="MathJax_Preview">\vx^*</span><script type="math/tex">\vx^*</script></span> is the mean value of the elements in <span><span class="MathJax_Preview">\vb</span><script type="math/tex">\vb</script></span>.</p>
                 
                   
                 
@@ -440,6 +630,27 @@ We will use the Hamming window, which is defined as:
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../background/" title="Mathematical background" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Mathematical background
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
