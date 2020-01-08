@@ -20,7 +20,7 @@ linear constraint:
 
 $$
 \begin{align*}
-\min_{s,c \in \R} &\sum_{i=1}^n (y_i - \hat{y}_i)^2\\
+\min{s,\,c,\,\hat{y}_i \in \R} &\sum_{i=1}^n (y_i - \hat{y}_i)^2\\
  \text{subject to } &s\cdot z_i+c = \hat{y}_i
 \end{align*}
 $$
@@ -28,10 +28,10 @@ $$
 The above minimization program can be reformulated as a linear least squares problem:
 
 $$
-\min_{\vx} \|\mA \vx - \vb\|_2^2 = \sum_{i=1}^n(\va_{i}^\intercal\vx-b_i)^2
+\min_{\vx} \|\mA \vx - \vb\|_2^2 = \sum_{i=1}^n(\va_{i}^\intercal\vx-b_i)^2,
 $$
 
-where,
+where
 
 $$
 \mA = \begin{bmatrix}z_1 & 1\\ z_2 & 1\\ \vdots&\vdots\\z_n & 1\end{bmatrix}, \ \vb = \begin{bmatrix}y_1\\y_2\\\vdots
@@ -52,7 +52,7 @@ $$
 \nabla\func{f}(\vx) = \mA^\intercal(\mA\vx-\vb), \text{ and } \nabla^2\func{f}(\vx) = \mA^\intercal\mA,
 $$
 
-respectively. The Hessian is positive semidefinite for every $\vx$ (and is positive definite if $\mA$ has ful row rank). This 
+respectively. The Hessian is positive semidefinite for every $\vx$ (and is positive definite if $\mA$ has full row rank). This 
 implies that the function $\func{f}(\vx)$ is convex. Additionally, $\vx = \vx^{*}$ is a critical point if 
 
 $$
@@ -142,20 +142,20 @@ $$
 \mA\vx_{LS} \in \set{R}(\mA) \text{ and } \vr \in \set{N}(\mA^\intercal)
 $$
  
-$\exa{1}$ What is the least squares solution $\vx^*$ for following problem:
+$\exa{1}$ What is the least-squares solution $\vx^*$ for the problem
  
 $$
-\min_{\vx} \frac{1}{2} \|\mA\vx - \vb\|_2^2
+\min_{\vx} \frac{1}{2} \|\mA\vx - \vb\|_2^2,
 $$
 
 where 
 
 $$
 \mA = \begin{bmatrix} 1 \\ \vdots \\ 1 \end{bmatrix} = \ve \in \R^m \quad \text{ and } \quad 
-\vb = \begin{bmatrix} b_1 \\ \vdots \\ b_m \end{bmatrix}
+\vb = \begin{bmatrix} b_1 \\ \vdots \\ b_m \end{bmatrix}.
 $$
 
-$\text{Solution:}$ First setup the normal equations. So,
+$\text{Solution:}$ First setup the normal equations:
 
 $$
 \mA^\intercal\mA\vx = \begin{bmatrix}1&\dots&1\end{bmatrix} \begin{bmatrix} 1 \\ \vdots \\ 1 \end{bmatrix}\vx = m\vx

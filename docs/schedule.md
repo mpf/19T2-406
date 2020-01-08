@@ -5,17 +5,18 @@ This is a tentative schedule. It will change often.
 | Lecture | Date | Topic | Notes | Homework |
 | ------- | ---- | ----- | ----- | -------- |
 | 1 | 06 Jan | Introduction |||
-| 2 | 08 Jan | Least squares | | |
-| 3 | 10 Jan | Regularized least squares | | |
-| 4 | 13 Jan | Non-linear least squares | | |
-| 5 | | Unconstrained mptimization | | |
-| 6 | | Descent methods | | |
-| 7 | | Newton's method | | |
-| 8 | | Quasi-Newton's methods | | |
-| 9 | | Convex functions | | |
-| 10 | | Constrained Optimization | | |
-| 11 | | Linear programming and applications | | |
-| 12 | | Simplex methods | | |
-| 13 | | Duality | | |
-| 14 | | Interior methods      | | |
+| 2 | 08 Jan | Least squares | [notes](notes/Least_squares.md) | |
+| 3 | 10 Jan | QR factorization | | |
+| 4 |  | Regularized least squares | | |
+| 5 |  | Non-linear least squares | | |
+| 6 | | Unconstrained optimization | | |
+| 7 | | Descent methods | | |
+| 8 | | Newton's method | | |
+| 9 | | Quasi-Newton methods | | |
+| 10 | | Convex functions | | |
+| 11 | | Constrained optimization | | |
+| 12 | | Linear programming and applications | | |
+| 13 | | Simplex method | | |
+| 14 | | Duality and sensitivity | | |
+| 15 | | Interior method for LP | | |
  
