@@ -135,7 +135,10 @@ window.MathJax = {
             proj: ["\\mathbf{proj}"],
             vnull: ["\\mathbf{null}"],
             range: ["\\mathbf{range}"],
-            Re: ["\\mathbf R"]
+            Re: ["\\mathbf R"],
+
+            trans: ["^\\intercal"],
+            det: ["\\text{det}"]
 
 
 
