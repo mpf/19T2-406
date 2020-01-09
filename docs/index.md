@@ -1,5 +1,5 @@
 # Computational Optimization
-
+test
 This course covers the main algorithms for continuous optimization, including unconstrained and constrained problems, large-scale problems, and duality theory and sensitivity. We will also cover numerical linear algebra operations needed in optimization, including LU, QR, and Cholesky decompositions. Discrete optimization problems are not covered.
 
 ## Lectures

@@ -110,8 +110,32 @@ window.MathJax = {
             prop: ["\\textbf{Proposition:}"],
 
 
-            func: ["\\mathcal{#1}",1]
+            func: ["\\mathcal{#1}",1],
 
+            bmat: ["\\begin{bmatrix}"],
+            emat: ["\\end{bmatrix}"],
+            
+            red: ["{\\color{red}#1}",1],
+
+            minimize: ["\\underset{#1}{\\mathrm{mimnimize}}",1],
+            argmin: ["\\underset{#1}{\\mathrm{argmin}}",1],
+            argmax: ["\\underset{#1}{\\mathrm{arg,ax}}",1],
+            st: ["\\text{subject to}"],
+            rank: ["\\textbf{rank}"],
+            daig: ["\\textbf{diag}"],
+            mb: ["\\mathbf"],
+            tr: ["\\mathbf{tr}"],
+            mL: ["{\\mathcal L}"],
+            mN: ["{\\mathcal N}"],
+
+            mC: ["{\\mathcal C}"],
+
+            mP: ["{\\mathcal P}"],
+            mZ: ["{\\mathcal Z}"],
+            proj: ["\\mathbf{proj}"],
+            vnull: ["\\mathbf{null}"],
+            range: ["\\mathbf{range}"],
+            Re: ["\\mathbf R"]
 
 
 
