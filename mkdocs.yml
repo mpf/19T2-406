@@ -60,5 +60,5 @@ nav:
       - Mathematical background: notes/background.md
       - Least Squares: notes/Least_squares.md
       - QR factorization: notes/QR_factorization.md
-  - Homework:
-      - Homework 1: homework/hw1.md
+  # - Homework:
+  #     - Homework 1: homework/hw1.md

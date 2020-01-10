@@ -5,12 +5,12 @@
 Let $\vx, \vy\in\R^n$ be any two vectors. By cosine identity, we have
 
 $$ 
-\vx\trans\vy = \|\vx\|_2\|\vy\|_2\cos(\theta)$
+\vx\trans\vy = \|\vx\|_2\|\vy\|_2\cos(\theta)
 $$ 
 
-where, $\theta$ is the angle between $\vx$ and $\vy$. So, $\vy$ and $\vy$ are orthogonal ($\theta = 0$), 
-if $\vx\trans\vy = 0$. Furthermore, we say $\vx$ and $\vy$ are orthonomal of $\vx$ and $\vy$ have unit 
-norm and are orthogonal, i.e.
+where, $\theta$ is the angle between $\vx$ and $\vy$. So, $\vx$ and $\vy$ are orthogonal ($\theta = 0$), 
+if $\vx\trans\vy = 0$. Furthermore, we say $\vx$ and $\vy$ are orthonomal if $\vx$ and $\vy$ have unit 
+2-norm and are orthogonal, i.e.
 
 $$
 \vx\trans\vy = 0, \quad \vx\trans\vx =1 , \quad \vy\trans\vy = 1.
@@ -18,7 +18,7 @@ $$
 
 ## **Orthogonal matrices**
 
-A matrix $\mQ$ is orthognal if it is square and its columns are all pairwise orthogonal. For an orthogonal 
+A matrix $\mQ$ is orthogonal if it is square and its columns are all pairwise orthogonal. For an orthogonal 
 matrix $\mQ = \bmat\vq_1 &\dots&\vq_n\emat$, we have
 
 $$
@@ -32,8 +32,8 @@ $$
 \mQ^{-1} = \mQ\trans.
 $$
 
-Orthognal matrices has many nice properties. One such property is that inner products are invariant under 
-orthgonal transfromations. So, for any vectors $\vx,\ \vy$, we have
+Orthogonal matrices have many good properties. One such property is that inner products are invariant under 
+orthogonal transfromations. So, for any vectors $\vx,\ \vy$, we have
 
 $$
 (\mQ\vx)\trans(\mQ\vy) = \vx\trans\mQ\trans\mQ\vy = \vx\trans\vy.
@@ -100,13 +100,14 @@ factorization of $\mA$. In the case when $m\geq n$ and $\mA$ is full rank, we ge
 
 ## **Solving least squares via QR**
 
-The $QR$ factorizationc can be used to solve the least squares problem
+The $QR$ factorization can be used to solve the least squares problem
 
 $$
 \min_{\vx \in\R^n}\frac{1}{2}\|\mA\vx-\vb\|_2^2,
 $$
 
-where $\mA \in \R^{m\times n}$ and $\vb\in \R^m$. Consider 
+where $\mA \in \R^{m\times n}$ and $\vb\in \R^m$. We consider the case where $m\geq n$, but QR factorization can be used to 
+solve the other case as well. Consider 
 
 $$
 \begin{align*}
@@ -118,17 +119,26 @@ $$
 \end{align*}
 $$
 
-So, minimizing $\frac{1}{2}\|\mA\vx-\vb\|_2$ will minimize $\|\hat{\mR}\vx - \hat{\mQ}\trans\vb\|_2^2$. 
-Since $\hat{\mR}$ is upper triangular, $\hat{\mQ}\trans\vb\in\range(\hat{\mR})$. So, the least squares solution
-satisfies
+So, minimizing $\|\hat{\mR}\vx - \hat{\mQ}\trans\vb\|_2^2$ will minimize $\frac{1}{2}\|\mA\vx-\vb\|_2$. In the case $\mA$ is full rank,
+we get an invertible $\hat{\mR}$ and the least squares solution which satisfies
 
 $$
+\begin{equation}\label{QR_leastsquares}
 \hat{\mR}\vx = \hat{\mQ}\trans\vb,
+\end{equation}
 $$
-which can be solved via back substitution. The figure below shows the geometric prespective of using a QR factorization 
-to solve the least squares problem
+
+will be unique. In the case when $\mA$ is not full rank, there will be a infinitely many solutions to the least squares problem. For 
+both cases, we can find a least squares solution by solving \eqref{QR_leastsquares} via back substitution.
+
+The figure below shows the geometric prespective of using a QR factorization 
+to solve the least squares problem. 
 
 <center>
 <img src="../img/lec3/leastsquares-geometry2.png" width = "400">
 </center>
+
+For every $\vb \in \R^m$, $\hat{\mQ}\hat{\mQ}\trans\vb$ is the orthogonal projection of $\vb$ onto the $\range(\hat{\mQ}) = 
+\range(\mA)$. The least squares solution finds a point $\vx$ such that $\mA\vx$ is equal tothe orthogonal projection of 
+$\vb$ onto the $\range(\mA)$. So, we get $\mA\vx = \hat{\mQ}\hat{\mQ}\trans\vb$, which simplifies to \eqref{QR_leastsquares}.
 
