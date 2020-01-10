@@ -50,6 +50,85 @@ $$
 
 ## **QR factorization**
 
+Let $\mA \in \R^{m\times n}$. A factorization of $\mA$ with 
 
+$$
+\mA = \mQ \mR
+$$
 
+where  $\mQ\in\R^{m\times m}$ is an orthogonal matrix and $\mR \in \R^{m\times n}$ is an upper triangular
+matrix is called a $QR$ factorization of $\mA$. In the case with $m\geq n$ and  $\rank(\mA) = k \leq n$, the $QR$ facorization 
+will have the following shape:
+
+<center>
+<img src="../img/lec3/qrdecomp.png" width = "400">
+</center>
+
+In the above figure, 
+
+1. $\mQ$ is an orthogonal matrix.
+2. $\mR$ is a upper triangular matrix, i.e. $R_{ij}=0$ whenever $i>j$.
+3. $\hat{\mQ}$ spans the range of $\mA$.
+4. $\bar{\mQ}$ spans the nullspace of $\mA\trans$.
+
+In Julia, we can compute the QR decompisition of a matrix using:
+
+```Julia
+m = 4
+n = 3
+A = randn(m,n)
+F = qr(A)
+```
+
+Let $\mQ = \bmat \vq_1 \dots \vq_m \emat$. We can express the columns of $\mA$ as 
+
+$$
+\begin{align*}
+\va_{1} &= r_{11} \vq_{1}\\
+\va_{2} &= r_{12} \vq_{1}+r_{22}\vq_2\\
+&\vdots\\
+\va_{n} &= r_{1n} \vq_{1} + r_{2n}\vq_2+\dots+r_{kn}\vq_{k}\\
+\end{align*}
+$$
+
+So, we can compactly write the matrix $\mA$ as $\mA = \hat{\mQ}\hat{\mR}$. This is the reduced (thin or economode) QR 
+factorization of $\mA$. In the case when $m\geq n$ and $\mA$ is full rank, we get following figure:
+
+<center>
+<img src="../img/lec3/qrdecomp-thin.png" width = "300">
+</center>
+
+## **Solving least squares via QR**
+
+The $QR$ factorizationc can be used to solve the least squares problem
+
+$$
+\min_{\vx \in\R^n}\frac{1}{2}\|\mA\vx-\vb\|_2^2,
+$$
+
+where $\mA \in \R^{m\times n}$ and $\vb\in \R^m$. Consider 
+
+$$
+\begin{align*}
+\|\mA\vx-\vb\|_2^2 &= (\mA\vx-\vb)\trans(\mA\vx-\vb)\\
+&= (\mA\vx-\vb)\trans\mQ\mQ\trans(\mA\vx-\vb)\\
+& = \|\mQ\trans(\mA\vx-\vb)\|_2^2\\
+&=\left\|\bmat\hat{\mR}\\\vzero\emat\vx-\bmat\hat{\mQ}\trans\\\bar{\mQ}\trans\emat\vb\right\|_2^2\\
+& = \|\hat{\mR}\vx - \hat{\mQ}\trans\vb\|_2^2+\|\bar{\mQ}\trans\vb\|_2^2
+\end{align*}
+$$
+
+So, minimizing $\frac{1}{2}\|\mA\vx-\vb\|_2$ will minimize $\|\hat{\mR}\vx - \hat{\mQ}\trans\vb\|_2^2$. 
+Since $\hat{\mR}$ is upper triangular, $\hat{\mQ}\trans\vb\in\range(\hat{\mR})$. So, the least squares solution
+satisfies
+
+$$
+\hat{\mR}\vx = \hat{\mQ}\trans\vb,
+$$
+which can be solved via back substitution. The figure below shows the geometric prespective of using a QR factorization 
+to solve the least squares problem
+
+<center>
+<img src="../img/lec3/leastsquares-geometry2.png" width = "400">
+</center>
 
