@@ -1,4 +1,11 @@
-# **CPSC 406: Homework 1 (Due Jan  17)**
+# **CPSC 406: Homework 1 (Due Jan  17, 6pm)**
+
+**Submission Instructions:** The solution will be submitted electronically, using the Canvas system. Solution should be
+ typeset using LaTeX (handwritten solution will not be accepted). Using jupyter notebook to type the solution, which supports 
+ Julia and Python, is recommended. If you are using jupyter notebook, submit both the ipynb file and its pdf output. 
+ If you are not using juypter notebook, the pdf file must contain the codes relavant to the homework. In both cases,
+ results of the code should be in the pdf file. See [here](grades.md#Grades-and-policies) for policy on collaboration and 
+ late submissions.
 
 1. **Backsolve** Here, we will explore the computational complexity of solving the system 
 
