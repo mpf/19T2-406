@@ -42,7 +42,7 @@
     
     
       
-        <title>**CPSC 406: Homework 1 (Due Jan 17)** - CPSC406 &mdash; Computational Optimization</title>
+        <title>Homework 1 - CPSC406 &mdash; Computational Optimization</title>
       
     
     
@@ -107,7 +107,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                **CPSC 406: Homework 1 (Due Jan  17)**
+                Homework 1
               
             </span>
           
@@ -153,14 +153,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../.." class="md-tabs__link md-tabs__link--active">
+      <a href="../.." class="md-tabs__link">
         Home Page
       </a>
     
@@ -178,6 +180,19 @@
       
         <a href="../../notes/background/" class="md-tabs__link">
           Lecture notes
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" class="md-tabs__link md-tabs__link--active">
+          Homework
         </a>
       
     </li>
@@ -303,6 +318,53 @@
   </li>
 
     
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Homework
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Homework
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Homework 1" class="md-nav__link md-nav__link--active">
+      Homework 1
+    </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -337,20 +399,20 @@
 <p><strong>Backsolve</strong> Here, we will explore the computational complexity of solving the system </p>
 <div>
 <div class="MathJax_Preview">
-Rx = b, \qquad R\in \Re^{n\times n}
+\mR\vx = \vb, \qquad \mR\in \R^{n\times n}
 </div>
 <script type="math/tex; mode=display">
-Rx = b, \qquad R\in \Re^{n\times n}
+\mR\vx = \vb, \qquad \mR\in \R^{n\times n}
 </script>
 </div>
-<p>when <span><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> is either upper triangular (<span><span class="MathJax_Preview">R_{ij} = 0</span><script type="math/tex">R_{ij} = 0</script></span> whenever <span><span class="MathJax_Preview">i &gt; j</span><script type="math/tex">i > j</script></span>) or lower triangular 
-(<span><span class="MathJax_Preview">R_{ij} = 0</span><script type="math/tex">R_{ij} = 0</script></span> whenever <span><span class="MathJax_Preview">i &lt; j</span><script type="math/tex">i < j</script></span>). If <span><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> were fully dense, then solving this system takes 
-<span><span class="MathJax_Preview">O(n^3)</span><script type="math/tex">O(n^3)</script></span> flops. We will show that when <span><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> is upper or lower triangular, this system takes
+<p>when <span><span class="MathJax_Preview">\mR</span><script type="math/tex">\mR</script></span> is either upper triangular (<span><span class="MathJax_Preview">R_{ij} = 0</span><script type="math/tex">R_{ij} = 0</script></span> whenever <span><span class="MathJax_Preview">i &gt; j</span><script type="math/tex">i > j</script></span>) or lower triangular 
+(<span><span class="MathJax_Preview">R_{ij} = 0</span><script type="math/tex">R_{ij} = 0</script></span> whenever <span><span class="MathJax_Preview">i &lt; j</span><script type="math/tex">i < j</script></span>). If <span><span class="MathJax_Preview">\mR</span><script type="math/tex">\mR</script></span> were fully dense, then solving this system takes 
+<span><span class="MathJax_Preview">O(n^3)</span><script type="math/tex">O(n^3)</script></span> flops. We will show that when <span><span class="MathJax_Preview">\mR</span><script type="math/tex">\mR</script></span> is upper or lower triangular, this system takes
 <span><span class="MathJax_Preview">O(n^2)</span><script type="math/tex">O(n^2)</script></span> flops. Assume that the diagonal elements <span><span class="MathJax_Preview">|R_{ii}| &gt; \epsilon</span><script type="math/tex">|R_{ii}| > \epsilon</script></span> for <span><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>
 suitably large in all cases.</p>
 <ol>
 <li>
-<p>Consider <span><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> lower triangular, e.g. we solve the system</p>
+<p>Consider <span><span class="MathJax_Preview">\mR</span><script type="math/tex">\mR</script></span> lower triangular, e.g. we solve the system</p>
 <div>
 <div class="MathJax_Preview">
 \bmat 
@@ -388,7 +450,7 @@ O(1) + O(2) + \cdots + O(n-1) + O(n) = O(n^2) \text{ flops.}
 </div>
 </li>
 <li>
-<p>Now consider <span><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> upper triangular, e.g. we solve the system</p>
+<p>Now consider <span><span class="MathJax_Preview">\mR</span><script type="math/tex">\mR</script></span> upper triangular, e.g. we solve the system</p>
 <div>
 <div class="MathJax_Preview">
 \bmat 
@@ -428,7 +490,8 @@ O(n) + O(n-1) + \cdots + O(2) + O(1) = O(n^2) \text{ flops.}
 </ol>
 </li>
 <li>
-<p><strong>Linear data fit</strong> Download <a href="">data</a>. Fit the best line </p>
+<p><strong>Linear data fit</strong> Download <a href="../hw1_p2_data.jld">data</a> (Heres the csv format of the same <a href="../hw1_p2_data.csv">data</a> ).
+ Fit the best line </p>
 <div>
 <div class="MathJax_Preview">
 f(z) = x_1 + x_2z 
@@ -438,7 +501,7 @@ f(z) = x_1 + x_2z
 </script>
 </div>
 <p>to the points <span><span class="MathJax_Preview">(z_1,y_1),...,(z_n,y_n)</span><script type="math/tex">(z_1,y_1),...,(z_n,y_n)</script></span>; that is, find the best approximation of the 
-    line <span><span class="MathJax_Preview">f(z)</span><script type="math/tex">f(z)</script></span> to <span><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span> in the 2-norm sense. Plot the fit, and report <span><span class="MathJax_Preview">\|r\|_2</span><script type="math/tex">\|r\|_2</script></span> the norm of 
+    line <span><span class="MathJax_Preview">f(z)</span><script type="math/tex">f(z)</script></span> to <span><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span> in the 2-norm sense. Plot the fit, and report <span><span class="MathJax_Preview">\|\vr\|_2</span><script type="math/tex">\|\vr\|_2</script></span> the norm of 
     the fit residual.</p>
 </li>
 <li>
@@ -454,12 +517,12 @@ f(z) = x_1 + x_2z + x_3z^2 + \cdots + x_{d+1}z^d
 </script>
 </div>
 <p>best approximates the data in the 2-norm sense (minimizing <span><span class="MathJax_Preview">\sum_i (f(z_i)-y_i)^2</span><script type="math/tex">\sum_i (f(z_i)-y_i)^2</script></span>).
-    Plot the fit, and report <span><span class="MathJax_Preview">\|r\|_2</span><script type="math/tex">\|r\|_2</script></span> the norm of the fit residual. About how many degrees 
+    Plot the fit, and report <span><span class="MathJax_Preview">\|\vr\|_2</span><script type="math/tex">\|\vr\|_2</script></span> the norm of the fit residual. About how many degrees 
     is needed for a reasonable fit?</p>
 </li>
 <li>
-<p><strong>QR factorization</strong> Consider the full rank, underdetermined but consistent 
-    linear system <span><span class="MathJax_Preview">Ax = b</span><script type="math/tex">Ax = b</script></span>, where <span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> is <span><span class="MathJax_Preview">m\times n</span><script type="math/tex">m\times n</script></span> with <span><span class="MathJax_Preview">m &lt; n</span><script type="math/tex">m < n</script></span>. </p>
+<p><strong>QR factorization</strong> Consider a full rank, underdetermined but consistent 
+    linear system <span><span class="MathJax_Preview">\mA\vx = \vb</span><script type="math/tex">\mA\vx = \vb</script></span>, where <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> is <span><span class="MathJax_Preview">m\times n</span><script type="math/tex">m\times n</script></span> with <span><span class="MathJax_Preview">m &lt; n</span><script type="math/tex">m < n</script></span>. </p>
 <ol>
 <li>
 <p>Show how to use the QR factorization to obtain a soution of this system.</p>
@@ -474,11 +537,23 @@ f(z) = x_1 + x_2z + x_3z^2 + \cdots + x_{d+1}z^d
 <span class="n">b</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">x</span>        
 </pre></div>
 Write a Julia code for solving for <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> using the procedure outlined in the previous 
-part of the question. Record the runtime using the Julia calls \texttt{tic} and 
-\texttt{toc}. (Make sure you are not running anything else or it will interfere with 
+part of the question. Record the runtime using the Julia calls <span><span class="MathJax_Preview">\texttt{time()}</span><script type="math/tex">\texttt{time()}</script></span>. (Make sure you are not running anything else or it will interfere with 
 the timing results.) Record the runtimes for matrices of sizes  <span><span class="MathJax_Preview">(m,n) = (10,20)</span><script type="math/tex">(m,n) = (10,20)</script></span>, 
 <span><span class="MathJax_Preview">(100,200)</span><script type="math/tex">(100,200)</script></span>, <span><span class="MathJax_Preview">(100,2000)</span><script type="math/tex">(100,2000)</script></span>,  <span><span class="MathJax_Preview">(100,20000)</span><script type="math/tex">(100,20000)</script></span>, and <span><span class="MathJax_Preview">(100,200000)</span><script type="math/tex">(100,200000)</script></span>. Compare the runtimes 
-against finding <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> using <span><span class="MathJax_Preview">x = A\backslash b</span><script type="math/tex">x = A\backslash b</script></span>.</p>
+against finding <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> using <span><span class="MathJax_Preview">\vx = \mA\backslash \vb</span><script type="math/tex">\vx = \mA\backslash \vb</script></span>.</p>
+</li>
+<li>
+<p>The underdetermined and consistent linear system <span><span class="MathJax_Preview">\mA\vx=\vb</span><script type="math/tex">\mA\vx=\vb</script></span> has infinitely many solutions. For the case where 
+   <span><span class="MathJax_Preview">\mA \in \R^{m\times n}</span><script type="math/tex">\mA \in \R^{m\times n}</script></span> is full rank, show how to use the QR factorization to obtain the least norm solution, i.e. find <span><span class="MathJax_Preview">\vx_{LN}</span><script type="math/tex">\vx_{LN}</script></span> that solves</p>
+<div>
+<div class="MathJax_Preview">
+\min_{\vx\in\R^n} \|\vx\|_2^2 \quad \text{ subject to } \quad \mA\vx = \vb
+</div>
+<script type="math/tex; mode=display">
+\min_{\vx\in\R^n} \|\vx\|_2^2 \quad \text{ subject to } \quad \mA\vx = \vb
+</script>
+</div>
+<p>using QR decomposition.</p>
 </li>
 </ol>
 </li>
@@ -500,6 +575,27 @@ against finding <span><span class="MathJax_Preview">x</span><script type="math/t
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../notes/QR_factorization/" title="QR factorization" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                QR factorization
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
