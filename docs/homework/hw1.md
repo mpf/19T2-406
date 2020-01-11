@@ -3,16 +3,16 @@
 1. **Backsolve** Here, we will explore the computational complexity of solving the system 
 
     $$
-    Rx = b, \qquad R\in \Re^{n\times n}
+    \mR\vx = \vb, \qquad \mR\in \R^{n\times n}
     $$
 
-    when $R$ is either upper triangular ($R_{ij} = 0$ whenever $i > j$) or lower triangular 
-    ($R_{ij} = 0$ whenever $i < j$). If $R$ were fully dense, then solving this system takes 
-    $O(n^3)$ flops. We will show that when $R$ is upper or lower triangular, this system takes
+    when $\mR$ is either upper triangular ($R_{ij} = 0$ whenever $i > j$) or lower triangular 
+    ($R_{ij} = 0$ whenever $i < j$). If $\mR$ were fully dense, then solving this system takes 
+    $O(n^3)$ flops. We will show that when $\mR$ is upper or lower triangular, this system takes
     $O(n^2)$ flops. Assume that the diagonal elements $|R_{ii}| > \epsilon$ for $\epsilon$
     suitably large in all cases.
 
-    2. Consider $R$ lower triangular, e.g. we solve the system
+    2. Consider $\mR$ lower triangular, e.g. we solve the system
 
         $$
         \bmat 
@@ -34,7 +34,7 @@
         O(1) + O(2) + \cdots + O(n-1) + O(n) = O(n^2) \text{ flops.}
         $$
 
-    3. Now consider $R$ upper triangular, e.g. we solve the system
+    3. Now consider $\mR$ upper triangular, e.g. we solve the system
 
         $$
         \bmat 
@@ -56,14 +56,15 @@
         O(n) + O(n-1) + \cdots + O(2) + O(1) = O(n^2) \text{ flops.}
         $$
     
-4. **Linear data fit** Download [data](). Fit the best line 
+4. **Linear data fit** Download [data](hw1_p2_data.jld) (Heres the csv format of the same [data](hw1_p2_data.csv) ).
+ Fit the best line 
 
     $$
     f(z) = x_1 + x_2z 
     $$
 
     to the points $(z_1,y_1),...,(z_n,y_n)$; that is, find the best approximation of the 
-        line $f(z)$ to $y$ in the 2-norm sense. Plot the fit, and report $\|r\|_2$ the norm of 
+        line $f(z)$ to $y$ in the 2-norm sense. Plot the fit, and report $\|\vr\|_2$ the norm of 
         the fit residual.
 
 
@@ -76,15 +77,13 @@
     $$
 
     best approximates the data in the 2-norm sense (minimizing $\sum_i (f(z_i)-y_i)^2$).
-        Plot the fit, and report $\|r\|_2$ the norm of the fit residual. About how many degrees 
+        Plot the fit, and report $\|\vr\|_2$ the norm of the fit residual. About how many degrees 
         is needed for a reasonable fit?
 
 
 
-
-
-6. **QR factorization** Consider the full rank, underdetermined but consistent 
-    linear system $Ax = b$, where $A$ is $m\times n$ with $m < n$. 
+6. **QR factorization** Consider a full rank, underdetermined but consistent 
+    linear system $\mA\vx = \vb$, where $\mA$ is $m\times n$ with $m < n$. 
 
     7. Show how to use the QR factorization to obtain a soution of this system.
 
@@ -99,9 +98,17 @@
         b = A*x        
         ```
         Write a Julia code for solving for $x$ using the procedure outlined in the previous 
-        part of the question. Record the runtime using the Julia calls \texttt{tic} and 
-        \texttt{toc}. (Make sure you are not running anything else or it will interfere with 
+        part of the question. Record the runtime using the Julia calls $\texttt{time()}$. (Make sure you are not running anything else or it will interfere with 
         the timing results.) Record the runtimes for matrices of sizes  $(m,n) = (10,20)$, 
         $(100,200)$, $(100,2000)$,  $(100,20000)$, and $(100,200000)$. Compare the runtimes 
-        against finding $x$ using $x = A\backslash b$.
+        against finding $x$ using $\vx = \mA\backslash \vb$.
+
+    9. The underdetermined and consistent linear system $\mA\vx=\vb$ has infinitely many solutions. For the case where 
+       $\mA \in \R^{m\times n}$ is full rank, show how to use the QR factorization to obtain the least norm solution, i.e. find $\vx_{LN}$ that solves
+
+        $$
+        \min_{\vx\in\R^n} \|\vx\|_2^2 \quad \text{ subject to } \quad \mA\vx = \vb
+        $$
+        
+        using QR decomposition.
     
