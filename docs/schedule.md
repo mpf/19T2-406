@@ -9,7 +9,7 @@ This is a tentative schedule. It will change often.
 | 3 | 10 Jan | [QR factorization](notes/QR_factorization.md#QRfactorization) | | [hw1](homework/hw1.md#CPSC406:Homework1(DueJan17)) out |
 | 4 | 13 Jan | Regularized least squares | | |
 | 5 | 15 Jan| Non-linear least squares  | | |
-| 6 | 17 Jan | Unconstrained mptimization | | hw1 due|
+| 6 | 17 Jan | Unconstrained mptimization | | hw1 due at 6pm|
 | 7 | 20 Jan | Descent methods | | |
 | 8 | 22 Jan | Newton's method | | |
 | 9 | 24 Jan | Quasi-Newton's methods | | |
