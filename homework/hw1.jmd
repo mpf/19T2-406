@@ -56,7 +56,7 @@
         O(n) + O(n-1) + \cdots + O(2) + O(1) = O(n^2) \text{ flops.}
         $$
     
-4. **Linear data fit** Download [data](hw1_p2_data.jld) (Heres the csv format of the same [data](hw1_p2_data.csv) ).
+4. **Linear data fit** Download [data](hw1_p2_data.jld) (Here is the csv format of the same [data](hw1_p2_data.csv) ).
  Fit the best line 
 
     $$
