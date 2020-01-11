@@ -6,10 +6,10 @@ This is a tentative schedule. It will change often.
 | ------- | ---- | ----- | ----- | -------- |
 | 1 | 06 Jan | Introduction |||
 | 2 | 08 Jan | [Least squares](notes/Least_squares.md#LeastSquares) | [notebook](notebooks/least-squares.ipynb)    | |
-| 3 | 10 Jan | [QR factorization](notes/QR_factorization.md#QRfactorization) | | |
+| 3 | 10 Jan | [QR factorization](notes/QR_factorization.md#QRfactorization) | | [hw1](homework/hw1.md#CPSC406:Homework1(DueJan17)) out |
 | 4 | 13 Jan | Regularized least squares | | |
 | 5 | 15 Jan| Non-linear least squares  | | |
-| 6 | 17 Jan | Unconstrained mptimization | | |
+| 6 | 17 Jan | Unconstrained mptimization | | hw1 due|
 | 7 | 20 Jan | Descent methods | | |
 | 8 | 22 Jan | Newton's method | | |
 | 9 | 24 Jan | Quasi-Newton's methods | | |
