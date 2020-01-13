@@ -1,0 +1,719 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Home page for CPSC406 Term 2 2019">
+      
+      
+        <link rel="canonical" href="https://friedlander.io/19T2-406/notes/Regularized_LS/">
+      
+      
+        <meta name="author" content="Michael P. Friedlander and Babhru Joshi">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+    
+    
+      
+        <title>Regularized least squares - CPSC406 &mdash; Computational Optimization</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#regularized-least-squares" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://friedlander.io/19T2-406" title="CPSC406 &mdash; Computational Optimization" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              CPSC406 &mdash; Computational Optimization
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Regularized least squares
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        Home Page
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../background/" class="md-tabs__link md-tabs__link--active">
+          Lecture notes
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../homework/hw1/" class="md-tabs__link">
+          Homework
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://friedlander.io/19T2-406" title="CPSC406 &mdash; Computational Optimization" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    CPSC406 &mdash; Computational Optimization
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home Page" class="md-nav__link">
+      Home Page
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../grades/" title="Grades" class="md-nav__link">
+      Grades
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../schedule/" title="Schedule" class="md-nav__link">
+      Schedule
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Lecture notes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Lecture notes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../background/" title="Mathematical background" class="md-nav__link">
+      Mathematical background
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Least_squares/" title="Least squares" class="md-nav__link">
+      Least squares
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../QR_factorization/" title="QR factorization" class="md-nav__link">
+      QR factorization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Regularized least squares
+      </label>
+    
+    <a href="./" title="Regularized least squares" class="md-nav__link md-nav__link--active">
+      Regularized least squares
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example-signal-denoising" class="md-nav__link">
+    Example: Signal denoising
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regularized-least-squares-aka-tikhonov" class="md-nav__link">
+    Regularized least squares (aka Tikhonov)
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Homework
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Homework
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../homework/hw1/" title="Homework 1" class="md-nav__link">
+      Homework 1
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example-signal-denoising" class="md-nav__link">
+    Example: Signal denoising
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regularized-least-squares-aka-tikhonov" class="md-nav__link">
+    Regularized least squares (aka Tikhonov)
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="regularized-least-squares"><strong>Regularized least squares</strong><a class="headerlink" href="#regularized-least-squares" title="Permanent link">&para;</a></h1>
+<p>In the least squares problem, we minimized 2-norm squared of the data misfit relative to a linear model. 
+In contrast to the least squares formulation, many problem need to balance competing objectives. For example, 
+consider the problem of finding <span><span class="MathJax_Preview">\vx_0 \in \R^n</span><script type="math/tex">\vx_0 \in \R^n</script></span> from noisy linear measurements <span><span class="MathJax_Preview">\vb = \mA\vx_0 + 
+\vw_\vb</span><script type="math/tex">\vb = \mA\vx_0 + 
+\vw_\vb</script></span> and <span><span class="MathJax_Preview">\vg = \mF\vx_0-\vw_\vg</span><script type="math/tex">\vg = \mF\vx_0-\vw_\vg</script></span>. Here <span><span class="MathJax_Preview">\vw_\vb</span><script type="math/tex">\vw_\vb</script></span> and <span><span class="MathJax_Preview">\vw_\vg</span><script type="math/tex">\vw_\vg</script></span> are noise vectors. In order to solve
+this problem, we need to find a <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> that makes </p>
+<ol>
+<li><span><span class="MathJax_Preview">\func{f}_1(\vx) = \|\mA\vx - \vb\|_2^2</span><script type="math/tex">\func{f}_1(\vx) = \|\mA\vx - \vb\|_2^2</script></span> small, and</li>
+<li><span><span class="MathJax_Preview">\func{f}_2(\vx) = \|\mB\vx - \vg\|_2^2</span><script type="math/tex">\func{f}_2(\vx) = \|\mB\vx - \vg\|_2^2</script></span> small.</li>
+</ol>
+<p>Generally, we can make <span><span class="MathJax_Preview">\func{f}_1(\vx)</span><script type="math/tex">\func{f}_1(\vx)</script></span> or <span><span class="MathJax_Preview">\func{f}_2(\vx)</span><script type="math/tex">\func{f}_2(\vx)</script></span> small, but not both. The figure below shows this
+relationship between <span><span class="MathJax_Preview">\func{f}_1(\vx)</span><script type="math/tex">\func{f}_1(\vx)</script></span> and <span><span class="MathJax_Preview">\func{f}_2(\vx)</span><script type="math/tex">\func{f}_2(\vx)</script></span>.</p>
+<p><center>
+<img src="../img/lec4/pareto.png" width = "400">
+</center></p>
+<p>In the figure, the points in the boundary of two regions are called the Pareto optimal solutions. In order to find these
+optimal solutions, we minimize the following weighted sum objective:</p>
+<div>
+<div class="MathJax_Preview">
+\begin{equation}\label{Regularized_LS_weight}
+f_1(\vx)+\gamma f_2(\vx) = \|\mA\vx-\vg\|_2^2+γ\|\mF\vx-\vg\|_2^2.
+\end{equation}
+</div>
+<script type="math/tex; mode=display">
+\begin{equation}\label{Regularized_LS_weight}
+f_1(\vx)+\gamma f_2(\vx) = \|\mA\vx-\vg\|_2^2+γ\|\mF\vx-\vg\|_2^2.
+\end{equation}
+</script>
+</div>
+<p>The parameter <span><span class="MathJax_Preview">\gamma</span><script type="math/tex">\gamma</script></span> is non-negative and defines relative weight between the objectives. For example, in the case of <span><span class="MathJax_Preview">\gamma =1</span><script type="math/tex">\gamma =1</script></span>, 
+the optimal point that minimizes \eqref{Regularized_LS_weight} is the point <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> on the optimal trade-off curve with <span><span class="MathJax_Preview">f_1(\vx) = 
+f_2(\vx)</span><script type="math/tex">f_1(\vx) = 
+f_2(\vx)</script></span>. </p>
+<p>Note that for a fixed <span><span class="MathJax_Preview">\gamma</span><script type="math/tex">\gamma</script></span> and <span><span class="MathJax_Preview">\alpha \in \R</span><script type="math/tex">\alpha \in \R</script></span>, the set </p>
+<div>
+<div class="MathJax_Preview">
+\ell(\gamma,\alpha) = \{(f_1(\vx),f_2(\vx)):f_1(\vx) +\gamma f_2(\vx) = \alpha, \vx \in \R^n\}
+</div>
+<script type="math/tex; mode=display">
+\ell(\gamma,\alpha) = \{(f_1(\vx),f_2(\vx)):f_1(\vx) +\gamma f_2(\vx) = \alpha, \vx \in \R^n\}
+</script>
+</div>
+<p>correspond to a line with slope of <span><span class="MathJax_Preview">-\gamma</span><script type="math/tex">-\gamma</script></span>. Another way to visualize the optimal solution is to find the line that is tangent to the 
+optimal trade-off cuve, see figure below.</p>
+<p><center>
+<img src="../img/lec4/pareto-levelsets.png" width = "400">
+</center></p>
+<h2 id="example-signal-denoising"><strong>Example: Signal denoising</strong><a class="headerlink" href="#example-signal-denoising" title="Permanent link">&para;</a></h2>
+<p>Suppose we observe noisy measurements of a signal:</p>
+<div>
+<div class="MathJax_Preview">
+\vb = \hat{\vx} + \vw,
+</div>
+<script type="math/tex; mode=display">
+\vb = \hat{\vx} + \vw,
+</script>
+</div>
+<p>where <span><span class="MathJax_Preview">\hat{\vx}\in\R^n</span><script type="math/tex">\hat{\vx}\in\R^n</script></span> is the signal and <span><span class="MathJax_Preview">\vw \in \R^n</span><script type="math/tex">\vw \in \R^n</script></span> is noise. A simple apporach to find <span><span class="MathJax_Preview">\hat{\vx}</span><script type="math/tex">\hat{\vx}</script></span>
+is to solve:</p>
+<div>
+<div class="MathJax_Preview">
+\min_{\vx\in\R^n} \frac{1}{2}\|\vx-\vb\|_2^2.
+</div>
+<script type="math/tex; mode=display">
+\min_{\vx\in\R^n} \frac{1}{2}\|\vx-\vb\|_2^2.
+</script>
+</div>
+<p>This minimization program doesnot enforce any structure on <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span>. However, if we have prior information
+that the signal is "smooth", then we might balance the least squares fit against the smoothness of the
+solution in the following way:</p>
+<div>
+<div class="MathJax_Preview">
+\begin{equation}\label{Regularized_LS_identity}
+\min_{\vx\in\R^n} \frac{1}{2}\|\vx-\vb\|_2^2 +\frac{\gamma}{2} \underbrace{\sum_{i=1}^{n-1}(x_i - x_{i+})^2}_{f_2(\vx)}.
+\end{equation}
+</div>
+<script type="math/tex; mode=display">
+\begin{equation}\label{Regularized_LS_identity}
+\min_{\vx\in\R^n} \frac{1}{2}\|\vx-\vb\|_2^2 +\frac{\gamma}{2} \underbrace{\sum_{i=1}^{n-1}(x_i - x_{i+})^2}_{f_2(\vx)}.
+\end{equation}
+</script>
+</div>
+<p>Here, <span><span class="MathJax_Preview">f_2(x)</span><script type="math/tex">f_2(x)</script></span> promotes smoothness. We can alternatively write the above minimization program
+in matrix notation. Define the finite differencem matrix</p>
+<div>
+<div class="MathJax_Preview">
+\mD = \bmat 1 &amp; -1 &amp; 0 &amp; \cdots &amp; 0 &amp; 0\\
+            0 &amp; 1 &amp; -1 &amp; 0 &amp; \cdots &amp; 0\\
+             &amp;  &amp; \ddots &amp; \ddots &amp;  &amp;  \\
+            0 &amp; \cdots &amp; 0 &amp; 1 &amp; -1 &amp; 0\\
+            0 &amp; 0 &amp; \cdots &amp; 0 &amp; 1 &amp; -1\emat \in \R^{{n-1}\times n}
+</div>
+<script type="math/tex; mode=display">
+\mD = \bmat 1 & -1 & 0 & \cdots & 0 & 0\\
+            0 & 1 & -1 & 0 & \cdots & 0\\
+             &  & \ddots & \ddots &  &  \\
+            0 & \cdots & 0 & 1 & -1 & 0\\
+            0 & 0 & \cdots & 0 & 1 & -1\emat \in \R^{{n-1}\times n}
+</script>
+</div>
+<p>So, we can rewrite <span><span class="MathJax_Preview">f_2(\vx) = \sum_{i=1}^{n-1}(x_i - x_{i+})^2 = \|\mD\vx\|_2^2</span><script type="math/tex">f_2(\vx) = \sum_{i=1}^{n-1}(x_i - x_{i+})^2 = \|\mD\vx\|_2^2</script></span>. This allows for 
+a reformulation of the weighted leas squares objective into a familiar least squares objective:</p>
+<div>
+<div class="MathJax_Preview">
+\|\vx-\vb\|_2^2+\gamma\|\mD\vx\|_2^2 = \bigg\|\underbrace{\bmat\mI\\\sqrt{\gamma}\mD\emat}_{\hat{\mA}}\vx - 
+\underbrace{\bmat\vb\\ \vzero\emat}_{\hat{\vb}}\bigg\|_2^2.
+</div>
+<script type="math/tex; mode=display">
+\|\vx-\vb\|_2^2+\gamma\|\mD\vx\|_2^2 = \bigg\|\underbrace{\bmat\mI\\\sqrt{\gamma}\mD\emat}_{\hat{\mA}}\vx - 
+\underbrace{\bmat\vb\\ \vzero\emat}_{\hat{\vb}}\bigg\|_2^2.
+</script>
+</div>
+<p>So the solution to the weighted least squares minimization program \eqref{Regularized_LS_identity}
+satisfies the normal equation <span><span class="MathJax_Preview">\hat{\mA}\hat{\mA}^\intercal\vx = \hat{\mA}\hat{\vb}</span><script type="math/tex">\hat{\mA}\hat{\mA}^\intercal\vx = \hat{\mA}\hat{\vb}</script></span>, which simplifies to </p>
+<div>
+<div class="MathJax_Preview">
+(\mI + \gamma\mD\mD^\intercal)\vx = \vb.
+</div>
+<script type="math/tex; mode=display">
+(\mI + \gamma\mD\mD^\intercal)\vx = \vb.
+</script>
+</div>
+<h2 id="regularized-least-squares-aka-tikhonov"><strong>Regularized least squares (aka Tikhonov)</strong><a class="headerlink" href="#regularized-least-squares-aka-tikhonov" title="Permanent link">&para;</a></h2>
+<p>We now generalize the result to noisy linear observations of a signal. In this case, the model is</p>
+<div>
+<div class="MathJax_Preview">
+\vb = \mA\vx + \vw,
+</div>
+<script type="math/tex; mode=display">
+\vb = \mA\vx + \vw,
+</script>
+</div>
+<p>where we added the measurement matrix <span><span class="MathJax_Preview">\mA \in \R^{m\times n}</span><script type="math/tex">\mA \in \R^{m\times n}</script></span>. The  corresponding wighted-sum least squares
+program is </p>
+<div>
+<div class="MathJax_Preview">
+\begin{equation}
+\min_{\vx\in\R^n} \frac{1}{2}\|\mA\vx-\vb\|_2^2 + \frac{\gamma}{2}\|\mD\vx\|_2^2,
+\end{equation}
+</div>
+<script type="math/tex; mode=display">
+\begin{equation}
+\min_{\vx\in\R^n} \frac{1}{2}\|\mA\vx-\vb\|_2^2 + \frac{\gamma}{2}\|\mD\vx\|_2^2,
+\end{equation}
+</script>
+</div>
+<p>where <span><span class="MathJax_Preview">\|\mD\vx\|_2^2</span><script type="math/tex">\|\mD\vx\|_2^2</script></span> is called the regularization penalty and <span><span class="MathJax_Preview">\gamma</span><script type="math/tex">\gamma</script></span> is called the regularization 
+parameter. The objective function can be reformulated as an least squares objective</p>
+<div>
+<div class="MathJax_Preview">
+\|\mA\vx-\vb\|_2^2+\gamma\|\mD\vx\|_2^2 = \bigg\|\underbrace{\bmat\mA\\\sqrt{\gamma}\mD\emat}_{\hat{\mA}}\vx - 
+\underbrace{\bmat\vb\\ \vzero\emat}_{\hat{\vb}}\bigg\|_2^2.
+</div>
+<script type="math/tex; mode=display">
+\|\mA\vx-\vb\|_2^2+\gamma\|\mD\vx\|_2^2 = \bigg\|\underbrace{\bmat\mA\\\sqrt{\gamma}\mD\emat}_{\hat{\mA}}\vx - 
+\underbrace{\bmat\vb\\ \vzero\emat}_{\hat{\vb}}\bigg\|_2^2.
+</script>
+</div>
+<p>and the corresponding normal equations is</p>
+<div>
+<div class="MathJax_Preview">
+(\mA\mA^\intercal + \gamma\mD\mD^\intercal)\vx = \vb.
+</div>
+<script type="math/tex; mode=display">
+(\mA\mA^\intercal + \gamma\mD\mD^\intercal)\vx = \vb.
+</script>
+</div>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../QR_factorization/" title="QR factorization" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                QR factorization
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../homework/hw1/" title="Homework 1" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Homework 1
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020 Michael Friedlander and Babhru Joshi
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
