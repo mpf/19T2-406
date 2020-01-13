@@ -58,7 +58,8 @@ nav:
   - Lecture notes:
       # - Introduction: notes/introduction.md
       - Mathematical background: notes/background.md
-      - Least Squares: notes/Least_squares.md
+      - Least squares: notes/Least_squares.md
       - QR factorization: notes/QR_factorization.md
+      - Regularized least squares: notes/Regularized_LS.md
   - Homework:
       - Homework 1: homework/hw1.md
