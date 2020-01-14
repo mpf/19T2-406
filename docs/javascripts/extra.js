@@ -138,7 +138,9 @@ window.MathJax = {
             Re: ["\\mathbf R"],
 
             trans: ["^\\intercal"],
-            det: ["\\text{det}"]
+            det: ["\\text{det}"],
+            vrho: ["\\vct \\rho"],
+            vnu: ["\\vct \\nu"]
 
 
 
