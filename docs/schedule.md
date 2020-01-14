@@ -6,15 +6,15 @@ This is a tentative schedule. It will change often.
 | ------- | ---- | ----- | ----- | -------- |
 | 1 | 06 Jan | Introduction |||
 | 2 | 08 Jan | [Least squares](notes/Least_squares.md#LeastSquares) | [notebook](https://nbviewer.jupyter.org/github/mpf/19T2-406/blob/master/docs/notebooks/least-squares.ipynb)                                 | |
-| 3 | 10 Jan | [QR factorization](notes/QR_factorization.md#QRfactorization) | | [hw1](homework/hw1.md#CPSC406:Homework1(DueJan17)) out |
+| 3 | 10 Jan | [QR factorization](notes/QR_factorization.md) | | [hw1](homework/hw1.md) out |
 | 4 | 13 Jan | [Regularized least squares](notes/Regularized_LS.md#Regularizedleastsquares) | [notebook](https://nbviewer.jupyter.org/github/mpf/19T2-406/blob/master/docs/notebooks/regularizedLS.ipynb) | |
 | 5 | 15 Jan| Non-linear least squares  | [notebook](https://nbviewer.jupyter.org/github/mpf/19T2-406/blob/master/docs/notebooks/gaussnewton.ipynb) | |
-| 6 | 17 Jan | Unconstrained mptimization | | hw1 due at 6pm |
+| 6 | 17 Jan | Unconstrained optimization | | hw1 due at 6pm |
 | 7 | 20 Jan | Descent methods | | |
 | 8 | 22 Jan | Newton's method | | |
 | 9 | 24 Jan | Quasi-Newton's methods | | |
 | 10 | 27 Jan | Convex functions | | |
-| 11 | 29 Jan | Constrained Optimization | | |
+| 11 | 29 Jan | Constrained optimization | | |
 | 12 | 31 Jan | Linear programming and applications | | |
 | 13 | 3 Feb | Simplex methods | | |
 | 14 | 5 Feb | Duality     | | |
