@@ -46,7 +46,8 @@ Repeat until covergence:<br>
 
 ----
 
-## **Linearization of residual**
+
+
 
 
 

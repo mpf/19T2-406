@@ -45,11 +45,3 @@ This is a tentative schedule. It will change often.
 | 36 | 3 Apr |      | | |
 | 37 | 6 Apr |      | | |
 | 38 | 8 Apr |      | | |
-
-
-
-Convex functions | | |
-| 11 | 29 Jan | Constrained optimization | | |
-| 12 | 31 Jan | Linear programming and applications | | |
-| 13 | 3 Feb | Simplex methods | | |
-| 14 | 5 Feb | Duality     | | |
