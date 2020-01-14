@@ -5,10 +5,10 @@ This is a tentative schedule. It will change often.
 | Lecture | Date | Topic | Notes | Homework |
 | ------- | ---- | ----- | ----- | -------- |
 | 1 | 06 Jan | Introduction |||
-| 2 | 08 Jan | [Least squares](notes/Least_squares.md#LeastSquares) | [notebook](notebooks/least-squares.ipynb)    | |
+| 2 | 08 Jan | [Least squares](notes/Least_squares.md#LeastSquares) | [notebook](https://nbviewer.jupyter.org/github/mpf/19T2-406/blob/master/docs/notebooks/least-squares.ipynb)                                 | |
 | 3 | 10 Jan | [QR factorization](notes/QR_factorization.md#QRfactorization) | | [hw1](homework/hw1.md#CPSC406:Homework1(DueJan17)) out |
-| 4 | 13 Jan | [Regularized least squares](notes/Regularized_LS.md#Regularizedleastsquares) | | |
-| 5 | 15 Jan| Non-linear least squares  | | |
+| 4 | 13 Jan | [Regularized least squares](notes/Regularized_LS.md#Regularizedleastsquares) | [notebook](https://nbviewer.jupyter.org/github/mpf/19T2-406/blob/master/docs/notebooks/regularizedLS.ipynb) | |
+| 5 | 15 Jan| Non-linear least squares  | [notebook](https://nbviewer.jupyter.org/github/mpf/19T2-406/blob/master/docs/notebooks/gaussnewton.ipynb) | |
 | 6 | 17 Jan | Unconstrained mptimization | | hw1 due at 6pm |
 | 7 | 20 Jan | Descent methods | | |
 | 8 | 22 Jan | Newton's method | | |
