@@ -13,7 +13,7 @@
         <meta name="description" content="Home page for CPSC406 Term 2 2019">
       
       
-        <link rel="canonical" href="https://friedlander.io/19T2-406/">
+        <link rel="canonical" href="https://friedlander.io/19T2-406/notes/Non-linear_LS/">
       
       
         <meta name="author" content="Michael P. Friedlander and Babhru Joshi">
@@ -37,21 +37,21 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
       
-        <title>CPSC406 &mdash; Computational Optimization</title>
+        <title>Non-linear least squares - CPSC406 &mdash; Computational Optimization</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
       
       
     
     
-      <script src="assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
     
     
       
@@ -60,7 +60,7 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
     
@@ -81,7 +81,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#computational-optimization" tabindex="1" class="md-skip">
+      <a href="#non-linear-least-squares" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -107,7 +107,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Home Page
+                Non-linear least squares
               
             </span>
           
@@ -153,14 +153,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="." class="md-tabs__link md-tabs__link--active">
+      <a href="../.." class="md-tabs__link">
         Home Page
       </a>
     
@@ -176,7 +178,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="notes/background/" class="md-tabs__link">
+        <a href="../background/" class="md-tabs__link md-tabs__link--active">
           Lecture notes
         </a>
       
@@ -189,7 +191,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="homework/" class="md-tabs__link">
+        <a href="../../homework/" class="md-tabs__link">
           Homework
         </a>
       
@@ -224,77 +226,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Home Page
-      </label>
-    
-    <a href="." title="Home Page" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../.." title="Home Page" class="md-nav__link">
       Home Page
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#lectures" class="md-nav__link">
-    Lectures
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#teaching-staff-2019-term-2" class="md-nav__link">
-    Teaching staff (2019 Term 2)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#textbook" class="md-nav__link">
-    Textbook
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#course-requirements" class="md-nav__link">
-    Course requirements
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#course-discussion-board" class="md-nav__link">
-    Course discussion board
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -304,7 +240,7 @@
 
 
   <li class="md-nav__item">
-    <a href="grades/" title="Grades" class="md-nav__link">
+    <a href="../../grades/" title="Grades" class="md-nav__link">
       Grades
     </a>
   </li>
@@ -316,7 +252,7 @@
 
 
   <li class="md-nav__item">
-    <a href="schedule/" title="Schedule" class="md-nav__link">
+    <a href="../../schedule/" title="Schedule" class="md-nav__link">
       Schedule
     </a>
   </li>
@@ -326,10 +262,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       Lecture notes
@@ -347,7 +285,7 @@
 
 
   <li class="md-nav__item">
-    <a href="notes/background/" title="Mathematical background" class="md-nav__link">
+    <a href="../background/" title="Mathematical background" class="md-nav__link">
       Mathematical background
     </a>
   </li>
@@ -359,7 +297,7 @@
 
 
   <li class="md-nav__item">
-    <a href="notes/Least_squares/" title="Least squares" class="md-nav__link">
+    <a href="../Least_squares/" title="Least squares" class="md-nav__link">
       Least squares
     </a>
   </li>
@@ -371,7 +309,7 @@
 
 
   <li class="md-nav__item">
-    <a href="notes/QR_factorization/" title="QR factorization" class="md-nav__link">
+    <a href="../QR_factorization/" title="QR factorization" class="md-nav__link">
       QR factorization
     </a>
   </li>
@@ -383,7 +321,7 @@
 
 
   <li class="md-nav__item">
-    <a href="notes/Regularized_LS/" title="Regularized least squares" class="md-nav__link">
+    <a href="../Regularized_LS/" title="Regularized least squares" class="md-nav__link">
       Regularized least squares
     </a>
   </li>
@@ -393,11 +331,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="notes/Non-linear_LS/" title="Non-linear least squares" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Non-linear least squares" class="md-nav__link md-nav__link--active">
       Non-linear least squares
     </a>
+    
   </li>
 
         
@@ -431,7 +378,7 @@
 
 
   <li class="md-nav__item">
-    <a href="homework/" title="Submissions" class="md-nav__link">
+    <a href="../../homework/" title="Submissions" class="md-nav__link">
       Submissions
     </a>
   </li>
@@ -443,7 +390,7 @@
 
 
   <li class="md-nav__item">
-    <a href="homework/hw1/" title="Homework 1" class="md-nav__link">
+    <a href="../../homework/hw1/" title="Homework 1" class="md-nav__link">
       Homework 1
     </a>
   </li>
@@ -471,50 +418,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#lectures" class="md-nav__link">
-    Lectures
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#teaching-staff-2019-term-2" class="md-nav__link">
-    Teaching staff (2019 Term 2)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#textbook" class="md-nav__link">
-    Textbook
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#course-requirements" class="md-nav__link">
-    Course requirements
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#course-discussion-board" class="md-nav__link">
-    Course discussion board
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -526,25 +429,51 @@
               
                 
                 
-                <h1 id="computational-optimization">Computational Optimization<a class="headerlink" href="#computational-optimization" title="Permanent link">&para;</a></h1>
-<p>This course covers the main algorithms for continuous optimization, including unconstrained and constrained problems, large-scale problems, and duality theory and sensitivity. We will also cover numerical linear algebra operations needed in optimization, including LU, QR, and Cholesky decompositions. Discrete optimization problems are not covered.</p>
-<h2 id="lectures">Lectures<a class="headerlink" href="#lectures" title="Permanent link">&para;</a></h2>
-<p>Monday, Wednesday, and Friday, 2-3 pm, DMP 110</p>
-<h2 id="teaching-staff-2019-term-2">Teaching staff (2019 Term 2)<a class="headerlink" href="#teaching-staff-2019-term-2" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Co-instructor: <a href="http://friedlander.io/">Michael P. Friedlander</a>. Office hours: Monday, 3-4p (ICCS X150)</li>
-<li>Co-instructor: Babhru Joshi. Office hours: Friday, 3-4p (ICCS X150, table 2)</li>
-<li>Teaching assistant: Zhenan Fan. Office hours: Tuesday, 2-3p (ICCS X150, table 6) </li>
-<li>Teaching Assistant: Huang Fang. Office hours: Thursday 2-3p (ICCS X150, table 4)</li>
-</ul>
-<h2 id="textbook">Textbook<a class="headerlink" href="#textbook" title="Permanent link">&para;</a></h2>
-<p><a href="https://epubs.siam.org/doi/book/10.1137/1.9781611973655"><em>Introduction to Nonlinear Optimization: Theory, Algorithms, and Applications with MATLAB</em></a>, Amir Beck (SIAM, 2014). This book is available online through the UBC Library.</p>
-<h2 id="course-requirements">Course requirements<a class="headerlink" href="#course-requirements" title="Permanent link">&para;</a></h2>
-<p>One of CPSC 302, CPSC 303, or MATH 307.</p>
-<h2 id="course-discussion-board">Course discussion board<a class="headerlink" href="#course-discussion-board" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Discussion board is hosted on <a href="http://piazza.com/ubc.ca/winterterm22019/cpsc406/home">Piazza</a>. Here is the <a href="http://piazza.com/ubc.ca/winterterm22019/cpsc406">link</a> to enroll.</li>
-</ul>
+                <h1 id="non-linear-least-squares"><strong>Non-linear least squares</strong><a class="headerlink" href="#non-linear-least-squares" title="Permanent link">&para;</a></h1>
+<p>The non-linear least squares problem is</p>
+<div>
+<div class="MathJax_Preview">
+\min_{\vx\in\R^n} \frac{1}{2}\|r(\vx)\|_2^2,
+</div>
+<script type="math/tex; mode=display">
+\min_{\vx\in\R^n} \frac{1}{2}\|r(\vx)\|_2^2,
+</script>
+</div>
+<p>where <span><span class="MathJax_Preview">r:\R^n→\R^m</span><script type="math/tex">r:\R^n→\R^m</script></span> is the residual vector. The <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>th component of residual vector is <span><span class="MathJax_Preview">r_{i}(\vx):\R^n→\R</span><script type="math/tex">r_{i}(\vx):\R^n→\R</script></span>. The non-linear
+least squares problem reduces to the linear least squares problem if <span><span class="MathJax_Preview">r</span><script type="math/tex">r</script></span> is affine, i.e. <span><span class="MathJax_Preview">r(\vx) = \mA\vx-\vb</span><script type="math/tex">r(\vx) = \mA\vx-\vb</script></span>.</p>
+<p><strong>Example: Position estimation from ranges</strong> </p>
+<p><center>
+<img src="../img/lec5/sensor_localization.png" width = "200">
+</center></p>
+<p>Let <span><span class="MathJax_Preview">\vx \in \R^2</span><script type="math/tex">\vx \in \R^2</script></span> be an unknown vector. Fix <span><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> beacon positions <span><span class="MathJax_Preview">\vb_{i} \in \R^2,\ i = 1,\dots,m</span><script type="math/tex">\vb_{i} \in \R^2,\ i = 1,\dots,m</script></span>. 
+Suppose we have noisy measurements <span><span class="MathJax_Preview">\vrho \in \R^m</span><script type="math/tex">\vrho \in \R^m</script></span> of <span><span class="MathJax_Preview">2</span><script type="math/tex">2</script></span>-norm distance between a becon <span><span class="MathJax_Preview">\vb_{i}</span><script type="math/tex">\vb_{i}</script></span> and the unknown 
+signal <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span>, i.e.</p>
+<p>$$
+ρ_{i} = |\vx- \vb|_2 + ν_i \quad \text{for } i=1,\dots,m.
+$$
+Here, <span><span class="MathJax_Preview">\vnu \in \R^m</span><script type="math/tex">\vnu \in \R^m</script></span> is noise/measurement error vector. The position estimation from ranges problem is to estimate 
+<span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> given <span><span class="MathJax_Preview">\vrho</span><script type="math/tex">\vrho</script></span> and <span><span class="MathJax_Preview">\vb_i, \ i = 1,\dots, m</span><script type="math/tex">\vb_i, \ i = 1,\dots, m</script></span>.</p>
+<p>A natural approach to solve this problem is by finding <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> that minimizes <span><span class="MathJax_Preview">\sum_{i=1}^m(ρ_{i} - \|\vx- \vb\|_2)^2</span><script type="math/tex">\sum_{i=1}^m(ρ_{i} - \|\vx- \vb\|_2)^2</script></span>. 
+Define <span><span class="MathJax_Preview">r_i(\vx) := ρ_{i} - \|\vx- \vb\|_2</span><script type="math/tex">r_i(\vx) := ρ_{i} - \|\vx- \vb\|_2</script></span>. Then we can estimmate <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> by solving the non-linear least squares problem</p>
+<div>
+<div class="MathJax_Preview">
+\min_{\vx\in \R^n} \frac{1}{2}\|r(\vx)\|_2^2.
+</div>
+<script type="math/tex; mode=display">
+\min_{\vx\in \R^n} \frac{1}{2}\|r(\vx)\|_2^2.
+</script>
+</div>
+<p>In contrast to linear least squares program, the non-linear least squares program generally contain both global and local
+minimizers. We can will use the following approach to find a minimizer of NLLS.</p>
+<hr />
+<p><strong>Gauss-Newton method for NLLS</strong></p>
+<p>Given starting guess <span><span class="MathJax_Preview">\vx^{(0)}</span><script type="math/tex">\vx^{(0)}</script></span> <br>
+Repeat until covergence:<br></p>
+<ol>
+<li>linearize <span><span class="MathJax_Preview">r(x)</span><script type="math/tex">r(x)</script></span> near current guess <span><span class="MathJax_Preview">\bar{\vx} = \vx^{k}</span><script type="math/tex">\bar{\vx} = \vx^{k}</script></span></li>
+<li>solve a linear least squares problem to get the next guess <span><span class="MathJax_Preview">\vx^{k+1}</span><script type="math/tex">\vx^{k+1}</script></span>,</li>
+</ol>
+<hr />
                 
                   
                 
@@ -566,14 +495,28 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
+          <a href="../Regularized_LS/" title="Regularized least squares" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Regularized least squares
+              </span>
+            </div>
+          </a>
         
-          <a href="grades/" title="Grades" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+        
+          <a href="../../homework/" title="Submissions" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Grades
+                Submissions
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -605,11 +548,11 @@
       
     </div>
     
-      <script src="assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
-        <script src="javascripts/extra.js"></script>
+        <script src="../../javascripts/extra.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
