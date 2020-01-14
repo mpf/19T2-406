@@ -1,13 +1,7 @@
-# **CPSC 406: Homework 1 (Due Jan  17, 6pm)**
+# Homework 1 **(Due Jan  17, 6pm)**
 
-**Submission Instructions:** The solution will be submitted electronically, using the Canvas system. Solution should be
- typeset using LaTeX (handwritten solution will not be accepted). Using jupyter notebook to type the solution, which supports 
- Julia and Python, is recommended. If you are using jupyter notebook, submit both the ipynb file and its pdf output. 
- If you are not using juypter notebook, the pdf file must contain the codes relavant to the homework. In both cases,
- results of the code should be in the pdf file. See [here](../grades.md#Grades-and-policies) for policy on collaboration and 
- late submissions.
 
-1. **Backsolve** Here, we will explore the computational complexity of solving the system 
+1. **Backsolve.** Here, we will explore the computational complexity of solving the system 
 
     $$
     \mR\vx = \vb, \qquad \mR\in \R^{n\times n}
@@ -63,7 +57,7 @@
         O(n) + O(n-1) + \cdots + O(2) + O(1) = O(n^2) \text{ flops.}
         $$
     
-4. **Linear data fit** Download [data](hw1_p2_data.jld) (Here is the csv format of the same [data](hw1_p2_data.csv) ).
+4. **Linear data fit.** Download [data](hw1_p2_data.jld) (Here is the csv format of the same [data](hw1_p2_data.csv) ).
  Fit the best line 
 
     $$
@@ -75,7 +69,7 @@
         the fit residual.
 
 
-5. **Polynomial data fit**  Using the same data as above, fit the best order-$d$ 
+5. **Polynomial data fit.**  Using the same data as above, fit the best order-$d$ 
     polynomial to the points $(z_1,y_1),...,(z_n,y_n)$ , for $d = 2,3,4,5$. That is,
     find $x_1,...,x_{d+1}$ such that 
 
@@ -89,7 +83,7 @@
 
 
 
-6. **QR factorization** Consider a full rank, underdetermined but consistent 
+6. **QR factorization.** Consider a full rank, underdetermined but consistent 
     linear system $\mA\vx = \vb$, where $\mA$ is $m\times n$ with $m < n$. 
 
     7. Show how to use the QR factorization to obtain a soution of this system.
@@ -104,8 +98,9 @@
         x = randn(n)
         b = A*x        
         ```
+
         Write a Julia code for solving for $x$ using the procedure outlined in the previous 
-        part of the question. Record the runtime using the Julia calls $\texttt{time()}$. (Make sure you are not running anything else or it will interfere with 
+        part of the question. Record the runtime using the Julia call `time`. (Make sure you are not running anything else or it will interfere with 
         the timing results.) Record the runtimes for matrices of sizes  $(m,n) = (10,20)$, 
         $(100,200)$, $(100,2000)$,  $(100,20000)$, and $(100,200000)$. Compare the runtimes 
         against finding $x$ using $\vx = \mA\backslash \vb$.
@@ -114,7 +109,7 @@
        $\mA \in \R^{m\times n}$ is full rank, show how to use the QR factorization to obtain the least norm solution, i.e. find $\vx_{LN}$ that solves
 
         $$
-        \min_{\vx\in\R^n} \|\vx\|_2^2 \quad \text{ subject to } \quad \mA\vx = \vb
+        \min_{\vx\in\R^n}\quad \|\vx\|_2^2 \quad \text{ subject to } \quad \mA\vx = \vb
         $$
         
         using QR decomposition.

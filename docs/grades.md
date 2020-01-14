@@ -2,7 +2,7 @@
 
 ##  Grade distribution
 
-* assignments (approximately 5-6): 30%
+* assignments (6): 30%
 * midterm exam: 30%
 * final exam: 40%
 
