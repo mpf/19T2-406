@@ -21,11 +21,14 @@ This is a tentative schedule. It will change often.
 | 15 | 7 Feb |      | | |
 | 16 | 10 Feb |      | | |
 | 17 | 12 Feb |      | | |
-| 18 | 1 Feb |      | | |
-| 19 | 24 Feb |      | | |
-| 20 | 26 Feb |      | | |
+| 18 | 14 Feb |      | | |
+|    | 17 Feb | Holiday (Family Day) | | |
+|    | 19 Feb | no lecture (spring break) | | |
+|    | 21 Feb | no lecture (spring break)| | |
+| 19 | 24 Feb   |      | | |
+| 20 | 26 Feb  |      | | |
 | 21 | 28 Feb |      | | |
-| 22 | 2 Mar |      | | |
+| 22 |  2 Mar |      | | |
 | 23 | 4 Mar |      | | |
 | 24 | 6 Mar |      | | |
 | 25 | 9 Mar |      | | |
