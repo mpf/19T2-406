@@ -341,9 +341,45 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Non-linear least squares
+      </label>
+    
     <a href="./" title="Non-linear least squares" class="md-nav__link md-nav__link--active">
       Non-linear least squares
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linearization-of-residual" class="md-nav__link">
+    Linearization of residual
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dampening" class="md-nav__link">
+    Dampening
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -418,6 +454,29 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linearization-of-residual" class="md-nav__link">
+    Linearization of residual
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dampening" class="md-nav__link">
+    Dampening
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -433,10 +492,14 @@
 <p>The non-linear least squares problem is</p>
 <div>
 <div class="MathJax_Preview">
+\begin{equation}\label{Non-linearleastsquares_prob}
 \min_{\vx\in\R^n} \frac{1}{2}\|r(\vx)\|_2^2,
+\end{equation}
 </div>
 <script type="math/tex; mode=display">
+\begin{equation}\label{Non-linearleastsquares_prob}
 \min_{\vx\in\R^n} \frac{1}{2}\|r(\vx)\|_2^2,
+\end{equation}
 </script>
 </div>
 <p>where <span><span class="MathJax_Preview">r:\R^n→\R^m</span><script type="math/tex">r:\R^n→\R^m</script></span> is the residual vector. The <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>th component of residual vector is <span><span class="MathJax_Preview">r_{i}(\vx):\R^n→\R</span><script type="math/tex">r_{i}(\vx):\R^n→\R</script></span>. The non-linear
@@ -473,6 +536,112 @@ Repeat until covergence:<br></p>
 <li>linearize <span><span class="MathJax_Preview">r(x)</span><script type="math/tex">r(x)</script></span> near current guess <span><span class="MathJax_Preview">\bar{\vx} = \vx^{k}</span><script type="math/tex">\bar{\vx} = \vx^{k}</script></span></li>
 <li>solve a linear least squares problem to get the next guess <span><span class="MathJax_Preview">\vx^{k+1}</span><script type="math/tex">\vx^{k+1}</script></span>,</li>
 </ol>
+<hr />
+<h2 id="linearization-of-residual"><strong>Linearization of residual</strong><a class="headerlink" href="#linearization-of-residual" title="Permanent link">&para;</a></h2>
+<p>We can solve non-linear least squares problem \eqref{Non-linearleastsquares_prob} by solving a sequence of linear least squares 
+problem. These linear least squares subproblem results from linearization of <span><span class="MathJax_Preview">r(\vx)</span><script type="math/tex">r(\vx)</script></span> at current
+estimate of the ground truth <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span>. </p>
+<p>The linear approximation of <span><span class="MathJax_Preview">r(\vx)</span><script type="math/tex">r(\vx)</script></span> at a point <span><span class="MathJax_Preview">\bar{\vx} \in \R^n</span><script type="math/tex">\bar{\vx} \in \R^n</script></span> is</p>
+<div>
+<div class="MathJax_Preview">
+r(\vx) = \bmat r_1(\vx)\\\vdots\\ r_n(\vx)\emat \approx \bmat r_1(\bar{\vx}) +\nabla
+r_1(\bar{\vx})\trans(\vx - \bar{\vx}) \\ \vdots \\  r_m(\bar{\vx}) +\nabla 
+r_m(\bar{\vx})\trans(\vx - \bar{\vx}) \emat = A(\bar{\vx}) \vx -b(\bar{\vx}),
+</div>
+<script type="math/tex; mode=display">
+r(\vx) = \bmat r_1(\vx)\\\vdots\\ r_n(\vx)\emat \approx \bmat r_1(\bar{\vx}) +\nabla
+r_1(\bar{\vx})\trans(\vx - \bar{\vx}) \\ \vdots \\  r_m(\bar{\vx}) +\nabla 
+r_m(\bar{\vx})\trans(\vx - \bar{\vx}) \emat = A(\bar{\vx}) \vx -b(\bar{\vx}),
+</script>
+</div>
+<p>where <span><span class="MathJax_Preview">A(\bar{\vx})\in\R^{m\times n}</span><script type="math/tex">A(\bar{\vx})\in\R^{m\times n}</script></span> is the Jacobian of the mappring <span><span class="MathJax_Preview">r(x)</span><script type="math/tex">r(x)</script></span> at <span><span class="MathJax_Preview">\bar{\vx}</span><script type="math/tex">\bar{\vx}</script></span> and <span><span class="MathJax_Preview">b(\bar{\vx}) = 
+A(\bar{\vx})\vx - r(\bar{\vx}) \in \R^m</span><script type="math/tex">b(\bar{\vx}) = 
+A(\bar{\vx})\vx - r(\bar{\vx}) \in \R^m</script></span>. The Jacobian of <span><span class="MathJax_Preview">r(x)</span><script type="math/tex">r(x)</script></span> at <span><span class="MathJax_Preview">\bar{\vx}</span><script type="math/tex">\bar{\vx}</script></span> is </p>
+<div>
+<div class="MathJax_Preview">
+A(\bar{\vx}) = \bmat \nabla 
+r_1(\bar{\vx})\trans\\ \vdots \\ \nabla r_m(\bar{\vx})\trans\emat.
+</div>
+<script type="math/tex; mode=display">
+A(\bar{\vx}) = \bmat \nabla 
+r_1(\bar{\vx})\trans\\ \vdots \\ \nabla r_m(\bar{\vx})\trans\emat.
+</script>
+</div>
+<p>We get the following minimization program after replacing <span><span class="MathJax_Preview">r(\vx)</span><script type="math/tex">r(\vx)</script></span> with its linear 
+approximation at <span><span class="MathJax_Preview">\vx^{(k)}</span><script type="math/tex">\vx^{(k)}</script></span>:</p>
+<div>
+<div class="MathJax_Preview">
+\vx^{(k+1)} = \mathop{\text{argmin}}_{\vx\in\R^n} \|A(\vx^{(k)})\vx - b(\vx^{(k)})\|_2^2.
+</div>
+<script type="math/tex; mode=display">
+\vx^{(k+1)} = \mathop{\text{argmin}}_{\vx\in\R^n} \|A(\vx^{(k)})\vx - b(\vx^{(k)})\|_2^2.
+</script>
+</div>
+<p>Starting at a current estimate <span><span class="MathJax_Preview">\vx^{(k)}</span><script type="math/tex">\vx^{(k)}</script></span>, we can determine the <span><span class="MathJax_Preview">\vx^{(k+1)}</span><script type="math/tex">\vx^{(k+1)}</script></span> by solving the 
+above linear least squares program.</p>
+<h2 id="dampening"><strong>Dampening</strong><a class="headerlink" href="#dampening" title="Permanent link">&para;</a></h2>
+<p>For ease of exposition, let </p>
+<div>
+<div class="MathJax_Preview">
+\bar{\mA} = A(\vx^{(k)}), \quad \bar{\vb} = b(\vx^{(k)}), \text{ and }  \bar{\vr} = r(\vx^{(k)}).
+</div>
+<script type="math/tex; mode=display">
+\bar{\mA} = A(\vx^{(k)}), \quad \bar{\vb} = b(\vx^{(k)}), \text{ and }  \bar{\vr} = r(\vx^{(k)}).
+</script>
+</div>
+<p>We assume that <span><span class="MathJax_Preview">\bar{\mA}</span><script type="math/tex">\bar{\mA}</script></span> is full rank. Consider</p>
+<div>
+<div class="MathJax_Preview">
+\begin{align*}
+\vx^{(k+1)} = &amp;\mathop{\text{argmin}}_{\vx\in\R^n} \|\bar{\mA}\vx - \bar{\vb}\|_2^2\\
+=&amp; (\bar{\mA}\trans\bar{\mA})^{-1}\bar{\mA}\trans\bar{\vb}\\
+=&amp; (\bar{\mA}\trans\bar{\mA})^{-1}\bar{\mA}\trans(\bar{\mA}\vx^{(k)} - \bar{\vr})\\
+= &amp;\vx^{(k)} - (\bar{\mA}\trans\bar{\mA})^{-1}\bar{\mA}\trans\bar{\vr}
+\end{align*}
+</div>
+<script type="math/tex; mode=display">
+\begin{align*}
+\vx^{(k+1)} = &\mathop{\text{argmin}}_{\vx\in\R^n} \|\bar{\mA}\vx - \bar{\vb}\|_2^2\\
+=& (\bar{\mA}\trans\bar{\mA})^{-1}\bar{\mA}\trans\bar{\vb}\\
+=& (\bar{\mA}\trans\bar{\mA})^{-1}\bar{\mA}\trans(\bar{\mA}\vx^{(k)} - \bar{\vr})\\
+= &\vx^{(k)} - (\bar{\mA}\trans\bar{\mA})^{-1}\bar{\mA}\trans\bar{\vr}
+\end{align*}
+</script>
+</div>
+<p>Here, <span><span class="MathJax_Preview">\vx^{(k+1)}</span><script type="math/tex">\vx^{(k+1)}</script></span> is the <span><span class="MathJax_Preview">k+1</span><script type="math/tex">k+1</script></span> Gauss-Newton estimate. Note that <span><span class="MathJax_Preview">(\bar{\mA}\trans\bar{\mA})^{-1}\bar{\mA}\trans\bar{\vr}</span><script type="math/tex">(\bar{\mA}\trans\bar{\mA})^{-1}\bar{\mA}\trans\bar{\vr}</script></span> solves <span><span class="MathJax_Preview">\min_{\vx\in\R^n}
+\|\bar{\mA}\vx - \bar{\vr}\|_2^2</span><script type="math/tex">\min_{\vx\in\R^n}
+\|\bar{\mA}\vx - \bar{\vr}\|_2^2</script></span>. Let</p>
+<div>
+<div class="MathJax_Preview">
+\vz^{(k)} = \mathop{\text{argmin}}_{\vx\in\R^n} \|\bar{\mA}\vx - \bar{\vr}\|_2^2.
+</div>
+<script type="math/tex; mode=display">
+\vz^{(k)} = \mathop{\text{argmin}}_{\vx\in\R^n} \|\bar{\mA}\vx - \bar{\vr}\|_2^2.
+</script>
+</div>
+<p>The dampened Gauss-Newton step is</p>
+<div>
+<div class="MathJax_Preview">
+\vx^{(k+1)} = \vx^{(k)} - \alpha \vz^{(k)},
+ </div>
+<script type="math/tex; mode=display">
+\vx^{(k+1)} = \vx^{(k)} - \alpha \vz^{(k)},
+ </script>
+</div>
+<p>where <span><span class="MathJax_Preview">\alpha \in (0,1]</span><script type="math/tex">\alpha \in (0,1]</script></span>.</p>
+<hr />
+<p><strong>Dampened Gauss-Newton method for NLLS</strong></p>
+<p>Given starting guess <span><span class="MathJax_Preview">\vx^{(0)}</span><script type="math/tex">\vx^{(0)}</script></span> <br>
+Repeat until covergence:<br></p>
+<ol>
+<li>linearize <span><span class="MathJax_Preview">r(x)</span><script type="math/tex">r(x)</script></span> near current guess <span><span class="MathJax_Preview">\bar{\vx} = \vx^{k}</span><script type="math/tex">\bar{\vx} = \vx^{k}</script></span>:<br>
+    <span><span class="MathJax_Preview">\quad r(\vx) \approx r(\bar{\vx}) - A(\bar{\vx})(\vx-\bar{\vx})</span><script type="math/tex">\quad r(\vx) \approx r(\bar{\vx}) - A(\bar{\vx})(\vx-\bar{\vx})</script></span></li>
+<li>solve a linear least squares problem:<br>
+    <span><span class="MathJax_Preview">\quad \vz^{(k)} = \mathop{\text{argmin}}_{\vx\in\R^n}\|A(\bar{\vx})\vx - r(\bar{\vx})\|_2^2</span><script type="math/tex">\quad \vz^{(k)} = \mathop{\text{argmin}}_{\vx\in\R^n}\|A(\bar{\vx})\vx - r(\bar{\vx})\|_2^2</script></span></li>
+<li>take damped step:<br>
+    <span><span class="MathJax_Preview">\quad \vx^{(k+1)} = \vx^{(k)} - \alpha^{(k)}\vz^{(k)}, \quad 0&lt;\alpha^{(k)}\leq 1</span><script type="math/tex">\quad \vx^{(k+1)} = \vx^{(k)} - \alpha^{(k)}\vz^{(k)}, \quad 0<\alpha^{(k)}\leq 1</script></span></li>
+</ol>
+<p>until converged</p>
 <hr />
                 
                   
