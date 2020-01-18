@@ -64,4 +64,5 @@ nav:
       - Non-linear least squares: notes/Non-linear_LS.md
   - Homework:
       - Submissions: homework/index.md
-      - Homework 1: homework/hw1.md
+      - Homework 1: homework/hw1/hw1.md
+      - Homework 2: homework/hw2/hw2.md

@@ -6,7 +6,7 @@ This is a tentative schedule. It will change often.
 | ------- | ---- | ----- | ----- | -------- |
 | 1 | 06 Jan / Mon | Introduction |||
 | 2 | 08 Jan / Wed| [Least squares](notes/Least_squares.md#LeastSquares) | [notebook](https://nbviewer.jupyter.org/github/mpf/19T2-406/blob/master/docs/notebooks/least-squares.ipynb)                                 | |
-| 3 | 10 Jan / Fri| [QR factorization](notes/QR_factorization.md) | | [hw1](homework/hw1.md) out |
+| 3 | 10 Jan / Fri| [QR factorization](notes/QR_factorization.md) | | [hw1](homework/hw1/hw1.md) out |
 | 4 | 13 Jan / Mon| [Regularized least squares](notes/Regularized_LS.md#Regularizedleastsquares) | [notebook](https://nbviewer.jupyter.org/github/mpf/19T2-406/blob/master/docs/notebooks/regularizedLS.ipynb) | |
 | 5 | 15 Jan / Wed| Non-linear least squares  | [notebook](https://nbviewer.jupyter.org/github/mpf/19T2-406/blob/master/docs/notebooks/gaussnewton.ipynb) | |
 | 6 | 17 Jan / Fri| Unconstrained optimization | | hw1 due at 6pm |
