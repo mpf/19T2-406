@@ -10,10 +10,10 @@ This is a tentative schedule. It will change often.
 | 4 | 13 Jan / Mon| [Regularized least squares](notes/Regularized_LS.md#Regularizedleastsquares) | [notebook](https://nbviewer.jupyter.org/github/mpf/19T2-406/blob/master/docs/notebooks/regularizedLS.ipynb) | |
 | 5 | 15 Jan / Wed| Non-linear least squares  | [notebook](https://nbviewer.jupyter.org/github/mpf/19T2-406/blob/master/docs/notebooks/gaussnewton.ipynb) | |
 | 6 | 17 Jan / Fri| Unconstrained optimization | | hw1 due at 6pm |
-| 7 | 20 Jan / Mon| Unconstrained optimization | | |
+| 7 | 20 Jan / Mon| Unconstrained optimization | | [hw2](homework/hw2/hw2.md) out|
 | 8 | 22 Jan / Wed| Quadratic functions | | |
 | 9 | 24 Jan / Fri| Quadratic functions | | |
-| 10 | 27 Jan / Mon| Descent methods | | |
+| 10 | 27 Jan / Mon| Descent methods | | hw2 due at 6pm |
 | 11 | 29 Jan / Wed| Descent methods | | |
 | 12 | 31 Jan / Fri | Newton's methods | | |
 | 13 | 3 Feb / Mon|  Quasi-Newton's methods| | |
