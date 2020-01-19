@@ -9,12 +9,12 @@ This is a tentative schedule. It will change often.
 | 3 | 10 Jan / Fri| [QR factorization](notes/QR_factorization.md) | | [hw1](homework/hw1/hw1.md) out |
 | 4 | 13 Jan / Mon| [Regularized least squares](notes/Regularized_LS.md#Regularizedleastsquares) | [notebook](https://nbviewer.jupyter.org/github/mpf/19T2-406/blob/master/docs/notebooks/regularizedLS.ipynb) | |
 |   | 15 Jan / Wed|  no lecture             |  | |
-| 5 | 17 Jan / Fri| Non-linear least squares  | [notebook](https://nbviewer.jupyter.org/github/mpf/19T2-406/blob/master/docs/notebooks/gaussnewton.ipynb) | |
-| 6 | 20 Jan / Mon| Unconstrained optimization | | hw1 due at 6pm |
-| 7 | 22 Jan / Wed| Unconstrained optimization | | [hw2](homework/hw2/hw2.md) out|
+| 5 | 17 Jan / Fri| Non-linear least squares  | [notebook](https://nbviewer.jupyter.org/github/mpf/19T2-406/blob/master/docs/notebooks/gaussnewton.ipynb) | hw1 due at 6pm |
+| 6 | 20 Jan / Mon| Unconstrained optimization | | [hw2](homework/hw2/hw2.md) out |
+| 7 | 22 Jan / Wed| Unconstrained optimization | | |
 | 8 | 24 Jan / Fri| Quadratic functions | | |
-| 9 | 27 Jan / Mon| Quadratic functions | | |
-| 10 | 29 Jan / Wed| Descent methods | | hw2 due at 6pm |
+| 9 | 27 Jan / Mon| Quadratic functions | |hw2 due at 6pm |
+| 10 | 29 Jan / Wed| Descent methods | |  |
 | 11 | 31 Jan / Fri| Descent methods | | |
 | 12 | 3 Feb / Mon | Newton's methods | | |
 | 13 | 5 Feb / Wed|  Quasi-Newton's methods| | |
