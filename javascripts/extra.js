@@ -117,7 +117,7 @@ window.MathJax = {
             
             red: ["{\\color{red}#1}",1],
 
-            minimize: ["\\underset{#1}{\\mathrm{mimnimize}}",1],
+            minimize: ["\\underset{#1}{\\mathrm{minimize}}",1],
             argmin: ["\\underset{#1}{\\mathrm{argmin}}",1],
             argmax: ["\\underset{#1}{\\mathrm{arg,ax}}",1],
             st: ["\\text{subject to}"],
