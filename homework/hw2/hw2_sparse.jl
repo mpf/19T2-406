@@ -29,7 +29,7 @@ bb = AA*x0+randn(m)./5;
 
 # save data
 save("docs/homework/hw2/hw2_p2_sparse_A.jld","data", AA)
-CSV.write("docs/homework/hw2/hw2_p2_sparse_A.csv", DataFrame(A), writeheader=false)
+CSV.write("docs/homework/hw2/hw2_p2_sparse_A.csv", DataFrame(AA), writeheader=false)
 
 save("docs/homework/hw2/hw2_p2_sparse_b.jld","data", bb)
 CSV.write("docs/homework/hw2/hw2_p2_sparse_b.csv", DataFrame(bb), writeheader=false)
