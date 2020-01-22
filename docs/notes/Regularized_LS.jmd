@@ -123,3 +123,4 @@ and the corresponding normal equations is
 
 $$
 (\mA\trans\mA + \gamma\mD\trans\mD)\vx = \mA\trans\vb.
+$$
