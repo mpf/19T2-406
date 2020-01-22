@@ -91,8 +91,35 @@ $$f(x) = f(x^*) + \underbrace{f'(x^*)(x-x^*)}_{ =\ 0} + \underbrace{\frac{1}{2}f
 \underbrace{O((x-x^*)^3)}_{\text{small}}$$
 
 for $x$ close to $x^*$. So $f(x) > f(x^*)$ for all $x$ near $x^*$, which imples $x^*$ is local minimizer. Similarly, we can prove $f(x^*)=0$ and
-$f''^(x^*)<0$ implies $x^*$ is a local maximizer. In the next section we will generalize these sufficient condition for any real valued function 
+$f''(x^*)<0$ implies $x^*$ is a local maximizer. In the next section we will generalize these sufficient condition for any real valued function 
 $f:\R^n \rightarrow \R$.
 
+## **Gradient and Hessian**
+
+For a differentiable function $f:\R^n\to\R$, the gradient of $f$ at $\vx$ is a vector in $\R^n$. The gradient of $f$ at $\vx$ contain the partial 
+derivative of $f$ at $x$ and is given by
+
+$$\nabla f(x) = \bmat\frac{\partial f(x)}{\partial x_1}\\\frac{\partial f(x)}{\partial x_2}\\\vdots\\
+\frac{\partial f(x)}{\partial x_n}\\\emat.
+$$
+
+Similarly, the Hessian of $f$ at $x$ is a symmetric matrix in $\R^{n\times n}$ that contain second partial derivative information and is given by
+
+$$
+\nabla^2 f(x) = 
+\bmat
+\frac{\partial f^2(x)}{\partial x_1\partial x_1} & \frac{\partial f^2(x)}{\partial x_1\partial x_2} & \cdots & 
+\frac{\partial f^2(x)}{\partial x_1\partial x_n}\\
+ \frac{\partial f^2(x)}{\partial x_2\partial x_1} & 
+  \frac{\partial f^2(x)}{\partial x_2\partial x_2}& \cdots &
+   \frac{\partial f^2(x)}{\partial x_2\partial x_n}\\
+\vdots & \vdots & \ddots & \vdots \\
+ \frac{\partial f^2(x)}{\partial x_n\partial x_1} &  
+ \frac{\partial f^2(x)}{\partial x_n\partial x_2} & \cdots &  \frac{\partial f^2(x)}{\partial x_n\partial x_n}\\
+\emat
+$$
+
+For example, for a function $f(x) = x_1^2 + 8x_1x_2  - 2x_3^3$, its gradiet is $\nabla f(x) = \bmat 2x_1 + 8x_2\\8x_1\\-6x_3^2\emat$,
+and its Hessian is $\nabla^2 f(x) = \bmat 2 & 8 & 0 \\ 8 & 0 & 0 \\ 0 & 0 & -12x_3\emat.$
 
 
