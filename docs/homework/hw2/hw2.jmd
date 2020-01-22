@@ -1,6 +1,6 @@
 # **CPSC 406: Homework 2 (Due Jan  27, 6pm)**
 
-1. (Beck 3.1) Let $\mA\in \R^{m\times n}$, $\vb\in \R^n$, $\mL \in \R^{p\times n}$ and scalar $\lambda >0$. Consider the regularized least squares problem
+1. (Beck 3.1) Let $\mA\in \R^{m\times n}$, $\vb\in \R^m$, $\mL \in \R^{p\times n}$ and scalar $\lambda >0$. Consider the regularized least squares problem
 
 	$$\mathop{\text{minimize}}_{\vx\in \R^n} \quad f(\vx) := \|\mA \vx-\vb\|_2^2 + \lambda \|\mL\vx\|_2^2.$$
 
