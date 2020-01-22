@@ -626,13 +626,13 @@ a reformulation of the weighted leas squares objective into a familiar least squ
 </script>
 </div>
 <p>So the solution to the weighted least squares minimization program \eqref{Regularized_LS_identity}
-satisfies the normal equation <span><span class="MathJax_Preview">\hat{\mA}\hat{\mA}^\intercal\vx = \hat{\mA}\hat{\vb}</span><script type="math/tex">\hat{\mA}\hat{\mA}^\intercal\vx = \hat{\mA}\hat{\vb}</script></span>, which simplifies to </p>
+satisfies the normal equation <span><span class="MathJax_Preview">\hat{\mA}\trans\hat{\mA}\vx = \hat{\mA}\trans\hat{\vb}</span><script type="math/tex">\hat{\mA}\trans\hat{\mA}\vx = \hat{\mA}\trans\hat{\vb}</script></span>, which simplifies to </p>
 <div>
 <div class="MathJax_Preview">
-(\mI + \gamma\mD\mD^\intercal)\vx = \vb.
+(\mI + \gamma\mD\trans\mD)\vx = \vb.
 </div>
 <script type="math/tex; mode=display">
-(\mI + \gamma\mD\mD^\intercal)\vx = \vb.
+(\mI + \gamma\mD\trans\mD)\vx = \vb.
 </script>
 </div>
 <h2 id="regularized-least-squares-aka-tikhonov"><strong>Regularized least squares (aka Tikhonov)</strong><a class="headerlink" href="#regularized-least-squares-aka-tikhonov" title="Permanent link">&para;</a></h2>
@@ -672,14 +672,8 @@ parameter. The objective function can be reformulated as an least squares object
 </script>
 </div>
 <p>and the corresponding normal equations is</p>
-<div>
-<div class="MathJax_Preview">
-(\mA\mA^\intercal + \gamma\mD\mD^\intercal)\vx = \vb.
-</div>
-<script type="math/tex; mode=display">
-(\mA\mA^\intercal + \gamma\mD\mD^\intercal)\vx = \vb.
-</script>
-</div>
+<p>$$
+(\mA\trans\mA + \gamma\mD\trans\mD)\vx = \mA\trans\vb.</p>
                 
                   
                 
