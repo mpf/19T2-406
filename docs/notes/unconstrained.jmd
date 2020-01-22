@@ -61,7 +61,7 @@ plot(plot(x,y,f,st=:surface,camera=(100,30)),
 ``` 
 
 The global minimizer is $\begin{pmatrix} \frac{1}{\sqrt{2}},& \frac{1}{\sqrt{2}} \end{pmatrix}$ and the 
-gobal maximizer is $\bmatp -\frac{1}{\sqrt{2}}, & -\frac{1}{\sqrt{2}} \ematp$. 
+global maximizer is $\bmatp -\frac{1}{\sqrt{2}}, & -\frac{1}{\sqrt{2}} \ematp$. 
 ----
 
 ## **Sufficient conditions in 1-d**

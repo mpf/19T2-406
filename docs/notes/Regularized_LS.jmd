@@ -88,10 +88,10 @@ $$
 $$
 
 So the solution to the weighted least squares minimization program \eqref{Regularized_LS_identity}
-satisfies the normal equation $\hat{\mA}\hat{\mA}^\intercal\vx = \hat{\mA}\hat{\vb}$, which simplifies to 
+satisfies the normal equation $\hat{\mA}\trans\hat{\mA}\vx = \hat{\mA}\trans\hat{\vb}$, which simplifies to 
 
 $$
-(\mI + \gamma\mD\mD^\intercal)\vx = \vb.
+(\mI + \gamma\mD\trans\mD)\vx = \vb.
 $$
 
 ## **Regularized least squares (aka Tikhonov)**
@@ -122,5 +122,5 @@ $$
 and the corresponding normal equations is
 
 $$
-(\mA\mA^\intercal + \gamma\mD\mD^\intercal)\vx = \vb.
-$$
+(\mA\trans\mA + \gamma\mD\trans\mD)\vx = \mA\trans\vb.
+s
