@@ -1,0 +1,69 @@
+# **Unconstrained Optimization**
+
+In this lecture we consider unconstrained optimization given by
+
+$$\begin{equation}\label{unconstrained_prob} \mathop{\text{minimize}}_{\vx \in \set{S}} f(\vx),\end{equation}$$
+
+where $f:\R^n \rightarrow \R$ and $\set{S}\subset \R^n$. In the course, we will primarily consider minimization problems. This is because a 
+maximizer of $f(\vx)$ is the minimzer of $-f(\vx)$. 
+
+## **Optimality**
+
+A point $\vx^*\in \set{S}$ is a 
+
+1. **global minimizer** of $f$ if $f(\vx^*) \leq f(\vx)$ for all $\vx\in \mS$
+2. **global maximizer** of $f$ if $f(\vx^*) \geq f(\vx)$ for all $\vx\in \mS$
+3. **local minimizer** of $f$ if $f(\vx^*) \leq f(\vx)$ for all $\vx\in \mS$ where $\|\vx-\vx^*\|_2 \leq\epsilon$ 
+4. **local maximizer** of $f$ if $f(\vx^*) \geq f(\vx)$ for all $\vx\in \mS$ where $\|\vx-\vx^*\|_2 \leq\epsilon$ 
+
+for some $\epsilon > 0$.  A maximizer (or minimizer) $\vx^*$ of \eqref{unconstrained_prob} is a strict maximizer (or minimizer) if for all points 
+in a neighborhood of $\vx^*$, the objective $f(x)$ does not attain the value of $f(\vx^{*})$. Equivalently, this definition of strict maximizer/minimizer 
+in the global case can be stated as: $\vx^*$ is a strict global  min or max if for all $\vx\in \set{S}$, we have  $f(\vx^*) = f(\vx)$ if and only if $\vx = \vx^*$.
+
+<center>
+<img src="../img/lec6/unconstrained_opto.png" width = "400">
+</center>
+
+The above figure shows that even if the optimality is attained, the optimal point may not be unique. There are cases when the optimal point is not attained or
+even exist. An example of these cases are shown below
+
+<center>
+    <img src="../img/lec6/oneoverx.png" width = "300">     <img src="../img/lec6/logfunction.png" width = "300">
+</center>
+----
+$\exa{1}$ Consider the minimization program
+
+$$\mathop{\text{minimize}}_{x,y} \{f(x,y) = x + y: x^2 + y^2 \leq 2\}.$$
+
+The figure below shows the interaction bewtween the objective fuction and set $\{(x,y):x^2 + y^2 \leq 2\}$. The pink lines are the "level sets" and the arrows
+are directions of descent. The optimal point is $\bmat -1\\ -1 \emat$.
+
+<center>
+    <img src="../img/lec6/linear-2d-circleconstrained.png" width = "300">   
+</center>
+----
+$\exa{2}$ Consider the minimization program
+
+$$ \mathop{\text{minimize}}_{x,y} \{f(x,y) = \frac{x+y}{x^2+y^2+1}:x,y\in\R\}.$$
+
+The surface and contour plots of $f(x,y)$ is
+
+```julia
+using Plots; pyplot()
+f(x,y) = (x+y)/(x^2+y^2+1)
+x = range(-4,stop=4,length=100)
+y = range(-5,stop=5,length = 100)
+
+pyplot(size=(700,200))
+plot(plot(x,y,f,st=:surface,camera=(100,30)),
+	plot(x,y,f,st=:contour,camera=(100,30)))
+
+``` 
+
+The global minimizer is $\begin{pmatrix} \frac{1}{\sqrt{2}},& \frac{1}{\sqrt{2}} \end{pmatrix}$ and the 
+gobal maximizer is $\bmatp -\frac{1}{\sqrt{2}}, & -\frac{1}{\sqrt{2}} \ematp$. 
+----
+
+
+
+
