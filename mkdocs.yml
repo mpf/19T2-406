@@ -62,6 +62,7 @@ nav:
       - QR factorization: notes/QR_factorization.md
       - Regularized least squares: notes/Regularized_LS.md
       - Non-linear least squares: notes/Non-linear_LS.md
+      - Unconstrained optimization: notes/unconstrained.md
   - Homework:
       - Submissions: homework/index.md
       - Homework 1: homework/hw1/hw1.md

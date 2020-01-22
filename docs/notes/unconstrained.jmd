@@ -48,7 +48,7 @@ $$ \mathop{\text{minimize}}_{x,y} \{f(x,y) = \frac{x+y}{x^2+y^2+1}:x,y\in\R\}.$$
 
 The surface and contour plots of $f(x,y)$ is
 
-````julia
+```julia
 using Plots; pyplot()
 f(x,y) = (x+y)/(x^2+y^2+1)
 x = range(-4,stop=4,length=100)
@@ -57,12 +57,8 @@ y = range(-5,stop=5,length = 100)
 pyplot(size=(700,200))
 plot(plot(x,y,f,st=:surface,camera=(100,30)),
 	plot(x,y,f,st=:contour,camera=(100,30)))
-````
 
-
-![](figures/unconstrained_1_1.png)
-
-
+``` 
 
 The global minimizer is $\begin{pmatrix} \frac{1}{\sqrt{2}},& \frac{1}{\sqrt{2}} \end{pmatrix}$ and the 
 gobal maximizer is $\bmatp -\frac{1}{\sqrt{2}}, & -\frac{1}{\sqrt{2}} \ematp$. 

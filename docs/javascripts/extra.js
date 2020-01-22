@@ -114,6 +114,10 @@ window.MathJax = {
 
             bmat: ["\\begin{bmatrix}"],
             emat: ["\\end{bmatrix}"],
+
+            bmatp: ["\\begin{pmatrix}"],
+            ematp: ["\\end{pmatrix}"],
+            
             
             red: ["{\\color{red}#1}",1],
 
