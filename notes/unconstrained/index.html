@@ -385,6 +385,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#gradient-and-hessian" class="md-nav__link">
+    Gradient and Hessian
+  </a>
+  
+</li>
+      
       
       
       
@@ -495,6 +502,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#gradient-and-hessian" class="md-nav__link">
+    Gradient and Hessian
+  </a>
+  
+</li>
+      
       
       
       
@@ -599,8 +613,50 @@ to use second derivative information to determine if these critial points are mi
 \underbrace{O((x-x^*)^3)}_{\text{small}}</script>
 </div>
 <p>for <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> close to <span><span class="MathJax_Preview">x^*</span><script type="math/tex">x^*</script></span>. So <span><span class="MathJax_Preview">f(x) &gt; f(x^*)</span><script type="math/tex">f(x) > f(x^*)</script></span> for all <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> near <span><span class="MathJax_Preview">x^*</span><script type="math/tex">x^*</script></span>, which imples <span><span class="MathJax_Preview">x^*</span><script type="math/tex">x^*</script></span> is local minimizer. Similarly, we can prove <span><span class="MathJax_Preview">f(x^*)=0</span><script type="math/tex">f(x^*)=0</script></span> and
-<span><span class="MathJax_Preview">f''^(x^*)&lt;0</span><script type="math/tex">f''^(x^*)<0</script></span> implies <span><span class="MathJax_Preview">x^*</span><script type="math/tex">x^*</script></span> is a local maximizer. In the next section we will generalize these sufficient condition for any real valued function 
+<span><span class="MathJax_Preview">f''(x^*)&lt;0</span><script type="math/tex">f''(x^*)<0</script></span> implies <span><span class="MathJax_Preview">x^*</span><script type="math/tex">x^*</script></span> is a local maximizer. In the next section we will generalize these sufficient condition for any real valued function 
 <span><span class="MathJax_Preview">f:\R^n \rightarrow \R</span><script type="math/tex">f:\R^n \rightarrow \R</script></span>.</p>
+<h2 id="gradient-and-hessian"><strong>Gradient and Hessian</strong><a class="headerlink" href="#gradient-and-hessian" title="Permanent link">&para;</a></h2>
+<p>For a differentiable function <span><span class="MathJax_Preview">f:\R^n\to\R</span><script type="math/tex">f:\R^n\to\R</script></span>, the gradient of <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> at <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> is a vector in <span><span class="MathJax_Preview">\R^n</span><script type="math/tex">\R^n</script></span>. The gradient of <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> at <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> contain the partial 
+derivative of <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> at <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> and is given by</p>
+<div>
+<div class="MathJax_Preview">\nabla f(x) = \bmat\frac{\partial f(x)}{\partial x_1}\\\frac{\partial f(x)}{\partial x_2}\\\vdots\\
+\frac{\partial f(x)}{\partial x_n}\\\emat.
+</div>
+<script type="math/tex; mode=display">\nabla f(x) = \bmat\frac{\partial f(x)}{\partial x_1}\\\frac{\partial f(x)}{\partial x_2}\\\vdots\\
+\frac{\partial f(x)}{\partial x_n}\\\emat.
+</script>
+</div>
+<p>Similarly, the Hessian of <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> at <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> is a symmetric matrix in <span><span class="MathJax_Preview">\R^{n\times n}</span><script type="math/tex">\R^{n\times n}</script></span> that contain second partial derivative information and is given by</p>
+<div>
+<div class="MathJax_Preview">
+\nabla^2 f(x) = 
+\bmat
+\frac{\partial f^2(x)}{\partial x_1\partial x_1} &amp; \frac{\partial f^2(x)}{\partial x_1\partial x_2} &amp; \cdots &amp; 
+\frac{\partial f^2(x)}{\partial x_1\partial x_n}\\
+ \frac{\partial f^2(x)}{\partial x_2\partial x_1} &amp; 
+  \frac{\partial f^2(x)}{\partial x_2\partial x_2}&amp; \cdots &amp;
+   \frac{\partial f^2(x)}{\partial x_2\partial x_n}\\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+ \frac{\partial f^2(x)}{\partial x_n\partial x_1} &amp;  
+ \frac{\partial f^2(x)}{\partial x_n\partial x_2} &amp; \cdots &amp;  \frac{\partial f^2(x)}{\partial x_n\partial x_n}\\
+\emat
+</div>
+<script type="math/tex; mode=display">
+\nabla^2 f(x) = 
+\bmat
+\frac{\partial f^2(x)}{\partial x_1\partial x_1} & \frac{\partial f^2(x)}{\partial x_1\partial x_2} & \cdots & 
+\frac{\partial f^2(x)}{\partial x_1\partial x_n}\\
+ \frac{\partial f^2(x)}{\partial x_2\partial x_1} & 
+  \frac{\partial f^2(x)}{\partial x_2\partial x_2}& \cdots &
+   \frac{\partial f^2(x)}{\partial x_2\partial x_n}\\
+\vdots & \vdots & \ddots & \vdots \\
+ \frac{\partial f^2(x)}{\partial x_n\partial x_1} &  
+ \frac{\partial f^2(x)}{\partial x_n\partial x_2} & \cdots &  \frac{\partial f^2(x)}{\partial x_n\partial x_n}\\
+\emat
+</script>
+</div>
+<p>For example, for a function <span><span class="MathJax_Preview">f(x) = x_1^2 + 8x_1x_2  - 2x_3^3</span><script type="math/tex">f(x) = x_1^2 + 8x_1x_2  - 2x_3^3</script></span>, its gradiet is <span><span class="MathJax_Preview">\nabla f(x) = \bmat 2x_1 + 8x_2\\8x_1\\-6x_3^2\emat</span><script type="math/tex">\nabla f(x) = \bmat 2x_1 + 8x_2\\8x_1\\-6x_3^2\emat</script></span>,
+and its Hessian is <span><span class="MathJax_Preview">\nabla^2 f(x) = \bmat 2 &amp; 8 &amp; 0 \\ 8 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -12x_3\emat.</span><script type="math/tex">\nabla^2 f(x) = \bmat 2 & 8 & 0 \\ 8 & 0 & 0 \\ 0 & 0 & -12x_3\emat.</script></span></p>
                 
                   
                 
