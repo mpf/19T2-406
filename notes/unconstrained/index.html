@@ -378,6 +378,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sufficient-conditions-in-1-d" class="md-nav__link">
+    Sufficient conditions in 1-d
+  </a>
+  
+</li>
+      
       
       
       
@@ -481,6 +488,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sufficient-conditions-in-1-d" class="md-nav__link">
+    Sufficient conditions in 1-d
+  </a>
+  
+</li>
+      
       
       
       
@@ -542,7 +556,7 @@ are directions of descent. The optimal point is <span><span class="MathJax_Previ
 <div class="MathJax_Preview"> \mathop{\text{minimize}}_{x,y} \{f(x,y) = \frac{x+y}{x^2+y^2+1}:x,y\in\R\}.</div>
 <script type="math/tex; mode=display"> \mathop{\text{minimize}}_{x,y} \{f(x,y) = \frac{x+y}{x^2+y^2+1}:x,y\in\R\}.</script>
 </div>
-<p>The surface and contour plots of <span><span class="MathJax_Preview">f(x,y)</span><script type="math/tex">f(x,y)</script></span> is</p>
+<p>The surface and contour plots of <span><span class="MathJax_Preview">f(x,y)</span><script type="math/tex">f(x,y)</script></span> are</p>
 <div class="codehilite"><pre><span></span><span class="k">using</span> <span class="n">Plots</span><span class="p">;</span> <span class="n">pyplot</span><span class="p">()</span>
 <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">range</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="n">stop</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
@@ -557,6 +571,36 @@ are directions of descent. The optimal point is <span><span class="MathJax_Previ
 <p>The global minimizer is <span><span class="MathJax_Preview">\begin{pmatrix} \frac{1}{\sqrt{2}},&amp; \frac{1}{\sqrt{2}} \end{pmatrix}</span><script type="math/tex">\begin{pmatrix} \frac{1}{\sqrt{2}},& \frac{1}{\sqrt{2}} \end{pmatrix}</script></span> and the 
 gobal maximizer is <span><span class="MathJax_Preview">\bmatp -\frac{1}{\sqrt{2}}, &amp; -\frac{1}{\sqrt{2}} \ematp</span><script type="math/tex">\bmatp -\frac{1}{\sqrt{2}}, & -\frac{1}{\sqrt{2}} \ematp</script></span>. </p>
 <hr />
+<h2 id="sufficient-conditions-in-1-d"><strong>Sufficient conditions in 1-d</strong><a class="headerlink" href="#sufficient-conditions-in-1-d" title="Permanent link">&para;</a></h2>
+<p>We will first look at 1-d function <span><span class="MathJax_Preview">f:\R→\R</span><script type="math/tex">f:\R→\R</script></span> and state sufficent conditions for optimality of a point <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> in the 
+interrior of the set <span><span class="MathJax_Preview">\set{S}</span><script type="math/tex">\set{S}</script></span>.  Consider the following 1-d function</p>
+<p><center>
+    <img src="../img/lec6/stationary-points.png" width = "300"><br />
+</center></p>
+<p>The critial points of <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> in the above figure are <span><span class="MathJax_Preview">x \in \{ b ,\ c,\ d,\ e\}</span><script type="math/tex">x \in \{ b ,\ c,\ d,\ e\}</script></span> and these points satisfy <span><span class="MathJax_Preview">f'(x) =0</span><script type="math/tex">f'(x) =0</script></span>. We may be able
+to use second derivative information to determine if these critial points are minimizer or maximizer. Precisely, for any function 
+<span><span class="MathJax_Preview">f:\R\rightarrow\R</span><script type="math/tex">f:\R\rightarrow\R</script></span>, a point <span><span class="MathJax_Preview">x = x^*</span><script type="math/tex">x = x^*</script></span> is</p>
+<ol>
+<li>
+<p>a local minimizer if <span><span class="MathJax_Preview">f'(x) = 0</span><script type="math/tex">f'(x) = 0</script></span> and <span><span class="MathJax_Preview">f''(x)&gt;0</span><script type="math/tex">f''(x)>0</script></span>, and</p>
+</li>
+<li>
+<p>a local maximizer if <span><span class="MathJax_Preview">f'(x) = 0</span><script type="math/tex">f'(x) = 0</script></span> and <span><span class="MathJax_Preview">f''(x)&lt;0</span><script type="math/tex">f''(x)<0</script></span>.</p>
+</li>
+</ol>
+<p>However, if both <span><span class="MathJax_Preview">f'(x) = 0</span><script type="math/tex">f'(x) = 0</script></span> and <span><span class="MathJax_Preview">f''(x)=0</span><script type="math/tex">f''(x)=0</script></span>, there is not enough information to draw any conclusion. As an example, consider <span><span class="MathJax_Preview">f(x) = x^3</span><script type="math/tex">f(x) = x^3</script></span> and
+<span><span class="MathJax_Preview">f(x) = x^4</span><script type="math/tex">f(x) = x^4</script></span>. For both function, <span><span class="MathJax_Preview">f'(x) = 0</span><script type="math/tex">f'(x) = 0</script></span> and <span><span class="MathJax_Preview">f''(x) = 0</span><script type="math/tex">f''(x) = 0</script></span>, however <span><span class="MathJax_Preview">x = 0</span><script type="math/tex">x = 0</script></span> is saddle point of <span><span class="MathJax_Preview">x^3</span><script type="math/tex">x^3</script></span> and <span><span class="MathJax_Preview">x = 0</span><script type="math/tex">x = 0</script></span> is a  minimizer of <span><span class="MathJax_Preview">x^4</span><script type="math/tex">x^4</script></span>.</p>
+<p>A proof of the sufficient condition of optimality follows directly from Taylor approximation of the function <span><span class="MathJax_Preview">f(x)</span><script type="math/tex">f(x)</script></span>. Consider the case where 
+<span><span class="MathJax_Preview">f'(x^*) = 0</span><script type="math/tex">f'(x^*) = 0</script></span> and <span><span class="MathJax_Preview">f''(x^*)&gt;0</span><script type="math/tex">f''(x^*)>0</script></span> for some <span><span class="MathJax_Preview">x^*\in\set{S}</span><script type="math/tex">x^*\in\set{S}</script></span>. Then by Taylor's theorem of <span><span class="MathJax_Preview">f(x)</span><script type="math/tex">f(x)</script></span> at <span><span class="MathJax_Preview">x = x^*</span><script type="math/tex">x = x^*</script></span>, we get</p>
+<div>
+<div class="MathJax_Preview">f(x) = f(x^*) + \underbrace{f'(x^*)(x-x^*)}_{ =\ 0} + \underbrace{\frac{1}{2}f''(x^*)(x-x^*)^2}_{\text{strictly positive}} + 
+\underbrace{O((x-x^*)^3)}_{\text{small}}</div>
+<script type="math/tex; mode=display">f(x) = f(x^*) + \underbrace{f'(x^*)(x-x^*)}_{ =\ 0} + \underbrace{\frac{1}{2}f''(x^*)(x-x^*)^2}_{\text{strictly positive}} + 
+\underbrace{O((x-x^*)^3)}_{\text{small}}</script>
+</div>
+<p>for <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> close to <span><span class="MathJax_Preview">x^*</span><script type="math/tex">x^*</script></span>. So <span><span class="MathJax_Preview">f(x) &gt; f(x^*)</span><script type="math/tex">f(x) > f(x^*)</script></span> for all <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> near <span><span class="MathJax_Preview">x^*</span><script type="math/tex">x^*</script></span>, which imples <span><span class="MathJax_Preview">x^*</span><script type="math/tex">x^*</script></span> is local minimizer. Similarly, we can prove <span><span class="MathJax_Preview">f(x^*)=0</span><script type="math/tex">f(x^*)=0</script></span> and
+<span><span class="MathJax_Preview">f''^(x^*)&lt;0</span><script type="math/tex">f''^(x^*)<0</script></span> implies <span><span class="MathJax_Preview">x^*</span><script type="math/tex">x^*</script></span> is a local maximizer. In the next section we will generalize these sufficient condition for any real valued function 
+<span><span class="MathJax_Preview">f:\R^n \rightarrow \R</span><script type="math/tex">f:\R^n \rightarrow \R</script></span>.</p>
                 
                   
                 

@@ -46,7 +46,7 @@ $\exa{2}$ Consider the minimization program
 
 $$ \mathop{\text{minimize}}_{x,y} \{f(x,y) = \frac{x+y}{x^2+y^2+1}:x,y\in\R\}.$$
 
-The surface and contour plots of $f(x,y)$ is
+The surface and contour plots of $f(x,y)$ are
 
 ```julia
 using Plots; pyplot()
@@ -64,6 +64,35 @@ The global minimizer is $\begin{pmatrix} \frac{1}{\sqrt{2}},& \frac{1}{\sqrt{2}}
 gobal maximizer is $\bmatp -\frac{1}{\sqrt{2}}, & -\frac{1}{\sqrt{2}} \ematp$. 
 ----
 
+## **Sufficient conditions in 1-d**
+
+We will first look at 1-d function $f:\R→\R$ and state sufficent conditions for optimality of a point $\vx$ in the 
+interrior of the set $\set{S}$.  Consider the following 1-d function
+
+<center>
+	<img src="../img/lec6/stationary-points.png" width = "300">  
+</center>
+
+The critial points of $f$ in the above figure are $x \in \{ b ,\ c,\ d,\ e\}$ and these points satisfy $f'(x) =0$. We may be able
+to use second derivative information to determine if these critial points are minimizer or maximizer. Precisely, for any function 
+$f:\R\rightarrow\R$, a point $x = x^*$ is
+
+1. a local minimizer if $f'(x) = 0$ and $f''(x)>0$, and
+
+2. a local maximizer if $f'(x) = 0$ and $f''(x)<0$.
+
+However, if both $f'(x) = 0$ and $f''(x)=0$, there is not enough information to draw any conclusion. As an example, consider $f(x) = x^3$ and
+$f(x) = x^4$. For both function, $f'(x) = 0$ and $f''(x) = 0$, however $x = 0$ is saddle point of $x^3$ and $x = 0$ is a  minimizer of $x^4$.
+
+A proof of the sufficient condition of optimality follows directly from Taylor approximation of the function $f(x)$. Consider the case where 
+$f'(x^*) = 0$ and $f''(x^*)>0$ for some $x^*\in\set{S}$. Then by Taylor's theorem of $f(x)$ at $x = x^*$, we get
+
+$$f(x) = f(x^*) + \underbrace{f'(x^*)(x-x^*)}_{ =\ 0} + \underbrace{\frac{1}{2}f''(x^*)(x-x^*)^2}_{\text{strictly positive}} + 
+\underbrace{O((x-x^*)^3)}_{\text{small}}$$
+
+for $x$ close to $x^*$. So $f(x) > f(x^*)$ for all $x$ near $x^*$, which imples $x^*$ is local minimizer. Similarly, we can prove $f(x^*)=0$ and
+$f''^(x^*)<0$ implies $x^*$ is a local maximizer. In the next section we will generalize these sufficient condition for any real valued function 
+$f:\R^n \rightarrow \R$.
 
 
 
