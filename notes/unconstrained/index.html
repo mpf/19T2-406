@@ -386,8 +386,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gradient-and-hessian" class="md-nav__link">
-    Gradient and Hessian
+  <a href="#gradient-hessian-and-directional-derivatives" class="md-nav__link">
+    Gradient, Hessian and directional derivatives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sufficient-conditions-of-optimality" class="md-nav__link">
+    Sufficient conditions of optimality
   </a>
   
 </li>
@@ -503,8 +510,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gradient-and-hessian" class="md-nav__link">
-    Gradient and Hessian
+  <a href="#gradient-hessian-and-directional-derivatives" class="md-nav__link">
+    Gradient, Hessian and directional derivatives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sufficient-conditions-of-optimality" class="md-nav__link">
+    Sufficient conditions of optimality
   </a>
   
 </li>
@@ -583,7 +597,7 @@ are directions of descent. The optimal point is <span><span class="MathJax_Previ
 
 <p><img alt="" src="../figures/unconstrained_1_1.png" /></p>
 <p>The global minimizer is <span><span class="MathJax_Preview">\begin{pmatrix} \frac{1}{\sqrt{2}},&amp; \frac{1}{\sqrt{2}} \end{pmatrix}</span><script type="math/tex">\begin{pmatrix} \frac{1}{\sqrt{2}},& \frac{1}{\sqrt{2}} \end{pmatrix}</script></span> and the 
-gobal maximizer is <span><span class="MathJax_Preview">\bmatp -\frac{1}{\sqrt{2}}, &amp; -\frac{1}{\sqrt{2}} \ematp</span><script type="math/tex">\bmatp -\frac{1}{\sqrt{2}}, & -\frac{1}{\sqrt{2}} \ematp</script></span>. </p>
+global maximizer is <span><span class="MathJax_Preview">\bmatp -\frac{1}{\sqrt{2}}, &amp; -\frac{1}{\sqrt{2}} \ematp</span><script type="math/tex">\bmatp -\frac{1}{\sqrt{2}}, & -\frac{1}{\sqrt{2}} \ematp</script></span>. </p>
 <hr />
 <h2 id="sufficient-conditions-in-1-d"><strong>Sufficient conditions in 1-d</strong><a class="headerlink" href="#sufficient-conditions-in-1-d" title="Permanent link">&para;</a></h2>
 <p>We will first look at 1-d function <span><span class="MathJax_Preview">f:\R→\R</span><script type="math/tex">f:\R→\R</script></span> and state sufficent conditions for optimality of a point <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> in the 
@@ -615,7 +629,7 @@ to use second derivative information to determine if these critial points are mi
 <p>for <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> close to <span><span class="MathJax_Preview">x^*</span><script type="math/tex">x^*</script></span>. So <span><span class="MathJax_Preview">f(x) &gt; f(x^*)</span><script type="math/tex">f(x) > f(x^*)</script></span> for all <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> near <span><span class="MathJax_Preview">x^*</span><script type="math/tex">x^*</script></span>, which imples <span><span class="MathJax_Preview">x^*</span><script type="math/tex">x^*</script></span> is local minimizer. Similarly, we can prove <span><span class="MathJax_Preview">f(x^*)=0</span><script type="math/tex">f(x^*)=0</script></span> and
 <span><span class="MathJax_Preview">f''(x^*)&lt;0</span><script type="math/tex">f''(x^*)<0</script></span> implies <span><span class="MathJax_Preview">x^*</span><script type="math/tex">x^*</script></span> is a local maximizer. In the next section we will generalize these sufficient condition for any real valued function 
 <span><span class="MathJax_Preview">f:\R^n \rightarrow \R</span><script type="math/tex">f:\R^n \rightarrow \R</script></span>.</p>
-<h2 id="gradient-and-hessian"><strong>Gradient and Hessian</strong><a class="headerlink" href="#gradient-and-hessian" title="Permanent link">&para;</a></h2>
+<h2 id="gradient-hessian-and-directional-derivatives"><strong>Gradient, Hessian and directional derivatives</strong><a class="headerlink" href="#gradient-hessian-and-directional-derivatives" title="Permanent link">&para;</a></h2>
 <p>For a differentiable function <span><span class="MathJax_Preview">f:\R^n\to\R</span><script type="math/tex">f:\R^n\to\R</script></span>, the gradient of <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> at <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> is a vector in <span><span class="MathJax_Preview">\R^n</span><script type="math/tex">\R^n</script></span>. The gradient of <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> at <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> contain the partial 
 derivative of <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> at <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> and is given by</p>
 <div>
@@ -657,6 +671,57 @@ derivative of <span><span class="MathJax_Preview">f</span><script type="math/tex
 </div>
 <p>For example, for a function <span><span class="MathJax_Preview">f(x) = x_1^2 + 8x_1x_2  - 2x_3^3</span><script type="math/tex">f(x) = x_1^2 + 8x_1x_2  - 2x_3^3</script></span>, its gradiet is <span><span class="MathJax_Preview">\nabla f(x) = \bmat 2x_1 + 8x_2\\8x_1\\-6x_3^2\emat</span><script type="math/tex">\nabla f(x) = \bmat 2x_1 + 8x_2\\8x_1\\-6x_3^2\emat</script></span>,
 and its Hessian is <span><span class="MathJax_Preview">\nabla^2 f(x) = \bmat 2 &amp; 8 &amp; 0 \\ 8 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -12x_3\emat.</span><script type="math/tex">\nabla^2 f(x) = \bmat 2 & 8 & 0 \\ 8 & 0 & 0 \\ 0 & 0 & -12x_3\emat.</script></span></p>
+<p>Next, we look at directional derivatives. For a differentiable function <span><span class="MathJax_Preview">f:\R^n\to \R</span><script type="math/tex">f:\R^n\to \R</script></span>, the directional derivative in the direction of <span><span class="MathJax_Preview">\vd \in \R^n</span><script type="math/tex">\vd \in \R^n</script></span> is </p>
+<div>
+<div class="MathJax_Preview">f'(\vx;\vd) = \lim_{\alpha\to 0^+} \frac{f(\vx+\alpha \vd) - f(\vx)}{\alpha} = \nabla f(\vx)\trans \vd</div>
+<script type="math/tex; mode=display">f'(\vx;\vd) = \lim_{\alpha\to 0^+} \frac{f(\vx+\alpha \vd) - f(\vx)}{\alpha} = \nabla f(\vx)\trans \vd</script>
+</div>
+<p>We say a <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> function is flat at <span><span class="MathJax_Preview">\vx^*</span><script type="math/tex">\vx^*</script></span> if <span><span class="MathJax_Preview">f'(\vx) = 0</span><script type="math/tex">f'(\vx) = 0</script></span>. In terms of directional derivative, <span><span class="MathJax_Preview">f'(\vx) = 0</span><script type="math/tex">f'(\vx) = 0</script></span> is equivalent to the directional derivative of <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> equaling 
+zero for all directions <span><span class="MathJax_Preview">\vd\in \R^n</span><script type="math/tex">\vd\in \R^n</script></span>, i.e.</p>
+<div>
+<div class="MathJax_Preview">\forall \vd\in \R^n,\; f'(\vx;\vd) = 0 \iff \nabla f(\vx) = 0</div>
+<script type="math/tex; mode=display">\forall \vd\in \R^n,\; f'(\vx;\vd) = 0 \iff \nabla f(\vx) = 0</script>
+</div>
+<p>Similarly, for a twice-differentiable function <span><span class="MathJax_Preview">f:\R^n\to \Re</span><script type="math/tex">f:\R^n\to \Re</script></span>, the  directional second derivative is</p>
+<div>
+<div class="MathJax_Preview">f''(\vx;\vd) = \lim_{\alpha\to 0^+} \frac{f'(\vx+\alpha \vd;\vd) - f'(\vx;\vd)}{\alpha} = \vd\trans\nabla^2 f(\vx)\vd.</div>
+<script type="math/tex; mode=display">f''(\vx;\vd) = \lim_{\alpha\to 0^+} \frac{f'(\vx+\alpha \vd;\vd) - f'(\vx;\vd)}{\alpha} = \vd\trans\nabla^2 f(\vx)\vd.</script>
+</div>
+<p>The second directional deriviate <span><span class="MathJax_Preview">f''(\vx;\vd)</span><script type="math/tex">f''(\vx;\vd)</script></span> provides curvature information of <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> at a point <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> along the direction <span><span class="MathJax_Preview">\vd</span><script type="math/tex">\vd</script></span>. This can be used to characterize
+convex functions. Recall that a function is convex if for all <span><span class="MathJax_Preview">\vx,\vy</span><script type="math/tex">\vx,\vy</script></span> in its domain, and all  <span><span class="MathJax_Preview">0\leq \theta \leq 1</span><script type="math/tex">0\leq \theta \leq 1</script></span>, we have</p>
+<div>
+<div class="MathJax_Preview">f(\theta \vx + (1-\theta) \vy) \leq \theta f(\vx) + (1-\theta) f(\vy).</div>
+<script type="math/tex; mode=display">f(\theta \vx + (1-\theta) \vy) \leq \theta f(\vx) + (1-\theta) f(\vy).</script>
+</div>
+<p>Equivalently, a function is convex if its directional second derivative is positive for all directions <span><span class="MathJax_Preview">d\in \R^n</span><script type="math/tex">d\in \R^n</script></span>, i.e.</p>
+<div>
+<div class="MathJax_Preview">\forall\ \vx \in \text{dom}(f),\; \forall \vd\in \R^n,\quad f''(\vx;\vd)\geq  0 </div>
+<script type="math/tex; mode=display">\forall\ \vx \in \text{dom}(f),\; \forall \vd\in \R^n,\quad f''(\vx;\vd)\geq  0 </script>
+</div>
+<h2 id="sufficient-conditions-of-optimality"><strong>Sufficient conditions of optimality</strong><a class="headerlink" href="#sufficient-conditions-of-optimality" title="Permanent link">&para;</a></h2>
+<p>We will state optimality conditions for the following minimization program</p>
+<div>
+<div class="MathJax_Preview">
+\mathop{\text{minimize}}_{\vx\in \set{S}} \quad f(\vx),
+</div>
+<script type="math/tex; mode=display">
+\mathop{\text{minimize}}_{\vx\in \set{S}} \quad f(\vx),
+</script>
+</div>
+<p>where <span><span class="MathJax_Preview">f : \R^n\to\R</span><script type="math/tex">f : \R^n\to\R</script></span> is a real valued function. We say a point <span><span class="MathJax_Preview">\vx^*\in \set{S}</span><script type="math/tex">\vx^*\in \set{S}</script></span> is </p>
+<ol>
+<li>
+<p>a minimizer of <span><span class="MathJax_Preview">f(\vx)</span><script type="math/tex">f(\vx)</script></span> if  <span><span class="MathJax_Preview">\nabla f(\vx^*) = 0</span><script type="math/tex">\nabla f(\vx^*) = 0</script></span> and <span><span class="MathJax_Preview">\vd^T\nabla^2 f(\vx^*) \vd &gt; 0</span><script type="math/tex">\vd^T\nabla^2 f(\vx^*) \vd > 0</script></span> for all <span><span class="MathJax_Preview">\vd\in \R^n</span><script type="math/tex">\vd\in \R^n</script></span>. 
+Note that a square symmetrix matrix <span><span class="MathJax_Preview">\mA \in \R^{n\times n}</span><script type="math/tex">\mA \in \R^{n\times n}</script></span>, like the Hessian matrix, is positive definite if 
+<span><span class="MathJax_Preview">\vz\trans\mA\vz &gt;0</span><script type="math/tex">\vz\trans\mA\vz >0</script></span> for all <span><span class="MathJax_Preview">\vz \in \R^n</span><script type="math/tex">\vz \in \R^n</script></span> (denoted by <span><span class="MathJax_Preview">\mA \succ 0</span><script type="math/tex">\mA \succ 0</script></span>).</p>
+</li>
+<li>
+<p>a maximizer of <span><span class="MathJax_Preview">f(\vx)</span><script type="math/tex">f(\vx)</script></span> if  <span><span class="MathJax_Preview">\nabla f(\vx^*) = 0</span><script type="math/tex">\nabla f(\vx^*) = 0</script></span> and <span><span class="MathJax_Preview">\vd^T\nabla^2 f(\vx^*) \vd &lt; 0</span><script type="math/tex">\vd^T\nabla^2 f(\vx^*) \vd < 0</script></span> for all <span><span class="MathJax_Preview">\vd\in \R^n</span><script type="math/tex">\vd\in \R^n</script></span>. In this case, <span><span class="MathJax_Preview">\nabla^2 f(\vx^*)</span><script type="math/tex">\nabla^2 f(\vx^*)</script></span> is<br />
+called a negative definite matrix and is denoted by <span><span class="MathJax_Preview">\mA \prec 0</span><script type="math/tex">\mA \prec 0</script></span>.</p>
+</li>
+</ol>
+<p>Lastly, if <span><span class="MathJax_Preview">\nabla f(\vx^*) = 0</span><script type="math/tex">\nabla f(\vx^*) = 0</script></span> and <span><span class="MathJax_Preview">\nabla^2 f(x^*)</span><script type="math/tex">\nabla^2 f(x^*)</script></span> is indefinite, i.e. neither positive nor negative definite, then <span><span class="MathJax_Preview">\vx^*</span><script type="math/tex">\vx^*</script></span> is a saddle point. When 
+<span><span class="MathJax_Preview">\nabla^2 f(x^*)</span><script type="math/tex">\nabla^2 f(x^*)</script></span> is indefinite then there exits directions where the 1-d slices of the function <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> are convex and concave.</p>
                 
                   
                 
