@@ -94,7 +94,7 @@ for $x$ close to $x^*$. So $f(x) > f(x^*)$ for all $x$ near $x^*$, which imples 
 $f''(x^*)<0$ implies $x^*$ is a local maximizer. In the next section we will generalize these sufficient condition for any real valued function 
 $f:\R^n \rightarrow \R$.
 
-## **Gradient and Hessian**
+## **Gradient, Hessian and directional derivatives**
 
 For a differentiable function $f:\R^n\to\R$, the gradient of $f$ at $\vx$ is a vector in $\R^n$. The gradient of $f$ at $\vx$ contain the partial 
 derivative of $f$ at $x$ and is given by
@@ -123,3 +123,44 @@ For example, for a function $f(x) = x_1^2 + 8x_1x_2  - 2x_3^3$, its gradiet is $
 and its Hessian is $\nabla^2 f(x) = \bmat 2 & 8 & 0 \\ 8 & 0 & 0 \\ 0 & 0 & -12x_3\emat.$
 
 
+Next, we look at directional derivatives. For a differentiable function $f:\R^n\to \R$, the directional derivative in the direction of $\vd \in \R^n$ is 
+	
+$$f'(\vx;\vd) = \lim_{\alpha\to 0^+} \frac{f(\vx+\alpha \vd) - f(\vx)}{\alpha} = \nabla f(\vx)\trans \vd$$
+	
+We say a $f$ function is flat at $\vx^*$ if $f'(\vx) = 0$. In terms of directional derivative, $f'(\vx) = 0$ is equivalent to the directional derivative of $f$ equaling 
+zero for all directions $\vd\in \R^n$, i.e.
+
+$$\forall \vd\in \R^n,\; f'(\vx;\vd) = 0 \iff \nabla f(\vx) = 0$$
+
+Similarly, for a twice-differentiable function $f:\R^n\to \Re$, the  directional second derivative is
+	
+$$f''(\vx;\vd) = \lim_{\alpha\to 0^+} \frac{f'(\vx+\alpha \vd;\vd) - f'(\vx;\vd)}{\alpha} = \vd\trans\nabla^2 f(\vx)\vd.$$
+	
+The second directional deriviate $f''(\vx;\vd)$ provides curvature information of $f$ at a point $\vx$ along the direction $\vd$. This can be used to characterize
+convex functions. Recall that a function is convex if for all $\vx,\vy$ in its domain, and all  $0\leq \theta \leq 1$, we have
+	
+$$f(\theta \vx + (1-\theta) \vy) \leq \theta f(\vx) + (1-\theta) f(\vy).$$
+	
+Equivalently, a function is convex if its directional second derivative is positive for all directions $d\in \R^n$, i.e.
+
+$$\forall\ \vx \in \text{dom}(f),\; \forall \vd\in \R^n,\quad f''(\vx;\vd)\geq  0 $$
+	
+
+## **Sufficient conditions of optimality**
+We will state optimality conditions for the following minimization program
+
+$$
+\mathop{\text{minimize}}_{\vx\in \set{S}} \quad f(\vx),
+$$
+
+where $f : \R^n\to\R$ is a real valued function. We say a point $\vx^*\in \set{S}$ is 
+
+1. a minimizer of $f(\vx)$ if  $\nabla f(\vx^*) = 0$ and $\vd^T\nabla^2 f(\vx^*) \vd > 0$ for all $\vd\in \R^n$. 
+Note that a square symmetrix matrix $\mA \in \R^{n\times n}$, like the Hessian matrix, is positive definite if 
+$\vz\trans\mA\vz >0$ for all $\vz \in \R^n$ (denoted by $\mA \succ 0$).
+	
+2. a maximizer of $f(\vx)$ if  $\nabla f(\vx^*) = 0$ and $\vd^T\nabla^2 f(\vx^*) \vd < 0$ for all $\vd\in \R^n$. In this case, $\nabla^2 f(\vx^*)$ is  
+called a negative definite matrix and is denoted by $\mA \prec 0$.
+
+Lastly, if $\nabla f(\vx^*) = 0$ and $\nabla^2 f(x^*)$ is indefinite, i.e. neither positive nor negative definite, then $\vx^*$ is a saddle point. When 
+$\nabla^2 f(x^*)$ is indefinite then there exits directions where the 1-d slices of the function $f$ are convex and concave.
