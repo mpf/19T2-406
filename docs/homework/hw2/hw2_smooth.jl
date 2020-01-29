@@ -36,7 +36,7 @@ b = load("docs/homework/hw2/hw2_p2_smooth_b.jld")["data"]
 x1 = Variable(n);
 
 loss = sumsquares(A*x1-b)
-reg = sum(abs(x1[2:end]-x1[1:end-1]))
+reg = norm(x1,1)
 
 λ = 10
 problem = minimize(loss+λ*reg)

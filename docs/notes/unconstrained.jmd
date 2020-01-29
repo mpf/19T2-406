@@ -55,8 +55,7 @@ x = range(-4,stop=4,length=100)
 y = range(-5,stop=5,length = 100)
 
 pyplot(size=(700,200))
-plot(plot(x,y,f,st=:surface,camera=(100,30)),
-	plot(x,y,f,st=:contour,camera=(100,30)))
+plot(plot(x,y,f,st=:surface,camera=(100,30)), plot(x,y,f,st=:contour,camera=(100,30)))
 
 ``` 
 
