@@ -101,6 +101,8 @@ window.MathJax = {
 
             exa:["\\text{Example #1:}",1],
 
+            lemma: ["\\text{Lemma #1:}",1],
+
             trace: ["\\textbf{tr}(#1)",1],
 
             vec: ["\\textbf{vec}(#1)",1],
@@ -121,9 +123,10 @@ window.MathJax = {
             
             red: ["{\\color{red}#1}",1],
 
-            minimize: ["\\underset{#1}{\\mathrm{minimize}}",1],
-            argmin: ["\\underset{#1}{\\mathrm{argmin}}",1],
-            argmax: ["\\underset{#1}{\\mathrm{arg,ax}}",1],
+            minimize: ["\\mathop{\\text{minimize}}"],
+            argmin: ["\\mathop{\\text{argmin}}"],
+            argmax: ["\\mathop{\\text{argmax}}"],
+
             st: ["\\text{subject to}"],
             rank: ["\\textbf{rank}"],
             daig: ["\\textbf{diag}"],
