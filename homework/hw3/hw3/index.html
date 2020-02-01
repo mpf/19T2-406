@@ -13,7 +13,7 @@
         <meta name="description" content="Home page for CPSC406 Term 2 2019">
       
       
-        <link rel="canonical" href="https://friedlander.io/19T2-406/homework/hw1/hw1/">
+        <link rel="canonical" href="https://friedlander.io/19T2-406/homework/hw3/hw3/">
       
       
         <meta name="author" content="Michael P. Friedlander and Babhru Joshi">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Homework 1 - CPSC406 &mdash; Computational Optimization</title>
+        <title>Homework 3 - CPSC406 &mdash; Computational Optimization</title>
       
     
     
@@ -81,7 +81,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#homework-1-due-jan-17-6pm" tabindex="1" class="md-skip">
+      <a href="#cpsc-406-homework-3-due-feb-7-6pm" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -107,7 +107,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Homework 1
+                Homework 3
               
             </span>
           
@@ -403,20 +403,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="Homework 1" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../hw1/hw1/" title="Homework 1" class="md-nav__link">
       Homework 1
     </a>
-    
   </li>
 
         
@@ -436,11 +427,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../hw3/hw3/" title="Homework 3" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Homework 3" class="md-nav__link md-nav__link--active">
       Homework 3
     </a>
+    
   </li>
 
         
@@ -477,168 +477,75 @@
               
                 
                 
-                <h1 id="homework-1-due-jan-17-6pm">Homework 1 <strong>(Due Jan  17, 6pm)</strong><a class="headerlink" href="#homework-1-due-jan-17-6pm" title="Permanent link">&para;</a></h1>
+                <h1 id="cpsc-406-homework-3-due-feb-7-6pm"><strong>CPSC 406: Homework 3 (Due Feb 7, 6pm)</strong><a class="headerlink" href="#cpsc-406-homework-3-due-feb-7-6pm" title="Permanent link">&para;</a></h1>
 <ol>
 <li>
-<p><strong>Backsolve.</strong> Here, we will explore the computational complexity of solving the system </p>
-<div>
-<div class="MathJax_Preview">
-\mR\vx = \vb, \qquad \mR\in \R^{n\times n}
-</div>
-<script type="math/tex; mode=display">
-\mR\vx = \vb, \qquad \mR\in \R^{n\times n}
-</script>
-</div>
-<p>when <span><span class="MathJax_Preview">\mR</span><script type="math/tex">\mR</script></span> is either upper triangular (<span><span class="MathJax_Preview">R_{ij} = 0</span><script type="math/tex">R_{ij} = 0</script></span> whenever <span><span class="MathJax_Preview">i &gt; j</span><script type="math/tex">i > j</script></span>) or lower triangular 
-(<span><span class="MathJax_Preview">R_{ij} = 0</span><script type="math/tex">R_{ij} = 0</script></span> whenever <span><span class="MathJax_Preview">i &lt; j</span><script type="math/tex">i < j</script></span>). If <span><span class="MathJax_Preview">\mR</span><script type="math/tex">\mR</script></span> were fully dense, then solving this system takes 
-<span><span class="MathJax_Preview">O(n^3)</span><script type="math/tex">O(n^3)</script></span> flops. We will show that when <span><span class="MathJax_Preview">\mR</span><script type="math/tex">\mR</script></span> is upper or lower triangular, this system takes
-<span><span class="MathJax_Preview">O(n^2)</span><script type="math/tex">O(n^2)</script></span> flops. Assume that the diagonal elements <span><span class="MathJax_Preview">|R_{ii}| &gt; \epsilon</span><script type="math/tex">|R_{ii}| > \epsilon</script></span> for <span><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>
-suitably large in all cases.</p>
+<p>(Exercises from Beck Ch 2) </p>
 <ol>
 <li>
-<p>Consider <span><span class="MathJax_Preview">\mR</span><script type="math/tex">\mR</script></span> lower triangular, e.g. we solve the system</p>
-<div>
-<div class="MathJax_Preview">
-\bmat 
-R_{11} &amp; 0 &amp; \cdots &amp; 0 \\
-R_{21} &amp; R_{22} &amp; \cdots &amp; 0 \\
-\vdots  &amp; \vdots  &amp; \ddots &amp; \vdots  \\
-R_{n,1} &amp; R_{n,2} &amp; \cdots &amp; R_{n,n}\\
-\emat 
-\bmat x_1 \\ x_2 \\ \vdots \\ x_n \emat 
-=
-\bmat b_1 \\ b_2 \\ \vdots \\ b_n \emat. 
-</div>
-<script type="math/tex; mode=display">
-\bmat 
-R_{11} & 0 & \cdots & 0 \\
-R_{21} & R_{22} & \cdots & 0 \\
-\vdots  & \vdots  & \ddots & \vdots  \\
-R_{n,1} & R_{n,2} & \cdots & R_{n,n}\\
-\emat 
-\bmat x_1 \\ x_2 \\ \vdots \\ x_n \emat 
-=
-\bmat b_1 \\ b_2 \\ \vdots \\ b_n \emat. 
-</script>
-</div>
-<p>Show how to find <span><span class="MathJax_Preview">x_1</span><script type="math/tex">x_1</script></span>. (This should take <span><span class="MathJax_Preview">O(1)</span><script type="math/tex">O(1)</script></span> flops.)  Given <span><span class="MathJax_Preview">x_1,...,x_i</span><script type="math/tex">x_1,...,x_i</script></span>,
-    show how to find <span><span class="MathJax_Preview">x_{i+1}</span><script type="math/tex">x_{i+1}</script></span>. (This should take <span><span class="MathJax_Preview">O(i)</span><script type="math/tex">O(i)</script></span> flops.) Putting it all 
-    together, we get </p>
-<div>
-<div class="MathJax_Preview">
-O(1) + O(2) + \cdots + O(n-1) + O(n) = O(n^2) \text{ flops.}
-</div>
-<script type="math/tex; mode=display">
-O(1) + O(2) + \cdots + O(n-1) + O(n) = O(n^2) \text{ flops.}
-</script>
-</div>
+<p>(Beck 2.17) Consider <span><span class="MathJax_Preview">f(x_1,x_2) =  2x_2^3-6x_2^2+3x_1^2x_2</span><script type="math/tex">f(x_1,x_2) =  2x_2^3-6x_2^2+3x_1^2x_2</script></span>.</p>
+<ol>
+<li>
+<p>Find all the stationary points, e.g. all <span><span class="MathJax_Preview">\vx = (x_1,x_2)</span><script type="math/tex">\vx = (x_1,x_2)</script></span> where <span><span class="MathJax_Preview">\nabla f(\vx) = 0</span><script type="math/tex">\nabla f(\vx) = 0</script></span>. </p>
 </li>
 <li>
-<p>Now consider <span><span class="MathJax_Preview">\mR</span><script type="math/tex">\mR</script></span> upper triangular, e.g. we solve the system</p>
-<div>
-<div class="MathJax_Preview">
-\bmat 
-R_{11} &amp;  \cdots &amp; R_{1,n-1} &amp;R_{1,n} \\
-    0     &amp;  \cdots &amp; R_{2,n-1} &amp;R_{2,n} \\
-\vdots  &amp; \ddots    &amp;  \vdots &amp;\vdots  \\
-0 &amp;  \cdots &amp; 0 &amp;R_{n,n}\\
-\emat 
-\bmat x_1 \\ x_2 \\ \vdots \\ x_n \emat 
-=
-\bmat b_1 \\ b_2 \\ \vdots \\ b_n \emat. 
-</div>
-<script type="math/tex; mode=display">
-\bmat 
-R_{11} &  \cdots & R_{1,n-1} &R_{1,n} \\
-    0     &  \cdots & R_{2,n-1} &R_{2,n} \\
-\vdots  & \ddots    &  \vdots &\vdots  \\
-0 &  \cdots & 0 &R_{n,n}\\
-\emat 
-\bmat x_1 \\ x_2 \\ \vdots \\ x_n \emat 
-=
-\bmat b_1 \\ b_2 \\ \vdots \\ b_n \emat. 
-</script>
-</div>
-<p>Show how to find <span><span class="MathJax_Preview">x_n</span><script type="math/tex">x_n</script></span>. (This should take <span><span class="MathJax_Preview">O(1)</span><script type="math/tex">O(1)</script></span> flops.)  Given <span><span class="MathJax_Preview">x_{i+1},...,x_n</span><script type="math/tex">x_{i+1},...,x_n</script></span>, 
-show how to find <span><span class="MathJax_Preview">x_{i}</span><script type="math/tex">x_{i}</script></span>. (This should take <span><span class="MathJax_Preview">O(n-i)</span><script type="math/tex">O(n-i)</script></span> flops.) Putting it all together,
-    we get </p>
-<div>
-<div class="MathJax_Preview">
-O(n) + O(n-1) + \cdots + O(2) + O(1) = O(n^2) \text{ flops.}
-</div>
-<script type="math/tex; mode=display">
-O(n) + O(n-1) + \cdots + O(2) + O(1) = O(n^2) \text{ flops.}
-</script>
-</div>
+<p>For all the stationary points and evaluate the Hessian. For each point, is the Hessian positive definite, positive semidefintie, negative definite, negative semidefinite, or none of these? What can you conclude about these stationary points? Are they local minimum? global minimum? local maximum? global maximum? saddle points? Are they strict or nonstrict?</p>
+</li>
+<li>
+<p>For each stationary point, plot a surface  plots for this 2-D function that zooms in on the stationary point. Visually, are they local minima, local maxima, or saddle points?</p>
+</li>
+<li>
+<p>From the picture, for each point, are they local / global minima/ maxima? Neither?</p>
 </li>
 </ol>
 </li>
 <li>
-<p><strong>Linear data fit.</strong> Download <a href="../hw1_p2_data.jld">data</a> (Here is the csv format of the same <a href="../hw1_p2_data.csv">data</a> ).
- Fit the best line </p>
-<div>
-<div class="MathJax_Preview">
-f(z) = x_1 + x_2z 
-</div>
-<script type="math/tex; mode=display">
-f(z) = x_1 + x_2z 
-</script>
-</div>
-<p>to the points <span><span class="MathJax_Preview">(z_1,y_1),...,(z_n,y_n)</span><script type="math/tex">(z_1,y_1),...,(z_n,y_n)</script></span>; that is, find the best approximation of the 
-    line <span><span class="MathJax_Preview">f(z)</span><script type="math/tex">f(z)</script></span> to <span><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span> in the 2-norm sense. Plot the fit, and report <span><span class="MathJax_Preview">\|\vr\|_2</span><script type="math/tex">\|\vr\|_2</script></span> the norm of 
-    the fit residual.</p>
+<p>(Beck 2.19) Let <span><span class="MathJax_Preview">f(\vx) = \frac{1}{2} \vx\trans\mA\vx + \vb\trans\vx + \vc</span><script type="math/tex">f(\vx) = \frac{1}{2} \vx\trans\mA\vx + \vb\trans\vx + \vc</script></span>, where <span><span class="MathJax_Preview">\mA \in \R^{n\times n}</span><script type="math/tex">\mA \in \R^{n\times n}</script></span> is PSD (<span><span class="MathJax_Preview">\mA\succeq 0</span><script type="math/tex">\mA\succeq 0</script></span>), <span><span class="MathJax_Preview">\vb\in \R^n</span><script type="math/tex">\vb\in \R^n</script></span>, and <span><span class="MathJax_Preview">\vc\in \R</span><script type="math/tex">\vc\in \R</script></span>. Show that <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> is bounded below over <span><span class="MathJax_Preview">\R^n</span><script type="math/tex">\R^n</script></span> if and only if <span><span class="MathJax_Preview">\vb\in \range(\mA) = \{\mA\vy : \vy\in \R^n\}</span><script type="math/tex">\vb\in \range(\mA) = \{\mA\vy : \vy\in \R^n\}</script></span>. Note: you must argue both directions!</p>
+</li>
+</ol>
 </li>
 <li>
-<p><strong>Polynomial data fit.</strong>  Using the same data as above, fit the best order-<span><span class="MathJax_Preview">d</span><script type="math/tex">d</script></span> 
-    polynomial to the points <span><span class="MathJax_Preview">(z_1,y_1),...,(z_n,y_n)</span><script type="math/tex">(z_1,y_1),...,(z_n,y_n)</script></span> , for <span><span class="MathJax_Preview">d = 2,3,4,5</span><script type="math/tex">d = 2,3,4,5</script></span>. That is,
-    find <span><span class="MathJax_Preview">x_1,...,x_{d+1}</span><script type="math/tex">x_1,...,x_{d+1}</script></span> such that </p>
-<div>
-<div class="MathJax_Preview">
-f(z) = x_1 + x_2z + x_3z^2 + \cdots + x_{d+1}z^d
-</div>
-<script type="math/tex; mode=display">
-f(z) = x_1 + x_2z + x_3z^2 + \cdots + x_{d+1}z^d
-</script>
-</div>
-<p>best approximates the data in the 2-norm sense (minimizing <span><span class="MathJax_Preview">\sum_i (f(z_i)-y_i)^2</span><script type="math/tex">\sum_i (f(z_i)-y_i)^2</script></span>).
-    Plot the fit, and report <span><span class="MathJax_Preview">\|\vr\|_2</span><script type="math/tex">\|\vr\|_2</script></span> the norm of the fit residual. About how many degrees 
-    is needed for a reasonable fit?</p>
+<p>Consider <span><span class="MathJax_Preview">\mA\in \R^{m\times n}</span><script type="math/tex">\mA\in \R^{m\times n}</script></span> and <span><span class="MathJax_Preview">B\in \R^{m\times n}</span><script type="math/tex">B\in \R^{m\times n}</script></span>. Show that 
+    $$ \tr(\mA\trans\mB) = \sum_{i,j} A_{ij}B_{ij}.$$ 
+    Compute the number of flops and storage required to calculate the left hand side (<span><span class="MathJax_Preview">\tr(\mA'*\mB)</span><script type="math/tex">\tr(\mA'*\mB)</script></span>) and right hand side (<span><span class="MathJax_Preview">\sum_{i,j} A_{ij}B_{ij}</span><script type="math/tex">\sum_{i,j} A_{ij}B_{ij}</script></span>) . (Use  <span><span class="MathJax_Preview">O(f(n,m))</span><script type="math/tex">O(f(n,m))</script></span> notation.) Is there a "superior" formulation?</p>
 </li>
 <li>
-<p><strong>QR factorization.</strong> Consider a full rank, underdetermined but consistent 
-    linear system <span><span class="MathJax_Preview">\mA\vx = \vb</span><script type="math/tex">\mA\vx = \vb</script></span>, where <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> is <span><span class="MathJax_Preview">m\times n</span><script type="math/tex">m\times n</script></span> with <span><span class="MathJax_Preview">m &lt; n</span><script type="math/tex">m < n</script></span>. </p>
+<p>(Structered matrices.) Consider a  matrix <span><span class="MathJax_Preview">\mA\in \R^{n\times n}</span><script type="math/tex">\mA\in \R^{n\times n}</script></span>.</p>
 <ol>
 <li>
-<p>Show how to use the QR factorization to obtain a soution of this system.</p>
+<p>Suppose <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> is diagonal, e.g. <span><span class="MathJax_Preview">A_{ij} = 0</span><script type="math/tex">A_{ij} = 0</script></span> whenever <span><span class="MathJax_Preview">i\neq j</span><script type="math/tex">i\neq j</script></span>. Prove that <span><span class="MathJax_Preview">\mA \succeq 0</span><script type="math/tex">\mA \succeq 0</script></span> if and only if <span><span class="MathJax_Preview">A_{ii} \geq 0</span><script type="math/tex">A_{ii} \geq 0</script></span> for all <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>, and <span><span class="MathJax_Preview">\mA\succ 0</span><script type="math/tex">\mA\succ 0</script></span> if and only if <span><span class="MathJax_Preview">A_{ii} &gt; 0</span><script type="math/tex">A_{ii} > 0</script></span> for all <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>.</p>
 </li>
 <li>
-<p>The following script can be used to generate random matrices in Julia, 
-    given dimensions <span><span class="MathJax_Preview">m=10</span><script type="math/tex">m=10</script></span> and <span><span class="MathJax_Preview">n=20</span><script type="math/tex">n=20</script></span>:</p>
-<div class="codehilite"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">randn</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">randn</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">x</span>        
-</pre></div>
-
-<p>Write a Julia code for solving for <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> using the procedure outlined in the previous 
-part of the question. Record the runtime using the Julia call <code>time</code>. (Make sure you are not running anything else or it will interfere with 
-the timing results.) Record the runtimes for matrices of sizes  <span><span class="MathJax_Preview">(m,n) = (10,20)</span><script type="math/tex">(m,n) = (10,20)</script></span>, 
-<span><span class="MathJax_Preview">(100,200)</span><script type="math/tex">(100,200)</script></span>, <span><span class="MathJax_Preview">(100,2000)</span><script type="math/tex">(100,2000)</script></span>,  <span><span class="MathJax_Preview">(100,20000)</span><script type="math/tex">(100,20000)</script></span>, and <span><span class="MathJax_Preview">(100,200000)</span><script type="math/tex">(100,200000)</script></span>. Compare the runtimes 
-against finding <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> using <span><span class="MathJax_Preview">\vx = \mA\backslash \vb</span><script type="math/tex">\vx = \mA\backslash \vb</script></span>.</p>
-</li>
-<li>
-<p>The underdetermined and consistent linear system <span><span class="MathJax_Preview">\mA\vx=\vb</span><script type="math/tex">\mA\vx=\vb</script></span> has infinitely many solutions. For the case where 
-   <span><span class="MathJax_Preview">\mA \in \R^{m\times n}</span><script type="math/tex">\mA \in \R^{m\times n}</script></span> is full rank, show how to use the QR factorization to obtain the least norm solution, i.e. find <span><span class="MathJax_Preview">\vx_{LN}</span><script type="math/tex">\vx_{LN}</script></span> that solves</p>
+<p>Suppose that <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> is block diagonal, e.g. </p>
 <div>
-<div class="MathJax_Preview">
-\min_{\vx\in\R^n}\quad \|\vx\|_2^2 \quad \text{ subject to } \quad \mA\vx = \vb
+<div class="MathJax_Preview"> \mA = \bmat \mA^{(1)} &amp; 0 &amp;  \cdots &amp; 0 \\ 0 &amp; \mA^{(2)} &amp; \cdots &amp; 0 \\ \vdots   &amp; \vdots   &amp; \ddots &amp; \vdots \\0 &amp; 0 &amp; \cdots  &amp;\mA^{(l)}  \\ \emat.</div>
+<script type="math/tex; mode=display"> \mA = \bmat \mA^{(1)} & 0 &  \cdots & 0 \\ 0 & \mA^{(2)} & \cdots & 0 \\ \vdots   & \vdots   & \ddots & \vdots \\0 & 0 & \cdots  &\mA^{(l)}  \\ \emat.</script>
 </div>
-<script type="math/tex; mode=display">
-\min_{\vx\in\R^n}\quad \|\vx\|_2^2 \quad \text{ subject to } \quad \mA\vx = \vb
-</script>
+<p>Prove that <span><span class="MathJax_Preview">\mA\succeq 0</span><script type="math/tex">\mA\succeq 0</script></span> if and only if each block <span><span class="MathJax_Preview">\mA^{(k)} \succeq 0</span><script type="math/tex">\mA^{(k)} \succeq 0</script></span> for all <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>, and <span><span class="MathJax_Preview">\mA\succ 0</span><script type="math/tex">\mA\succ 0</script></span> if and only if <span><span class="MathJax_Preview">\mA^{(k)} \succ 0</span><script type="math/tex">\mA^{(k)} \succ 0</script></span> for all <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>We will show that if a twice continuously differentiable <span><span class="MathJax_Preview">f:\R^n\rightarrow \R</span><script type="math/tex">f:\R^n\rightarrow \R</script></span> has <span><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span>-Lipschitz continous gradient and a minimizer of <span><span class="MathJax_Preview">\min_{\vx \in \R^n} f(\vx)</span><script type="math/tex">\min_{\vx \in \R^n} f(\vx)</script></span> exists, then the graident method with constant step size converges if step size <span><span class="MathJax_Preview">\bar{\alpha} \in (0,\frac{2}{L})</span><script type="math/tex">\bar{\alpha} \in (0,\frac{2}{L})</script></span>. In the following subquestion, assume that <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> has an <span><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span>-Lipschitz continous gradient and is twice continuously differentiable.</p>
+<ol>
+<li>
+<p>Show <span><span class="MathJax_Preview">\nabla^2 f(\vw) \preceq L \mI</span><script type="math/tex">\nabla^2 f(\vw) \preceq L \mI</script></span> for all <span><span class="MathJax_Preview">\vw</span><script type="math/tex">\vw</script></span>.</p>
+</li>
+<li>
+<p>Building on part a. and using multivariate Taylor expansion, show the following descent lemma:</p>
+<div>
+<div class="MathJax_Preview">f(\vv) \leq f(\vw) + \nabla f(\vw)\trans (\vv-\vw) + \frac{L}{2}\|\vv-\vw\|_2^2</div>
+<script type="math/tex; mode=display">f(\vv) \leq f(\vw) + \nabla f(\vw)\trans (\vv-\vw) + \frac{L}{2}\|\vv-\vw\|_2^2</script>
 </div>
-<p>using QR decomposition.</p>
+<p>for all <span><span class="MathJax_Preview">\vv</span><script type="math/tex">\vv</script></span> and <span><span class="MathJax_Preview">\vw</span><script type="math/tex">\vw</script></span>.</p>
+</li>
+<li>
+<p>Consider gradient descent with constant step size <span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span>, i.e.</p>
+<div>
+<div class="MathJax_Preview">\vx_{k+1} = \vx_k - \alpha \nabla f(\vx_k).</div>
+<script type="math/tex; mode=display">\vx_{k+1} = \vx_k - \alpha \nabla f(\vx_k).</script>
+</div>
+<p>In the descent lemma, substitute <span><span class="MathJax_Preview">\vv = \vx_{k+1}</span><script type="math/tex">\vv = \vx_{k+1}</script></span> and <span><span class="MathJax_Preview">\vw = \vx_{k}</span><script type="math/tex">\vw = \vx_{k}</script></span> and show that <span><span class="MathJax_Preview">f(\vx_{k+1}) &lt; f(\vx_k)</span><script type="math/tex">f(\vx_{k+1}) < f(\vx_k)</script></span> if <span><span class="MathJax_Preview">\alpha \in (0,\frac{2}{L})</span><script type="math/tex">\alpha \in (0,\frac{2}{L})</script></span> and <span><span class="MathJax_Preview">\vx_k</span><script type="math/tex">\vx_k</script></span> is not a stationary point.</p>
 </li>
 </ol>
 </li>
@@ -664,7 +571,7 @@ against finding <span><span class="MathJax_Preview">x</span><script type="math/t
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../" title="Submissions" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../hw2/hw2/" title="Homework 2" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -673,25 +580,11 @@ against finding <span><span class="MathJax_Preview">x</span><script type="math/t
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Submissions
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../../hw2/hw2/" title="Homework 2" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
                 Homework 2
               </span>
             </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
           </a>
+        
         
       </nav>
     </div>
