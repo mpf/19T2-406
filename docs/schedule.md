@@ -15,10 +15,10 @@ This is a tentative schedule. It will change often.
 | 8 | 24 Jan / Fri| Quadratic functions | | |
 | 9 | 27 Jan / Mon| Quadratic functions | |hw2 due at 6pm |
 | 10 | 29 Jan / Wed| Descent methods | |  |
-| 11 | 31 Jan / Fri| Descent methods | | |
+| 11 | 31 Jan / Fri| Descent methods | | [hw3](homework/hw3/hw3.md) out|
 | 12 | 3 Feb / Mon | Newton's methods | | |
 | 13 | 5 Feb / Wed|  Quasi-Newton's methods| | |
-| 14 | 7 Feb / Fri|      | | |
+| 14 | 7 Feb / Fri|      | | hw3 due at 6pm|
 | 15 | 10 Feb / Mon| Case study     | | |
 | 16 | 12 Feb / Wed| Review     | | |
 | 17 | 14 Feb / Fri| Midterm     | | |
