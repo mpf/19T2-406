@@ -100,10 +100,21 @@ window.MathJax = {
             setZ: ["\\set Z"],
 
             exa:["\\text{Example #1:}",1],
+            Exa:["\\text{Example}"],
+
+
+            def:["\\text{Definition:}"],
 
             lemma: ["\\text{Lemma #1:}",1],
+            Lemma: ["\\text{Lemma:}"],
+
 
             trace: ["\\textbf{tr}(#1)",1],
+
+            lambdamax: ["\\lambda_{\\text{max}}"],
+
+            lambdamin: ["\\lambda_{\\text{min}}"],
+
 
             vec: ["\\textbf{vec}(#1)",1],
 
