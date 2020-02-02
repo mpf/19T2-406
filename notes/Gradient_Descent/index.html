@@ -404,6 +404,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#convergence-of-gradient-method-with-constant-stepsize" class="md-nav__link">
+    Convergence of gradient method with constant stepsize
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#condition-number-of-a-matrix" class="md-nav__link">
+    Condition number of a matrix
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaled-gradient-method" class="md-nav__link">
+    Scaled gradient method
+  </a>
+  
+</li>
+      
       
       
       
@@ -533,6 +554,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#convergence-of-gradient-method-with-constant-stepsize" class="md-nav__link">
+    Convergence of gradient method with constant stepsize
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#condition-number-of-a-matrix" class="md-nav__link">
+    Condition number of a matrix
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaled-gradient-method" class="md-nav__link">
+    Scaled gradient method
+  </a>
+  
+</li>
+      
       
       
       
@@ -557,12 +599,12 @@
 <div class="MathJax_Preview">\minimize_{\vx\in\R^n} f(\vx)</div>
 <script type="math/tex; mode=display">\minimize_{\vx\in\R^n} f(\vx)</script>
 </div>
-<p>where <span><span class="MathJax_Preview">f:\R^n \rightarrow \R</span><script type="math/tex">f:\R^n \rightarrow \R</script></span> is continously differentiable and study an iterative algorithm that solves it. We will consider an iterative algorithm of the form</p>
+<p>where <span><span class="MathJax_Preview">f:\R^n \rightarrow \R</span><script type="math/tex">f:\R^n \rightarrow \R</script></span> is continuously differentiable and study an iterative algorithm that solves it. We will consider an iterative algorithm of the form</p>
 <div>
 <div class="MathJax_Preview">\vx^{k+1} = \vx^k + \alpha^k \vd^k, \quad k = 1,2,\dots</div>
 <script type="math/tex; mode=display">\vx^{k+1} = \vx^k + \alpha^k \vd^k, \quad k = 1,2,\dots</script>
 </div>
-<p>where <span><span class="MathJax_Preview">\vd^k</span><script type="math/tex">\vd^k</script></span> and <span><span class="MathJax_Preview">\alpha^k</span><script type="math/tex">\alpha^k</script></span> are search direction and step length, respectively, at the <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>th iteration of the algorithm. A seach direction <span><span class="MathJax_Preview">\vd \neq 0</span><script type="math/tex">\vd \neq 0</script></span> is a descent direction for <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> at <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> if the directional deravtive is negative, i.e.,</p>
+<p>where <span><span class="MathJax_Preview">\vd^k</span><script type="math/tex">\vd^k</script></span> and <span><span class="MathJax_Preview">\alpha^k</span><script type="math/tex">\alpha^k</script></span> are search direction and step length, respectively, at the <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>th iteration of the algorithm. A seach direction <span><span class="MathJax_Preview">\vd \neq 0</span><script type="math/tex">\vd \neq 0</script></span> is a descent direction for <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> at <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> if the directional derivative is negative, i.e.,</p>
 <div>
 <div class="MathJax_Preview"> f'(\vx;d) = \nabla f(x)\trans \vd &lt;0.</div>
 <script type="math/tex; mode=display"> f'(\vx;d) = \nabla f(x)\trans \vd <0.</script>
@@ -638,7 +680,7 @@
 <p>In the above figure, <span><span class="MathJax_Preview">\alpha_3</span><script type="math/tex">\alpha_3</script></span> and <span><span class="MathJax_Preview">\alpha_4</span><script type="math/tex">\alpha_4</script></span> satisfy the sufficient decrease property.</p>
 </li>
 </ol>
-<p><span><span class="MathJax_Preview">\exa{(Exact linesearch for quadratic functions)}</span><script type="math/tex">\exa{(Exact linesearch for quadratic functions)}</script></span> An exact linesearch is typically only posible for quadratic functions:</p>
+<p><span><span class="MathJax_Preview">\exa{(Exact linesearch for quadratic functions)}</span><script type="math/tex">\exa{(Exact linesearch for quadratic functions)}</script></span> An exact linesearch is typically only possible for quadratic functions:</p>
 <div>
 <div class="MathJax_Preview">f(\vx) = \frac{1}{2}\vx\trans\mA\vx +\vb\trans\vx + c</div>
 <script type="math/tex; mode=display">f(\vx) = \frac{1}{2}\vx\trans\mA\vx +\vb\trans\vx + c</script>
@@ -648,7 +690,7 @@
 <div class="MathJax_Preview">\min_{\alpha\geq 0} f(\vx + \alpha \vd)</div>
 <script type="math/tex; mode=display">\min_{\alpha\geq 0} f(\vx + \alpha \vd)</script>
 </div>
-<p>where <span><span class="MathJax_Preview">\vd</span><script type="math/tex">\vd</script></span> is a descent direction, and both <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> and <span><span class="MathJax_Preview">\vd</span><script type="math/tex">\vd</script></span> are fixed. In the quadractic case, we have</p>
+<p>where <span><span class="MathJax_Preview">\vd</span><script type="math/tex">\vd</script></span> is a descent direction, and both <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> and <span><span class="MathJax_Preview">\vd</span><script type="math/tex">\vd</script></span> are fixed. In the quadratic case, we have</p>
 <div>
 <div class="MathJax_Preview">f(\vx+\alpha\vd) = \frac{1}{2}(\vx+\alpha \vd)\trans\mA(\vx+\alpha \vd) + \vb\trans(\vx+\alpha\vd)+c.</div>
 <script type="math/tex; mode=display">f(\vx+\alpha\vd) = \frac{1}{2}(\vx+\alpha \vd)\trans\mA(\vx+\alpha \vd) + \vb\trans(\vx+\alpha\vd)+c.</script>
@@ -660,7 +702,7 @@
 </div>
 <p>the optimal <span><span class="MathJax_Preview">\alpha = -\frac{\nabla f(\vx)\trans\vd}{\vd\trans\mA\vd}</span><script type="math/tex">\alpha = -\frac{\nabla f(\vx)\trans\vd}{\vd\trans\mA\vd}</script></span>, which is always positive under the assumption that <span><span class="MathJax_Preview">\mA \succ 0</span><script type="math/tex">\mA \succ 0</script></span>.</p>
 <h2 id="search-directions"><strong>Search Directions</strong><a class="headerlink" href="#search-directions" title="Permanent link">&para;</a></h2>
-<p>The simplest seach direction provies the gradient descent algorithm. In gradient descent, the seach directon <span><span class="MathJax_Preview">\vd^k : = -\vg_k</span><script type="math/tex">\vd^k : = -\vg_k</script></span>, where <span><span class="MathJax_Preview">\vg_k = \nabla f(\vx^k)</span><script type="math/tex">\vg_k = \nabla f(\vx^k)</script></span>. It is easy to see that the negative gradient descent direction <span><span class="MathJax_Preview">-\vg_k</span><script type="math/tex">-\vg_k</script></span> provides a descent direction. To show that <span><span class="MathJax_Preview">-\vg_k</span><script type="math/tex">-\vg_k</script></span> is a descent direction, consider</p>
+<p>The simplest search direction provides the gradient descent algorithm. In gradient descent, the search direction <span><span class="MathJax_Preview">\vd^k : = -\vg_k</span><script type="math/tex">\vd^k : = -\vg_k</script></span>, where <span><span class="MathJax_Preview">\vg_k = \nabla f(\vx^k)</span><script type="math/tex">\vg_k = \nabla f(\vx^k)</script></span>. It is easy to see that the negative gradient descent direction <span><span class="MathJax_Preview">-\vg_k</span><script type="math/tex">-\vg_k</script></span> provides a descent direction. To show that <span><span class="MathJax_Preview">-\vg_k</span><script type="math/tex">-\vg_k</script></span> is a descent direction, consider</p>
 <div>
 <div class="MathJax_Preview"> f'(\vx^k;\vg_k) = -\vg_k\trans\vg_k = -\|\vg\|_2^2.</div>
 <script type="math/tex; mode=display"> f'(\vx^k;\vg_k) = -\vg_k\trans\vg_k = -\|\vg\|_2^2.</script>
@@ -690,6 +732,174 @@
 </li>
 </ol>
 <hr />
+<p>Below is a Julia implementation of gradient method with exact linesearch for minimizing quadratic functions of the form <span><span class="MathJax_Preview">f(\vx) = \frac{1}{2}\vx\trans\mA\vx + \vb\trans\vx</span><script type="math/tex">f(\vx) = \frac{1}{2}\vx\trans\mA\vx + \vb\trans\vx</script></span>. We use gradient method with exact linesearch to minimize <span><span class="MathJax_Preview">f(x,y) = x^2+2y^2</span><script type="math/tex">f(x,y) = x^2+2y^2</script></span> starting at <span><span class="MathJax_Preview">(x_0,y_0) = (2,1)</span><script type="math/tex">(x_0,y_0) = (2,1)</script></span>.</p>
+<div class="codehilite"><pre><span></span><span class="k">function</span> <span class="n">grad_method_exact_ls</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">ϵ</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>
+    <span class="n">∇f</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">xtrace</span> <span class="o">=</span> <span class="n">x</span><span class="o">&#39;</span>
+    <span class="k">while</span> <span class="n">norm</span><span class="p">(</span><span class="n">∇f</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">ϵ</span>
+        <span class="n">α</span> <span class="o">=</span> <span class="n">dot</span><span class="p">(</span><span class="n">∇f</span><span class="p">,</span><span class="n">∇f</span><span class="p">)</span> <span class="o">/</span> <span class="n">dot</span><span class="p">(</span><span class="n">∇f</span><span class="p">,</span><span class="n">A</span><span class="o">*</span><span class="n">∇f</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">α</span><span class="o">*</span><span class="n">∇f</span>
+        <span class="n">∇f</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="n">x</span><span class="o">&#39;*</span><span class="n">A</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span><span class="o">&#39;*</span><span class="n">x</span>
+       <span class="c"># @printf &quot;it = %3d | |∇f| = %8.2e | f = %8.2e\n&quot; k norm(∇f) f</span>
+        <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">xtrace</span> <span class="o">=</span> <span class="n">vcat</span><span class="p">(</span><span class="n">xtrace</span><span class="p">,</span><span class="n">x</span><span class="o">&#39;</span><span class="p">)</span>
+    <span class="k">end</span>
+    <span class="k">return</span> <span class="n">xtrace</span>
+<span class="k">end</span>
+
+<span class="c">#Apply to f(x) = x^2+2y^2</span>
+<span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">0</span><span class="p">;</span><span class="mi">0</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">xtrace</span> <span class="o">=</span> <span class="n">grad_method_exact_ls</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">x0</span><span class="p">);</span>
+
+<span class="c"># contour plot</span>
+<span class="n">f</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">[</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">]</span><span class="o">&#39;*</span><span class="n">A</span><span class="o">*</span><span class="p">[</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">]</span><span class="o">+</span><span class="n">b</span><span class="o">&#39;*</span><span class="p">[</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">]</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">:</span><span class="mf">0.05</span><span class="o">:</span><span class="mi">2</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">:</span><span class="mf">0.05</span><span class="o">:</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">contour</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">levels</span> <span class="o">=</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">plot!</span><span class="p">(</span><span class="n">xtrace</span><span class="p">[</span><span class="o">:</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">xtrace</span><span class="p">[</span><span class="o">:</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">marker</span> <span class="o">=</span> <span class="mi">3</span> <span class="p">,</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;Path of gradient method&quot;</span><span class="p">)</span>
+</pre></div>
+
+<p><img alt="" src="../figures/Gradient_Descent_2_1.png" /></p>
+<h2 id="convergence-of-gradient-method-with-constant-stepsize"><strong>Convergence of gradient method with constant stepsize</strong><a class="headerlink" href="#convergence-of-gradient-method-with-constant-stepsize" title="Permanent link">&para;</a></h2>
+<p>In gradient method with constant stepsize, we set <span><span class="MathJax_Preview">\alpha)k = \bar{\alpha}</span><script type="math/tex">\alpha)k = \bar{\alpha}</script></span> for all iterations. Naturally, the convergence and convergence rate of gradient method with constant stepsize is depends on the size of the constant <span><span class="MathJax_Preview">\bar{\alpha}</span><script type="math/tex">\bar{\alpha}</script></span>. If <span><span class="MathJax_Preview">\bar{\alpha}</span><script type="math/tex">\bar{\alpha}</script></span> is small then gradient method will likely converge (assuming the function is well-behaved), however the convergence will be slow. On the other hand, if the <span><span class="MathJax_Preview">\bar{\alpha}</span><script type="math/tex">\bar{\alpha}</script></span> is large, gradient method can diverge. So, we must choose a stepsize <span><span class="MathJax_Preview">\bar{\alpha} \in (0,\alpha_{\text{max}})</span><script type="math/tex">\bar{\alpha} \in (0,\alpha_{\text{max}})</script></span> for the method to converge. This <span><span class="MathJax_Preview">\alpha_{\text{max}}</span><script type="math/tex">\alpha_{\text{max}}</script></span> will depend on a property of <span><span class="MathJax_Preview">∇f</span><script type="math/tex">∇f</script></span> called Lipschitz continuity.</p>
+<hr />
+<p><strong><em>Definition</em></strong> (Lipschitz continuity of gradient) A continuously differentiable function <span><span class="MathJax_Preview">f:\R^n \rightarrow  \R</span><script type="math/tex">f:\R^n \rightarrow  \R</script></span> has Lipschitz continuous gradient with parameter <span><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span> if </p>
+<div>
+<div class="MathJax_Preview"> \|\nabla f(\vx) - \nabla f(\vy)\|_2 \leq L \|\vx- \vy\|_2</div>
+<script type="math/tex; mode=display"> \|\nabla f(\vx) - \nabla f(\vy)\|_2 \leq L \|\vx- \vy\|_2</script>
+</div>
+<p>for all vectors <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span>, <span><span class="MathJax_Preview">\vy</span><script type="math/tex">\vy</script></span> and some constant <span><span class="MathJax_Preview">L&gt;0</span><script type="math/tex">L>0</script></span>.</p>
+<hr />
+<p><strong><em>Example</em></strong> Let <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> be a PSD matrix. Let <span><span class="MathJax_Preview">f(\vx) = \frac{1}{2}\vx\trans\mA\vx+\vb\trans\vx+c</span><script type="math/tex">f(\vx) = \frac{1}{2}\vx\trans\mA\vx+\vb\trans\vx+c</script></span>. The gradient is <span><span class="MathJax_Preview">\nabla f(\vx) = \mA\vx-\vb</span><script type="math/tex">\nabla f(\vx) = \mA\vx-\vb</script></span> and </p>
+<div>
+<div class="MathJax_Preview">\begin{align*} \|\nabla f(\vx) -\nabla f(\vy)\| =&amp; \|(\mA\vx-\vb) - (\mA\vy-\vb)\|\\
+=&amp; \|\mA\vx-\mA\vy\|\\
+=&amp; \|\mA(\vx-\vy)\|\\
+\leq &amp; \|\mA\|_2\|\vx-\vy\|_2\\
+\leq &amp; \lambda_{\text{max}}(\mA) \|\vx-\vy\|_2.
+\end{align*}</div>
+<script type="math/tex; mode=display">\begin{align*} \|\nabla f(\vx) -\nabla f(\vy)\| =& \|(\mA\vx-\vb) - (\mA\vy-\vb)\|\\
+=& \|\mA\vx-\mA\vy\|\\
+=& \|\mA(\vx-\vy)\|\\
+\leq & \|\mA\|_2\|\vx-\vy\|_2\\
+\leq & \lambda_{\text{max}}(\mA) \|\vx-\vy\|_2.
+\end{align*}</script>
+</div>
+<p>We now state a lemma that provides an upper bound on the stepsize for convergence of gradient method with constant stepsize.</p>
+<hr />
+<p><strong><em>Lemma</em></strong> If <span><span class="MathJax_Preview">f:\R^n\rightarrow \R</span><script type="math/tex">f:\R^n\rightarrow \R</script></span> has an L-Lipschitz continuous gradient and a minimizer exists, then the gradient method with constant stepsize converges if <span><span class="MathJax_Preview">\bar{\alpha} \in (0,2/L)</span><script type="math/tex">\bar{\alpha} \in (0,2/L)</script></span>.</p>
+<hr />
+<p>Using the above lemma, we can show that minimizing the quadratic <span><span class="MathJax_Preview">f(\vx) = \frac{1}{2}\vx\trans\mA\vx +\vb\trans\vx +c</span><script type="math/tex">f(\vx) = \frac{1}{2}\vx\trans\mA\vx +\vb\trans\vx +c</script></span> over <span><span class="MathJax_Preview">\R^n</span><script type="math/tex">\R^n</script></span> with <span><span class="MathJax_Preview">\mA = \bmat 1 &amp; 0 \\0 &amp; 2\emat</span><script type="math/tex">\mA = \bmat 1 & 0 \\0 & 2\emat</script></span> converges if the constant stepsize in the gradient method satisfies <span><span class="MathJax_Preview">\bar{\alpha} \in (0, 1)</span><script type="math/tex">\bar{\alpha} \in (0, 1)</script></span>. This is because <span><span class="MathJax_Preview">\lambda_{\text{max}}(\mA) = 2</span><script type="math/tex">\lambda_{\text{max}}(\mA) = 2</script></span>.</p>
+<hr />
+<p><strong><em>Lemma</em></strong> (Convergence of the gradient method) For the minimization of <span><span class="MathJax_Preview">f:\R^n\rightarrow\R</span><script type="math/tex">f:\R^n\rightarrow\R</script></span> bounded below with <span><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span>-Lipschitz gradient and one of the following linsearches</p>
+<ol>
+<li>
+<p>constant stepsize <span><span class="MathJax_Preview">\bar{\alpha}\in(0,2?L),</span><script type="math/tex">\bar{\alpha}\in(0,2?L),</script></span></p>
+</li>
+<li>
+<p>exact linesearch, or</p>
+</li>
+<li>
+<p>backtracking linesearch with <span><span class="MathJax_Preview">\mu \in (-0,1)</span><script type="math/tex">\mu \in (-0,1)</script></span>,</p>
+</li>
+</ol>
+<p>the gradient method satisfies <span><span class="MathJax_Preview">f(\vx_{k+1})&lt; f(\vx_k)</span><script type="math/tex">f(\vx_{k+1})< f(\vx_k)</script></span> for all <span><span class="MathJax_Preview">k =0,1,2,\dots</span><script type="math/tex">k =0,1,2,\dots</script></span> unless <span><span class="MathJax_Preview">\nabla f(\vx_k)  = 0</span><script type="math/tex">\nabla f(\vx_k)  = 0</script></span> and <span><span class="MathJax_Preview">\|\nabla f(\vx_k)\| \rightarrow 0</span><script type="math/tex">\|\nabla f(\vx_k)\| \rightarrow 0</script></span> as <span><span class="MathJax_Preview">k \rightarrow \infty</span><script type="math/tex">k \rightarrow \infty</script></span>.</p>
+<hr />
+<h2 id="condition-number-of-a-matrix"><strong>Condition number of a matrix</strong><a class="headerlink" href="#condition-number-of-a-matrix" title="Permanent link">&para;</a></h2>
+<p>The condition number of a <span><span class="MathJax_Preview">n\times n</span><script type="math/tex">n\times n</script></span> positive definite matrix <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> is defined by </p>
+<div>
+<div class="MathJax_Preview">\kappa(\mA) = \frac{\lambdamax(\mA)}{\lambdamin(\mA)}.</div>
+<script type="math/tex; mode=display">\kappa(\mA) = \frac{\lambdamax(\mA)}{\lambdamin(\mA)}.</script>
+</div>
+<p>An ill-conditioned matrix have large condition number and the condition number of the Hessian at the solution influences the speed at which the gradient method converges. Generally, if condition number of Hessian is small then gradient method converges quickly and, conversely, if condition number is large then gradient method converges slowly.</p>
+<p>Consider the Rosenbrock function <span><span class="MathJax_Preview">f(x_1,x_2) = 100(x_1 - x_2^2)^2 + (1-x_1)^2</span><script type="math/tex">f(x_1,x_2) = 100(x_1 - x_2^2)^2 + (1-x_1)^2</script></span>. We can show that a stationary point of the Rosenbrock function is <span><span class="MathJax_Preview">(x_1, x_2) = (1,1)</span><script type="math/tex">(x_1, x_2) = (1,1)</script></span> and the Hessian of <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> at <span><span class="MathJax_Preview">(1,1)</span><script type="math/tex">(1,1)</script></span> is <span><span class="MathJax_Preview">\bmat 802 &amp; -400\\-400 &amp; 200\emat</span><script type="math/tex">\bmat 802 & -400\\-400 & 200\emat</script></span>. The Hessian has a large condition number and, as a result, any gradient method will have slow convergence. </p>
+<div class="codehilite"><pre><span></span><span class="c">#Gradient method with backtracking</span>
+<span class="k">function</span> <span class="n">grad_method_backtracking</span><span class="p">(</span><span class="n">fObj</span><span class="p">,</span> <span class="n">gObj</span><span class="p">,</span> <span class="n">x0</span><span class="p">;</span> <span class="n">ϵ</span> <span class="o">=</span> <span class="mf">1e-6</span><span class="p">,</span> <span class="n">μ</span> <span class="o">=</span> <span class="mf">1e-5</span><span class="p">,</span> <span class="n">maxits</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">fObj</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">∇f</span> <span class="o">=</span> <span class="n">gObj</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">xtrace</span> <span class="o">=</span> <span class="n">x</span><span class="o">&#39;</span>
+    <span class="k">while</span> <span class="n">norm</span><span class="p">(</span><span class="n">∇f</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">ϵ</span> <span class="o">&amp;&amp;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">maxits</span>
+        <span class="n">α</span> <span class="o">=</span> <span class="mf">1.0</span>
+        <span class="k">while</span> <span class="p">((</span><span class="n">f</span> <span class="o">-</span> <span class="n">fObj</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">α</span><span class="o">*</span><span class="n">∇f</span><span class="p">))</span> <span class="o">&lt;</span> <span class="n">μ</span><span class="o">*</span><span class="n">α</span><span class="o">*</span><span class="n">dot</span><span class="p">(</span><span class="n">∇f</span><span class="p">,</span><span class="n">∇f</span><span class="p">)</span> <span class="p">)</span>
+            <span class="n">α</span> <span class="o">/=</span><span class="mi">2</span>
+        <span class="k">end</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">-</span><span class="n">α</span><span class="o">*</span><span class="n">∇f</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">fObj</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">∇f</span> <span class="o">=</span> <span class="n">gObj</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">xtrace</span> <span class="o">=</span> <span class="n">vcat</span><span class="p">(</span><span class="n">xtrace</span><span class="p">,</span><span class="n">x</span><span class="o">&#39;</span><span class="p">)</span>
+    <span class="k">end</span>
+    <span class="nd">@printf</span> <span class="s">&quot;it = </span><span class="si">%3d</span><span class="s"> | |∇f| = </span><span class="si">%8.2e</span><span class="s"> | f = </span><span class="si">%8.2e</span><span class="se">\n</span><span class="s">&quot;</span> <span class="n">k</span> <span class="n">norm</span><span class="p">(</span><span class="n">∇f</span><span class="p">)</span> <span class="n">f</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">xtrace</span>
+<span class="k">end</span>
+
+<span class="c">#Apply gradient method with backtracking to Rosenbrock function</span>
+<span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="mi">100</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">^</span><span class="mi">2</span>
+<span class="n">∇f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="n">ForwardDiff</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">xtrace</span> <span class="o">=</span> <span class="n">grad_method_backtracking</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">∇f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">μ</span> <span class="o">=</span> <span class="mf">1e-4</span><span class="p">,</span> <span class="n">maxits</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">);</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span>it = 1000 | |∇f| = 1.56e+00 | f = 1.33e+00
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="c">#Contour plot</span>
+<span class="n">f</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">)</span> <span class="o">=</span> <span class="mi">100</span><span class="p">(</span><span class="n">x2</span><span class="o">-</span><span class="n">x1</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x1</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="mi">0</span><span class="o">:</span><span class="mf">0.05</span><span class="o">:</span><span class="mi">3</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="mi">3</span><span class="o">:</span><span class="mf">0.05</span><span class="o">:</span><span class="mi">6</span>
+<span class="n">contour</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">levels</span> <span class="o">=</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">plot!</span><span class="p">(</span><span class="n">xtrace</span><span class="p">[</span><span class="o">:</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">xtrace</span><span class="p">[</span><span class="o">:</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span><span class="n">marker</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;Path of gradient method&quot;</span><span class="p">)</span>
+</pre></div>
+
+<p><img alt="" src="../figures/Gradient_Descent_3_1.png" /></p>
+<p>In the above plot, we see that the gradient method converges slowly. We can increase the convergence rate by transforming the minimization problem so that Hessian is well-behaved at the minimizer.</p>
+<h2 id="scaled-gradient-method"><strong>Scaled gradient method</strong><a class="headerlink" href="#scaled-gradient-method" title="Permanent link">&para;</a></h2>
+<p>Scaled gradient method applies a linear change of variable so that the resulting problem is well-behaved. Consider the minimization of a function <span><span class="MathJax_Preview">f(\vx)</span><script type="math/tex">f(\vx)</script></span> where <span><span class="MathJax_Preview">f:\R^n \rightarrow \R</span><script type="math/tex">f:\R^n \rightarrow \R</script></span>. In scaled gradient method, we fix a non-singular <span><span class="MathJax_Preview">n\times n</span><script type="math/tex">n\times n</script></span> matrix <span><span class="MathJax_Preview">\mS</span><script type="math/tex">\mS</script></span> and minimize</p>
+<div>
+<div class="MathJax_Preview"> \minimize_{\vy\in\R^n} g(\vy),</div>
+<script type="math/tex; mode=display"> \minimize_{\vy\in\R^n} g(\vy),</script>
+</div>
+<p>where <span><span class="MathJax_Preview">g(\vy) := f(\mS\vx)</span><script type="math/tex">g(\vy) := f(\mS\vx)</script></span>. That is, we make a linear change of variable with <span><span class="MathJax_Preview">\vx = \mS\vy</span><script type="math/tex">\vx = \mS\vy</script></span>. Applying gradient method to the scaled problem yields </p>
+<div>
+<div class="MathJax_Preview">\vy_{k+1} = \vy_k -\alpha_k \nabla g(\vy_k)</div>
+<script type="math/tex; mode=display">\vy_{k+1} = \vy_k -\alpha_k \nabla g(\vy_k)</script>
+</div>
+<p>with <span><span class="MathJax_Preview">\nabla g(\vy) = \mS\trans \nabla f(\mS \vy)</span><script type="math/tex">\nabla g(\vy) = \mS\trans \nabla f(\mS \vy)</script></span>. Multiplying on the left by <span><span class="MathJax_Preview">\mS</span><script type="math/tex">\mS</script></span>, we get <span><span class="MathJax_Preview">\vx_{k+1} = \vx_k -\alpha_k \mS\mS\trans\nabla f(\vx_k)</span><script type="math/tex">\vx_{k+1} = \vx_k -\alpha_k \mS\mS\trans\nabla f(\vx_k)</script></span>. So, the scaled gradient method iterate, with <span><span class="MathJax_Preview">\mD:= \mS\mS\trans</span><script type="math/tex">\mD:= \mS\mS\trans</script></span> is</p>
+<div>
+<div class="MathJax_Preview">\vx_{k+1} = \vx_k -\alpha_k\mD\nabla f(\vx_k).</div>
+<script type="math/tex; mode=display">\vx_{k+1} = \vx_k -\alpha_k\mD\nabla f(\vx_k).</script>
+</div>
+<p>It is easy to show that the scaled gradient <span><span class="MathJax_Preview">-D\nabla f(\vx)</span><script type="math/tex">-D\nabla f(\vx)</script></span> is a descent direction (check <span><span class="MathJax_Preview">f'(\vx;-\mD\nabla f(\vx)) &lt;0</span><script type="math/tex">f'(\vx;-\mD\nabla f(\vx)) <0</script></span>). The scaled gradient method is</p>
+<hr />
+<p><strong>Scaled Gradient method</strong></p>
+<p>Input: <span><span class="MathJax_Preview">\epsilon &gt;0</span><script type="math/tex">\epsilon >0</script></span> (tolerance), <span><span class="MathJax_Preview">\vx_0</span><script type="math/tex">\vx_0</script></span> (starting point)</p>
+<p>For <span><span class="MathJax_Preview">k = 0,1,2,\dots</span><script type="math/tex">k = 0,1,2,\dots</script></span></p>
+<ol>
+<li>
+<p>Choose scaling matrix <span><span class="MathJax_Preview">\mD_k</span><script type="math/tex">\mD_k</script></span></p>
+</li>
+<li>
+<p>evaluate scaled gradient <span><span class="MathJax_Preview">\vd_k = \mD_k \nabla f(\vx_k)</span><script type="math/tex">\vd_k = \mD_k \nabla f(\vx_k)</script></span></p>
+</li>
+<li>
+<p>choose step length <span><span class="MathJax_Preview">\alpha_k</span><script type="math/tex">\alpha_k</script></span> based on reducing the function <span><span class="MathJax_Preview">\phi(\alpha) = f(\vx_k-\alpha\vd_k)</span><script type="math/tex">\phi(\alpha) = f(\vx_k-\alpha\vd_k)</script></span></p>
+</li>
+<li>
+<p>set <span><span class="MathJax_Preview">\vx_{k+1} = \vx_k -\alpha_k \vg_k</span><script type="math/tex">\vx_{k+1} = \vx_k -\alpha_k \vg_k</script></span></p>
+</li>
+<li>
+<p>stop if <span><span class="MathJax_Preview">\|\nabla f(\vx_{k+1})\|&lt;\epsilon</span><script type="math/tex">\|\nabla f(\vx_{k+1})\|<\epsilon</script></span>.</p>
+</li>
+</ol>
+<hr />
+<p>In the above algorithm, the choice of <span><span class="MathJax_Preview">\mD</span><script type="math/tex">\mD</script></span> should make <span><span class="MathJax_Preview">\nabla^2 g(\vy) = \mD^{\frac{1}{2}}\nabla^2 f(\mD^{\frac{1}{2}}\vy)\mD^{\frac{1}{2}} = \mD^{\frac{1}{2}}\nabla^2 f(\vx)\mD^{\frac{1}{2}}</span><script type="math/tex">\nabla^2 g(\vy) = \mD^{\frac{1}{2}}\nabla^2 f(\mD^{\frac{1}{2}}\vy)\mD^{\frac{1}{2}} = \mD^{\frac{1}{2}}\nabla^2 f(\vx)\mD^{\frac{1}{2}}</script></span> as well conditioned as possible. For example, in Newton method, we choose <span><span class="MathJax_Preview">\mD_k = (\nabla^2 f(\vx))^{-1}</span><script type="math/tex">\mD_k = (\nabla^2 f(\vx))^{-1}</script></span> which results in <span><span class="MathJax_Preview">\mD^{\frac{1}{2}}\nabla^2 f(\vx)\mD^{\frac{1}{2}} = \mI</span><script type="math/tex">\mD^{\frac{1}{2}}\nabla^2 f(\vx)\mD^{\frac{1}{2}} = \mI</script></span>, which has the condition number of 1. Similarly, in damped-Newton, we choose <span><span class="MathJax_Preview">\mD_k = (\nabla^2 f(\vx)+\lambda\mI)^{-1}</span><script type="math/tex">\mD_k = (\nabla^2 f(\vx)+\lambda\mI)^{-1}</script></span>, where condition number approaches 1 as <span><span class="MathJax_Preview">\lambda \rightarrow \infty</span><script type="math/tex">\lambda \rightarrow \infty</script></span></p>
                 
                   
                 
