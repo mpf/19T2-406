@@ -13,7 +13,7 @@ This is a tentative schedule. It will change often.
 | 6 | 20 Jan / Mon| [Unconstrained optimization](notes/unconstrained.md#UnconstrainedOptimization) | | [hw2](homework/hw2/hw2.md) out |
 | 7 | 22 Jan / Wed| [Unconstrained optimization](notes/unconstrained.md#UnconstrainedOptimization) | | |
 | 8 | 24 Jan / Fri| Quadratic functions | | |
-| 9 | 27 Jan / Mon| [Descent methods](notes/Gradient_Descent.md#GradientDescent) | [notebook](https://nbviewer.jupyter.org/github/mpf/19T2-406/blob/master/docs/notebooks/Gradient_method.ipynb) |hw2 due at 6pm |
+| 9 | 27 Jan / Mon| [Descent methods](notes/Gradient_Descent.md#GradientDescent) | [notebook](https://nbviewer.jupyter.org/github/mpf/19T2-406/blob/master/docs/notebooks/Gradient_descent.ipynb) |hw2 due at 6pm |
 | 9 | 27 Jan / Mon| [Descent methods](notes/Gradient_Descent.md#GradientDescent) | |hw2 due at 6pm |
 | 11 | 31 Jan / Fri| [Descent methods](notes/Gradient_Descent.md#GradientDescent) | | [hw3](homework/hw3/hw3.md) out|
 | 12 | 3 Feb / Mon | Newton's methods | | |
