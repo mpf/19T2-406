@@ -505,12 +505,12 @@
 </ol>
 </li>
 <li>
-<p>Consider <span><span class="MathJax_Preview">\mA\in \R^{m\times n}</span><script type="math/tex">\mA\in \R^{m\times n}</script></span> and <span><span class="MathJax_Preview">B\in \R^{m\times n}</span><script type="math/tex">B\in \R^{m\times n}</script></span>. Show that 
+<p>Consider <span><span class="MathJax_Preview">\mA\in \R^{m\times n}</span><script type="math/tex">\mA\in \R^{m\times n}</script></span> and <span><span class="MathJax_Preview">\mB\in \R^{m\times n}</span><script type="math/tex">\mB\in \R^{m\times n}</script></span>. Show that 
     $$ \tr(\mA\trans\mB) = \sum_{i,j} A_{ij}B_{ij}.$$ 
-    Compute the number of flops and storage required to calculate the left hand side (<span><span class="MathJax_Preview">\tr(\mA'*\mB)</span><script type="math/tex">\tr(\mA'*\mB)</script></span>) and right hand side (<span><span class="MathJax_Preview">\sum_{i,j} A_{ij}B_{ij}</span><script type="math/tex">\sum_{i,j} A_{ij}B_{ij}</script></span>) . (Use  <span><span class="MathJax_Preview">O(f(n,m))</span><script type="math/tex">O(f(n,m))</script></span> notation.) Is there a "superior" formulation?</p>
+    Compute the number of flops and storage required to calculate the left hand side (<span><span class="MathJax_Preview">\tr(\mA'*\mB)</span><script type="math/tex">\tr(\mA'*\mB)</script></span>) and right hand side (<span><span class="MathJax_Preview">\sum_{i,j} A_{ij}B_{ij}</span><script type="math/tex">\sum_{i,j} A_{ij}B_{ij}</script></span>) . (Use  <span><span class="MathJax_Preview">O(f(n,m))</span><script type="math/tex">O(f(n,m))</script></span> notation.) Which of the two is the "superior" formulation?</p>
 </li>
 <li>
-<p>(Structered matrices.) Consider a  matrix <span><span class="MathJax_Preview">\mA\in \R^{n\times n}</span><script type="math/tex">\mA\in \R^{n\times n}</script></span>.</p>
+<p>(Structured matrices.) Consider a  matrix <span><span class="MathJax_Preview">\mA\in \R^{n\times n}</span><script type="math/tex">\mA\in \R^{n\times n}</script></span>.</p>
 <ol>
 <li>
 <p>Suppose <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> is diagonal, e.g. <span><span class="MathJax_Preview">A_{ij} = 0</span><script type="math/tex">A_{ij} = 0</script></span> whenever <span><span class="MathJax_Preview">i\neq j</span><script type="math/tex">i\neq j</script></span>. Prove that <span><span class="MathJax_Preview">\mA \succeq 0</span><script type="math/tex">\mA \succeq 0</script></span> if and only if <span><span class="MathJax_Preview">A_{ii} \geq 0</span><script type="math/tex">A_{ii} \geq 0</script></span> for all <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>, and <span><span class="MathJax_Preview">\mA\succ 0</span><script type="math/tex">\mA\succ 0</script></span> if and only if <span><span class="MathJax_Preview">A_{ii} &gt; 0</span><script type="math/tex">A_{ii} > 0</script></span> for all <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>.</p>
@@ -529,15 +529,23 @@
 <p>We will show that if a twice continuously differentiable <span><span class="MathJax_Preview">f:\R^n\rightarrow \R</span><script type="math/tex">f:\R^n\rightarrow \R</script></span> has <span><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span>-Lipschitz continous gradient and a minimizer of <span><span class="MathJax_Preview">\min_{\vx \in \R^n} f(\vx)</span><script type="math/tex">\min_{\vx \in \R^n} f(\vx)</script></span> exists, then the graident method with constant step size converges if step size <span><span class="MathJax_Preview">\bar{\alpha} \in (0,\frac{2}{L})</span><script type="math/tex">\bar{\alpha} \in (0,\frac{2}{L})</script></span>. In the following subquestion, assume that <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> has an <span><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span>-Lipschitz continous gradient and is twice continuously differentiable.</p>
 <ol>
 <li>
-<p>Show <span><span class="MathJax_Preview">\nabla^2 f(\vw) \preceq L \mI</span><script type="math/tex">\nabla^2 f(\vw) \preceq L \mI</script></span> for all <span><span class="MathJax_Preview">\vw</span><script type="math/tex">\vw</script></span>.</p>
+<p>Fix <span><span class="MathJax_Preview">\vx \in \R^n</span><script type="math/tex">\vx \in \R^n</script></span>. Show that <span><span class="MathJax_Preview">\|\nabla^2 f(\vx)\vv \|_2 \leq L\|\vv\|_2</span><script type="math/tex">\|\nabla^2 f(\vx)\vv \|_2 \leq L\|\vv\|_2</script></span> for all <span><span class="MathJax_Preview">\vv</span><script type="math/tex">\vv</script></span>. (Hint: Let <span><span class="MathJax_Preview">c:\R^n\rightarrow\R^n</span><script type="math/tex">c:\R^n\rightarrow\R^n</script></span> be continuously differentiable. Then the directional derivative of <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> at <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> in the direction of <span><span class="MathJax_Preview">\vv</span><script type="math/tex">\vv</script></span> is </p>
+<div>
+<div class="MathJax_Preview"> \mJ\vv = \lim_{t ↘ 0} \frac{c(\vx + t\vv) - c(\vx)}{t},</div>
+<script type="math/tex; mode=display"> \mJ\vv = \lim_{t ↘ 0} \frac{c(\vx + t\vv) - c(\vx)}{t},</script>
+</div>
+<p>where <span><span class="MathJax_Preview">\mJ</span><script type="math/tex">\mJ</script></span> is the Jacobian of <span><span class="MathJax_Preview">c</span><script type="math/tex">c</script></span> at <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span>. Apply this to <span><span class="MathJax_Preview">c = \nabla f</span><script type="math/tex">c = \nabla f</script></span> and take 2-norm of both sides.)</p>
 </li>
 <li>
-<p>Building on part a. and using multivariate Taylor expansion, show the following descent lemma:</p>
+<p>Show that for all <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span>, the eigenvalues of <span><span class="MathJax_Preview">\nabla^2 f(\vx)</span><script type="math/tex">\nabla^2 f(\vx)</script></span> are bounded from above by <span><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span> , i.e. for all <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span>, we have <span><span class="MathJax_Preview">\nabla^2 f(\vx) \preceq L \mI</span><script type="math/tex">\nabla^2 f(\vx) \preceq L \mI</script></span>. </p>
+</li>
+<li>
+<p>Building on part b. and using multivariate Taylor's remainder theorem (Beck Thm 1.24), show that</p>
 <div>
 <div class="MathJax_Preview">f(\vv) \leq f(\vw) + \nabla f(\vw)\trans (\vv-\vw) + \frac{L}{2}\|\vv-\vw\|_2^2</div>
 <script type="math/tex; mode=display">f(\vv) \leq f(\vw) + \nabla f(\vw)\trans (\vv-\vw) + \frac{L}{2}\|\vv-\vw\|_2^2</script>
 </div>
-<p>for all <span><span class="MathJax_Preview">\vv</span><script type="math/tex">\vv</script></span> and <span><span class="MathJax_Preview">\vw</span><script type="math/tex">\vw</script></span>.</p>
+<p>for all <span><span class="MathJax_Preview">\vv</span><script type="math/tex">\vv</script></span> and <span><span class="MathJax_Preview">\vw</span><script type="math/tex">\vw</script></span>. This is known as the descent lemma.</p>
 </li>
 <li>
 <p>Consider gradient descent with constant step size <span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span>, i.e.</p>
