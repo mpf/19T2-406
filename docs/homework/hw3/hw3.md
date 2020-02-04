@@ -14,11 +14,11 @@
     
     12. (Beck 2.19) Let $f(\vx) = \frac{1}{2} \vx\trans\mA\vx + \vb\trans\vx + \vc$, where $\mA \in \R^{n\times n}$ is PSD ($\mA\succeq 0$), $\vb\in \R^n$, and $\vc\in \R$. Show that $f$ is bounded below over $\R^n$ if and only if $\vb\in \range(\mA) = \{\mA\vy : \vy\in \R^n\}$. Note: you must argue both directions!
 
-13. Consider $\mA\in \R^{m\times n}$ and $B\in \R^{m\times n}$. Show that 
+13. Consider $\mA\in \R^{m\times n}$ and $\mB\in \R^{m\times n}$. Show that 
     $$ \tr(\mA\trans\mB) = \sum_{i,j} A_{ij}B_{ij}.$$ 
-    Compute the number of flops and storage required to calculate the left hand side ($\tr(\mA'*\mB)$) and right hand side ($\sum_{i,j} A_{ij}B_{ij}$) . (Use  $O(f(n,m))$ notation.) Is there a "superior" formulation?
+    Compute the number of flops and storage required to calculate the left hand side ($\tr(\mA'*\mB)$) and right hand side ($\sum_{i,j} A_{ij}B_{ij}$) . (Use  $O(f(n,m))$ notation.) Which of the two is the "superior" formulation?
 
-14. (Structered matrices.) Consider a  matrix $\mA\in \R^{n\times n}$.
+14. (Structured matrices.) Consider a  matrix $\mA\in \R^{n\times n}$.
 
     15. Suppose $\mA$ is diagonal, e.g. $A_{ij} = 0$ whenever $i\neq j$. Prove that $\mA \succeq 0$ if and only if $A_{ii} \geq 0$ for all $i$, and $\mA\succ 0$ if and only if $A_{ii} > 0$ for all $i$.
 
@@ -30,13 +30,19 @@
 
 18. We will show that if a twice continuously differentiable $f:\R^n\rightarrow \R$ has $L$-Lipschitz continous gradient and a minimizer of $\min_{\vx \in \R^n} f(\vx)$ exists, then the graident method with constant step size converges if step size $\bar{\alpha} \in (0,\frac{2}{L})$. In the following subquestion, assume that $f$ has an $L$-Lipschitz continous gradient and is twice continuously differentiable.
 
-    19. Show $\nabla^2 f(\vw) \preceq L \mI$ for all $\vw$.
+    19. Fix $\vx \in \R^n$. Show that $\|\nabla^2 f(\vx)\vv \|_2 \leq L\|\vv\|_2$ for all $\vv$. (Hint: Let $c:\R^n\rightarrow\R^n$ be continuously differentiable. Then the directional derivative of $f$ at $\vx$ in the direction of $\vv$ is 
 
-    20. Building on part a. and using multivariate Taylor expansion, show the following descent lemma:
+        $$ \mJ\vv = \lim_{t ↘ 0} \frac{c(\vx + t\vv) - c(\vx)}{t},$$
+
+        where $\mJ$ is the Jacobian of $c$ at $\vx$. Apply this to $c = \nabla f$ and take 2-norm of both sides.)
+
+    19. Show that for all $\vx$, the eigenvalues of $\nabla^2 f(\vx)$ are bounded from above by $L$ , i.e. for all $\vx$, we have $\nabla^2 f(\vx) \preceq L \mI$. 
+
+    20. Building on part b. and using multivariate Taylor's remainder theorem (Beck Thm 1.24), show that
 
         $$f(\vv) \leq f(\vw) + \nabla f(\vw)\trans (\vv-\vw) + \frac{L}{2}\|\vv-\vw\|_2^2$$
 
-        for all $\vv$ and $\vw$.
+        for all $\vv$ and $\vw$. This is known as the descent lemma.
 
     21. Consider gradient descent with constant step size $\alpha$, i.e.
 
