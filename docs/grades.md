@@ -18,14 +18,13 @@ Plagiarism](https://my.cs.ubc.ca/docs/collaboration-plagiarism).
 
 ## Late submissions
 
-Each student has a three business-day allowance to use throughout the
-term. If an assignment is due by Thursday, then submission by Friday
-counts as one delay; a submission by Monday counts as two delays; a
-submission by Tuesday counts as three delays (and consumes the entire
-three-day allowance).  Apart from using delays, late submissions are
-not accepted. Once a solution set has been posted, no more late
-submissions are permitted; consequently, you may not always be able to
-use all of your delays.
+Each student has a three lecture-day allowance to use throughout the term. For
+instance, if an assignment is due by Wednesday, then submission by Friday counts
+as one delay; a submission by Monday counts as two delays; a submission by the
+following Wednesday counts as three delays (and consumes the entire three-day
+allowance). Apart from using delays, late submissions are not accepted. Once a
+solution set has been posted, no more late submissions are permitted;
+consequently, you may not always be able to use all of your delays.
 
 
 ## Policies

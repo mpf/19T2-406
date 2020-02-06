@@ -10,4 +10,4 @@ Jupyter notebook submissions are especially encouraged because these are a conve
 way of packaging typeset solutions and corresponding results and code. If you choose
 to use a Jupyter notebook, please submit a PDF and the `ipynb` file.
 
-* Adhere to the policy on [collaboration and late submissions](/19T2-406/grades).
+* Adhere to the policy on [collaboration and late submissions](../grades).

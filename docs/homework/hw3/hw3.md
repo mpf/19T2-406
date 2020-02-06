@@ -12,7 +12,7 @@
 
         11.  From the picture, for each point, are they local / global minima/ maxima? Neither?
     
-    12. (Beck 2.19) Let $f(\vx) = \frac{1}{2} \vx\trans\mA\vx + \vb\trans\vx + \vc$, where $\mA \in \R^{n\times n}$ is PSD ($\mA\succeq 0$), $\vb\in \R^n$, and $\vc\in \R$. Show that $f$ is bounded below over $\R^n$ if and only if $\vb\in \range(\mA) = \{\mA\vy : \vy\in \R^n\}$. Note: you must argue both directions!
+    12. (Beck 2.19) Let $f(\vx) = \frac{1}{2} \vx\trans\mA\vx + \vb\trans\vx + \vc$, where $\mA \in \R^{n\times n}$ is positive semidefinite, $\vb\in \R^n$, and $\vc\in \R$. Show that $f$ is bounded below over $\R^n$ if and only if $\vb\in \range(\mA) := \{\mA\vy \mid \vy\in \R^n\}$. Note: you must argue both directions!
 
 13. Consider $\mA\in \R^{m\times n}$ and $\mB\in \R^{m\times n}$. Show that 
     $$ \tr(\mA\trans\mB) = \sum_{i,j} A_{ij}B_{ij}.$$ 
@@ -32,17 +32,19 @@
 
     19. Fix $\vx \in \R^n$. Show that $\|\nabla^2 f(\vx)\vv \|_2 \leq L\|\vv\|_2$ for all $\vv$. (Hint: Let $c:\R^n\rightarrow\R^n$ be continuously differentiable. Then the directional derivative of $f$ at $\vx$ in the direction of $\vv$ is 
 
-        $$ \mJ\vv = \lim_{t ↘ 0} \frac{c(\vx + t\vv) - c(\vx)}{t},$$
+        $$ \mJ(\vx)\vv = \lim_{t ↘ 0} \frac{c(\vx + t\vv) - c(\vx)}{t},$$
 
-        where $\mJ$ is the Jacobian of $c$ at $\vx$. Apply this to $c = \nabla f$ and take 2-norm of both sides.)
+        where $\mJ(\vx)$ is the Jacobian of $c$ evaluated at $\vx$. Apply this to $c = \nabla f$ and take 2-norm of both sides.)
 
-    19. Show that for all $\vx$, the eigenvalues of $\nabla^2 f(\vx)$ are bounded from above by $L$ , i.e. for all $\vx$, we have $\nabla^2 f(\vx) \preceq L \mI$. 
+    19. Show that for all $\vx$, the eigenvalues of $\nabla^2 f(\vx)$ are
+        bounded from above by $L$, i.e. $\lambdamax(\nabla^2 f(\vx))\le L$ for
+        all $\vx$.
 
-    20. Building on part b. and using multivariate Taylor's remainder theorem (Beck Thm 1.24), show that
+    20. Building on part (b) and using multivariate Taylor's remainder theorem (Beck Thm 1.24), show that
 
         $$f(\vv) \leq f(\vw) + \nabla f(\vw)\trans (\vv-\vw) + \frac{L}{2}\|\vv-\vw\|_2^2$$
 
-        for all $\vv$ and $\vw$. This is known as the descent lemma.
+        for all $\vv$ and $\vw$. This is sometimes known as the Descent Lemma.
 
     21. Consider gradient descent with constant step size $\alpha$, i.e.
 
