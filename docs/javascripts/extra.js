@@ -135,6 +135,7 @@ window.MathJax = {
             red: ["{\\color{red}#1}",1],
 
             minimize: ["\\mathop{\\text{minimize}}"],
+            maximize: ["\\mathop{\\text{maximize}}"],
             argmin: ["\\mathop{\\text{argmin}}"],
             argmax: ["\\mathop{\\text{argmax}}"],
 
@@ -158,7 +159,9 @@ window.MathJax = {
             trans: ["^\\intercal"],
             det: ["\\text{det}"],
             vrho: ["\\vct \\rho"],
-            vnu: ["\\vct \\nu"]
+            vnu: ["\\vct \\nu"],
+
+            pr: ["{\\textbf{Pr}}"]
 
 
 
