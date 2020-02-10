@@ -1,0 +1,702 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Home page for CPSC406 Term 2 2019">
+      
+      
+        <link rel="canonical" href="https://friedlander.io/19T2-406/homework/hw3/hw3_soln/">
+      
+      
+        <meta name="author" content="Michael P. Friedlander and Babhru Joshi">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+    
+    
+      
+        <title>**Homework 3 solution** - CPSC406 &mdash; Computational Optimization</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.1b62728e.css">
+      
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#homework-3-solution" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://friedlander.io/19T2-406" title="CPSC406 &mdash; Computational Optimization" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              CPSC406 &mdash; Computational Optimization
+            </span>
+            <span class="md-header-nav__topic">
+              
+                **Homework 3 solution**
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link md-tabs__link--active">
+        Home Page
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../notes/background/" class="md-tabs__link">
+          Lecture notes
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../" class="md-tabs__link">
+          Homework
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../InclassActivity/mlactivity/mlactivity/" class="md-tabs__link">
+          In-class Activity
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://friedlander.io/19T2-406" title="CPSC406 &mdash; Computational Optimization" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    CPSC406 &mdash; Computational Optimization
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home Page" class="md-nav__link">
+      Home Page
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../grades/" title="Grades" class="md-nav__link">
+      Grades
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../schedule/" title="Schedule" class="md-nav__link">
+      Schedule
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Lecture notes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Lecture notes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../notes/background/" title="Mathematical background" class="md-nav__link">
+      Mathematical background
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../notes/Least_squares/" title="Least squares" class="md-nav__link">
+      Least squares
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../notes/QR_factorization/" title="QR factorization" class="md-nav__link">
+      QR factorization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../notes/Regularized_LS/" title="Regularized least squares" class="md-nav__link">
+      Regularized least squares
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../notes/Non-linear_LS/" title="Non-linear least squares" class="md-nav__link">
+      Non-linear least squares
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../notes/unconstrained/" title="Unconstrained optimization" class="md-nav__link">
+      Unconstrained optimization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../notes/Gradient_Descent/" title="Gradient descent" class="md-nav__link">
+      Gradient descent
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Homework
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Homework
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="Submissions" class="md-nav__link">
+      Submissions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hw1/hw1/" title="Homework 1" class="md-nav__link">
+      Homework 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hw2/hw2/" title="Homework 2" class="md-nav__link">
+      Homework 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../hw3/" title="Homework 3" class="md-nav__link">
+      Homework 3
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      In-class Activity
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        In-class Activity
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../InclassActivity/mlactivity/mlactivity/" title="Digit classification" class="md-nav__link">
+      Digit classification
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="homework-3-solution"><strong>Homework 3 solution</strong><a class="headerlink" href="#homework-3-solution" title="Permanent link">&para;</a></h1>
+<ol>
+<li>
+<p>(Exercises from Beck Ch 2) </p>
+<ol>
+<li>
+<p>(Beck 2.17) Here <span><span class="MathJax_Preview">f(x_1,x_2) =  2x_2^3-6x_2^2+3x_1^2x_2</span><script type="math/tex">f(x_1,x_2) =  2x_2^3-6x_2^2+3x_1^2x_2</script></span>,</p>
+<ol>
+<li>
+<p>The gradient is </p>
+<div>
+<div class="MathJax_Preview">\nabla f(x) = \bmat 6x_1x_2 \\ 6x_2^2 - 12x_2 + 3x_1^2\emat, \qquad</div>
+<script type="math/tex; mode=display">\nabla f(x) = \bmat 6x_1x_2 \\ 6x_2^2 - 12x_2 + 3x_1^2\emat, \qquad</script>
+</div>
+<p>There are two stationary points: <span><span class="MathJax_Preview">x^* = (0,0)</span><script type="math/tex">x^* = (0,0)</script></span> and <span><span class="MathJax_Preview">x^* = (0,2)</span><script type="math/tex">x^* = (0,2)</script></span>.</p>
+</li>
+<li>
+<p>The Hessian is</p>
+<div>
+<div class="MathJax_Preview">\nabla^2 f(x) = \bmat 6x_2  &amp; 6x_1   \\ 6x_1 &amp; 12x_2-12 \emat</div>
+<script type="math/tex; mode=display">\nabla^2 f(x) = \bmat 6x_2  & 6x_1   \\ 6x_1 & 12x_2-12 \emat</script>
+</div>
+<p>At <span><span class="MathJax_Preview">x^* = (0,0)</span><script type="math/tex">x^* = (0,0)</script></span>,
+$$\nabla^2 f\left(\bmat 0 \ 0 \emat \right) = \bmat 0 &amp; 0   \ 0 &amp; -12\emat $$</p>
+<p>which is negative semidefinite. (Diagonal with all non-positive values, and one 0.) We cannot tell if it is a local minimum or maximum or saddle point. At <span><span class="MathJax_Preview">x^* = (0,2)</span><script type="math/tex">x^* = (0,2)</script></span>,
+$$\nabla^2 f\left(\bmat 0 \ 2 \emat \right) = \bmat 12 &amp; 0   \ 0 &amp; 12\emat $$</p>
+<p>which is positive definite. (Diagonal with all strictly positive values). This point must be a strict local minima.</p>
+</li>
+<li>
+<p>At <span><span class="MathJax_Preview">x = (0,2)</span><script type="math/tex">x = (0,2)</script></span>, it is clearly a strict local minimum.</p>
+</li>
+</ol>
+<p><center>
+        <img src="../figures/p1_d_min.png" width = "300"> 
+   </center></p>
+<p>At <span><span class="MathJax_Preview">x = (0,0)</span><script type="math/tex">x = (0,0)</script></span>, it is a saddle point.</p>
+<p><center>
+        <img src="../figures/p1_d_saddle.png" width = "300"> 
+   </center></p>
+</li>
+<li>
+<p>(Beck 2.19) We first show that forward implication. Since <span><span class="MathJax_Preview">\nabla^2 f(x) = A \succeq 0</span><script type="math/tex">\nabla^2 f(x) = A \succeq 0</script></span> for all <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>, if we find any point in which <span><span class="MathJax_Preview">\nabla f(x) = 0</span><script type="math/tex">\nabla f(x) = 0</script></span>, then we have found a global minimizer of this function. If <span><span class="MathJax_Preview">b\in \range(A)</span><script type="math/tex">b\in \range(A)</script></span>, then there exists a <span><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span> where <span><span class="MathJax_Preview">Ay = b</span><script type="math/tex">Ay = b</script></span>. Taking <span><span class="MathJax_Preview">x^* = -y</span><script type="math/tex">x^* = -y</script></span> gives the stationary point we need.</p>
+<p>Now assume that <span><span class="MathJax_Preview">b\not\in \range(A)</span><script type="math/tex">b\not\in \range(A)</script></span>. Then, this means that <span><span class="MathJax_Preview">b = u+v</span><script type="math/tex">b = u+v</script></span> where <span><span class="MathJax_Preview">u\in \range(A)</span><script type="math/tex">u\in \range(A)</script></span> and <span><span class="MathJax_Preview">v\in \vnull(A^T) = \vnull(A)</span><script type="math/tex">v\in \vnull(A^T) = \vnull(A)</script></span> where <span><span class="MathJax_Preview">v\neq 0</span><script type="math/tex">v\neq 0</script></span>. Now take any <span><span class="MathJax_Preview">x = \gamma v</span><script type="math/tex">x = \gamma v</script></span> for any scalar <span><span class="MathJax_Preview">c</span><script type="math/tex">c</script></span>. Then </p>
+<div>
+<div class="MathJax_Preview">
+f(\gamma v) = \frac{\gamma ^2}{2}\underbrace{v^TAv}_{=0} + \gamma \underbrace{b^Tv}_{=v^Tv} + c = \gamma \|v\|_2^2 + c.
+</div>
+<script type="math/tex; mode=display">
+f(\gamma v) = \frac{\gamma ^2}{2}\underbrace{v^TAv}_{=0} + \gamma \underbrace{b^Tv}_{=v^Tv} + c = \gamma \|v\|_2^2 + c.
+</script>
+</div>
+<p>Picking <span><span class="MathJax_Preview">\gamma\to -\infty</span><script type="math/tex">\gamma\to -\infty</script></span> shows that <span><span class="MathJax_Preview">f(\gamma v) \to -\infty</span><script type="math/tex">f(\gamma v) \to -\infty</script></span> is unbounded below. </p>
+</li>
+</ol>
+</li>
+<li>
+<p>To compute <span><span class="MathJax_Preview">\tr(A^TB)</span><script type="math/tex">\tr(A^TB)</script></span>, we must first form the matrix product <span><span class="MathJax_Preview">A^TB</span><script type="math/tex">A^TB</script></span> which requires <span><span class="MathJax_Preview">O(n^2m)</span><script type="math/tex">O(n^2m)</script></span> flops and <span><span class="MathJax_Preview">O(n^2)</span><script type="math/tex">O(n^2)</script></span> storage. Then extracting the trace is an additional <span><span class="MathJax_Preview">O(n)</span><script type="math/tex">O(n)</script></span> flops and <span><span class="MathJax_Preview">O(1)</span><script type="math/tex">O(1)</script></span> storage. So, in total, <span><span class="MathJax_Preview">O(n^2m + n)</span><script type="math/tex">O(n^2m + n)</script></span> flops (or <span><span class="MathJax_Preview">O(n^2m)</span><script type="math/tex">O(n^2m)</script></span> as the dominating term) and <span><span class="MathJax_Preview">O(n^2+1)</span><script type="math/tex">O(n^2+1)</script></span> storage (or just <span><span class="MathJax_Preview">O(n^2)</span><script type="math/tex">O(n^2)</script></span>). </p>
+<p>To compute the right and side, we do not need any additional storage, and just require <span><span class="MathJax_Preview">O(mn)</span><script type="math/tex">O(mn)</script></span> flops. </p>
+<p>Now if <span><span class="MathJax_Preview">m \gg n</span><script type="math/tex">m \gg n</script></span>, this is a significant reduction in storage, and if <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> is large is a significant reduction in flops.  The key takeaway is that, for proper scalability, though many things are equivalent, how you implement it matters. </p>
+</li>
+<li>
+<p>Here, <span><span class="MathJax_Preview">f:\R^n \rightarrow \R</span><script type="math/tex">f:\R^n \rightarrow \R</script></span> is a twice continuously differentiable function that has <span><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span>-Lipschitz gradient.</p>
+<ol>
+<li>
+<p>The directional derivative of <span><span class="MathJax_Preview">\nabla f</span><script type="math/tex">\nabla f</script></span> at <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> in the direction <span><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span> is</p>
+<div>
+<div class="MathJax_Preview">
+\begin{align}
+\nabla^2 f(x) v &amp;= \lim_{t \searrow 0} \frac{\nabla f(x+tv)-\nabla f(x)}{t}.\\
+\end{align}
+</div>
+<script type="math/tex; mode=display">
+\begin{align}
+\nabla^2 f(x) v &= \lim_{t \searrow 0} \frac{\nabla f(x+tv)-\nabla f(x)}{t}.\\
+\end{align}
+</script>
+</div>
+<p>So,</p>
+<div>
+<div class="MathJax_Preview">
+\begin{align}
+\|\nabla^2 f(x) v\|_2 &amp;= \|\lim_{t \searrow 0} \frac{\nabla f(x+tv)-\nabla f(x)}{t}\|_2\\
+&amp; = \lim_{t \searrow 0} \|\frac{\nabla f(x+tv)-\nabla f(x)}{t}\|_2\\
+&amp; \leq \lim_{t \searrow 0} \frac{L\|tv\|}{t}\\
+&amp; = L\|v\|_2 
+\end{align}
+</div>
+<script type="math/tex; mode=display">
+\begin{align}
+\|\nabla^2 f(x) v\|_2 &= \|\lim_{t \searrow 0} \frac{\nabla f(x+tv)-\nabla f(x)}{t}\|_2\\
+& = \lim_{t \searrow 0} \|\frac{\nabla f(x+tv)-\nabla f(x)}{t}\|_2\\
+& \leq \lim_{t \searrow 0} \frac{L\|tv\|}{t}\\
+& = L\|v\|_2 
+\end{align}
+</script>
+</div>
+<p>where second line follows from continuity of norms and third line follows from <span><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span>-Lipschitz of gradient.</p>
+</li>
+<li>
+<p>From above, we have that any fixed <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>  satisfies the inequality <span><span class="MathJax_Preview">\|\nabla^2 f(x) v\| \leq L\|v\|_2</span><script type="math/tex">\|\nabla^2 f(x) v\| \leq L\|v\|_2</script></span> for all <span><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span>.</p>
+<p>Fix <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> and let <span><span class="MathJax_Preview">(\lambda_+,v_+)</span><script type="math/tex">(\lambda_+,v_+)</script></span> be the maximal eigen-pair of the matrix <span><span class="MathJax_Preview">\nabla^2 f(x)</span><script type="math/tex">\nabla^2 f(x)</script></span>. So, <span><span class="MathJax_Preview">\|\nabla^2 f(x) v\| \leq L\|v\|_2</span><script type="math/tex">\|\nabla^2 f(x) v\| \leq L\|v\|_2</script></span> for all <span><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span> gives <span><span class="MathJax_Preview">\lambda_+ \leq L</span><script type="math/tex">\lambda_+ \leq L</script></span>. Thus, all eigenvalues of <span><span class="MathJax_Preview">\nabla^2 f(x)</span><script type="math/tex">\nabla^2 f(x)</script></span> is bounded from above by <span><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span>. As <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> is arbitrary, we get that for all <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>, the eigenvalues of <span><span class="MathJax_Preview">\nabla^2 f(x)</span><script type="math/tex">\nabla^2 f(x)</script></span> is bounded from above by <span><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span>.</p>
+</li>
+<li>
+<p>Using Taylor's remainder theorem, we get</p>
+<div>
+<div class="MathJax_Preview">f(v) = f(w) -\nabla f(w)^\intercal (v-w) + \frac{1}{2}(v-w)^\intercal\nabla^2 f(\xi) (v-w),</div>
+<script type="math/tex; mode=display">f(v) = f(w) -\nabla f(w)^\intercal (v-w) + \frac{1}{2}(v-w)^\intercal\nabla^2 f(\xi) (v-w),</script>
+</div>
+<p>where <span><span class="MathJax_Preview">v, w \in \R^n</span><script type="math/tex">v, w \in \R^n</script></span> and <span><span class="MathJax_Preview">\xi \in [v,w]</span><script type="math/tex">\xi \in [v,w]</script></span>. Since <span><span class="MathJax_Preview">\|\nabla^2 f(x) v\| \leq L\|v\|_2</span><script type="math/tex">\|\nabla^2 f(x) v\| \leq L\|v\|_2</script></span> for all <span><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span> and <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>, we also have <span><span class="MathJax_Preview">v^\intercal \nabla^2 f(x) v \leq L\|v\|_2^2</span><script type="math/tex">v^\intercal \nabla^2 f(x) v \leq L\|v\|_2^2</script></span> all <span><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span> and <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>. Thus,</p>
+<div>
+<div class="MathJax_Preview">f(v) = f(w) +\nabla f(w)^\intercal (v-w) + \frac{L}{2}\|v-w\|_2^2.</div>
+<script type="math/tex; mode=display">f(v) = f(w) +\nabla f(w)^\intercal (v-w) + \frac{L}{2}\|v-w\|_2^2.</script>
+</div>
+</li>
+<li>
+<p>A gradient descent step is <span><span class="MathJax_Preview">x_{k+1} = x_k - \alpha \nabla f(x_k)</span><script type="math/tex">x_{k+1} = x_k - \alpha \nabla f(x_k)</script></span>. Substituting <span><span class="MathJax_Preview">v = x_{k+1}</span><script type="math/tex">v = x_{k+1}</script></span> and <span><span class="MathJax_Preview">w = x_k</span><script type="math/tex">w = x_k</script></span>, we get</p>
+<div>
+<div class="MathJax_Preview">
+\begin{align}
+f(x_{k+1}) &amp;= f(x_k) +\nabla f(x_k)^\intercal (x_{k+1}-x_k) + \frac{L}{2}\|x_{k+1}-x_k\|_2^2\\
+&amp; =  f(x_k) -\alpha \nabla f(x_k)^\intercal \nabla f(x_k) + \frac{L\alpha^2}{2}\|\nabla f(x_k)\|_2^2\\
+&amp; =  f(x_k) -\alpha \|\nabla f(x_k)\|_2^2\left( 1 - \frac{L\alpha}{2}\right)\\
+\end{align} 
+</div>
+<script type="math/tex; mode=display">
+\begin{align}
+f(x_{k+1}) &= f(x_k) +\nabla f(x_k)^\intercal (x_{k+1}-x_k) + \frac{L}{2}\|x_{k+1}-x_k\|_2^2\\
+& =  f(x_k) -\alpha \nabla f(x_k)^\intercal \nabla f(x_k) + \frac{L\alpha^2}{2}\|\nabla f(x_k)\|_2^2\\
+& =  f(x_k) -\alpha \|\nabla f(x_k)\|_2^2\left( 1 - \frac{L\alpha}{2}\right)\\
+\end{align} 
+</script>
+</div>
+<p>Note that <span><span class="MathJax_Preview">\alpha\|\nabla f(x_k)\|_2^2( 1 - \frac{L\alpha}{2})&gt;0</span><script type="math/tex">\alpha\|\nabla f(x_k)\|_2^2( 1 - \frac{L\alpha}{2})>0</script></span> if <span><span class="MathJax_Preview">x_k</span><script type="math/tex">x_k</script></span> is not a stationary point and <span><span class="MathJax_Preview">0 &lt; \alpha &lt; \frac{2}{L}</span><script type="math/tex">0 < \alpha < \frac{2}{L}</script></span></p>
+</li>
+</ol>
+</li>
+</ol>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020 Michael Friedlander and Babhru Joshi
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.808e90bb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
