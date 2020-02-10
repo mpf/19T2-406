@@ -12,7 +12,7 @@ In homework 2, you used ```Convex.jl``` to minimize multi-objective problems. Re
 1. **Retrieving data.** Download [mnist.mat](../mnist.mat). This dataset contains 28 x 28 black and white images of handwritten digits, 0,...,9. Install package ```MAT``` to  open and read the dataset.
 
     ```julia
-    using MAT
+    using MAT, Plots, Images, LinearAlgebra, ImageView, Colors, Statistics
     # open file
     file = matopen("mnist.mat")
     trainX = float64.(read(file, "trainX"))
@@ -75,7 +75,7 @@ In homework 2, you used ```Convex.jl``` to minimize multi-objective problems. Re
 
 6. We now have our data matrix $A$ and label matrix $b$ corresponding to the training set. Now, we want 
 	
-    $$x_{LS} = \argmin{x} \|Ax-b\|_2^2$$
+    $$x_{LS} = \argmin_x \|Ax-b\|_2^2$$
 
     7. Solve this using a direct method (e.g. $A \backslash b$). Evaluate the *loss* of the model
 	
