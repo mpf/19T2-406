@@ -21,7 +21,7 @@ This is a tentative schedule. It will change often.
 | 14 | 7 Feb / Fri|  Cholesky Factorization    | [notebook](https://nbviewer.jupyter.org/github/mpf/19T2-406/blob/master/docs/notebooks/Cholesky.ipynb)| hw3 due at 6pm|
 | 15 | 10 Feb / Mon| [Case study](InclassActivity/mlactivity/mlactivity.md#CPSC406)     | | |
 | 16 | 12 Feb / Wed| Review     | | |
-| 17 | 14 Feb / Fri| Midterm     | | |
+| 17 | 14 Feb / Fri| Midterm     | [practice questions](exams/practice/midterm_practice.pdf) | |
 |    | 17 Feb / Mon| Holiday (Family Day) | | |
 |    | 19 Feb / Wed| no lecture (spring break) | | |
 |    | 21 Feb / Fri| no lecture (spring break)| | |
