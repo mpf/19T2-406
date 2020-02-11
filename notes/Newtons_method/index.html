@@ -13,7 +13,7 @@
         <meta name="description" content="Home page for CPSC406 Term 2 2019">
       
       
-        <link rel="canonical" href="https://friedlander.io/19T2-406/notes/Non-linear_LS/">
+        <link rel="canonical" href="https://friedlander.io/19T2-406/notes/Newtons_method/">
       
       
         <meta name="author" content="Michael P. Friedlander and Babhru Joshi">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Non-linear least squares - CPSC406 &mdash; Computational Optimization</title>
+        <title>Newton's method - CPSC406 &mdash; Computational Optimization</title>
       
     
     
@@ -81,7 +81,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#non-linear-least-squares" tabindex="1" class="md-skip">
+      <a href="#newtons-method" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -107,7 +107,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Non-linear least squares
+                Newton's method
               
             </span>
           
@@ -344,56 +344,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Non-linear least squares
-      </label>
-    
-    <a href="./" title="Non-linear least squares" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../Non-linear_LS/" title="Non-linear least squares" class="md-nav__link">
       Non-linear least squares
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#linearization-of-residual" class="md-nav__link">
-    Linearization of residual
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dampening" class="md-nav__link">
-    Dampening
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -425,11 +380,56 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../Newtons_method/" title="Newton's method" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Newton's method
+      </label>
+    
+    <a href="./" title="Newton's method" class="md-nav__link md-nav__link--active">
       Newton's method
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#convergence-of-pure-newtons-method" class="md-nav__link">
+    Convergence of (pure) Newton's method
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rates-of-convergence" class="md-nav__link">
+    Rates of convergence
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -567,15 +567,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#linearization-of-residual" class="md-nav__link">
-    Linearization of residual
+  <a href="#convergence-of-pure-newtons-method" class="md-nav__link">
+    Convergence of (pure) Newton's method
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#dampening" class="md-nav__link">
-    Dampening
+  <a href="#rates-of-convergence" class="md-nav__link">
+    Rates of convergence
   </a>
   
 </li>
@@ -597,161 +597,90 @@
               
                 
                 
-                <h1 id="non-linear-least-squares"><strong>Non-linear least squares</strong><a class="headerlink" href="#non-linear-least-squares" title="Permanent link">&para;</a></h1>
-<p>The non-linear least squares problem is</p>
+                <h1 id="newtons-method"><strong>Newton's Method</strong><a class="headerlink" href="#newtons-method" title="Permanent link">&para;</a></h1>
+<p>In Newton's method, we minimize a quadratic approximation of the function at each iterate. Consider the problem</p>
 <div>
-<div class="MathJax_Preview">
-\begin{equation}\label{Non-linearleastsquares_prob}
-\min_{\vx\in\R^n} \frac{1}{2}\|r(\vx)\|_2^2,
-\end{equation}
+<div class="MathJax_Preview"> \minimize_{\vx \in \R^n} f(\vx)</div>
+<script type="math/tex; mode=display"> \minimize_{\vx \in \R^n} f(\vx)</script>
 </div>
-<script type="math/tex; mode=display">
-\begin{equation}\label{Non-linearleastsquares_prob}
-\min_{\vx\in\R^n} \frac{1}{2}\|r(\vx)\|_2^2,
-\end{equation}
-</script>
-</div>
-<p>where <span><span class="MathJax_Preview">r:\R^n→\R^m</span><script type="math/tex">r:\R^n→\R^m</script></span> is the residual vector. The <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>th component of residual vector is <span><span class="MathJax_Preview">r_{i}(\vx):\R^n→\R</span><script type="math/tex">r_{i}(\vx):\R^n→\R</script></span>. The non-linear
-least squares problem reduces to the linear least squares problem if <span><span class="MathJax_Preview">r</span><script type="math/tex">r</script></span> is affine, i.e. <span><span class="MathJax_Preview">r(\vx) = \mA\vx-\vb</span><script type="math/tex">r(\vx) = \mA\vx-\vb</script></span>.</p>
-<p><strong>Example: Position estimation from ranges</strong> </p>
-<p><center>
-<img src="../img/lec5/sensor_localization.png" width = "200">
-</center></p>
-<p>Let <span><span class="MathJax_Preview">\vx \in \R^2</span><script type="math/tex">\vx \in \R^2</script></span> be an unknown vector. Fix <span><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> beacon positions <span><span class="MathJax_Preview">\vb_{i} \in \R^2,\ i = 1,\dots,m</span><script type="math/tex">\vb_{i} \in \R^2,\ i = 1,\dots,m</script></span>. 
-Suppose we have noisy measurements <span><span class="MathJax_Preview">\vrho \in \R^m</span><script type="math/tex">\vrho \in \R^m</script></span> of <span><span class="MathJax_Preview">2</span><script type="math/tex">2</script></span>-norm distance between a becon <span><span class="MathJax_Preview">\vb_{i}</span><script type="math/tex">\vb_{i}</script></span> and the unknown 
-signal <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span>, i.e.</p>
-<p>$$
-ρ_{i} = |\vx- \vb|_2 + ν_i \quad \text{for } i=1,\dots,m.
-$$
-Here, <span><span class="MathJax_Preview">\vnu \in \R^m</span><script type="math/tex">\vnu \in \R^m</script></span> is noise/measurement error vector. The position estimation from ranges problem is to estimate 
-<span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> given <span><span class="MathJax_Preview">\vrho</span><script type="math/tex">\vrho</script></span> and <span><span class="MathJax_Preview">\vb_i, \ i = 1,\dots, m</span><script type="math/tex">\vb_i, \ i = 1,\dots, m</script></span>.</p>
-<p>A natural approach to solve this problem is by finding <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> that minimizes <span><span class="MathJax_Preview">\sum_{i=1}^m(ρ_{i} - \|\vx- \vb\|_2)^2</span><script type="math/tex">\sum_{i=1}^m(ρ_{i} - \|\vx- \vb\|_2)^2</script></span>. 
-Define <span><span class="MathJax_Preview">r_i(\vx) := ρ_{i} - \|\vx- \vb\|_2</span><script type="math/tex">r_i(\vx) := ρ_{i} - \|\vx- \vb\|_2</script></span>. Then we can estimmate <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> by solving the non-linear least squares problem</p>
+<p>where <span><span class="MathJax_Preview">f:\R^n\rightarrow \R</span><script type="math/tex">f:\R^n\rightarrow \R</script></span> is a twice continuously differentiable function. Given an iterate <span><span class="MathJax_Preview">\vx_k</span><script type="math/tex">\vx_k</script></span>, define <span><span class="MathJax_Preview">\vx_{k+1}</span><script type="math/tex">\vx_{k+1}</script></span> as the minimizer of the quadratic program given by</p>
 <div>
-<div class="MathJax_Preview">
-\min_{\vx\in \R^n} \frac{1}{2}\|r(\vx)\|_2^2.
+<div class="MathJax_Preview">\vx_{k+1} = \argmin_{\vx} \{f_k + \nabla f_k\trans(\vx - \vx_k) - \frac{1}{2}(\vx-\vx_k)\trans\nabla^2f_k(\vx-\vx_k)\}.</div>
+<script type="math/tex; mode=display">\vx_{k+1} = \argmin_{\vx} \{f_k + \nabla f_k\trans(\vx - \vx_k) - \frac{1}{2}(\vx-\vx_k)\trans\nabla^2f_k(\vx-\vx_k)\}.</script>
 </div>
-<script type="math/tex; mode=display">
-\min_{\vx\in \R^n} \frac{1}{2}\|r(\vx)\|_2^2.
-</script>
+<p>In the above equation, <span><span class="MathJax_Preview">f_k := f(\vx_k)</span><script type="math/tex">f_k := f(\vx_k)</script></span>. The minimizer of the quadratic program is well-defined if <span><span class="MathJax_Preview">\nabla^2 f_k ≻ 0</span><script type="math/tex">\nabla^2 f_k ≻ 0</script></span>. In that case,</p>
+<div>
+<div class="MathJax_Preview">\vx_{k+1} = \vx_{k} - (\nabla^2 f_k)^{-1} \nabla f_k = \vx_k + \vd_k,</div>
+<script type="math/tex; mode=display">\vx_{k+1} = \vx_{k} - (\nabla^2 f_k)^{-1} \nabla f_k = \vx_k + \vd_k,</script>
 </div>
-<p>In contrast to linear least squares program, the non-linear least squares program generally contain both global and local
-minimizers. We can will use the following approach to find a minimizer of NLLS.</p>
+<p>where <span><span class="MathJax_Preview">\vd_k</span><script type="math/tex">\vd_k</script></span> solves <span><span class="MathJax_Preview">\nabla^2 f_k d = -\nabla f_k</span><script type="math/tex">\nabla^2 f_k d = -\nabla f_k</script></span>. The pure Newton's method is given by the following algorithm:</p>
 <hr />
-<p><strong>Gauss-Newton method for NLLS</strong></p>
-<p>Given starting guess <span><span class="MathJax_Preview">\vx^{(0)}</span><script type="math/tex">\vx^{(0)}</script></span> <br>
-Repeat until covergence:<br></p>
+<p><strong>Pure Newton's method</strong></p>
+<p>Given: <span><span class="MathJax_Preview">\vx_0</span><script type="math/tex">\vx_0</script></span>, tol &gt; 0
+for <span><span class="MathJax_Preview">k = 0, 1, 2,\dots</span><script type="math/tex">k = 0, 1, 2,\dots</script></span></p>
 <ol>
-<li>linearize <span><span class="MathJax_Preview">r(x)</span><script type="math/tex">r(x)</script></span> near current guess <span><span class="MathJax_Preview">\bar{\vx} = \vx^{k}</span><script type="math/tex">\bar{\vx} = \vx^{k}</script></span></li>
-<li>solve a linear least squares problem to get the next guess <span><span class="MathJax_Preview">\vx^{k+1}</span><script type="math/tex">\vx^{k+1}</script></span>,</li>
+<li>
+<p><span><span class="MathJax_Preview">\vg_k ← ∇f(\vx_k)</span><script type="math/tex">\vg_k ← ∇f(\vx_k)</script></span>   (compute gradient)</p>
+</li>
+<li>
+<p><span><span class="MathJax_Preview">\mH_k ← ∇^2f(\vx_k)</span><script type="math/tex">\mH_k ← ∇^2f(\vx_k)</script></span>    (compute Hessian)</p>
+</li>
+<li>
+<p><span><span class="MathJax_Preview">\vd_k</span><script type="math/tex">\vd_k</script></span> solves <span><span class="MathJax_Preview">\mH_k \vd = -\vg_k</span><script type="math/tex">\mH_k \vd = -\vg_k</script></span>    (compute Newton step)</p>
+</li>
+<li>
+<p><span><span class="MathJax_Preview">\vx_{k+1} \leftarrow  \vx_k + \vd_k</span><script type="math/tex">\vx_{k+1} \leftarrow  \vx_k + \vd_k</script></span></p>
+</li>
+<li>
+<p>STOP if <span><span class="MathJax_Preview">\|\nabla f(\vx_{k+1})\|_2 \leq</span><script type="math/tex">\|\nabla f(\vx_{k+1})\|_2 \leq</script></span> tol</p>
+</li>
 </ol>
 <hr />
-<h2 id="linearization-of-residual"><strong>Linearization of residual</strong><a class="headerlink" href="#linearization-of-residual" title="Permanent link">&para;</a></h2>
-<p>We can solve non-linear least squares problem \eqref{Non-linearleastsquares_prob} by solving a sequence of linear least squares 
-problem. These linear least squares subproblem results from linearization of <span><span class="MathJax_Preview">r(\vx)</span><script type="math/tex">r(\vx)</script></span> at current
-estimate of the ground truth <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span>. </p>
-<p>The linear approximation of <span><span class="MathJax_Preview">r(\vx)</span><script type="math/tex">r(\vx)</script></span> at a point <span><span class="MathJax_Preview">\bar{\vx} \in \R^n</span><script type="math/tex">\bar{\vx} \in \R^n</script></span> is</p>
+<h2 id="convergence-of-pure-newtons-method"><strong>Convergence of (pure) Newton's method</strong><a class="headerlink" href="#convergence-of-pure-newtons-method" title="Permanent link">&para;</a></h2>
+<p>Convergence of (pure) Newton's method requires the Hessian at every iteration to be positive definite, i.e. <span><span class="MathJax_Preview">\nabla^2f_k \succ  0</span><script type="math/tex">\nabla^2f_k \succ  0</script></span> for all iterations k. This positive definiteness of the Hessian ensures that the Newton step is a descent direction since</p>
 <div>
-<div class="MathJax_Preview">
-r(\vx) = \bmat r_1(\vx)\\\vdots\\ r_n(\vx)\emat \approx \bmat r_1(\bar{\vx}) +\nabla
-r_1(\bar{\vx})\trans(\vx - \bar{\vx}) \\ \vdots \\  r_m(\bar{\vx}) +\nabla 
-r_m(\bar{\vx})\trans(\vx - \bar{\vx}) \emat = A(\bar{\vx}) \vx -b(\bar{\vx}),
+<div class="MathJax_Preview">\nabla^2f_k \vd = -\nabla f_k \Rightarrow \vd\trans\nabla^2f_k\vd = -\vd\trans\nabla f_k \Rightarrow \nabla f_k\trans\vd &lt;.0</div>
+<script type="math/tex; mode=display">\nabla^2f_k \vd = -\nabla f_k \Rightarrow \vd\trans\nabla^2f_k\vd = -\vd\trans\nabla f_k \Rightarrow \nabla f_k\trans\vd <.0</script>
 </div>
-<script type="math/tex; mode=display">
-r(\vx) = \bmat r_1(\vx)\\\vdots\\ r_n(\vx)\emat \approx \bmat r_1(\bar{\vx}) +\nabla
-r_1(\bar{\vx})\trans(\vx - \bar{\vx}) \\ \vdots \\  r_m(\bar{\vx}) +\nabla 
-r_m(\bar{\vx})\trans(\vx - \bar{\vx}) \emat = A(\bar{\vx}) \vx -b(\bar{\vx}),
-</script>
-</div>
-<p>where <span><span class="MathJax_Preview">A(\bar{\vx})\in\R^{m\times n}</span><script type="math/tex">A(\bar{\vx})\in\R^{m\times n}</script></span> is the Jacobian of the mappring <span><span class="MathJax_Preview">r(x)</span><script type="math/tex">r(x)</script></span> at <span><span class="MathJax_Preview">\bar{\vx}</span><script type="math/tex">\bar{\vx}</script></span> and <span><span class="MathJax_Preview">b(\bar{\vx}) = 
-A(\bar{\vx})\vx - r(\bar{\vx}) \in \R^m</span><script type="math/tex">b(\bar{\vx}) = 
-A(\bar{\vx})\vx - r(\bar{\vx}) \in \R^m</script></span>. The Jacobian of <span><span class="MathJax_Preview">r(x)</span><script type="math/tex">r(x)</script></span> at <span><span class="MathJax_Preview">\bar{\vx}</span><script type="math/tex">\bar{\vx}</script></span> is </p>
+<p>However, positive definiteness is not sufficient for convergence, i.e. the pure Newton method may still diverge even if <span><span class="MathJax_Preview">\nabla^2 f_k \succ 0</span><script type="math/tex">\nabla^2 f_k \succ 0</script></span>. For example, consider the function <span><span class="MathJax_Preview">f(x) = \sqrt{1+x^2}</span><script type="math/tex">f(x) = \sqrt{1+x^2}</script></span>. The derivative of <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> is <span><span class="MathJax_Preview">f'(x) = x(1+x^2)^{-\frac{1}{2}}</span><script type="math/tex">f'(x) = x(1+x^2)^{-\frac{1}{2}}</script></span> and the second-derivative is <span><span class="MathJax_Preview">f''(x) = (1+x^2)^{-\frac{3}{2}}</span><script type="math/tex">f''(x) = (1+x^2)^{-\frac{3}{2}}</script></span>. So the Newton iteration is <span><span class="MathJax_Preview">x_{k+1} = x_k - \frac{f'(x_k)}{f''(x_k)} = -x_k^3.</span><script type="math/tex">x_{k+1} = x_k - \frac{f'(x_k)}{f''(x_k)} = -x_k^3.</script></span> Note that </p>
 <div>
-<div class="MathJax_Preview">
-A(\bar{\vx}) = \bmat \nabla 
-r_1(\bar{\vx})\trans\\ \vdots \\ \nabla r_m(\bar{\vx})\trans\emat.
+<div class="MathJax_Preview">x_{k} \rightarrow \left\{\begin{array}{ll}0 &amp; \text{if } |x_0|&lt;1\\ \pm 1 &amp; \text{if } |x_0|=1\\ \pm\infty &amp; \text{if } |x_0|&gt;1\end{array}\right.</div>
+<script type="math/tex; mode=display">x_{k} \rightarrow \left\{\begin{array}{ll}0 & \text{if } |x_0|<1\\ \pm 1 & \text{if } |x_0|=1\\ \pm\infty & \text{if } |x_0|>1\end{array}\right.</script>
 </div>
-<script type="math/tex; mode=display">
-A(\bar{\vx}) = \bmat \nabla 
-r_1(\bar{\vx})\trans\\ \vdots \\ \nabla r_m(\bar{\vx})\trans\emat.
-</script>
-</div>
-<p>We get the following minimization program after replacing <span><span class="MathJax_Preview">r(\vx)</span><script type="math/tex">r(\vx)</script></span> with its linear 
-approximation at <span><span class="MathJax_Preview">\vx^{(k)}</span><script type="math/tex">\vx^{(k)}</script></span>:</p>
-<div>
-<div class="MathJax_Preview">
-\vx^{(k+1)} = \mathop{\text{argmin}}_{\vx\in\R^n} \|A(\vx^{(k)})\vx - b(\vx^{(k)})\|_2^2.
-</div>
-<script type="math/tex; mode=display">
-\vx^{(k+1)} = \mathop{\text{argmin}}_{\vx\in\R^n} \|A(\vx^{(k)})\vx - b(\vx^{(k)})\|_2^2.
-</script>
-</div>
-<p>Starting at a current estimate <span><span class="MathJax_Preview">\vx^{(k)}</span><script type="math/tex">\vx^{(k)}</script></span>, we can determine the <span><span class="MathJax_Preview">\vx^{(k+1)}</span><script type="math/tex">\vx^{(k+1)}</script></span> by solving the 
-above linear least squares program.</p>
-<h2 id="dampening"><strong>Dampening</strong><a class="headerlink" href="#dampening" title="Permanent link">&para;</a></h2>
-<p>For ease of exposition, let </p>
-<div>
-<div class="MathJax_Preview">
-\bar{\mA} = A(\vx^{(k)}), \quad \bar{\vb} = b(\vx^{(k)}), \text{ and }  \bar{\vr} = r(\vx^{(k)}).
-</div>
-<script type="math/tex; mode=display">
-\bar{\mA} = A(\vx^{(k)}), \quad \bar{\vb} = b(\vx^{(k)}), \text{ and }  \bar{\vr} = r(\vx^{(k)}).
-</script>
-</div>
-<p>We assume that <span><span class="MathJax_Preview">\bar{\mA}</span><script type="math/tex">\bar{\mA}</script></span> is full rank. Consider</p>
-<div>
-<div class="MathJax_Preview">
-\begin{align*}
-\vx^{(k+1)} = &amp;\mathop{\text{argmin}}_{\vx\in\R^n} \|\bar{\mA}\vx - \bar{\vb}\|_2^2\\
-=&amp; (\bar{\mA}\trans\bar{\mA})^{-1}\bar{\mA}\trans\bar{\vb}\\
-=&amp; (\bar{\mA}\trans\bar{\mA})^{-1}\bar{\mA}\trans(\bar{\mA}\vx^{(k)} - \bar{\vr})\\
-= &amp;\vx^{(k)} - (\bar{\mA}\trans\bar{\mA})^{-1}\bar{\mA}\trans\bar{\vr}
-\end{align*}
-</div>
-<script type="math/tex; mode=display">
-\begin{align*}
-\vx^{(k+1)} = &\mathop{\text{argmin}}_{\vx\in\R^n} \|\bar{\mA}\vx - \bar{\vb}\|_2^2\\
-=& (\bar{\mA}\trans\bar{\mA})^{-1}\bar{\mA}\trans\bar{\vb}\\
-=& (\bar{\mA}\trans\bar{\mA})^{-1}\bar{\mA}\trans(\bar{\mA}\vx^{(k)} - \bar{\vr})\\
-= &\vx^{(k)} - (\bar{\mA}\trans\bar{\mA})^{-1}\bar{\mA}\trans\bar{\vr}
-\end{align*}
-</script>
-</div>
-<p>Here, <span><span class="MathJax_Preview">\vx^{(k+1)}</span><script type="math/tex">\vx^{(k+1)}</script></span> is the <span><span class="MathJax_Preview">k+1</span><script type="math/tex">k+1</script></span> Gauss-Newton estimate. Note that <span><span class="MathJax_Preview">(\bar{\mA}\trans\bar{\mA})^{-1}\bar{\mA}\trans\bar{\vr}</span><script type="math/tex">(\bar{\mA}\trans\bar{\mA})^{-1}\bar{\mA}\trans\bar{\vr}</script></span> solves <span><span class="MathJax_Preview">\min_{\vx\in\R^n}
-\|\bar{\mA}\vx - \bar{\vr}\|_2^2</span><script type="math/tex">\min_{\vx\in\R^n}
-\|\bar{\mA}\vx - \bar{\vr}\|_2^2</script></span>. Let</p>
-<div>
-<div class="MathJax_Preview">
-\vz^{(k)} = \mathop{\text{argmin}}_{\vx\in\R^n} \|\bar{\mA}\vx - \bar{\vr}\|_2^2.
-</div>
-<script type="math/tex; mode=display">
-\vz^{(k)} = \mathop{\text{argmin}}_{\vx\in\R^n} \|\bar{\mA}\vx - \bar{\vr}\|_2^2.
-</script>
-</div>
-<p>The dampened Gauss-Newton step is</p>
-<div>
-<div class="MathJax_Preview">
-\vx^{(k+1)} = \vx^{(k)} - \alpha \vz^{(k)},
- </div>
-<script type="math/tex; mode=display">
-\vx^{(k+1)} = \vx^{(k)} - \alpha \vz^{(k)},
- </script>
-</div>
-<p>where <span><span class="MathJax_Preview">\alpha \in (0,1]</span><script type="math/tex">\alpha \in (0,1]</script></span>.</p>
 <hr />
-<p><strong>Dampened Gauss-Newton method for NLLS</strong></p>
-<p>Given starting guess <span><span class="MathJax_Preview">\vx^{(0)}</span><script type="math/tex">\vx^{(0)}</script></span> <br>
-Repeat until covergence:<br></p>
+<p><strong><em>Lemma</em></strong> (Convergence of pure Newton's method) Suppose <span><span class="MathJax_Preview">f:\R^n\rightarrow \R</span><script type="math/tex">f:\R^n\rightarrow \R</script></span> is twice continuously differentiable and </p>
 <ol>
-<li>linearize <span><span class="MathJax_Preview">r(x)</span><script type="math/tex">r(x)</script></span> near current guess <span><span class="MathJax_Preview">\bar{\vx} = \vx^{k}</span><script type="math/tex">\bar{\vx} = \vx^{k}</script></span>:<br>
-    <span><span class="MathJax_Preview">\quad r(\vx) \approx r(\bar{\vx}) - A(\bar{\vx})(\vx-\bar{\vx})</span><script type="math/tex">\quad r(\vx) \approx r(\bar{\vx}) - A(\bar{\vx})(\vx-\bar{\vx})</script></span></li>
-<li>solve a linear least squares problem:<br>
-    <span><span class="MathJax_Preview">\quad \vz^{(k)} = \mathop{\text{argmin}}_{\vx\in\R^n}\|A(\bar{\vx})\vx - r(\bar{\vx})\|_2^2</span><script type="math/tex">\quad \vz^{(k)} = \mathop{\text{argmin}}_{\vx\in\R^n}\|A(\bar{\vx})\vx - r(\bar{\vx})\|_2^2</script></span></li>
-<li>take damped step:<br>
-    <span><span class="MathJax_Preview">\quad \vx^{(k+1)} = \vx^{(k)} - \alpha^{(k)}\vz^{(k)}, \quad 0&lt;\alpha^{(k)}\leq 1</span><script type="math/tex">\quad \vx^{(k+1)} = \vx^{(k)} - \alpha^{(k)}\vz^{(k)}, \quad 0<\alpha^{(k)}\leq 1</script></span></li>
+<li>
+<p>there exists an <span><span class="MathJax_Preview">\epsilon &gt;0</span><script type="math/tex">\epsilon >0</script></span> such that <span><span class="MathJax_Preview">\nabla^2 f(x)\succeq \epsilon   \mI</span><script type="math/tex">\nabla^2 f(x)\succeq \epsilon   \mI</script></span> for all <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span>,</p>
+</li>
+<li>
+<p>there exists some <span><span class="MathJax_Preview">L&gt;0</span><script type="math/tex">L>0</script></span> such that <span><span class="MathJax_Preview">\|\nabla^2 f(\vx) -\nabla^2 f(\vy)\|_2 \leq L \|\vx-\vy\|_2</span><script type="math/tex">\|\nabla^2 f(\vx) -\nabla^2 f(\vy)\|_2 \leq L \|\vx-\vy\|_2</script></span> for all <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> and <span><span class="MathJax_Preview">\vy</span><script type="math/tex">\vy</script></span>.  </p>
+</li>
 </ol>
-<p>until converged</p>
+<p>If the minimizer <span><span class="MathJax_Preview">\vx_*</span><script type="math/tex">\vx_*</script></span> of <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> is unique, then the pure Newton iterations satisfies</p>
+<div>
+<div class="MathJax_Preview">\|\vx_{k+1} - \vx_*\|_2 \leq \frac{L}{2\epsilon} \|\vx-\vx_*\|_2^2.</div>
+<script type="math/tex; mode=display">\|\vx_{k+1} - \vx_*\|_2 \leq \frac{L}{2\epsilon} \|\vx-\vx_*\|_2^2.</script>
+</div>
+<p>In addition, if <span><span class="MathJax_Preview">\|\vx_0 - \vx_*\|_2 \leq \frac{\epsilon}{L}</span><script type="math/tex">\|\vx_0 - \vx_*\|_2 \leq \frac{\epsilon}{L}</script></span>, then each iterate <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> satisfies</p>
+<div>
+<div class="MathJax_Preview">\|\vx_{k} - \vx_*\|_2 \leq \left(\frac{L}{2\epsilon}\right)\left(\frac{1}{4}\right)^{2^k}.</div>
+<script type="math/tex; mode=display">\|\vx_{k} - \vx_*\|_2 \leq \left(\frac{L}{2\epsilon}\right)\left(\frac{1}{4}\right)^{2^k}.</script>
+</div>
 <hr />
+<h2 id="rates-of-convergence"><strong>Rates of convergence</strong><a class="headerlink" href="#rates-of-convergence" title="Permanent link">&para;</a></h2>
+<p>Rates of convergence measures how fast a sequence ${\vx_k}_{k=0,1,2,\dots} converges to its limit (assuming limit exists). Suppose <span><span class="MathJax_Preview">\vx_k \rightarrow \vx_*</span><script type="math/tex">\vx_k \rightarrow \vx_*</script></span>, i.e. <span><span class="MathJax_Preview">\lim_{k\rightarrow \infty} \|\vx_k -\vx_*\| = 0</span><script type="math/tex">\lim_{k\rightarrow \infty} \|\vx_k -\vx_*\| = 0</script></span>. </p>
+<ol>
+<li>
+<p>Linear Convergence: There exists a number <span><span class="MathJax_Preview">\mu \in (0,1)</span><script type="math/tex">\mu \in (0,1)</script></span> such that <span><span class="MathJax_Preview">\lim_{k\rightarrow \infty} \frac{\|\vx_{k+1}-\vx_*\|}{\|\vx_k-\vx_*\|} = \mu</span><script type="math/tex">\lim_{k\rightarrow \infty} \frac{\|\vx_{k+1}-\vx_*\|}{\|\vx_k-\vx_*\|} = \mu</script></span>. For example, consider the sequence <span><span class="MathJax_Preview">x_k = 2^{-k}</span><script type="math/tex">x_k = 2^{-k}</script></span>.</p>
+</li>
+<li>
+<p>Sublinear Convergence: A sequence <span><span class="MathJax_Preview">\{\vx_k\}_{k=0,1,2,\dots}</span><script type="math/tex">\{\vx_k\}_{k=0,1,2,\dots}</script></span> converges sublinearly to <span><span class="MathJax_Preview">\vx_*</span><script type="math/tex">\vx_*</script></span> if <span><span class="MathJax_Preview">\lim_{k\rightarrow \infty} \frac{\|\vx_{k+1}-\vx_*\|}{\|\vx_k-\vx_*\|} = 1</span><script type="math/tex">\lim_{k\rightarrow \infty} \frac{\|\vx_{k+1}-\vx_*\|}{\|\vx_k-\vx_*\|} = 1</script></span>. For example, consider the sequence <span><span class="MathJax_Preview">x_k = \frac{1}{k+1}</span><script type="math/tex">x_k = \frac{1}{k+1}</script></span>.</p>
+</li>
+<li>
+<p>Superlinear Convergence: A sequence <span><span class="MathJax_Preview">\{\vx_k\}_{k=0,1,2,\dots}</span><script type="math/tex">\{\vx_k\}_{k=0,1,2,\dots}</script></span> converges superlinearly with order <span><span class="MathJax_Preview">q</span><script type="math/tex">q</script></span> to <span><span class="MathJax_Preview">\vx_*</span><script type="math/tex">\vx_*</script></span> if there exists a number <span><span class="MathJax_Preview">M&gt;0</span><script type="math/tex">M>0</script></span> such that <span><span class="MathJax_Preview">\lim_{k\rightarrow \infty} \frac{\|\vx_{k+1}-\vx_*\|}{\|\vx_k-\vx_*\|^q} \leq M</span><script type="math/tex">\lim_{k\rightarrow \infty} \frac{\|\vx_{k+1}-\vx_*\|}{\|\vx_k-\vx_*\|^q} \leq M</script></span>. For example, consider the sequence <span><span class="MathJax_Preview">x_k = \left(\frac{1}{2}\right)^{2^k}</span><script type="math/tex">x_k = \left(\frac{1}{2}\right)^{2^k}</script></span>. If <span><span class="MathJax_Preview">q=2</span><script type="math/tex">q=2</script></span>, we say the convergence of quadratic.</p>
+</li>
+</ol>
                 
                   
                 
@@ -773,7 +702,7 @@ Repeat until covergence:<br></p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../Regularized_LS/" title="Regularized least squares" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../Gradient_Descent/" title="Gradient descent" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -782,19 +711,19 @@ Repeat until covergence:<br></p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Regularized least squares
+                Gradient descent
               </span>
             </div>
           </a>
         
         
-          <a href="../unconstrained/" title="Unconstrained optimization" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../homework/" title="Submissions" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Unconstrained optimization
+                Submissions
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
