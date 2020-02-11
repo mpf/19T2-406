@@ -16,7 +16,7 @@ This is a tentative schedule. It will change often.
 | 9 | 27 Jan / Mon| [Descent methods](notes/Gradient_Descent.md#GradientDescent) | [notebook](https://nbviewer.jupyter.org/github/mpf/19T2-406/blob/master/docs/notebooks/Gradient_descent.ipynb) |hw2 due at 6pm |
 | 9 | 27 Jan / Mon| [Descent methods](notes/Gradient_Descent.md#GradientDescent) | |hw2 due at 6pm |
 | 11 | 31 Jan / Fri| [Descent methods](notes/Gradient_Descent.md#GradientDescent) | | [hw3](homework/hw3/hw3.md) out|
-| 12 | 3 Feb / Mon | Newton's Method | | |
+| 12 | 3 Feb / Mon | [Newton's Method](notes/Newtons_method.md#NewtonsMethod) | | |
 | 13 | 5 Feb / Wed|  Cholesky Factorization| | |
 | 14 | 7 Feb / Fri|  Cholesky Factorization    | [notebook](https://nbviewer.jupyter.org/github/mpf/19T2-406/blob/master/docs/notebooks/Cholesky.ipynb)| hw3 due at 6pm|
 | 15 | 10 Feb / Mon| [Case study](InclassActivity/mlactivity/mlactivity.md#CPSC406)     | | |

@@ -65,6 +65,7 @@ nav:
       - Non-linear least squares: notes/Non-linear_LS.md
       - Unconstrained optimization: notes/unconstrained.md
       - Gradient descent: notes/Gradient_Descent.md
+      - Newton's method: notes/Newtons_method.md
   - Homework:
       - Submissions: homework/index.md
       - Homework 1: homework/hw1/hw1.md
