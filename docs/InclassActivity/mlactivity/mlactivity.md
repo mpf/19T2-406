@@ -1,4 +1,4 @@
-# **CPSC 406: In class activity  1**
+# **CPSC 406: In class activity  1 (Due date: Feb 26, 6pm)**
 
 
 

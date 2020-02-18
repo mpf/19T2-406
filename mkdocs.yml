@@ -66,6 +66,7 @@ nav:
       - Unconstrained optimization: notes/unconstrained.md
       - Gradient descent: notes/Gradient_Descent.md
       - Newton's method: notes/Newtons_method.md
+    #   - Cholesky factorization: notes/Cholesky_factorization.md
   - Homework:
       - Submissions: homework/index.md
       - Homework 1: homework/hw1/hw1.md

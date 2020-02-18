@@ -53,6 +53,51 @@
 
     Now if $m \gg n$, this is a significant reduction in storage, and if $n$ is large is a significant reduction in flops.  The key takeaway is that, for proper scalability, though many things are equivalent, how you implement it matters. 
 
+8. **Structered matrices.** Consider a  matrix $A\in \Re^{n\times n}$.
+
+    1.  Pick any $u\in \R^n$. Then
+	    $$ u^TAu = \sum_{i=1}^n A_{ii} u_i^2.$$
+
+        2. $(\Rightarrow)$ Now for any $u$, if for all $i$, $A_{ii} \geq 0$, then $u^TAu \geq 0$. And, for any $u\neq 0$, if $A_{ii}>0$, then $u^TAu > 0$. 
+		
+		3. $(\Leftarrow)$ For the other direction, suppose for some $i$,  $A_{ii} = 0$. Then picking $u=e_i\neq 0$, $u^TAu = A_{ii} = 0$. If, on the other hand,  $A_{ii} < 0$, then $u^TAu = A_{ii} < 0$.
+	
+	2. Suppose that $A$ is block diagonal. 
+       
+        1. Pick any $u \in \R^n$. Partition $u$ such that 
+			
+            $$
+			u = \bmat u^{(1)} \\ u^{(2)} \\ \vdots \\ u^{(l)} \emat, \qquad u^TAu = \sum_{k=1}^l \underbrace{(u^{(k)})^TA^{(k)}u^{(k)}}_{c_k}
+			$$
+			
+			
+			1. $(\Rightarrow)$ Now for any $u$, if for all $k$, $A^{(k)} \succeq 0$, then for all $k$, $c_k \geq 0$ and $u^TAu \geq 0$. And, for any $u\neq 0$, if for all $k$, $A^{(k)} \succ 0$, then for all $k$, $c_k \geq 0$, there exists at least one $k$ where $c_k > 0$, and therefore  $u^TAu > 0$. 
+				
+			2. $(\Leftarrow, \succeq)$	For the other direction, suppose for some $k$,  $A^{(k)} \not\succeq 0$. Then find the corresponding lower dimensional vector $v$ where $v^T(A^{(k)})v <0$. Then pack $u$ such that
+				
+                $$
+				u^{(i)} = 
+				\begin{cases}
+				v & \text{if } i = k\\
+				0 & \text{if } i \neq k.
+				\end{cases}
+				$$
+
+				Then $u^TAu = v^T(A^{(k)})v <0$, which implies $A^{(k)}\not\succeq 0$. (Note the opposite of $\succeq 0$ is NOT $\preceq 0$.)
+				
+			3.  $(\Leftarrow, \succ)$ Similarily, if $A^{(k)} \not\succ 0$, find the corresponding lower dimensional vector $v$ where $v^T(A^{(k)})v \leq 0$. Then pack $u$ such that
+				
+                $$
+				u^{(i)} = 
+				\begin{cases}
+				v & \text{if } i = k\\
+				0 & \text{if } i \neq k.
+				\end{cases}
+				$$
+
+				Then $u^TAu = v^T(A^{(k)})v \leq 0$, which implies $A^{(k)}\not\succ 0$. 
+			
+
 8. Here, $f:\R^n \rightarrow \R$ is a twice continuously differentiable function that has $L$-Lipschitz gradient.
 
     9. The directional derivative of $\nabla f$ at $x$ in the direction $v$ is
