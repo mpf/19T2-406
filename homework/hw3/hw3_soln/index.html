@@ -586,6 +586,84 @@ f(\gamma v) = \frac{\gamma ^2}{2}\underbrace{v^TAv}_{=0} + \gamma \underbrace{b^
 <p>Now if <span><span class="MathJax_Preview">m \gg n</span><script type="math/tex">m \gg n</script></span>, this is a significant reduction in storage, and if <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> is large is a significant reduction in flops.  The key takeaway is that, for proper scalability, though many things are equivalent, how you implement it matters. </p>
 </li>
 <li>
+<p><strong>Structered matrices.</strong> Consider a  matrix <span><span class="MathJax_Preview">A\in \Re^{n\times n}</span><script type="math/tex">A\in \Re^{n\times n}</script></span>.</p>
+<ol>
+<li>
+<p>Pick any <span><span class="MathJax_Preview">u\in \R^n</span><script type="math/tex">u\in \R^n</script></span>. Then
+    $$ u^TAu = \sum_{i=1}^n A_{ii} u_i^2.$$</p>
+<ol>
+<li>
+<p><span><span class="MathJax_Preview">(\Rightarrow)</span><script type="math/tex">(\Rightarrow)</script></span> Now for any <span><span class="MathJax_Preview">u</span><script type="math/tex">u</script></span>, if for all <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>, <span><span class="MathJax_Preview">A_{ii} \geq 0</span><script type="math/tex">A_{ii} \geq 0</script></span>, then <span><span class="MathJax_Preview">u^TAu \geq 0</span><script type="math/tex">u^TAu \geq 0</script></span>. And, for any <span><span class="MathJax_Preview">u\neq 0</span><script type="math/tex">u\neq 0</script></span>, if <span><span class="MathJax_Preview">A_{ii}&gt;0</span><script type="math/tex">A_{ii}>0</script></span>, then <span><span class="MathJax_Preview">u^TAu &gt; 0</span><script type="math/tex">u^TAu > 0</script></span>. </p>
+</li>
+<li>
+<p><span><span class="MathJax_Preview">(\Leftarrow)</span><script type="math/tex">(\Leftarrow)</script></span> For the other direction, suppose for some <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>,  <span><span class="MathJax_Preview">A_{ii} = 0</span><script type="math/tex">A_{ii} = 0</script></span>. Then picking <span><span class="MathJax_Preview">u=e_i\neq 0</span><script type="math/tex">u=e_i\neq 0</script></span>, <span><span class="MathJax_Preview">u^TAu = A_{ii} = 0</span><script type="math/tex">u^TAu = A_{ii} = 0</script></span>. If, on the other hand,  <span><span class="MathJax_Preview">A_{ii} &lt; 0</span><script type="math/tex">A_{ii} < 0</script></span>, then <span><span class="MathJax_Preview">u^TAu = A_{ii} &lt; 0</span><script type="math/tex">u^TAu = A_{ii} < 0</script></span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Suppose that <span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> is block diagonal. </p>
+<ol>
+<li>
+<p>Pick any <span><span class="MathJax_Preview">u \in \R^n</span><script type="math/tex">u \in \R^n</script></span>. Partition <span><span class="MathJax_Preview">u</span><script type="math/tex">u</script></span> such that </p>
+<div>
+<div class="MathJax_Preview">
+u = \bmat u^{(1)} \\ u^{(2)} \\ \vdots \\ u^{(l)} \emat, \qquad u^TAu = \sum_{k=1}^l \underbrace{(u^{(k)})^TA^{(k)}u^{(k)}}_{c_k}
+</div>
+<script type="math/tex; mode=display">
+u = \bmat u^{(1)} \\ u^{(2)} \\ \vdots \\ u^{(l)} \emat, \qquad u^TAu = \sum_{k=1}^l \underbrace{(u^{(k)})^TA^{(k)}u^{(k)}}_{c_k}
+</script>
+</div>
+<ol>
+<li>
+<p><span><span class="MathJax_Preview">(\Rightarrow)</span><script type="math/tex">(\Rightarrow)</script></span> Now for any <span><span class="MathJax_Preview">u</span><script type="math/tex">u</script></span>, if for all <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>, <span><span class="MathJax_Preview">A^{(k)} \succeq 0</span><script type="math/tex">A^{(k)} \succeq 0</script></span>, then for all <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>, <span><span class="MathJax_Preview">c_k \geq 0</span><script type="math/tex">c_k \geq 0</script></span> and <span><span class="MathJax_Preview">u^TAu \geq 0</span><script type="math/tex">u^TAu \geq 0</script></span>. And, for any <span><span class="MathJax_Preview">u\neq 0</span><script type="math/tex">u\neq 0</script></span>, if for all <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>, <span><span class="MathJax_Preview">A^{(k)} \succ 0</span><script type="math/tex">A^{(k)} \succ 0</script></span>, then for all <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>, <span><span class="MathJax_Preview">c_k \geq 0</span><script type="math/tex">c_k \geq 0</script></span>, there exists at least one <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> where <span><span class="MathJax_Preview">c_k &gt; 0</span><script type="math/tex">c_k > 0</script></span>, and therefore  <span><span class="MathJax_Preview">u^TAu &gt; 0</span><script type="math/tex">u^TAu > 0</script></span>. </p>
+</li>
+<li>
+<p><span><span class="MathJax_Preview">(\Leftarrow, \succeq)</span><script type="math/tex">(\Leftarrow, \succeq)</script></span>  For the other direction, suppose for some <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>,  <span><span class="MathJax_Preview">A^{(k)} \not\succeq 0</span><script type="math/tex">A^{(k)} \not\succeq 0</script></span>. Then find the corresponding lower dimensional vector <span><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span> where <span><span class="MathJax_Preview">v^T(A^{(k)})v &lt;0</span><script type="math/tex">v^T(A^{(k)})v <0</script></span>. Then pack <span><span class="MathJax_Preview">u</span><script type="math/tex">u</script></span> such that</p>
+<div>
+<div class="MathJax_Preview">
+u^{(i)} = 
+\begin{cases}
+v &amp; \text{if } i = k\\
+0 &amp; \text{if } i \neq k.
+\end{cases}
+</div>
+<script type="math/tex; mode=display">
+u^{(i)} = 
+\begin{cases}
+v & \text{if } i = k\\
+0 & \text{if } i \neq k.
+\end{cases}
+</script>
+</div>
+<p>Then <span><span class="MathJax_Preview">u^TAu = v^T(A^{(k)})v &lt;0</span><script type="math/tex">u^TAu = v^T(A^{(k)})v <0</script></span>, which implies <span><span class="MathJax_Preview">A^{(k)}\not\succeq 0</span><script type="math/tex">A^{(k)}\not\succeq 0</script></span>. (Note the opposite of <span><span class="MathJax_Preview">\succeq 0</span><script type="math/tex">\succeq 0</script></span> is NOT <span><span class="MathJax_Preview">\preceq 0</span><script type="math/tex">\preceq 0</script></span>.)</p>
+</li>
+<li>
+<p><span><span class="MathJax_Preview">(\Leftarrow, \succ)</span><script type="math/tex">(\Leftarrow, \succ)</script></span> Similarily, if <span><span class="MathJax_Preview">A^{(k)} \not\succ 0</span><script type="math/tex">A^{(k)} \not\succ 0</script></span>, find the corresponding lower dimensional vector <span><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span> where <span><span class="MathJax_Preview">v^T(A^{(k)})v \leq 0</span><script type="math/tex">v^T(A^{(k)})v \leq 0</script></span>. Then pack <span><span class="MathJax_Preview">u</span><script type="math/tex">u</script></span> such that</p>
+<div>
+<div class="MathJax_Preview">
+u^{(i)} = 
+\begin{cases}
+v &amp; \text{if } i = k\\
+0 &amp; \text{if } i \neq k.
+\end{cases}
+</div>
+<script type="math/tex; mode=display">
+u^{(i)} = 
+\begin{cases}
+v & \text{if } i = k\\
+0 & \text{if } i \neq k.
+\end{cases}
+</script>
+</div>
+<p>Then <span><span class="MathJax_Preview">u^TAu = v^T(A^{(k)})v \leq 0</span><script type="math/tex">u^TAu = v^T(A^{(k)})v \leq 0</script></span>, which implies <span><span class="MathJax_Preview">A^{(k)}\not\succ 0</span><script type="math/tex">A^{(k)}\not\succ 0</script></span>. </p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
 <p>Here, <span><span class="MathJax_Preview">f:\R^n \rightarrow \R</span><script type="math/tex">f:\R^n \rightarrow \R</script></span> is a twice continuously differentiable function that has <span><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span>-Lipschitz gradient.</p>
 <ol>
 <li>

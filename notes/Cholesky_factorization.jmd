@@ -1,0 +1,3 @@
+# **Cholesky factorization**
+
+In this lecture, we will consider Cholesky factorization of positive definite matrices. A $n\times n$ symmetric matrix $\mA$ is positive definite if $\vx\trans\mA\vx >0$ for all $\vx \neq \vzero$. Additionally, every principal submatrix of a positive definite matrix is also postive matrix. This is because for any $n\times k$ full-rank matrix $\mX$, the matrix $\mX\trans\mA\mX$ is positive definite. 
