@@ -67,6 +67,7 @@ nav:
       - Gradient descent: notes/Gradient_Descent.md
       - Newton's method: notes/Newtons_method.md
     #   - Cholesky factorization: notes/Cholesky_factorization.md
+      - Linear constraint: notes/Linear_constraint.md
   - Homework:
       - Submissions: homework/index.md
       - Homework 1: homework/hw1/hw1.md

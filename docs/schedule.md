@@ -20,28 +20,28 @@ This is a tentative schedule. It will change often.
 | 13 | 5 Feb / Wed|  Cholesky Factorization| | |
 | 14 | 7 Feb / Fri|  Cholesky Factorization    | [notebook](https://nbviewer.jupyter.org/github/mpf/19T2-406/blob/master/docs/notebooks/Cholesky.ipynb)| hw3 due at 6pm|
 | 15 | 10 Feb / Mon| [Case study](InclassActivity/mlactivity/mlactivity.md#CPSC406)     | | |
-| 16 | 12 Feb / Wed| Review     | | |
+| 16 | 12 Feb / Wed| Quasi-Newton Methods  | | |
 | 17 | 14 Feb / Fri| Midterm     | [practice questions](exams/practice/midterm_practice.pdf) | |
 |    | 17 Feb / Mon| Holiday (Family Day) | | |
 |    | 19 Feb / Wed| no lecture (spring break) | | |
 |    | 21 Feb / Fri| no lecture (spring break)| | |
-| 18 | 24 Feb / Mon |  Quasi-Newton Methods    | | |
-| 19 | 26 Feb / Wed |   Convex sets   | | |
-| 20 | 28 Feb / Fri|    Convex functions  | | |
-| 21 |  2 Mar / Mon|   Constrained optimization   | | |
-| 22 | 4 Mar / Wed |  Linear programing    | | |
-| 23 | 6 Mar / Fri |  Linear programing    | | |
-| 24 | 9 Mar / Mon |  Simplex method    | | |
-| 25 | 11 Mar / Wed | Simplex method     | | |
-| 26 | 13 Mar / Fri | Simplex method     | | |
-| 27 | 16 Mar / Mon| Duality     | | |
-| 28 | 18 Mar / Wed| Duality     | | |
-| 29 | 20 Mar / Fri| Interior point methods     | | |
-| 30 | 23 Mar / Mon| Interior point methods     | | |
-| 31 | 25 Mar / Wed |      | | |
-| 32 | 27 Mar / Fri |      | | |
-| 33 | 30 Mar / Mon |      | | |
-| 34 | 1 Apr / Wed|      | | |
-| 35 | 3 Apr / Fri|      | | |
-| 36 | 6 Apr / Mon|      | | |
-| 37 | 8 Apr / Wed|      | | |
+| 18 | 24 Feb / Mon | [Linear constraint](notes/Linear_constraint.md#Linearconstraint)     | | |
+| 19 | 26 Feb / Wed | [Linear constraint](notes/Linear_constraint.md#Linearconstraint)     | | |
+| 20 | 28 Feb / Fri|   Convex sets   | | |
+| 21 |  2 Mar / Mon|    Convex functions  | | |
+| 22 | 4 Mar / Wed |   Constrained optimization   | | |
+| 23 | 6 Mar / Fri |     | | |
+| 24 | 9 Mar / Mon |     | | |
+| 25 | 11 Mar / Wed |     | | |
+| 26 | 13 Mar / Fri |     | | |
+| 27 | 16 Mar / Mon|      | | |
+| 28 | 18 Mar / Wed|     | | |
+| 29 | 20 Mar / Fri|   Linear programing    | | |
+| 30 | 23 Mar / Mon|   Linear programing    | | |
+| 31 | 25 Mar / Wed |  Simplex method     | | |
+| 32 | 27 Mar / Fri |  Simplex method     | | |
+| 33 | 30 Mar / Mon |  Simplex method     | | |
+| 34 | 1 Apr / Wed|  Duality    | | |
+| 35 | 3 Apr / Fri|  Duality    | | |
+| 36 | 6 Apr / Mon|   Interior point methods   | | |
+| 37 | 8 Apr / Wed|   Interior point methods   | | |
