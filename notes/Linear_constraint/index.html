@@ -1,0 +1,920 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Home page for CPSC406 Term 2 2019">
+      
+      
+        <link rel="canonical" href="https://friedlander.io/19T2-406/notes/Linear_constraint/">
+      
+      
+        <meta name="author" content="Michael P. Friedlander and Babhru Joshi">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+    
+    
+      
+        <title>Linear constraint - CPSC406 &mdash; Computational Optimization</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#linear-constraint" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://friedlander.io/19T2-406" title="CPSC406 &mdash; Computational Optimization" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              CPSC406 &mdash; Computational Optimization
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Linear constraint
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        Home Page
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../background/" class="md-tabs__link md-tabs__link--active">
+          Lecture notes
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../homework/" class="md-tabs__link">
+          Homework
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../InclassActivity/mlactivity/mlactivity/" class="md-tabs__link">
+          In-class Activity
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://friedlander.io/19T2-406" title="CPSC406 &mdash; Computational Optimization" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    CPSC406 &mdash; Computational Optimization
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home Page" class="md-nav__link">
+      Home Page
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../grades/" title="Grades" class="md-nav__link">
+      Grades
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../schedule/" title="Schedule" class="md-nav__link">
+      Schedule
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Lecture notes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Lecture notes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../background/" title="Mathematical background" class="md-nav__link">
+      Mathematical background
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Least_squares/" title="Least squares" class="md-nav__link">
+      Least squares
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../QR_factorization/" title="QR factorization" class="md-nav__link">
+      QR factorization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Regularized_LS/" title="Regularized least squares" class="md-nav__link">
+      Regularized least squares
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Non-linear_LS/" title="Non-linear least squares" class="md-nav__link">
+      Non-linear least squares
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../unconstrained/" title="Unconstrained optimization" class="md-nav__link">
+      Unconstrained optimization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Gradient_Descent/" title="Gradient descent" class="md-nav__link">
+      Gradient descent
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Newtons_method/" title="Newton's method" class="md-nav__link">
+      Newton's method
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Linear constraint
+      </label>
+    
+    <a href="./" title="Linear constraint" class="md-nav__link md-nav__link--active">
+      Linear constraint
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reduced-unconstrained-problem" class="md-nav__link">
+    Reduced unconstrained problem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimality-conditions" class="md-nav__link">
+    Optimality Conditions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithm" class="md-nav__link">
+    Algorithm
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Homework
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Homework
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../homework/" title="Submissions" class="md-nav__link">
+      Submissions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../homework/hw1/hw1/" title="Homework 1" class="md-nav__link">
+      Homework 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../homework/hw2/hw2/" title="Homework 2" class="md-nav__link">
+      Homework 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../homework/hw3/hw3/" title="Homework 3" class="md-nav__link">
+      Homework 3
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      In-class Activity
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        In-class Activity
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../InclassActivity/mlactivity/mlactivity/" title="Digit classification" class="md-nav__link">
+      Digit classification
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reduced-unconstrained-problem" class="md-nav__link">
+    Reduced unconstrained problem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimality-conditions" class="md-nav__link">
+    Optimality Conditions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithm" class="md-nav__link">
+    Algorithm
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="linear-constraint"><strong>Linear Constraint</strong><a class="headerlink" href="#linear-constraint" title="Permanent link">&para;</a></h1>
+<p>In this lecture, we consider optimization problem where the unknown variable satisfies a linear constraint. Let <span><span class="MathJax_Preview">f:\R^n → \R</span><script type="math/tex">f:\R^n → \R</script></span> be a continuously differentiable real valued function and <span><span class="MathJax_Preview">\mA \in \R^{m\times n}</span><script type="math/tex">\mA \in \R^{m\times n}</script></span> be a matrix with <span><span class="MathJax_Preview">m&gt;n</span><script type="math/tex">m>n</script></span>. The linearly-constrained optimization problem is</p>
+<div>
+<div class="MathJax_Preview">
+\begin{equation}\label{linear_constraint}
+\minimize_{\vx\in\R^n} f(\vx) \text{ subject to } \mA\vx = \vb,
+\end{equation}
+</div>
+<script type="math/tex; mode=display">
+\begin{equation}\label{linear_constraint}
+\minimize_{\vx\in\R^n} f(\vx) \text{ subject to } \mA\vx = \vb,
+\end{equation}
+</script>
+</div>
+<p>where <span><span class="MathJax_Preview">\vb \in \R^m</span><script type="math/tex">\vb \in \R^m</script></span> is a fixed vector. We assume that the matrix <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> is full rank and the minimum value is finite and attained.  The figure below shows interaction between the objective function <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> and the feasible set <span><span class="MathJax_Preview">\mathcal{F}</span><script type="math/tex">\mathcal{F}</script></span>. The feasible set is the set of point that satisfy the constraint.</p>
+<p><center>
+<img src="../figures/Linear_constraint.png" width = "200">
+</center></p>
+<h2 id="reduced-unconstrained-problem"><strong>Reduced unconstrained problem</strong><a class="headerlink" href="#reduced-unconstrained-problem" title="Permanent link">&para;</a></h2>
+<p>In the case of linear constraints as in \eqref{linear_constraint}, we can reformulate the problem into an unconstrained problem. In order to write the unconstrained problem, we note that the feasible set <span><span class="MathJax_Preview">\mathcal{F} = \{\vx \in \R^n| \mA\vx=\vb\}</span><script type="math/tex">\mathcal{F} = \{\vx \in \R^n| \mA\vx=\vb\}</script></span> can we equivalent expressed as the set <span><span class="MathJax_Preview">\{\bar{\vx} + \mZ \vp |\vp \in \R^{n-m}\}</span><script type="math/tex">\{\bar{\vx} + \mZ \vp |\vp \in \R^{n-m}\}</script></span>, where </p>
+<ol>
+<li>
+<p><span><span class="MathJax_Preview">\bar{x}</span><script type="math/tex">\bar{x}</script></span> is any particular feasible solution , i.e. <span><span class="MathJax_Preview">\bar{\vx}</span><script type="math/tex">\bar{\vx}</script></span> satisfies <span><span class="MathJax_Preview">\mA\bar{\vx} = \vb</span><script type="math/tex">\mA\bar{\vx} = \vb</script></span>, and</p>
+</li>
+<li>
+<p><span><span class="MathJax_Preview">\mZ</span><script type="math/tex">\mZ</script></span> is a basis for <span><span class="MathJax_Preview">\vnull(\mA)</span><script type="math/tex">\vnull(\mA)</script></span>.</p>
+</li>
+</ol>
+<p>So, any <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> that satisfies the linear constraint in \eqref{linear_constraint} can be expressed as <span><span class="MathJax_Preview">\bar{\vx}+\mZ\vp</span><script type="math/tex">\bar{\vx}+\mZ\vp</script></span> for some <span><span class="MathJax_Preview">\vp \in \R^{n-m}</span><script type="math/tex">\vp \in \R^{n-m}</script></span>. This reduces the linear constrained problem \eqref{linear_constraint} to an unconstrained problem in <span><span class="MathJax_Preview">n-m</span><script type="math/tex">n-m</script></span> variables:</p>
+<div>
+<div class="MathJax_Preview">
+\begin{equation}\label{reduced_unconstrained}
+\minimize_{\vp\in\R^{n-m}} f(\bar{\vx} + \mZ\vp).
+\end{equation}
+</div>
+<script type="math/tex; mode=display">
+\begin{equation}\label{reduced_unconstrained}
+\minimize_{\vp\in\R^{n-m}} f(\bar{\vx} + \mZ\vp).
+\end{equation}
+</script>
+</div>
+<p>The above unconstrained problem can be solved to get an optimal <span><span class="MathJax_Preview">\vp^*</span><script type="math/tex">\vp^*</script></span> via any unconstrained method. The corresponding optimal solution to the constrained problem is then <span><span class="MathJax_Preview">\vx^* = \bar{\vx}+\mZ\vp^*</span><script type="math/tex">\vx^* = \bar{\vx}+\mZ\vp^*</script></span>.</p>
+<h2 id="optimality-conditions"><strong>Optimality Conditions</strong><a class="headerlink" href="#optimality-conditions" title="Permanent link">&para;</a></h2>
+<p>Define "reduced" objective function for any particular solution <span><span class="MathJax_Preview">\bar{\vx}</span><script type="math/tex">\bar{\vx}</script></span> and basis for null space <span><span class="MathJax_Preview">\mZ</span><script type="math/tex">\mZ</script></span> as <span><span class="MathJax_Preview">f_\vz(\vp): = f(\bar{\vx} + \mZ\vp)</span><script type="math/tex">f_\vz(\vp): = f(\bar{\vx} + \mZ\vp)</script></span>. THe gradient of <span><span class="MathJax_Preview">f_\vx</span><script type="math/tex">f_\vx</script></span> at <span><span class="MathJax_Preview">\vp</span><script type="math/tex">\vp</script></span> is </p>
+<div>
+<div class="MathJax_Preview">
+\nabla f_\vz(\vp) = \mZ\trans\nabla f(\bar{\vx} + \mZ+\vp).
+</div>
+<script type="math/tex; mode=display">
+\nabla f_\vz(\vp) = \mZ\trans\nabla f(\bar{\vx} + \mZ+\vp).
+</script>
+</div>
+<p>The quantity <span><span class="MathJax_Preview">\nabla f_\vz</span><script type="math/tex">\nabla f_\vz</script></span> is called the reduced gradient. Let <span><span class="MathJax_Preview">\vp^*</span><script type="math/tex">\vp^*</script></span> be an arbitrary point and set <span><span class="MathJax_Preview">\vx^* = \bar{\vx}+\mZ\vp^*</span><script type="math/tex">\vx^* = \bar{\vx}+\mZ\vp^*</script></span>. Then <span><span class="MathJax_Preview">\vp^*</span><script type="math/tex">\vp^*</script></span> is optimal only if </p>
+<div>
+<div class="MathJax_Preview">
+\nabla f_\vz(\vp^*) = 0 ⇔ \mZ\trans\nabla f(\vx^*) = 0 \Leftrightarrow \nabla f(\vx^*) \in \vnull(\mZ\trans).
+</div>
+<script type="math/tex; mode=display">
+\nabla f_\vz(\vp^*) = 0 ⇔ \mZ\trans\nabla f(\vx^*) = 0 \Leftrightarrow \nabla f(\vx^*) \in \vnull(\mZ\trans).
+</script>
+</div>
+<p>By construction of <span><span class="MathJax_Preview">\mZ</span><script type="math/tex">\mZ</script></span>, we have <span><span class="MathJax_Preview">\vnull(\mZ) = \range(\mA)</span><script type="math/tex">\vnull(\mZ) = \range(\mA)</script></span>. Also, note that the fundamental subspaces in <span><span class="MathJax_Preview">\R^n</span><script type="math/tex">\R^n</script></span> associated with <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> and <span><span class="MathJax_Preview">\mZ</span><script type="math/tex">\mZ</script></span> satisfy</p>
+<div>
+<div class="MathJax_Preview">
+\begin{align*}
+&amp; \range(\mA\trans)\oplus \vnull(\mA) = \R^n,\text{ and}\\
+&amp; \vnull(\mZ\trans)\oplus \range(\mZ) = \R^n.
+\end{align*}
+</div>
+<script type="math/tex; mode=display">
+\begin{align*}
+& \range(\mA\trans)\oplus \vnull(\mA) = \R^n,\text{ and}\\
+& \vnull(\mZ\trans)\oplus \range(\mZ) = \R^n.
+\end{align*}
+</script>
+</div>
+<p>Thus, <span><span class="MathJax_Preview">\nabla f(\vx^*) \in \vnull(\mZ\trans)</span><script type="math/tex">\nabla f(\vx^*) \in \vnull(\mZ\trans)</script></span> if and only if <span><span class="MathJax_Preview">\nabla f(\vx^*) \in \range(\mA\trans)</span><script type="math/tex">\nabla f(\vx^*) \in \range(\mA\trans)</script></span>. Further, <span><span class="MathJax_Preview">\nabla f(\vx^*) \in \range(\mA\trans)</span><script type="math/tex">\nabla f(\vx^*) \in \range(\mA\trans)</script></span> if and only if there exist a <span><span class="MathJax_Preview">\vy</span><script type="math/tex">\vy</script></span> such that <span><span class="MathJax_Preview">\nabla f(\vx^*) = \mA\trans\vy</span><script type="math/tex">\nabla f(\vx^*) = \mA\trans\vy</script></span>. These relations lead to the following first-order necessary conditions.</p>
+<p><strong><em>Lemma</em></strong> (First order necessary condition) A point <span><span class="MathJax_Preview">\vx^*</span><script type="math/tex">\vx^*</script></span> is a local minimizer of \eqref{linear_constraint} only if there exists an <span><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span>-vector <span><span class="MathJax_Preview">\vy</span><script type="math/tex">\vy</script></span> such that </p>
+<ol>
+<li>
+<p>(Optimality) <span><span class="MathJax_Preview">\nabla f(\vx^*) = \mA\trans\vy  = \sum_{i=1}^m \va_i y_i</span><script type="math/tex">\nabla f(\vx^*) = \mA\trans\vy  = \sum_{i=1}^m \va_i y_i</script></span>. Here, <span><span class="MathJax_Preview">\va_i</span><script type="math/tex">\va_i</script></span> is the <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>th row of <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span>.</p>
+</li>
+<li>
+<p>(Feasibility) <span><span class="MathJax_Preview">\mA\vx^* = \vb</span><script type="math/tex">\mA\vx^* = \vb</script></span>.</p>
+</li>
+</ol>
+<p>Note that the optimality statement in the above lemma can be equivalently expressed as <span><span class="MathJax_Preview">\mZ\trans\nabla f(\vx^*) = 0</span><script type="math/tex">\mZ\trans\nabla f(\vx^*) = 0</script></span>, which is further equivalent to <span><span class="MathJax_Preview">\nabla f(\vx^*)\trans\vp = 0</span><script type="math/tex">\nabla f(\vx^*)\trans\vp = 0</script></span> for all <span><span class="MathJax_Preview">\vp \in\vnull(A)</span><script type="math/tex">\vp \in\vnull(A)</script></span>. The vector <span><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span> is sometimes referred to as "Lagrange multipliers".</p>
+<p><center>
+<img src="../figures/first_order_opt_reduced.png" width = "200">
+</center></p>
+<p>Note that the Hessian of <span><span class="MathJax_Preview">f_\vz</span><script type="math/tex">f_\vz</script></span> at <span><span class="MathJax_Preview">\vp</span><script type="math/tex">\vp</script></span> is <span><span class="MathJax_Preview">\nabla^2 f_\vz(\vp) = \mZ\trans\nabla^2f(\bar{\vx}+\mZ\vp)\mZ</span><script type="math/tex">\nabla^2 f_\vz(\vp) = \mZ\trans\nabla^2f(\bar{\vx}+\mZ\vp)\mZ</script></span>. We now state the necessary second-order condition.</p>
+<p><strong><em>Lemma</em></strong> (Second-order necessary condition) A point <span><span class="MathJax_Preview">\vx^*</span><script type="math/tex">\vx^*</script></span> is a local minimizer only if <span><span class="MathJax_Preview">\mA\vx^* = \vb</span><script type="math/tex">\mA\vx^* = \vb</script></span> and <span><span class="MathJax_Preview">\nabla^2f_\vz(\vx^*)⪰ 0</span><script type="math/tex">\nabla^2f_\vz(\vx^*)⪰ 0</script></span>. Equivalently, <span><span class="MathJax_Preview">\vx^*</span><script type="math/tex">\vx^*</script></span> is a local minimizer only if <span><span class="MathJax_Preview">\mA\vx^* = \vb</span><script type="math/tex">\mA\vx^* = \vb</script></span> and <span><span class="MathJax_Preview">\mZ\trans\nabla^2f(\vx^*)\mZ \succeq 0</span><script type="math/tex">\mZ\trans\nabla^2f(\vx^*)\mZ \succeq 0</script></span>.</p>
+<p>We now state the sufficient second-order optimality condition.</p>
+<p><strong><em>Lemma</em></strong> (Second-order sufficient condition) A point  <span><span class="MathJax_Preview">\vx^*</span><script type="math/tex">\vx^*</script></span> is a local minimizer if it satisfies the following conditions:</p>
+<ol>
+<li>
+<p>(Feasibility) <span><span class="MathJax_Preview">\mA\vx^* = \vb</span><script type="math/tex">\mA\vx^* = \vb</script></span>, </p>
+</li>
+<li>
+<p>(Stationary) <span><span class="MathJax_Preview">\nabla f_\vz(\vx^*) = 0</span><script type="math/tex">\nabla f_\vz(\vx^*) = 0</script></span>, and</p>
+</li>
+<li>
+<p>(Positivity) <span><span class="MathJax_Preview">\nabla^2f_\vz(\vx^*) \succ 0</span><script type="math/tex">\nabla^2f_\vz(\vx^*) \succ 0</script></span>.</p>
+</li>
+</ol>
+<p>Equivalently, <span><span class="MathJax_Preview">\vx^*</span><script type="math/tex">\vx^*</script></span> is a local minimizer if it satisfies the following conditions:</p>
+<ol>
+<li>
+<p>(Feasibility) <span><span class="MathJax_Preview">\mA\vx^* = \vb</span><script type="math/tex">\mA\vx^* = \vb</script></span>, </p>
+</li>
+<li>
+<p>(Stationary) <span><span class="MathJax_Preview">\nabla f(\vx^*) = \mA\trans\vy</span><script type="math/tex">\nabla f(\vx^*) = \mA\trans\vy</script></span> for some <span><span class="MathJax_Preview">\vy</span><script type="math/tex">\vy</script></span>, and</p>
+</li>
+<li>
+<p>(Positivity) <span><span class="MathJax_Preview">\vp\trans\nabla^2f(\vx^*)\vp&gt;0</span><script type="math/tex">\vp\trans\nabla^2f(\vx^*)\vp>0</script></span> for all <span><span class="MathJax_Preview">\vp \in \vnull(A)\backslash \{\vzero\}</span><script type="math/tex">\vp \in \vnull(A)\backslash \{\vzero\}</script></span>.</p>
+</li>
+</ol>
+<h2 id="example"><strong>Example</strong><a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
+<p>(Least norm solutions) Consider the following problem:</p>
+<div>
+<div class="MathJax_Preview"> \minimize_{\vx} \|\vx\|_2 \text{ subject to } \mA\vx=\vb.</div>
+<script type="math/tex; mode=display"> \minimize_{\vx} \|\vx\|_2 \text{ subject to } \mA\vx=\vb.</script>
+</div>
+<p>To find the least norm solution, we first state the corresponding first-order optimality condition. Without loss of generality, we may assume that the objective is <span><span class="MathJax_Preview">f(\vx) = \frac{1}{2}\|\vx\|_2^2</span><script type="math/tex">f(\vx) = \frac{1}{2}\|\vx\|_2^2</script></span>. Since <span><span class="MathJax_Preview">\nabla f(\vx) = \vx</span><script type="math/tex">\nabla f(\vx) = \vx</script></span>, first-order optimality is</p>
+<div>
+<div class="MathJax_Preview">
+\left.
+\begin{array}{c}
+&amp;\vx = \mA\trans\vy \text{ for some } \vy\\ 
+&amp;\mA\vx = \vb
+\end{array}
+\right\} ⇔ \bmat-\mI &amp; \mA\trans\\ \mA &amp; \vzero\emat\bmat\vx\\ \vy\emat = \bmat\vzero\\ \vb\emat.
+</div>
+<script type="math/tex; mode=display">
+\left.
+\begin{array}{c}
+&\vx = \mA\trans\vy \text{ for some } \vy\\ 
+&\mA\vx = \vb
+\end{array}
+\right\} ⇔ \bmat-\mI & \mA\trans\\ \mA & \vzero\emat\bmat\vx\\ \vy\emat = \bmat\vzero\\ \vb\emat.
+</script>
+</div>
+<p>So, if the constraint set <span><span class="MathJax_Preview">\mA\vx = \vb</span><script type="math/tex">\mA\vx = \vb</script></span> is <span><span class="MathJax_Preview">x_1 + x_2 + \dots + x_n = 1</span><script type="math/tex">x_1 + x_2 + \dots + x_n = 1</script></span>, then the first order optimality condition yields</p>
+<div>
+<div class="MathJax_Preview">
+\bmat-\mI &amp; \ve \trans\\ \ve\trans &amp; 0\emat\bmat\vx\\ y\emat = \bmat 0\\ 1\emat \Rightarrow \left\{\begin{array}{c}
+&amp;-vx +\ve y = 0\\ 
+&amp;\ve\trans\vx = 1
+\end{array}\right\} \Rightarrow \ve\trans\ve\vy = 1 ⇒ y = \frac{1}{n}.
+</div>
+<script type="math/tex; mode=display">
+\bmat-\mI & \ve \trans\\ \ve\trans & 0\emat\bmat\vx\\ y\emat = \bmat 0\\ 1\emat \Rightarrow \left\{\begin{array}{c}
+&-vx +\ve y = 0\\ 
+&\ve\trans\vx = 1
+\end{array}\right\} \Rightarrow \ve\trans\ve\vy = 1 ⇒ y = \frac{1}{n}.
+</script>
+</div>
+<p>Thus, the minimizer is <span><span class="MathJax_Preview">\vx = \frac{1}{n} \ve</span><script type="math/tex">\vx = \frac{1}{n} \ve</script></span>.</p>
+<h2 id="algorithm"><strong>Algorithm</strong><a class="headerlink" href="#algorithm" title="Permanent link">&para;</a></h2>
+<p>The reduced gradient method for solving linear constraint optimization problem is:</p>
+<p><strong><em>Algorithm</em></strong> (Reduced gradient method)</p>
+<p>Given <span><span class="MathJax_Preview">\vx_0</span><script type="math/tex">\vx_0</script></span> feasible and <span><span class="MathJax_Preview">\mZ</span><script type="math/tex">\mZ</script></span> a basis for <span><span class="MathJax_Preview">\vnull(\mA)</span><script type="math/tex">\vnull(\mA)</script></span></p>
+<p>For <span><span class="MathJax_Preview">k = 0, 1, 2, \dots</span><script type="math/tex">k = 0, 1, 2, \dots</script></span></p>
+<ol>
+<li>
+<p>Compute <span><span class="MathJax_Preview">\vg := \nabla f(\vx_k)</span><script type="math/tex">\vg := \nabla f(\vx_k)</script></span>.</p>
+</li>
+<li>
+<p>Compute <span><span class="MathJax_Preview">\mH := \nabla^2f(\vx_k)</span><script type="math/tex">\mH := \nabla^2f(\vx_k)</script></span>.</p>
+</li>
+<li>
+<p>Solve <span><span class="MathJax_Preview">\mZ\trans\mH\mZ\vp = -\mZ\trans\vg</span><script type="math/tex">\mZ\trans\mH\mZ\vp = -\mZ\trans\vg</script></span> to get <span><span class="MathJax_Preview">\vp_k</span><script type="math/tex">\vp_k</script></span>.</p>
+</li>
+<li>
+<p>Linesearch on <span><span class="MathJax_Preview">f(\vx_k + \alpha \mZ\vp_k)</span><script type="math/tex">f(\vx_k + \alpha \mZ\vp_k)</script></span>.</p>
+</li>
+<li>
+<p><span><span class="MathJax_Preview">\vx_{k+1} = \vx_k + \alpha_k\mZ\vp_k</span><script type="math/tex">\vx_{k+1} = \vx_k + \alpha_k\mZ\vp_k</script></span>.</p>
+</li>
+<li>
+<p>Repeat until convergence.</p>
+</li>
+</ol>
+<p>The algorithm requires an initial feasible point and a basis for the null space of <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span>. An initial feasible point is easy to obtain (for example, the least squares solution). One approach to obtain a basis for the null space is by considering the QR decomposition of <span><span class="MathJax_Preview">\mA\trans</span><script type="math/tex">\mA\trans</script></span>. We will present an alternate way to construct the basis for the null space.</p>
+<p>Permute the columns of <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> so that the matrix <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> can be represented as </p>
+<div>
+<div class="MathJax_Preview">\mA = \bmat \mB &amp; \mN\emat, </div>
+<script type="math/tex; mode=display">\mA = \bmat \mB & \mN\emat, </script>
+</div>
+<p>where <span><span class="MathJax_Preview">\mB</span><script type="math/tex">\mB</script></span> is non-singular. Such a matrix exists because <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> is full rank. The matrix <span><span class="MathJax_Preview">\mB</span><script type="math/tex">\mB</script></span> is called a basic matrix and <span><span class="MathJax_Preview">\mN</span><script type="math/tex">\mN</script></span> is called the non-basic matrix. Then feasibility requires</p>
+<div>
+<div class="MathJax_Preview">\mA\vx =\vb ⇔ \bmat\mB &amp;\mN\emat\bmat\vx_B\\ \vx_N\emat \Leftrightarrow \mB\vx_B + \mN\vx_N = \vb.</div>
+<script type="math/tex; mode=display">\mA\vx =\vb ⇔ \bmat\mB &\mN\emat\bmat\vx_B\\ \vx_N\emat \Leftrightarrow \mB\vx_B + \mN\vx_N = \vb.</script>
+</div>
+<p>The variables <span><span class="MathJax_Preview">\vx_B</span><script type="math/tex">\vx_B</script></span> and <span><span class="MathJax_Preview">\vx_N</span><script type="math/tex">\vx_N</script></span> are called basic variable and non-basic variable respectively. Note that <span><span class="MathJax_Preview">\vx_B</span><script type="math/tex">\vx_B</script></span> is uniquely determined by <span><span class="MathJax_Preview">\vx_N</span><script type="math/tex">\vx_N</script></span>, i.e. <span><span class="MathJax_Preview">\vx_B = \mB^{-1}(b-\mN\vx_N)</span><script type="math/tex">\vx_B = \mB^{-1}(b-\mN\vx_N)</script></span>, and <span><span class="MathJax_Preview">\vx_N</span><script type="math/tex">\vx_N</script></span> is free to move. </p>
+<p>By construction, the matrix <span><span class="MathJax_Preview">\mZ = \bmat-\mB^{-1}\mN\\ \mI\emat</span><script type="math/tex">\mZ = \bmat-\mB^{-1}\mN\\ \mI\emat</script></span> is a basis for the null space of <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span>. This is because <span><span class="MathJax_Preview">\mA\mZ = \bmat\mB&amp;\mN\emat\bmat-\mB^{-1}\mN\ \\mI\emat = 0</span><script type="math/tex">\mA\mZ = \bmat\mB&\mN\emat\bmat-\mB^{-1}\mN\ \\mI\emat = 0</script></span>.</p>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../Newtons_method/" title="Newton's method" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Newton's method
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../homework/" title="Submissions" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Submissions
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020 Michael Friedlander and Babhru Joshi
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
