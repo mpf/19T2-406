@@ -20,7 +20,7 @@ This is a tentative schedule. It will change often.
 | 13 | 5 Feb / Wed|  Cholesky Factorization| | |
 | 14 | 7 Feb / Fri|  Cholesky Factorization    | [notebook](https://nbviewer.jupyter.org/github/mpf/19T2-406/blob/master/docs/notebooks/Cholesky.ipynb)| hw3 due at 6pm|
 | 15 | 10 Feb / Mon| [Case study](InclassActivity/mlactivity/mlactivity.md#CPSC406)     | | |
-| 16 | 12 Feb / Wed| Quasi-Newton Methods  | | |
+| 16 | 12 Feb / Wed| [Quasi-Newton Methods](notes/Quasi_newton.md#Quasi-Newtonmethods)  | | |
 | 17 | 14 Feb / Fri| Midterm     | [practice questions](exams/practice/midterm_practice.pdf) | |
 |    | 17 Feb / Mon| Holiday (Family Day) | | |
 |    | 19 Feb / Wed| no lecture (spring break) | | |

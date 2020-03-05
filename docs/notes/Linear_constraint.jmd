@@ -155,7 +155,7 @@ $$\mA\vx =\vb ⇔ \bmat\mB &\mN\emat\bmat\vx_B\\ \vx_N\emat \Leftrightarrow \mB\
 
 The variables $\vx_B$ and $\vx_N$ are called basic variable and non-basic variable respectively. Note that $\vx_B$ is uniquely determined by $\vx_N$, i.e. $\vx_B = \mB^{-1}(b-\mN\vx_N)$, and $\vx_N$ is free to move. 
 
-By construction, the matrix $\mZ = \bmat-\mB^{-1}\mN\\ \mI\emat$ is a basis for the null space of $\mA$. This is because $\mA\mZ = \bmat\mB&\mN\emat\bmat-\mB^{-1}\mN\ \\mI\emat = 0$.
+By construction, the matrix $\mZ = \bmat-\mB^{-1}\mN\\ \mI\emat$ is a basis for the null space of $\mA$. This is because $\mA\mZ = \bmat\mB&\mN\emat\bmat-\mB^{-1}\mN \\ \mI\emat = 0$.
 
 
 
