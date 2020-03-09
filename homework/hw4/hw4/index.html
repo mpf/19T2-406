@@ -661,7 +661,6 @@ x^* = \proj_{\mathcal C}(x^* - \gamma \nabla f(x^*))
 <p>In other words, <span><span class="MathJax_Preview">\nabla f(x^*)</span><script type="math/tex">\nabla f(x^*)</script></span> is in the <em>normal cone of <span><span class="MathJax_Preview">\mathcal C</span><script type="math/tex">\mathcal C</script></span> at point <span><span class="MathJax_Preview">x^*</span><script type="math/tex">x^*</script></span></em>. Show that this property is equivalent to \eqref{e-projection}.</p>
 </li>
 <li>
-<p>. </p>
 <ol>
 <li>
 <p>Let <span><span class="MathJax_Preview">\mathcal{C} = \{x \in \R^n | Ax = b\}</span><script type="math/tex">\mathcal{C} = \{x \in \R^n | Ax = b\}</script></span>, where <span><span class="MathJax_Preview">A \in \R^{m\times n}</span><script type="math/tex">A \in \R^{m\times n}</script></span> has full row rank. Show that <span><span class="MathJax_Preview">\proj_{\mathcal C} (z) = z - A\trans(AA\trans)^{-1}(b-Az)</span><script type="math/tex">\proj_{\mathcal C} (z) = z - A\trans(AA\trans)^{-1}(b-Az)</script></span>. Hint: decompose <span><span class="MathJax_Preview">\nabla f(x)</span><script type="math/tex">\nabla f(x)</script></span> into two components: <span><span class="MathJax_Preview">\nabla f(x)</span><script type="math/tex">\nabla f(x)</script></span> is in <span><span class="MathJax_Preview">\range(A^T) \oplus \vnull(A)</span><script type="math/tex">\range(A^T) \oplus \vnull(A)</script></span>.</p>
@@ -682,6 +681,17 @@ f(x) = \sum_{i=1}^{N-1}[100(x_{i+1} - x_{i}^2)^2+(1-x_i)^2].
 <script type="math/tex; mode=display"> \min_{x} f(x) \text{ s.t. } Ax = b.</script>
 </div>
 <p>Another way to solve this linearly constrained problem is using <a href="../../../notes/Linear_constraint/#Linearconstraint">reduced gradient method</a>. An implementation of reduced gradient method to solve this problem is in the following julia <a href="https://nbviewer.jupyter.org/github/mpf/19T2-406/blob/master/docs/notebooks/Reduced_gradient.ipynb">notebook</a>. Are the solutions equal?</p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Convexity</strong></p>
+<ol>
+<li>
+<p><strong>Entropy</strong> Let <span><span class="MathJax_Preview">f(x) = -\sum_{i=1}^n x_i\log x_i</span><script type="math/tex">f(x) = -\sum_{i=1}^n x_i\log x_i</script></span>. Show that <span><span class="MathJax_Preview">f(x)</span><script type="math/tex">f(x)</script></span> is concave in the simplex set <span><span class="MathJax_Preview">\{ x\in \R^n | \sum_{i=1}^n x_i = 1, x_1,\dots,x_n\geq 0 \}</span><script type="math/tex">\{ x\in \R^n | \sum_{i=1}^n x_i = 1, x_1,\dots,x_n\geq 0 \}</script></span>.</p>
+</li>
+<li>
+<p><strong>Log-Sum-Exp</strong> Let <span><span class="MathJax_Preview">A \in \R^{m\times n}</span><script type="math/tex">A \in \R^{m\times n}</script></span> with <span><span class="MathJax_Preview">a_i</span><script type="math/tex">a_i</script></span> as the <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>th column of <span><span class="MathJax_Preview">A\trans</span><script type="math/tex">A\trans</script></span>. Show that <span><span class="MathJax_Preview">f(x) = \log\left(\sum_{i=1}^m e^{a_i\trans x}\right)</span><script type="math/tex">f(x) = \log\left(\sum_{i=1}^m e^{a_i\trans x}\right)</script></span> is convex in <span><span class="MathJax_Preview">\R^n</span><script type="math/tex">\R^n</script></span>.</p>
 </li>
 </ol>
 </li>
