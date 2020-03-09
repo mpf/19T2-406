@@ -51,7 +51,7 @@
 
     In other words, $\nabla f(x^*)$ is in the *normal cone of $\mathcal C$ at point $x^*$*. Show that this property is equivalent to \eqref{e-projection}.
 
-4. . 
+4.  
     
     1. Let $\mathcal{C} = \{x \in \R^n | Ax = b\}$, where $A \in \R^{m\times n}$ has full row rank. Show that $\proj_{\mathcal C} (z) = z - A\trans(AA\trans)^{-1}(b-Az)$. Hint: decompose $\nabla f(x)$ into two components: $\nabla f(x)$ is in $\range(A^T) \oplus \vnull(A)$.
 
@@ -67,6 +67,10 @@
         
         Another way to solve this linearly constrained problem is using [reduced gradient method](../../notes/Linear_constraint.md#Linearconstraint). An implementation of reduced gradient method to solve this problem is in the following julia [notebook](https://nbviewer.jupyter.org/github/mpf/19T2-406/blob/master/docs/notebooks/Reduced_gradient.ipynb). Are the solutions equal?
 
+5. **Convexity**
 
+    1. **Entropy** Let $f(x) = -\sum_{i=1}^n x_i\log x_i$. Show that $f(x)$ is concave in the simplex set $\{ x\in \R^n | \sum_{i=1}^n x_i = 1, x_1,\dots,x_n\geq 0 \}$.
+
+    2. **Log-Sum-Exp** Let $A \in \R^{m\times n}$ with $a_i$ as the $i$th column of $A\trans$. Show that $f(x) = \log\left(\sum_{i=1}^m e^{a_i\trans x}\right)$ is convex in $\R^n$.
 
 
