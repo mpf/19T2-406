@@ -25,16 +25,16 @@ This is a tentative schedule. It will change often.
 |    | 17 Feb / Mon| Holiday (Family Day) | | |
 |    | 19 Feb / Wed| no lecture (spring break) | | |
 |    | 21 Feb / Fri| no lecture (spring break)| | |
-| 18 | 24 Feb / Mon | [Linear constraint](notes/Linear_constraint.md#Linearconstraint)     | | |
-| 19 | 26 Feb / Wed | [Linear constraint](notes/Linear_constraint.md#Linearconstraint)     | | |
+| 18 | 24 Feb / Mon | [Linear constraint](notes/Linear_constraint.md#Linearconstraint)     | [notebook](https://nbviewer.jupyter.org/github/mpf/19T2-406/blob/master/docs/notebooks/Reduced_gradient.ipynb) | |
+| 19 | 26 Feb / Wed | [Linear constraint](notes/Linear_constraint.md#Linearconstraint)     | | [In-class activity](InclassActivity/mlactivity/mlactivity.md#CPSC406) due|
 | 20 | 28 Feb / Fri|   Convex sets   | | |
-| 21 |  2 Mar / Mon|    Convex functions  | | |
-| 22 | 4 Mar / Wed |   Constrained optimization   | | |
-| 23 | 6 Mar / Fri |     | | |
-| 24 | 9 Mar / Mon |     | | |
+| 21 |  2 Mar / Mon|   Convex sets  | | |
+| 22 | 4 Mar / Wed |   Projected gradient descent   | | |
+| 23 | 6 Mar / Fri |   Projected gradient descent | | |
+| 24 | 9 Mar / Mon |  Convex functions    | | [hw4](homework/hw4/hw4.md) out|
 | 25 | 11 Mar / Wed |     | | |
 | 26 | 13 Mar / Fri |     | | |
-| 27 | 16 Mar / Mon|      | | |
+| 27 | 16 Mar / Mon|      | | hw4 due|
 | 28 | 18 Mar / Wed|     | | |
 | 29 | 20 Mar / Fri|   Linear programing    | | |
 | 30 | 23 Mar / Mon|   Linear programing    | | |

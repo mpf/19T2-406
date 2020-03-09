@@ -31,7 +31,7 @@
     x^* = \proj_{\mathcal C}(x^* - \gamma \nabla f(x^*))
     \end{equation}
 
-    for some constant $\gamma > 0$, where the projection itself is an optimization problem:
+    for any constant $\gamma > 0$, where the projection itself is an optimization problem:
 
     $$
     \begin{array}{lll}
@@ -61,9 +61,11 @@
         f(x) = \sum_{i=1}^{N-1}[100(x_{i+1} - x_{i}^2)^2+(1-x_i)^2].
         $$
 
-        Let$A = \bmat 1 & 1 & 1\\ 2 & 1 & 0 \emat$ and $b = \bmat 1 & 0.5\emat$. Use projected gradient descent with constant step to minimizes the 3-variable Rosenbrock test function subject to linear constraint $Ax = b$, i.e. solve 
+        Let $A = \bmat 1 & 1 & 1\\ 2 & 1 & 0 \emat$ and $b = \bmat 1 \\ 0.5\emat$. Use projected gradient descent with constant stepsize to minimizes the 3-variable Rosenbrock test function subject to linear constraint $Ax = b$, i.e. solve 
 
-        $$ \min_{x} f(x) \text{ s.t. } Ax = b$$.
+        $$ \min_{x} f(x) \text{ s.t. } Ax = b.$$ 
+        
+        Another way to solve this linearly constrained problem is using [reduced gradient method](../../notes/Linear_constraint.md#Linearconstraint). An implementation of reduced gradient method to solve this problem is in the following julia [notebook](https://nbviewer.jupyter.org/github/mpf/19T2-406/blob/master/docs/notebooks/Reduced_gradient.ipynb). Are the solutions equal?
 
 
 
