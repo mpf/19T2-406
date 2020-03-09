@@ -1,6 +1,6 @@
 # **Linear Constraint**
 
-In this lecture, we consider optimization problem where the unknown variable satisfies a linear constraint. Let $f:\R^n → \R$ be a continuously differentiable real valued function and $\mA \in \R^{m\times n}$ be a matrix with $m>n$. The linearly-constrained optimization problem is
+In this lecture, we consider optimization problem where the unknown variable satisfies a linear constraint. Let $f:\R^n → \R$ be a continuously differentiable real valued function and $\mA \in \R^{m\times n}$ be a matrix with $m\le n$. The linearly-constrained optimization problem is
 
 $$
 \begin{equation}\label{linear_constraint}
@@ -8,7 +8,7 @@ $$
 \end{equation}
 $$
 
-where $\vb \in \R^m$ is a fixed vector. We assume that the matrix $\mA$ is full rank and the minimum value is finite and attained.  The figure below shows interaction between the objective function $f$ and the feasible set $\mathcal{F}$. The feasible set is the set of point that satisfy the constraint.
+where $\vb \in \R^m$ is a fixed vector. We assume that the matrix $\mA$ has full row rank and the minimum value is finite and attained.  The figure below shows interaction between the objective function $f$ and the feasible set $\mathcal{F}$. The feasible set is the set of point that satisfy the constraint.
 
 <center>
 <img src="../figures/Linear_constraint.png" width = "200">
