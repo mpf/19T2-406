@@ -27,8 +27,8 @@ This is a tentative schedule. It will change often.
 |    | 21 Feb / Fri| no lecture (spring break)| | |
 | 18 | 24 Feb / Mon | [Linear constraint](notes/Linear_constraint.md#Linearconstraint)     | [notebook](https://nbviewer.jupyter.org/github/mpf/19T2-406/blob/master/docs/notebooks/Reduced_gradient.ipynb) | |
 | 19 | 26 Feb / Wed | [Linear constraint](notes/Linear_constraint.md#Linearconstraint)     | | [In-class activity](InclassActivity/mlactivity/mlactivity.md#CPSC406) due|
-| 20 | 28 Feb / Fri|   Convex sets   | | |
-| 21 |  2 Mar / Mon|   Convex sets  | | |
+| 20 | 28 Feb / Fri|   [Convex sets](notes/Convex_set.md#Convexset)   | | |
+| 21 |  2 Mar / Mon|   [Convex sets](notes/Convex_set.md#Convexset)  | | |
 | 22 | 4 Mar / Wed |   Projected gradient descent   | | |
 | 23 | 6 Mar / Fri |   Projected gradient descent | | |
 | 24 | 9 Mar / Mon |  Convex functions    | | [hw4](homework/hw4/hw4.md) out|
