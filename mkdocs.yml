@@ -70,6 +70,7 @@ nav:
     #   - Cholesky factorization: notes/Cholesky_factorization.md
       - Linear constraint: notes/Linear_constraint.md
       - Convex sets: notes/Convex_set.md
+      - Constrained optimization: notes/Constrained_optimization.md
   - Homework:
       - Submissions: homework/index.md
       - Homework 1: homework/hw1/hw1.md
