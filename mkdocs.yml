@@ -79,3 +79,6 @@ nav:
       - Digit classification: InclassActivity/mlactivity/mlactivity.md
 
 
+google_analytics:
+  - 'UA-4736412-7'
+  - 'auto'
