@@ -29,7 +29,7 @@ $$
 Another way to define convex sets is via the notion of convex combination. Convex combination of a set of points $\vx_1, \dots, \vx_k \in \R^n$ is the linear combination of those points $\vx = \theta_1\vx_1 + \dots + \theta_k\vx_k$ with the coefficients $\theta_i$ satisfying $\sum_{i=1}^k \theta_i = 1$ and $\theta_i\geq 0$ for all $i$. So, a set $\setC$ is convex if every convex combination of points in the set is in the set. Some examples of convex sets are hyperplanes and half-spaces. Hyperplane is a set of the form $\{\vx\ |\ \va\trans\vx = b\}$, where $\va \neq0$ and $\vb \in \R$. Similarly, half-space is a set of the form $\{\vx\ |\ \va\trans\vx \leq b\}$, where $\va \neq0$ and $\vb \in \R$. Note that hyperplanes are affine and convex, but half-spaces are only convex.
 
 <center>
-    <img src="../figures/hyper_halfspace.svg" width = "600">
+    <img src="../figures/hyper_halfspace.svg" width = "400">
 </center>
 
 If a set is not convex, the simplest way to 'convexify' the set is by taking its convex hull. The convex hull of a set $\setD$ is the set that contains all convex combinations of points in the set $\setD$. Formally, the convex hull of $\setD$ is 
@@ -37,7 +37,7 @@ If a set is not convex, the simplest way to 'convexify' the set is by taking its
 $$ \text{conv}(\setD) := \{z \ | \ z = \theta\vx + (1-\theta)\vy,\ \vx,\vy \in \setD,\ \theta\in[0,1]\}.$$
 
 <center>
-    <img src="../figures/convex_hull.svg" width = "600">
+    <img src="../figures/convex_hull.svg" width = "400">
 </center>
 
 ## **Operations that preserve convexity**
@@ -57,7 +57,7 @@ $$ \text{conv}(\setD) := \{z \ | \ z = \theta\vx + (1-\theta)\vy,\ \vx,\vy \in \
         Thus, an $n$-dimensional simplex is the intersection of convex sets and is itself convex.
 
 <center>
-    <img src="../figures/polytope_simplex.svg" width = "600">
+    <img src="../figures/polytope_simplex.svg" width = "400">
 </center>
 
 2. **Linear Mapping:** Let $\setC \subseteq \R^n$ be a convex set. For any $m$ by $n$ matrix $\mA$, the image of $\setC$ under $\mA$ is convex. That is, the set $\mA(\setC) = \{\mA\vx | \vx \in \setC\}$ is convex.
@@ -74,7 +74,7 @@ A set $\setS \subseteq \R^n$ is a cone if every positive scalar multiple of the 
 $$ \setS \text{ is a cone if } \vx\in \setS \Leftrightarrow \alpha \vx \in \setS \text{ for all } \alpha\geq 0$$
 
 <center>
-    <img src="../figures/cone.svg" width = "600">
+    <img src="../figures/cone.svg" width = "400">
 </center>
 
 A convex cone is a cone that is convex. A convex cone satisfies:
