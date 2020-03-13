@@ -43,17 +43,17 @@
 
     1. **Nonnegative constraint.** For $\mathcal C = \{x : x_i \geq 0\}$,  prove that \eqref{e-projection} implies $\nabla f(x^*)\geq 0$.
     
-    2. **Normal cone.** In general, the optimality condition for \eqref{e-constrained} is that $x^*$ is optimal if and only if
+    2. **(Revised)** **Normal cone.** In general, the optimality condition for \eqref{e-constrained} is that $x^*$ is optimal if and only if
     
     \begin{equation}\label{e-optimality}
-    \nabla f(x^*)^T(y-x) \geq 0,\; \forall y\in \mathcal C
+    \nabla f(x^*)^T(y-x^*) \geq 0,\; \forall y\in \mathcal C
     \end{equation}
 
-    In other words, $\nabla f(x^*)$ is in the *normal cone of $\mathcal C$ at point $x^*$*. Show that this property is equivalent to \eqref{e-projection}.
+    In other words, $-\nabla f(x^*)$ is in the *normal cone of $\mathcal C$ at point $x^*$*. Show that this property is equivalent to \eqref{e-projection}.
 
 4.  
     
-    1. Let $\mathcal{C} = \{x \in \R^n | Ax = b\}$, where $A \in \R^{m\times n}$ has full row rank. Show that $\proj_{\mathcal C} (z) = z - A\trans(AA\trans)^{-1}(b-Az)$. Hint: decompose $\nabla f(x)$ into two components: $\nabla f(x)$ is in $\range(A^T) \oplus \vnull(A)$.
+    1. **(Revised)** Let $\mathcal{C} = \{x \in \R^n | Ax = b\}$, where $A \in \R^{m\times n}$ has full row rank. Show that $\proj_{\mathcal C} (z) = z + A\trans(AA\trans)^{-1}(b-Az)$. Hint: decompose $\nabla f(x)$ into two components: $\nabla f(x)$ is in $\range(A^T) \oplus \vnull(A)$.
 
     2. **Projected gradient descent** The N-variable Rosenbrock test function is
 
