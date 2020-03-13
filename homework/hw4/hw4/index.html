@@ -696,23 +696,23 @@ x^* = \proj_{\mathcal C}(x^* - \gamma \nabla f(x^*))
 <p><strong>Nonnegative constraint.</strong> For <span><span class="MathJax_Preview">\mathcal C = \{x : x_i \geq 0\}</span><script type="math/tex">\mathcal C = \{x : x_i \geq 0\}</script></span>,  prove that \eqref{e-projection} implies <span><span class="MathJax_Preview">\nabla f(x^*)\geq 0</span><script type="math/tex">\nabla f(x^*)\geq 0</script></span>.</p>
 </li>
 <li>
-<p><strong>Normal cone.</strong> In general, the optimality condition for \eqref{e-constrained} is that <span><span class="MathJax_Preview">x^*</span><script type="math/tex">x^*</script></span> is optimal if and only if</p>
+<p><strong>(Revised)</strong> <strong>Normal cone.</strong> In general, the optimality condition for \eqref{e-constrained} is that <span><span class="MathJax_Preview">x^*</span><script type="math/tex">x^*</script></span> is optimal if and only if</p>
 </li>
 </ol>
 <div>
 <div class="MathJax_Preview">\begin{equation}\label{e-optimality}
-\nabla f(x^*)^T(y-x) \geq 0,\; \forall y\in \mathcal C
+\nabla f(x^*)^T(y-x^*) \geq 0,\; \forall y\in \mathcal C
 \end{equation}</div>
 <script type="math/tex; mode=display">\begin{equation}\label{e-optimality}
-\nabla f(x^*)^T(y-x) \geq 0,\; \forall y\in \mathcal C
+\nabla f(x^*)^T(y-x^*) \geq 0,\; \forall y\in \mathcal C
 \end{equation}</script>
 </div>
-<p>In other words, <span><span class="MathJax_Preview">\nabla f(x^*)</span><script type="math/tex">\nabla f(x^*)</script></span> is in the <em>normal cone of <span><span class="MathJax_Preview">\mathcal C</span><script type="math/tex">\mathcal C</script></span> at point <span><span class="MathJax_Preview">x^*</span><script type="math/tex">x^*</script></span></em>. Show that this property is equivalent to \eqref{e-projection}.</p>
+<p>In other words, <span><span class="MathJax_Preview">-\nabla f(x^*)</span><script type="math/tex">-\nabla f(x^*)</script></span> is in the <em>normal cone of <span><span class="MathJax_Preview">\mathcal C</span><script type="math/tex">\mathcal C</script></span> at point <span><span class="MathJax_Preview">x^*</span><script type="math/tex">x^*</script></span></em>. Show that this property is equivalent to \eqref{e-projection}.</p>
 </li>
 <li>
 <ol>
 <li>
-<p>Let <span><span class="MathJax_Preview">\mathcal{C} = \{x \in \R^n | Ax = b\}</span><script type="math/tex">\mathcal{C} = \{x \in \R^n | Ax = b\}</script></span>, where <span><span class="MathJax_Preview">A \in \R^{m\times n}</span><script type="math/tex">A \in \R^{m\times n}</script></span> has full row rank. Show that <span><span class="MathJax_Preview">\proj_{\mathcal C} (z) = z - A\trans(AA\trans)^{-1}(b-Az)</span><script type="math/tex">\proj_{\mathcal C} (z) = z - A\trans(AA\trans)^{-1}(b-Az)</script></span>. Hint: decompose <span><span class="MathJax_Preview">\nabla f(x)</span><script type="math/tex">\nabla f(x)</script></span> into two components: <span><span class="MathJax_Preview">\nabla f(x)</span><script type="math/tex">\nabla f(x)</script></span> is in <span><span class="MathJax_Preview">\range(A^T) \oplus \vnull(A)</span><script type="math/tex">\range(A^T) \oplus \vnull(A)</script></span>.</p>
+<p><strong>(Revised)</strong> Let <span><span class="MathJax_Preview">\mathcal{C} = \{x \in \R^n | Ax = b\}</span><script type="math/tex">\mathcal{C} = \{x \in \R^n | Ax = b\}</script></span>, where <span><span class="MathJax_Preview">A \in \R^{m\times n}</span><script type="math/tex">A \in \R^{m\times n}</script></span> has full row rank. Show that <span><span class="MathJax_Preview">\proj_{\mathcal C} (z) = z + A\trans(AA\trans)^{-1}(b-Az)</span><script type="math/tex">\proj_{\mathcal C} (z) = z + A\trans(AA\trans)^{-1}(b-Az)</script></span>. Hint: decompose <span><span class="MathJax_Preview">\nabla f(x)</span><script type="math/tex">\nabla f(x)</script></span> into two components: <span><span class="MathJax_Preview">\nabla f(x)</span><script type="math/tex">\nabla f(x)</script></span> is in <span><span class="MathJax_Preview">\range(A^T) \oplus \vnull(A)</span><script type="math/tex">\range(A^T) \oplus \vnull(A)</script></span>.</p>
 </li>
 <li>
 <p><strong>Projected gradient descent</strong> The N-variable Rosenbrock test function is</p>
