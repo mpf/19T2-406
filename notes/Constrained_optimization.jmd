@@ -18,7 +18,7 @@ $$\setN_\setS(\vx) = \{\vg\in\R^n | \vg\trans(\vz-\vx)\leq 0,\ \forall z \in \se
 
 The first order necessary condition in terms of normal cone is:
 
-$$\vx^* \text{is a minimizer of \eqref{constrained_prob} if -} \nabla f(\vx^*) \in \setN_\setS(\vx^*).$$ 
+$$\text{if } \vx^* \text{is a minimizer of \eqref{constrained_prob}, then -} \nabla f(\vx^*) \in \setN_\setS(\vx^*).$$ 
 
 Figure below shows the normal cone of a set $\setS$ at different points in the set. 
 <center>

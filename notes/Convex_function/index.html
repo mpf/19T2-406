@@ -13,7 +13,7 @@
         <meta name="description" content="Home page for CPSC406 Term 2 2019">
       
       
-        <link rel="canonical" href="https://friedlander.io/19T2-406/notes/Convex_set/">
+        <link rel="canonical" href="https://friedlander.io/19T2-406/notes/Convex_function/">
       
       
         <meta name="author" content="Michael P. Friedlander and Babhru Joshi">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Convex sets - CPSC406 &mdash; Computational Optimization</title>
+        <title>Convex function - CPSC406 &mdash; Computational Optimization</title>
       
     
     
@@ -106,7 +106,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#convex-sets" tabindex="1" class="md-skip">
+      <a href="#convex-functions" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -132,7 +132,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Convex sets
+                Convex function
               
             </span>
           
@@ -441,70 +441,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Convex sets
-      </label>
-    
-    <a href="./" title="Convex sets" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../Convex_set/" title="Convex sets" class="md-nav__link">
       Convex sets
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#affine-sets-subspaces" class="md-nav__link">
-    Affine sets, subspaces
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#convex-sets_1" class="md-nav__link">
-    Convex sets
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#operations-that-preserve-convexity" class="md-nav__link">
-    Operations that preserve convexity
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#convex-cones" class="md-nav__link">
-    Convex cones
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -524,11 +465,56 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../Convex_function/" title="Convex function" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Convex function
+      </label>
+    
+    <a href="./" title="Convex function" class="md-nav__link md-nav__link--active">
       Convex function
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#restriction-to-lines" class="md-nav__link">
+    Restriction to lines
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operations-that-preserve-convexity" class="md-nav__link">
+    Operations that preserve convexity
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -690,15 +676,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#affine-sets-subspaces" class="md-nav__link">
-    Affine sets, subspaces
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#convex-sets_1" class="md-nav__link">
-    Convex sets
+  <a href="#restriction-to-lines" class="md-nav__link">
+    Restriction to lines
   </a>
   
 </li>
@@ -706,13 +685,6 @@
         <li class="md-nav__item">
   <a href="#operations-that-preserve-convexity" class="md-nav__link">
     Operations that preserve convexity
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#convex-cones" class="md-nav__link">
-    Convex cones
   </a>
   
 </li>
@@ -734,118 +706,84 @@
               
                 
                 
-                <h1 id="convex-sets"><strong>Convex Sets</strong><a class="headerlink" href="#convex-sets" title="Permanent link">&para;</a></h1>
-<p>In this lecture, we define convex sets and set operations that preserve convexity. We will first look a affine sets, linear sets and subspaces.</p>
-<h2 id="affine-sets-subspaces"><strong>Affine sets, subspaces</strong><a class="headerlink" href="#affine-sets-subspaces" title="Permanent link">&para;</a></h2>
+                <h1 id="convex-functions"><strong>Convex functions</strong><a class="headerlink" href="#convex-functions" title="Permanent link">&para;</a></h1>
+<p>A function <span><span class="MathJax_Preview">f:\mathcal{C} → \R</span><script type="math/tex">f:\mathcal{C} → \R</script></span> is  convex if $\mathcal{C} is convex and the function satisfies</p>
+<div>
+<div class="MathJax_Preview">f(\theta \vx + (1-\theta)\vy) \leq \theta f(\vx) + (1-\theta) f(\vy),\text{ for all } \vx,\vy \in\mathcal{C} \text{ and } \theta\in[0,1].</div>
+<script type="math/tex; mode=display">f(\theta \vx + (1-\theta)\vy) \leq \theta f(\vx) + (1-\theta) f(\vy),\text{ for all } \vx,\vy \in\mathcal{C} \text{ and } \theta\in[0,1].</script>
+</div>
+<p>Intuitively, the function is convex if the line segment between <span><span class="MathJax_Preview">f(\vx)</span><script type="math/tex">f(\vx)</script></span> and <span><span class="MathJax_Preview">f(\vy)</span><script type="math/tex">f(\vy)</script></span>, for any <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> an <span><span class="MathJax_Preview">\vy</span><script type="math/tex">\vy</script></span>, lies above or on the graph of the function. If the line segment lies strictly above the graph of the function, then we say the function is strictly convex, i.e. <span><span class="MathJax_Preview">f:\mathcal{C} → \R</span><script type="math/tex">f:\mathcal{C} → \R</script></span> is  strictly convex if $\mathcal{C} is convex and the function satisfies</p>
+<div>
+<div class="MathJax_Preview">f(\theta \vx + (1-\theta)\vy) &lt; \theta f(\vx) + (1-\theta) f(\vy),\text{ for all } \vx,\vy \in\mathcal{C} \text{ and } \theta\in [0,1].</div>
+<script type="math/tex; mode=display">f(\theta \vx + (1-\theta)\vy) < \theta f(\vx) + (1-\theta) f(\vy),\text{ for all } \vx,\vy \in\mathcal{C} \text{ and } \theta\in [0,1].</script>
+</div>
+<p>These definitions can be used to describe (strictly) concave functions as well. We say a function <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> is (strictly) concave if <span><span class="MathJax_Preview">-f</span><script type="math/tex">-f</script></span> is (strictly) convex.  Below are some examples of convex and concave functions:</p>
 <ol>
 <li>
-<p><strong>Affine set:</strong> A line through two distinct points <span><span class="MathJax_Preview">\vx, \vy \in \R^n</span><script type="math/tex">\vx, \vy \in \R^n</script></span> is the set <span><span class="MathJax_Preview">\{\vz\ |\ \theta\vx + (1-\theta)\vy = z, \theta \in \R\}</span><script type="math/tex">\{\vz\ |\ \theta\vx + (1-\theta)\vy = z, \theta \in \R\}</script></span>. A set <span><span class="MathJax_Preview">\setS</span><script type="math/tex">\setS</script></span> is affine if it contains all lines through any two distinct vectors in the set. That is, for every two vectors <span><span class="MathJax_Preview">\vx, \vy \in \R^n</span><script type="math/tex">\vx, \vy \in \R^n</script></span> and scalar <span><span class="MathJax_Preview">\theta \in \R</span><script type="math/tex">\theta \in \R</script></span>, the vector <span><span class="MathJax_Preview">\theta \vx + (1-\theta) \vy</span><script type="math/tex">\theta \vx + (1-\theta) \vy</script></span> is also in the set <span><span class="MathJax_Preview">\setS</span><script type="math/tex">\setS</script></span>.</p>
-</li>
-<li>
-<p><strong>Subspace:</strong> A set <span><span class="MathJax_Preview">\mathcal{S} \subset  \R^n</span><script type="math/tex">\mathcal{S} \subset  \R^n</script></span> of vectors in <span><span class="MathJax_Preview">\R^n</span><script type="math/tex">\R^n</script></span> is called a subspace of the following two properties are satisfied:</p>
+<p>Convex functions</p>
 <ol>
 <li>
-<p>(Closed under addition) For every two vectors <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span>, <span><span class="MathJax_Preview">\vy \in \setS</span><script type="math/tex">\vy \in \setS</script></span>, their sum <span><span class="MathJax_Preview">\vx + \vy</span><script type="math/tex">\vx + \vy</script></span> is also in <span><span class="MathJax_Preview">\setS</span><script type="math/tex">\setS</script></span>.</p>
+<p>Affine: <span><span class="MathJax_Preview">\va\trans\vx + \beta</span><script type="math/tex">\va\trans\vx + \beta</script></span> for any <span><span class="MathJax_Preview">\va\in\R^n</span><script type="math/tex">\va\in\R^n</script></span>, <span><span class="MathJax_Preview">\beta \in \R</span><script type="math/tex">\beta \in \R</script></span>.</p>
 </li>
 <li>
-<p>(closed under scalar multiplication) For every vector <span><span class="MathJax_Preview">\vx \in \setS</span><script type="math/tex">\vx \in \setS</script></span> and scalar <span><span class="MathJax_Preview">\theta \in \R</span><script type="math/tex">\theta \in \R</script></span>, the scalar multiple <span><span class="MathJax_Preview">\theta \vx</span><script type="math/tex">\theta \vx</script></span> is also in <span><span class="MathJax_Preview">\setS</span><script type="math/tex">\setS</script></span>.</p>
+<p>Exponential: <span><span class="MathJax_Preview">e^{\alpha x}</span><script type="math/tex">e^{\alpha x}</script></span> for any <span><span class="MathJax_Preview">\alpha \in \R</span><script type="math/tex">\alpha \in \R</script></span>.</p>
+</li>
+<li>
+<p>Powers: <span><span class="MathJax_Preview">x^\alpha</span><script type="math/tex">x^\alpha</script></span> on <span><span class="MathJax_Preview">\R_{ ++ }</span><script type="math/tex">\R_{ ++ }</script></span> for all <span><span class="MathJax_Preview">\alpha \geq 1</span><script type="math/tex">\alpha \geq 1</script></span> or <span><span class="MathJax_Preview">\alpha \leq 0</span><script type="math/tex">\alpha \leq 0</script></span>.</p>
+</li>
+<li>
+<p>Absolute value: <span><span class="MathJax_Preview">|x|^p</span><script type="math/tex">|x|^p</script></span> for al <span><span class="MathJax_Preview">p\geq 1</span><script type="math/tex">p\geq 1</script></span>.</p>
+</li>
+<li>
+<p>Negative entropy: <span><span class="MathJax_Preview">x\log x</span><script type="math/tex">x\log x</script></span> on <span><span class="MathJax_Preview">\R_{ ++ }</span><script type="math/tex">\R_{ ++ }</script></span>.</p>
 </li>
 </ol>
-<p>Examples of subspaces included the range and null space of a matrix. </p>
+</li>
+<li>
+<p>Concave functions</p>
+<ol>
+<li>
+<p>Affine: (see above)</p>
+</li>
+<li>
+<p>Powers: <span><span class="MathJax_Preview">x^\alpha</span><script type="math/tex">x^\alpha</script></span> on <span><span class="MathJax_Preview">\R_{++}</span><script type="math/tex">\R_{++}</script></span> for all <span><span class="MathJax_Preview">0\leq x\leq 1</span><script type="math/tex">0\leq x\leq 1</script></span>.</p>
+</li>
+<li>
+<p>Logarithm: <span><span class="MathJax_Preview">\log x</span><script type="math/tex">\log x</script></span> on <span><span class="MathJax_Preview">\R_{ ++ }</span><script type="math/tex">\R_{ ++ }</script></span>.</p>
 </li>
 </ol>
-<h2 id="convex-sets_1"><strong>Convex sets</strong><a class="headerlink" href="#convex-sets_1" title="Permanent link">&para;</a></h2>
-<p>The line segment between any two points <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> and <span><span class="MathJax_Preview">\vy</span><script type="math/tex">\vy</script></span> is the set <span><span class="MathJax_Preview">\{z | z = \theta \vx + (1-\theta) \vy,\ \theta \in [0,1]\}</span><script type="math/tex">\{z | z = \theta \vx + (1-\theta) \vy,\ \theta \in [0,1]\}</script></span>. A set <span><span class="MathJax_Preview">\setC \subseteq \R^n</span><script type="math/tex">\setC \subseteq \R^n</script></span> is convex if it contains the line segment between any two distinct points in the set, i.e. <span><span class="MathJax_Preview">\setC</span><script type="math/tex">\setC</script></span> is convex if </p>
+</li>
+</ol>
+<p>In the following sections, unless otherwise stated, we assume the function is convex. However, the properties of these convex function can be adapted to concave functions as well.</p>
+<h2 id="restriction-to-lines"><strong>Restriction to lines</strong><a class="headerlink" href="#restriction-to-lines" title="Permanent link">&para;</a></h2>
+<p>A useful property of convex function is that every restriction of the function on a line is also convex. For a fixed <span><span class="MathJax_Preview">\vx\in\R^n</span><script type="math/tex">\vx\in\R^n</script></span> and <span><span class="MathJax_Preview">\vd \in \R^n</span><script type="math/tex">\vd \in \R^n</script></span>, the restriction of <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> along <span><span class="MathJax_Preview">\vd</span><script type="math/tex">\vd</script></span> is $f(\vx +\alpha \vd). Here, <span><span class="MathJax_Preview">\alpha \in\R</span><script type="math/tex">\alpha \in\R</script></span> sweeps the graph of the function starting at <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> in the direction of <span><span class="MathJax_Preview">\vd</span><script type="math/tex">\vd</script></span>. More formally, the function <span><span class="MathJax_Preview">f:\mathcal{C} \rightarrow \R</span><script type="math/tex">f:\mathcal{C} \rightarrow \R</script></span>, where <span><span class="MathJax_Preview">\mathcal{C}\subseteq \R^n</span><script type="math/tex">\mathcal{C}\subseteq \R^n</script></span> is a convex set, is convex if and only if</p>
 <div>
-<div class="MathJax_Preview">
-\vx ,\vy \in \setC \text{ and } \theta \in [0,1] \Rightarrow \theta \vx + (1-\theta) \vy \in \setC.
+<div class="MathJax_Preview"> \psi(\alpha) = f(\vx+\alpha \vd)</div>
+<script type="math/tex; mode=display"> \psi(\alpha) = f(\vx+\alpha \vd)</script>
 </div>
-<script type="math/tex; mode=display">
-\vx ,\vy \in \setC \text{ and } \theta \in [0,1] \Rightarrow \theta \vx + (1-\theta) \vy \in \setC.
-</script>
-</div>
-<p><center>
-    <img src="../figures/convex_sets.svg" width = "400">
-</center></p>
-<p>Another way to define convex sets is via the notion of convex combination. Convex combination of a set of points <span><span class="MathJax_Preview">\vx_1, \dots, \vx_k \in \R^n</span><script type="math/tex">\vx_1, \dots, \vx_k \in \R^n</script></span> is the linear combination of those points <span><span class="MathJax_Preview">\vx = \theta_1\vx_1 + \dots + \theta_k\vx_k</span><script type="math/tex">\vx = \theta_1\vx_1 + \dots + \theta_k\vx_k</script></span> with the coefficients <span><span class="MathJax_Preview">\theta_i</span><script type="math/tex">\theta_i</script></span> satisfying <span><span class="MathJax_Preview">\sum_{i=1}^k \theta_i = 1</span><script type="math/tex">\sum_{i=1}^k \theta_i = 1</script></span> and <span><span class="MathJax_Preview">\theta_i\geq 0</span><script type="math/tex">\theta_i\geq 0</script></span> for all <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>. So, a set <span><span class="MathJax_Preview">\setC</span><script type="math/tex">\setC</script></span> is convex if every convex combination of points in the set is in the set. Some examples of convex sets are hyperplanes and half-spaces. Hyperplane is a set of the form <span><span class="MathJax_Preview">\{\vx\ |\ \va\trans\vx = b\}</span><script type="math/tex">\{\vx\ |\ \va\trans\vx = b\}</script></span>, where <span><span class="MathJax_Preview">\va \neq0</span><script type="math/tex">\va \neq0</script></span> and <span><span class="MathJax_Preview">\vb \in \R</span><script type="math/tex">\vb \in \R</script></span>. Similarly, half-space is a set of the form <span><span class="MathJax_Preview">\{\vx\ |\ \va\trans\vx \leq b\}</span><script type="math/tex">\{\vx\ |\ \va\trans\vx \leq b\}</script></span>, where <span><span class="MathJax_Preview">\va \neq0</span><script type="math/tex">\va \neq0</script></span> and <span><span class="MathJax_Preview">\vb \in \R</span><script type="math/tex">\vb \in \R</script></span>. Note that hyperplanes are affine and convex, but half-spaces are only convex.</p>
-<p><center>
-    <img src="../figures/hyper_halfspace.svg" width = "400">
-</center></p>
-<p>If a set is not convex, the simplest way to 'convexify' the set is by taking its convex hull. The convex hull of a set <span><span class="MathJax_Preview">\setD</span><script type="math/tex">\setD</script></span> is the set that contains all convex combinations of points in the set <span><span class="MathJax_Preview">\setD</span><script type="math/tex">\setD</script></span>. Formally, the convex hull of <span><span class="MathJax_Preview">\setD</span><script type="math/tex">\setD</script></span> is </p>
-<div>
-<div class="MathJax_Preview"> \text{conv}(\setD) := \{z \ | \ z = \theta\vx + (1-\theta)\vy,\ \vx,\vy \in \setD,\ \theta\in[0,1]\}.</div>
-<script type="math/tex; mode=display"> \text{conv}(\setD) := \{z \ | \ z = \theta\vx + (1-\theta)\vy,\ \vx,\vy \in \setD,\ \theta\in[0,1]\}.</script>
-</div>
-<p><center>
-    <img src="../figures/convex_hull.svg" width = "400">
-</center></p>
+<p>is convex for all <span><span class="MathJax_Preview">\vx \in \mathcal{C}</span><script type="math/tex">\vx \in \mathcal{C}</script></span> and <span><span class="MathJax_Preview">\vd \in \R^n</span><script type="math/tex">\vd \in \R^n</script></span>.</p>
 <h2 id="operations-that-preserve-convexity"><strong>Operations that preserve convexity</strong><a class="headerlink" href="#operations-that-preserve-convexity" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p><strong>Intersections</strong>:  Let <span><span class="MathJax_Preview">\setC_i \subseteq \R^n</span><script type="math/tex">\setC_i \subseteq \R^n</script></span> be a convex set for all <span><span class="MathJax_Preview">i \in \setI</span><script type="math/tex">i \in \setI</script></span>. Then the intersection <span><span class="MathJax_Preview">\cap_{i \in \setI} \setC_i</span><script type="math/tex">\cap_{i \in \setI} \setC_i</script></span> is itself a convex set. Some examples are:</p>
-<ol>
-<li>
-<p>Convex Polytope: A set <span><span class="MathJax_Preview">\setP = \{x \in \R^n\ |\ mA\vx \leq\vb\}</span><script type="math/tex">\setP = \{x \in \R^n\ |\ mA\vx \leq\vb\}</script></span> defined by a set of linear inequalities is convex. Let <span><span class="MathJax_Preview">\va_i</span><script type="math/tex">\va_i</script></span> be the <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>th column of <span><span class="MathJax_Preview">\mA\trans</span><script type="math/tex">\mA\trans</script></span>. Then, we express <span><span class="MathJax_Preview">\setP</span><script type="math/tex">\setP</script></span> as an intersection of half-spaces since</p>
-<div>
-<div class="MathJax_Preview">\begin{align*}\setP &amp;= \{\vx \in \R^n\ |\ \mA\vx \leq\vb\}\\ &amp; = \cap_{i=1}^m \{\vx \ | \ \va_i\trans\vx \leq b_i\}.\end{align*}</div>
-<script type="math/tex; mode=display">\begin{align*}\setP &= \{\vx \in \R^n\ |\ \mA\vx \leq\vb\}\\ & = \cap_{i=1}^m \{\vx \ | \ \va_i\trans\vx \leq b_i\}.\end{align*}</script>
-</div>
-<p>Note that half-spaces are convex. Thus, the set <span><span class="MathJax_Preview">\setP</span><script type="math/tex">\setP</script></span> is a convex set.</p>
+<p>Non-negative multiple: The function <span><span class="MathJax_Preview">\alpha f</span><script type="math/tex">\alpha f</script></span> is convex if <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> is convex and <span><span class="MathJax_Preview">\alpha \geq 0</span><script type="math/tex">\alpha \geq 0</script></span>.</p>
 </li>
 <li>
-<p><span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>-dimensional simplex: Consider the set <span><span class="MathJax_Preview">\setC = \{\vx \in \R^n\ |\ \sum_{i=1}^n\vx_i \leq 1,\ \vx_i \geq 0\}</span><script type="math/tex">\setC = \{\vx \in \R^n\ |\ \sum_{i=1}^n\vx_i \leq 1,\ \vx_i \geq 0\}</script></span>. This set is called an n-dimensional simplex. We can express <span><span class="MathJax_Preview">\setC</span><script type="math/tex">\setC</script></span> as</p>
-<div>
-<div class="MathJax_Preview">\setP = \{\vx \ | \ \ve\trans\vx\leq 1\}\cap\{\vx \ | -\ \ve_1\trans\vx\leq 0\}\cap\dots\cap\{\vx \ | \ -\ve_n\trans\vx\leq 0\}.</div>
-<script type="math/tex; mode=display">\setP = \{\vx \ | \ \ve\trans\vx\leq 1\}\cap\{\vx \ | -\ \ve_1\trans\vx\leq 0\}\cap\dots\cap\{\vx \ | \ -\ve_n\trans\vx\leq 0\}.</script>
-</div>
-<p>Thus, an <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>-dimensional simplex is the intersection of convex sets and is itself convex.</p>
+<p>Sum (including infinite sums): The function <span><span class="MathJax_Preview">f_1 + f_2</span><script type="math/tex">f_1 + f_2</script></span> is convex if <span><span class="MathJax_Preview">f_1</span><script type="math/tex">f_1</script></span> and <span><span class="MathJax_Preview">f_2</span><script type="math/tex">f_2</script></span> are convex functions.</p>
+</li>
+<li>
+<p>Composition with affine function: Fix <span><span class="MathJax_Preview">\mA \in\R^{m\times n}</span><script type="math/tex">\mA \in\R^{m\times n}</script></span> and <span><span class="MathJax_Preview">\vb \in \R^m</span><script type="math/tex">\vb \in \R^m</script></span>. The function <span><span class="MathJax_Preview">f(\mA\vx+\vb)</span><script type="math/tex">f(\mA\vx+\vb)</script></span> is convex if <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> is convex. </p>
 </li>
 </ol>
-</li>
-</ol>
-<p><center>
-    <img src="../figures/polytope_simplex.svg" width = "400">
-</center></p>
+<p><strong><em>Example</em></strong></p>
 <ol>
 <li>
-<p><strong>Linear Mapping:</strong> Let <span><span class="MathJax_Preview">\setC \subseteq \R^n</span><script type="math/tex">\setC \subseteq \R^n</script></span> be a convex set. For any <span><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> by <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> matrix <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span>, the image of <span><span class="MathJax_Preview">\setC</span><script type="math/tex">\setC</script></span> under <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> is convex. That is, the set <span><span class="MathJax_Preview">\mA(\setC) = \{\mA\vx | \vx \in \setC\}</span><script type="math/tex">\mA(\setC) = \{\mA\vx | \vx \in \setC\}</script></span> is convex.</p>
+<p>Log barrier: The function <span><span class="MathJax_Preview">f(x) = -\sum_{i = 1}^m \log(\va_i\trans\vx - b_i)</span><script type="math/tex">f(x) = -\sum_{i = 1}^m \log(\va_i\trans\vx - b_i)</script></span> is convex over the set <span><span class="MathJax_Preview">\cap _{i = 1}^m\{\vx\in\R^n | \va_i\trans\vx&gt;b_i\}</span><script type="math/tex">\cap _{i = 1}^m\{\vx\in\R^n | \va_i\trans\vx>b_i\}</script></span></p>
 </li>
 <li>
-<p><strong>Addition:</strong> Let <span><span class="MathJax_Preview">\setC_1,\dots,\setC_m \subseteq \R^n</span><script type="math/tex">\setC_1,\dots,\setC_m \subseteq \R^n</script></span> be convex sets. For every scalars <span><span class="MathJax_Preview">\lambda_i</span><script type="math/tex">\lambda_i</script></span>, the addition of the scaled convex sets is itself convex. That is, the set </p>
-</li>
-</ol>
-<div>
-<div class="MathJax_Preview">\lambda_1\setC_1 + \dots + \lambda_m\setC_m = \{\sum_{i=1}^m\lambda_i\vx_i\ |\ \vx_i\in \setC_i, i = 1,dots, m\}</div>
-<script type="math/tex; mode=display">\lambda_1\setC_1 + \dots + \lambda_m\setC_m = \{\sum_{i=1}^m\lambda_i\vx_i\ |\ \vx_i\in \setC_i, i = 1,dots, m\}</script>
-</div>
-<p>is convex.</p>
-<h2 id="convex-cones"><strong>Convex cones</strong><a class="headerlink" href="#convex-cones" title="Permanent link">&para;</a></h2>
-<p>A set <span><span class="MathJax_Preview">\setS \subseteq \R^n</span><script type="math/tex">\setS \subseteq \R^n</script></span> is a cone if every positive scalar multiple of the vector <span><span class="MathJax_Preview">\vx \in \setS</span><script type="math/tex">\vx \in \setS</script></span> is also in the set. That is, </p>
-<div>
-<div class="MathJax_Preview"> \setS \text{ is a cone if } \vx\in \setS \Leftrightarrow \alpha \vx \in \setS \text{ for all } \alpha\geq 0</div>
-<script type="math/tex; mode=display"> \setS \text{ is a cone if } \vx\in \setS \Leftrightarrow \alpha \vx \in \setS \text{ for all } \alpha\geq 0</script>
-</div>
-<p><center>
-    <img src="../figures/cone.svg" width = "400">
-</center></p>
-<p>A convex cone is a cone that is convex. A convex cone satisfies:</p>
-<div>
-<div class="MathJax_Preview"> \vx, \vy \in \setS \Leftrightarrow \theta_1\vx + \theta_2 \vy \in \setS,\ \text{for all } \theta_1,\theta_2 \geq0.</div>
-<script type="math/tex; mode=display"> \vx, \vy \in \setS \Leftrightarrow \theta_1\vx + \theta_2 \vy \in \setS,\ \text{for all } \theta_1,\theta_2 \geq0.</script>
-</div>
-<p>Some examples of convex cones are:</p>
-<ol>
-<li>
-<p>Non-negative orthant, <span><span class="MathJax_Preview">\R^n_+ = \{\vx\ |\ \vx_i\geq 0\ \forall\ i=1,\dots,n\}</span><script type="math/tex">\R^n_+ = \{\vx\ |\ \vx_i\geq 0\ \forall\ i=1,\dots,n\}</script></span>.</p>
+<p>Norm of affine function: The function <span><span class="MathJax_Preview">f(x) = \|\mA\vx-\vb\|</span><script type="math/tex">f(x) = \|\mA\vx-\vb\|</script></span> is convex.</p>
 </li>
 <li>
-<p>Second-order cone, <span><span class="MathJax_Preview">\setL_+^n = \{\bmat \vx\\t \emat\in\R^{n+1}\ |\ \|\vx\|_2\leq t,\ \vx \in\R^n,\ t\in \R_+ \}</span><script type="math/tex">\setL_+^n = \{\bmat \vx\\t \emat\in\R^{n+1}\ |\ \|\vx\|_2\leq t,\ \vx \in\R^n,\ t\in \R_+ \}</script></span>.</p>
-</li>
-<li>
-<p>Positive semi-definite cone, <span><span class="MathJax_Preview">\setS_+^n = \{\mX\in\R^{n\times n}\ |\ \vu\trans\mX\vu\geq,\ \forall \vu\in\R^n,\ \mX = \mX\trans\}</span><script type="math/tex">\setS_+^n = \{\mX\in\R^{n\times n}\ |\ \vu\trans\mX\vu\geq,\ \forall \vu\in\R^n,\ \mX = \mX\trans\}</script></span>.</p>
-</li>
-<li>
-<p>The polytope <span><span class="MathJax_Preview">\setP =\{\vx\ |\ \mA\vx\leq 0\}</span><script type="math/tex">\setP =\{\vx\ |\ \mA\vx\leq 0\}</script></span> is a convex cone.</p>
+<p>The function <span><span class="MathJax_Preview">f(x_1, x_2, x_3) = e^{x_1 - x_2 + x_3} +e^{2x_2} + x_1</span><script type="math/tex">f(x_1, x_2, x_3) = e^{x_1 - x_2 + x_3} +e^{2x_2} + x_1</script></span> is convex.</p>
 </li>
 </ol>
                 
@@ -869,7 +807,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../Linear_constraint/" title="Linear constraint" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../Constrained_optimization/" title="Constrained optimization" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -878,19 +816,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Linear constraint
+                Constrained optimization
               </span>
             </div>
           </a>
         
         
-          <a href="../Constrained_optimization/" title="Constrained optimization" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../homework/" title="Submissions" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Constrained optimization
+                Submissions
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
