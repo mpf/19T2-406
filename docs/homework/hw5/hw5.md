@@ -15,15 +15,17 @@
 
 2. **Support function calculus**. The support function of a set $C ⊆ \R^n$ is defined as
 
-    $$\sigma_C (y) = \sup\{y\trans x | x ∈ C\}$$
-    
-    1. Show that $\sigma_C$ is convex.
-    
-    2.  Show that $\sigma_C = \sigma_{\text{conv}(C)}$, where $\text{conv}(C)$ is the convex hull of $C$.
+    $$\sigma_C (\vy) = \sup\{\vy\trans \vx | \vx ∈ C\}.$$
 
-    3. Show that $\sigma_{A+B} = \sigma_{A} + \sigma_{B}$.
+    1. All of the $\ell_p$-norms can be viewed as a special case of the support function defined above. For example, $\|\vy\|_2 = \sigma_C(\vy)$ if the set $C$ is the normalized $\ell_2$ ball, i.e. $C = \{\vx| \|\vx\|_2 = 1\}$. For which set $C$ is the support function equal to $\ell_1$-norm? For what set $C$ is the support function equal to $\ell_∞$-norm? 
     
-    4. Show that $\sigma_{A∪B} = \max\{\sigma_A, \sigma_B\}$.
+    2. Note that all norms are convex function because they satisfy triangle inequality. Let $C$ be a set that contains $0$. Show that $\sigma_C$ is convex by showing triangle inequality for support function.
+    
+    3. Show that $\sigma_C = \sigma_{\text{conv}(C)}$, where $\text{conv}(C)$ is the convex hull of $C$.
+
+    4. Show that $\sigma_{A+B} = \sigma_{A} + \sigma_{B}$., where $A+B$ is the Minkowski sum of $A$ and $B$.
+    
+    5. Show that $\sigma_{A∪B} = \max\{\sigma_A, \sigma_B\}$.
     
 3. **Jensen's Inequality** Let $f:C→\R$ be a convex function. Show that for all $x_{i} \in C$, $i = 1,\dots, k$, we have
 

@@ -1,3 +1,30 @@
 # **Convex functions**
 
-In this lecture, we define convex sets and 
+A function $f:\mathcal{C} → \R$ is  convex if $\mathcal{C} is convex and the function satisfies
+
+$$f(\theta \vx + (1-\theta)\vy) \leq \theta f(\vx) + (1-\theta) f(\vy),\text{ for all } \vx,\vy \in\mathcal{C} \text{ and } \theta\in\[0,1].$$
+
+Intuitively, the function is convex if the line segment between $f(\vx)$ and $f(\vy)$, for any $\vx$ an $\vy$, lies above or on the graph of the function. If the line segment lies strictly above the graph of the function, then we say the function is strictly convex, i.e. $f:\mathcal{C} → \R$ is  strictly convex if $\mathcal{C} is convex and the function satisfies
+
+$$f(\theta \vx + (1-\theta)\vy) < \theta f(\vx) + (1-\theta) f(\vy),\text{ for all } \vx,\vy \in\mathcal{C} \text{ and } \theta\in\[0,1].$$
+
+These definitions can be used to describe (strictly) concave functions as well. We say a function $f$ is (strictly) concave if $-f$ is (strictly) convex.  Below are some examples of convex and concave functions:
+
+1. Convex functions
+
+    1. Affine: $\va\trans\vx + \beta$ for any $\va\in\
+
+
+
+In the following sections, unless otherwise stated, we assume the function is convex. However, the properties of these convex function can be adapted to concave functions as well.
+
+## **Restriction to lines**
+
+A useful property of convex function is that every restriction of the function on a line is also convex. For a fixed $\vx\in\R^n$ and $\vd \in \R^n$, the restriction of $f$ along $\vd$ is $f(\vx +\alpha \vd). Here, $\alpha \in\R$ sweeps the graph of the function starting at $\vx$ in the direction of $\vd$. More formally, the function $f:\mathcal{C} \rightarrow \R$, where $\mathcal{C}\subseteq \R^n$ is a convex set, is convex if and only if
+
+$$ \psi(\alpha) = f(\vx+\alpha \vd)$$
+
+is convex for all $\vx \in \mathcal{C}$ and $\vd \in \R^n$.
+
+
+
