@@ -71,12 +71,14 @@ nav:
       - Linear constraint: notes/Linear_constraint.md
       - Convex sets: notes/Convex_set.md
       - Constrained optimization: notes/Constrained_optimization.md
+      - Convex function: notes/Convex_function.md
   - Homework:
       - Submissions: homework/index.md
       - Homework 1: homework/hw1/hw1.md
       - Homework 2: homework/hw2/hw2.md
       - Homework 3: homework/hw3/hw3.md
       - Homework 4: homework/hw4/hw4.md
+      - Homework 5: homework/hw5/hw5.md
   - In-class Activity:
       - Digit classification: InclassActivity/mlactivity/mlactivity.md
 

@@ -32,8 +32,8 @@ This is a tentative schedule. It will change often.
 | 22 | 4 Mar / Wed |   [Constrained optimization](notes/Constrained_optimization.md#Constrainedoptimization)   | | |
 | 23 | 6 Mar / Fri |   [Constrained optimization](notes/Constrained_optimization.md#Constrainedoptimization) | | |
 | 24 | 9 Mar / Mon |  Convex functions    | | [hw4](homework/hw4/hw4.md) out|
-| 25 | 11 Mar / Wed |     | | |
-| 26 | 13 Mar / Fri |     | | |
+| 25 | 11 Mar / Wed | Convex functions    | | |
+| 26 | 13 Mar / Fri | Linear programming applications    | | |
 | 27 | 16 Mar / Mon|      | | hw4 due at 6pm|
 | 28 | 18 Mar / Wed|     | | |
 | 29 | 20 Mar / Fri|   Linear programing    | | |
