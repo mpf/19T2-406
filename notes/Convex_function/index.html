@@ -507,6 +507,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#characterizations-of-convex-function" class="md-nav__link">
+    Characterizations of convex function
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimality-conditions" class="md-nav__link">
+    Optimality conditions
+  </a>
+  
+</li>
+      
       
       
       
@@ -677,6 +691,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#characterizations-of-convex-function" class="md-nav__link">
+    Characterizations of convex function
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimality-conditions" class="md-nav__link">
+    Optimality conditions
+  </a>
+  
+</li>
+      
       
       
       
@@ -700,7 +728,7 @@
 <div class="MathJax_Preview">f(\theta \vx + (1-\theta)\vy) \leq \theta f(\vx) + (1-\theta) f(\vy),\text{ for all } \vx,\vy \in\mathcal{C} \text{ and } \theta\in[0,1].</div>
 <script type="math/tex; mode=display">f(\theta \vx + (1-\theta)\vy) \leq \theta f(\vx) + (1-\theta) f(\vy),\text{ for all } \vx,\vy \in\mathcal{C} \text{ and } \theta\in[0,1].</script>
 </div>
-<p>Intuitively, the function is convex if the line segment between <span><span class="MathJax_Preview">f(\vx)</span><script type="math/tex">f(\vx)</script></span> and <span><span class="MathJax_Preview">f(\vy)</span><script type="math/tex">f(\vy)</script></span>, for any <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> an <span><span class="MathJax_Preview">\vy</span><script type="math/tex">\vy</script></span>, lies above or on the graph of the function. If the line segment lies strictly above the graph of the function, then we say the function is strictly convex, i.e. <span><span class="MathJax_Preview">f:\mathcal{C} → \R</span><script type="math/tex">f:\mathcal{C} → \R</script></span> is  strictly convex if $\mathcal{C} is convex and the function satisfies</p>
+<p>Intuitively, the function is convex if the line segment between <span><span class="MathJax_Preview">f(\vx)</span><script type="math/tex">f(\vx)</script></span> and <span><span class="MathJax_Preview">f(\vy)</span><script type="math/tex">f(\vy)</script></span>, for any <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> an <span><span class="MathJax_Preview">\vy</span><script type="math/tex">\vy</script></span>, lies above or on the graph of the function. If the line segment lies strictly above the graph of the function, then we say the function is strictly convex, i.e. <span><span class="MathJax_Preview">f:\mathcal{C} → \R</span><script type="math/tex">f:\mathcal{C} → \R</script></span> is  strictly convex if <span><span class="MathJax_Preview">\mathcal{C}</span><script type="math/tex">\mathcal{C}</script></span> is convex and the function satisfies</p>
 <div>
 <div class="MathJax_Preview">f(\theta \vx + (1-\theta)\vy) &lt; \theta f(\vx) + (1-\theta) f(\vy),\text{ for all } \vx,\vy \in\mathcal{C} \text{ and } \theta\in [0,1].</div>
 <script type="math/tex; mode=display">f(\theta \vx + (1-\theta)\vy) < \theta f(\vx) + (1-\theta) f(\vy),\text{ for all } \vx,\vy \in\mathcal{C} \text{ and } \theta\in [0,1].</script>
@@ -744,7 +772,7 @@
 </ol>
 <p>In the following sections, unless otherwise stated, we assume the function is convex. However, the properties of these convex function can be adapted to concave functions as well.</p>
 <h2 id="restriction-to-lines"><strong>Restriction to lines</strong><a class="headerlink" href="#restriction-to-lines" title="Permanent link">&para;</a></h2>
-<p>A useful property of convex function is that every restriction of the function on a line is also convex. For a fixed <span><span class="MathJax_Preview">\vx\in\R^n</span><script type="math/tex">\vx\in\R^n</script></span> and <span><span class="MathJax_Preview">\vd \in \R^n</span><script type="math/tex">\vd \in \R^n</script></span>, the restriction of <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> along <span><span class="MathJax_Preview">\vd</span><script type="math/tex">\vd</script></span> is $f(\vx +\alpha \vd). Here, <span><span class="MathJax_Preview">\alpha \in\R</span><script type="math/tex">\alpha \in\R</script></span> sweeps the graph of the function starting at <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> in the direction of <span><span class="MathJax_Preview">\vd</span><script type="math/tex">\vd</script></span>. More formally, the function <span><span class="MathJax_Preview">f:\mathcal{C} \rightarrow \R</span><script type="math/tex">f:\mathcal{C} \rightarrow \R</script></span>, where <span><span class="MathJax_Preview">\mathcal{C}\subseteq \R^n</span><script type="math/tex">\mathcal{C}\subseteq \R^n</script></span> is a convex set, is convex if and only if</p>
+<p>A useful property of convex function is that every restriction of the function on a line is also convex. For a fixed <span><span class="MathJax_Preview">\vx\in\R^n</span><script type="math/tex">\vx\in\R^n</script></span> and <span><span class="MathJax_Preview">\vd \in \R^n</span><script type="math/tex">\vd \in \R^n</script></span>, the restriction of <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> along <span><span class="MathJax_Preview">\vd</span><script type="math/tex">\vd</script></span> is <span><span class="MathJax_Preview">f(\vx +\alpha \vd)</span><script type="math/tex">f(\vx +\alpha \vd)</script></span>. Here, <span><span class="MathJax_Preview">\alpha \in\R</span><script type="math/tex">\alpha \in\R</script></span> sweeps the graph of the function starting at <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> in the direction of <span><span class="MathJax_Preview">\vd</span><script type="math/tex">\vd</script></span>. More formally, the function <span><span class="MathJax_Preview">f:\mathcal{C} \rightarrow \R</span><script type="math/tex">f:\mathcal{C} \rightarrow \R</script></span>, where <span><span class="MathJax_Preview">\mathcal{C}\subseteq \R^n</span><script type="math/tex">\mathcal{C}\subseteq \R^n</script></span> is a convex set, is convex if and only if</p>
 <div>
 <div class="MathJax_Preview"> \psi(\alpha) = f(\vx+\alpha \vd)</div>
 <script type="math/tex; mode=display"> \psi(\alpha) = f(\vx+\alpha \vd)</script>
@@ -753,13 +781,13 @@
 <h2 id="operations-that-preserve-convexity"><strong>Operations that preserve convexity</strong><a class="headerlink" href="#operations-that-preserve-convexity" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>Non-negative multiple: The function <span><span class="MathJax_Preview">\alpha f</span><script type="math/tex">\alpha f</script></span> is convex if <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> is convex and <span><span class="MathJax_Preview">\alpha \geq 0</span><script type="math/tex">\alpha \geq 0</script></span>.</p>
+<p><strong>Non-negative multiple</strong>: The function <span><span class="MathJax_Preview">\alpha f</span><script type="math/tex">\alpha f</script></span> is convex if <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> is convex and <span><span class="MathJax_Preview">\alpha \geq 0</span><script type="math/tex">\alpha \geq 0</script></span>.</p>
 </li>
 <li>
-<p>Sum (including infinite sums): The function <span><span class="MathJax_Preview">f_1 + f_2</span><script type="math/tex">f_1 + f_2</script></span> is convex if <span><span class="MathJax_Preview">f_1</span><script type="math/tex">f_1</script></span> and <span><span class="MathJax_Preview">f_2</span><script type="math/tex">f_2</script></span> are convex functions.</p>
+<p><strong>Sum (including infinite sums)</strong>: The function <span><span class="MathJax_Preview">f_1 + f_2</span><script type="math/tex">f_1 + f_2</script></span> is convex if <span><span class="MathJax_Preview">f_1</span><script type="math/tex">f_1</script></span> and <span><span class="MathJax_Preview">f_2</span><script type="math/tex">f_2</script></span> are convex functions.</p>
 </li>
 <li>
-<p>Composition with affine function: Fix <span><span class="MathJax_Preview">\mA \in\R^{m\times n}</span><script type="math/tex">\mA \in\R^{m\times n}</script></span> and <span><span class="MathJax_Preview">\vb \in \R^m</span><script type="math/tex">\vb \in \R^m</script></span>. The function <span><span class="MathJax_Preview">f(\mA\vx+\vb)</span><script type="math/tex">f(\mA\vx+\vb)</script></span> is convex if <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> is convex. </p>
+<p><strong>Composition with affine function</strong>: Fix <span><span class="MathJax_Preview">\mA \in\R^{m\times n}</span><script type="math/tex">\mA \in\R^{m\times n}</script></span> and <span><span class="MathJax_Preview">\vb \in \R^m</span><script type="math/tex">\vb \in \R^m</script></span>. The function <span><span class="MathJax_Preview">f(\mA\vx+\vb)</span><script type="math/tex">f(\mA\vx+\vb)</script></span> is convex if <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> is convex. </p>
 </li>
 </ol>
 <p><strong><em>Example</em></strong></p>
@@ -774,6 +802,66 @@
 <p>The function <span><span class="MathJax_Preview">f(x_1, x_2, x_3) = e^{x_1 - x_2 + x_3} +e^{2x_2} + x_1</span><script type="math/tex">f(x_1, x_2, x_3) = e^{x_1 - x_2 + x_3} +e^{2x_2} + x_1</script></span> is convex.</p>
 </li>
 </ol>
+<h2 id="characterizations-of-convex-function"><strong>Characterizations of convex function</strong><a class="headerlink" href="#characterizations-of-convex-function" title="Permanent link">&para;</a></h2>
+<p>One intuitive property of the convex function is that every point on the graph of the function is supported by a hyperplane. This property is summarized by the following first order characterization of convex functions.</p>
+<hr />
+<p><strong><em>Lemma</em></strong> Let <span><span class="MathJax_Preview">f:\mathcal{C}\rightarrow \R</span><script type="math/tex">f:\mathcal{C}\rightarrow \R</script></span> be continuously differentiable over a convex set <span><span class="MathJax_Preview">\mathcal{C} \subseteq \R^n</span><script type="math/tex">\mathcal{C} \subseteq \R^n</script></span>. Then <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> is convex if and only if </p>
+<div>
+<div class="MathJax_Preview"> f(\vx) + \nabla f(\vx)\trans(\vy - \vx) \leq f(\vy) \text{ for all } \vx, \vy \in \mathcal{C}.</div>
+<script type="math/tex; mode=display"> f(\vx) + \nabla f(\vx)\trans(\vy - \vx) \leq f(\vy) \text{ for all } \vx, \vy \in \mathcal{C}.</script>
+</div>
+<p><strong><em>Proof Idea</em></strong> By convexity of <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span>, we have</p>
+<div>
+<div class="MathJax_Preview"> f(\theta \vy +(1-\theta) \vx) \leq \theta f(\vy)+(1-\theta)f(\vx)</div>
+<script type="math/tex; mode=display"> f(\theta \vy +(1-\theta) \vx) \leq \theta f(\vy)+(1-\theta)f(\vx)</script>
+</div>
+<p>for all <span><span class="MathJax_Preview">\vx,\vy\in\mathcal{C}</span><script type="math/tex">\vx,\vy\in\mathcal{C}</script></span> and <span><span class="MathJax_Preview">\theta \in [0,1]</span><script type="math/tex">\theta \in [0,1]</script></span>. This implies that</p>
+<div>
+<div class="MathJax_Preview"> \frac{f(\theta \vy +(1-\theta) \vx) - f(x)}{\theta} \leq f(\vy)-f(\vx).</div>
+<script type="math/tex; mode=display"> \frac{f(\theta \vy +(1-\theta) \vx) - f(x)}{\theta} \leq f(\vy)-f(\vx).</script>
+</div>
+<p>Taking <span><span class="MathJax_Preview">\lim \theta ↘ 0</span><script type="math/tex">\lim \theta ↘ 0</script></span>, we get <span><span class="MathJax_Preview">f'(\vx; \vy-\vx) \leq f(\vy) - f(\vx)</span><script type="math/tex">f'(\vx; \vy-\vx) \leq f(\vy) - f(\vx)</script></span>. Since, <span><span class="MathJax_Preview">f'(\vx; \vy-\vx) = \nabla f(\vx)\trans (\vy-\vx)</span><script type="math/tex">f'(\vx; \vy-\vx) = \nabla f(\vx)\trans (\vy-\vx)</script></span>, we have <span><span class="MathJax_Preview">f(\vx) + \nabla f(\vx)\trans(\vy - \vx) \leq f(\vy)</span><script type="math/tex">f(\vx) + \nabla f(\vx)\trans(\vy - \vx) \leq f(\vy)</script></span>. This completes part of the proof.</p>
+<hr />
+<p>Now, we state the second order characterization of convex functions. The second order characterization relates the Hessian of the function with convexity.</p>
+<hr />
+<p><strong><em>Lemma</em></strong> Let <span><span class="MathJax_Preview">f:\mathcal{C}\rightarrow \R</span><script type="math/tex">f:\mathcal{C}\rightarrow \R</script></span> be twice continuously differentiable over a convex set <span><span class="MathJax_Preview">\mathcal{C} \subseteq \R^n</span><script type="math/tex">\mathcal{C} \subseteq \R^n</script></span>. Then <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> is convex if and only if <span><span class="MathJax_Preview">\nabla^2f(\vx) ⪰ 0</span><script type="math/tex">\nabla^2f(\vx) ⪰ 0</script></span> for all <span><span class="MathJax_Preview">\vx \in \mathcal{C}</span><script type="math/tex">\vx \in \mathcal{C}</script></span>.</p>
+<p>The level set of function <span><span class="MathJax_Preview">f:\mathcal{C}→\R</span><script type="math/tex">f:\mathcal{C}→\R</script></span> is the set </p>
+<div>
+<div class="MathJax_Preview"> [f\leq \alpha] := \{\vx \in \mathcal{C}\ |\ f(\vx) \leq \alpha\}.</div>
+<script type="math/tex; mode=display"> [f\leq \alpha] := \{\vx \in \mathcal{C}\ |\ f(\vx) \leq \alpha\}.</script>
+</div>
+<hr />
+<p><strong><em>Lemma</em></strong> If <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> is convex then all of its level sets are convex.</p>
+<p><strong><em>Proof</em></strong> Take <span><span class="MathJax_Preview">\vx,\vy \in [f \leq \alpha]</span><script type="math/tex">\vx,\vy \in [f \leq \alpha]</script></span>. Then <span><span class="MathJax_Preview">f(\vx) \leq \alpha</span><script type="math/tex">f(\vx) \leq \alpha</script></span> and <span><span class="MathJax_Preview">f(\vy) \leq \alpha</span><script type="math/tex">f(\vy) \leq \alpha</script></span>. Since <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> is convex, we have that for all <span><span class="MathJax_Preview">\theta \in [0,1]</span><script type="math/tex">\theta \in [0,1]</script></span></p>
+<div>
+<div class="MathJax_Preview">\begin{align}
+f(\theta \vx + (1-\theta)\vy) &amp;\leq \theta f(\vx) + (1-\theta)f(\vy)\\ &amp;\leq \theta \alpha + (1-\theta) \alpha\\ &amp;= \alpha.\end{align}</div>
+<script type="math/tex; mode=display">\begin{align}
+f(\theta \vx + (1-\theta)\vy) &\leq \theta f(\vx) + (1-\theta)f(\vy)\\ &\leq \theta \alpha + (1-\theta) \alpha\\ &= \alpha.\end{align}</script>
+</div>
+<p>Thus, <span><span class="MathJax_Preview">\theta \vx +(1-\theta)\vy \in [f\leq \alpha]</span><script type="math/tex">\theta \vx +(1-\theta)\vy \in [f\leq \alpha]</script></span>. QED</p>
+<hr />
+<p><strong><em>Corollary</em></strong> The set of minimizers of 
+\begin{equation}\label{convex opt}
+\min_{\vx}  f(\vx) \text{ subject to } \vx \in \mathcal{C}
+\end{equation}
+is convex.</p>
+<h2 id="optimality-conditions"><strong>Optimality conditions</strong><a class="headerlink" href="#optimality-conditions" title="Permanent link">&para;</a></h2>
+<p>Convex function enjoys simple global optimality conditions. The main reason for this is any local minimizer of a convex function is also a global minimizer. In order to formalize this property of convex optimization, we first define local and global minimizers. We say <span><span class="MathJax_Preview">\vx^*</span><script type="math/tex">\vx^*</script></span> is a local minimizer of \eqref{convex opt} if <span><span class="MathJax_Preview">f(\vx^*)\leq f(\vx)</span><script type="math/tex">f(\vx^*)\leq f(\vx)</script></span> for all <span><span class="MathJax_Preview">\vx \in \mathcal{C}\cap \mathcal{B}_{ϵ}(\vx^*)</span><script type="math/tex">\vx \in \mathcal{C}\cap \mathcal{B}_{ϵ}(\vx^*)</script></span>. Here, <span><span class="MathJax_Preview">\mathcal{B}_{ϵ}(\vx^*)</span><script type="math/tex">\mathcal{B}_{ϵ}(\vx^*)</script></span> is the set <span><span class="MathJax_Preview">\{\vx\in \R^n | \|\vx-\vx^*\| \leq ϵ\}</span><script type="math/tex">\{\vx\in \R^n | \|\vx-\vx^*\| \leq ϵ\}</script></span>. While local minimizer is a statement for points around a point, global minimizer is a statement for all points in the set <span><span class="MathJax_Preview">\mathcal{C}</span><script type="math/tex">\mathcal{C}</script></span>. We say <span><span class="MathJax_Preview">\vx^*</span><script type="math/tex">\vx^*</script></span> is a global minimizer of \eqref{convex opt} if <span><span class="MathJax_Preview">f(\vx^*)\leq f(\vx)</span><script type="math/tex">f(\vx^*)\leq f(\vx)</script></span> for all <span><span class="MathJax_Preview">\vx \in \mathcal{C}</span><script type="math/tex">\vx \in \mathcal{C}</script></span>.</p>
+<hr />
+<p><strong><em>lemma</em></strong> Consider the optimization program \eqref{convex opt}. If <span><span class="MathJax_Preview">\vx^*</span><script type="math/tex">\vx^*</script></span> is a local minimizer of \eqref{convex opt}, then it is also a global minimizer of \eqref{convex opt}.</p>
+<p><strong><em>Proof</em></strong> Suppose <span><span class="MathJax_Preview">\bar{\vx}</span><script type="math/tex">\bar{\vx}</script></span> is a local minimizer, but not a global minimizer. Then there exists <span><span class="MathJax_Preview">\vy \in \mathcal{C}</span><script type="math/tex">\vy \in \mathcal{C}</script></span> such that <span><span class="MathJax_Preview">f(\vy) \leq f(\bar{\vx})</span><script type="math/tex">f(\vy) \leq f(\bar{\vx})</script></span>. Also, for any <span><span class="MathJax_Preview">\theta \in [0,1]</span><script type="math/tex">\theta \in [0,1]</script></span>, we have</p>
+<div>
+<div class="MathJax_Preview">\begin{align*}f(\theta \bar{\vx} + (1-\theta)\vy)&amp;\leq \theta f(\bar{\vx}) + (1-\theta)f(\vy)\\&amp;\leq\theta \bar{\vx} + (1-\theta)f(\bar{\vx})\\ &amp;= f(\bar{\vx}).\end{align*}</div>
+<script type="math/tex; mode=display">\begin{align*}f(\theta \bar{\vx} + (1-\theta)\vy)&\leq \theta f(\bar{\vx}) + (1-\theta)f(\vy)\\&\leq\theta \bar{\vx} + (1-\theta)f(\bar{\vx})\\ &= f(\bar{\vx}).\end{align*}</script>
+</div>
+<p>This is contradiction. QED</p>
+<hr />
+<p>Recall that a point <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> is a minimizer of a twice continuously differentiable <span><span class="MathJax_Preview">f:\R^n →\R</span><script type="math/tex">f:\R^n →\R</script></span> if and only if <span><span class="MathJax_Preview">\nabla f(\vx) = 0</span><script type="math/tex">\nabla f(\vx) = 0</script></span> and <span><span class="MathJax_Preview">\nabla^2 f(\vx) ⪰ 0</span><script type="math/tex">\nabla^2 f(\vx) ⪰ 0</script></span>. However, if a function is convex, <span><span class="MathJax_Preview">\nabla f(\vx) = 0</span><script type="math/tex">\nabla f(\vx) = 0</script></span> is a sufficient and necessary condition for <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> to be a minimizer. Since all minimizers of a convex function is a global minimizer, <span><span class="MathJax_Preview">\nabla f(\vx) = 0</span><script type="math/tex">\nabla f(\vx) = 0</script></span> is sufficient and necessary to assert global optimality of <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span>. </p>
+<hr />
+<p><strong><em>Lemma (unconstrained)</em></strong> Let <span><span class="MathJax_Preview">f:\R^n → \R</span><script type="math/tex">f:\R^n → \R</script></span> be a continuously differentiable (strict) convex function. A point <span><span class="MathJax_Preview">\vx^*</span><script type="math/tex">\vx^*</script></span> is a (unique) global minimizer of <span><span class="MathJax_Preview">f(\vx)</span><script type="math/tex">f(\vx)</script></span> if and only if <span><span class="MathJax_Preview">\nabla f(\vx^*) = 0</span><script type="math/tex">\nabla f(\vx^*) = 0</script></span>.</p>
+<p><strong><em>Lemma (constrained)</em></strong> Let <span><span class="MathJax_Preview">f:\mathcal{C} → \R</span><script type="math/tex">f:\mathcal{C} → \R</script></span> be a continuously differentiable (strict) convex function. A point <span><span class="MathJax_Preview">\vx^*</span><script type="math/tex">\vx^*</script></span> is a (unique) global minimizer of <span><span class="MathJax_Preview">f(\vx)</span><script type="math/tex">f(\vx)</script></span> over the set <span><span class="MathJax_Preview">\mathcal{C}</span><script type="math/tex">\mathcal{C}</script></span> if and only if <span><span class="MathJax_Preview">\nabla f(\vx^*)\trans (\vz - \vx^*) \geq 0</span><script type="math/tex">\nabla f(\vx^*)\trans (\vz - \vx^*) \geq 0</script></span> for all <span><span class="MathJax_Preview">\vz \in \mathcal{C}.</span><script type="math/tex">\vz \in \mathcal{C}.</script></span></p>
+<hr />
                 
                   
                 
