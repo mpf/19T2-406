@@ -78,7 +78,7 @@ nav:
       - Homework 2: homework/hw2/hw2.md
       - Homework 3: homework/hw3/hw3.md
       - Homework 4: homework/hw4/hw4.md
-      - Homework 5: homework/hw5/hw5.md
+      # - Homework 5: homework/hw5/hw5.md
   - In-class Activity:
       - Digit classification: InclassActivity/mlactivity/mlactivity.md
 
