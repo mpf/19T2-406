@@ -144,13 +144,7 @@ window.MathJax = {
             daig: ["\\textbf{diag}"],
             mb: ["\\mathbf"],
             tr: ["\\mathbf{tr}"],
-            mL: ["{\\mathcal L}"],
-            mN: ["{\\mathcal N}"],
-
-            mC: ["{\\mathcal C}"],
-
-            mP: ["{\\mathcal P}"],
-            mZ: ["{\\mathcal Z}"],
+            
             proj: ["\\mathbf{proj}"],
             vnull: ["\\mathbf{null}"],
             range: ["\\mathbf{range}"],
