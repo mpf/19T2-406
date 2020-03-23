@@ -85,7 +85,7 @@
 
     2. Show that  \eqref{e-max} is a linear program by writing it in form \eqref{eq:linprog-form}.
 
-    3. Modify the [Julia notebook](HW5_p4.ipynb) and solve all three problems \eqref{e-lasso}, \eqref{e-max}, \eqref{e-ridge} using Convex.jl, GLPK.jl, and/or backsolve. Do so by filling in the blanks in the notebook code.  Histogram the residuals in each case ($\vr = \mA\vx^*-\vb$) and write a few sentences about each norm in the notebook.
+    3. Modify the [Julia notebook](HW5_p4.ipynb) and solve all three problems \eqref{e-lasso}, \eqref{e-max}, \eqref{e-ridge} using Convex.jl, GLPK.jl, and/or backsolve. Do so by filling in the blanks in the notebook code.  Histogram the residuals in each case ($\vr = \mA\vx^*-\vb$) and write a few sentences about the residuals corresponding each norm in the notebook.
 
     4. Widgets are used in the health industry, and if $|\va_k^T\vx-b_k|$ is too large, then patients with illness $k$ will die. You must ensure that not a single patient meets this terrible fate. Which norm do you pick?
 
