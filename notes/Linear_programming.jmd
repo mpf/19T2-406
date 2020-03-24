@@ -1,0 +1,12 @@
+# **Linear Programming**
+
+Linear programming solves the following minimization programming
+
+\begin{equation}\label{non_stand_LP}
+\min_{\vx\in\R^n} \vc\trans\vx \text{ subject to } \mA\vx\leq \vb,
+\end{equation}
+
+where $\mA \in \R^{m\times n}$, $\vc \in \R^n$, and $\vb \in \R^m$ are known a priori. The optimization program \eqref{non_stand_LP} can be expressed in the standard form through a sequence of transformation. These transformation will be discussed in subsequent lectures. In this lecture, we will examine \eqref{non_stand_LP} and characterize its minimizer.
+
+In general, the 
+

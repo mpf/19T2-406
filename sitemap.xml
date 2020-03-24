@@ -2,112 +2,117 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://friedlander.io/19T2-406/</loc>
-     <lastmod>2020-03-20</lastmod>
+     <lastmod>2020-03-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://friedlander.io/19T2-406/grades/</loc>
-     <lastmod>2020-03-20</lastmod>
+     <lastmod>2020-03-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://friedlander.io/19T2-406/schedule/</loc>
-     <lastmod>2020-03-20</lastmod>
+     <lastmod>2020-03-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://friedlander.io/19T2-406/notes/background/</loc>
-     <lastmod>2020-03-20</lastmod>
+     <lastmod>2020-03-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://friedlander.io/19T2-406/notes/Least_squares/</loc>
-     <lastmod>2020-03-20</lastmod>
+     <lastmod>2020-03-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://friedlander.io/19T2-406/notes/QR_factorization/</loc>
-     <lastmod>2020-03-20</lastmod>
+     <lastmod>2020-03-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://friedlander.io/19T2-406/notes/Regularized_LS/</loc>
-     <lastmod>2020-03-20</lastmod>
+     <lastmod>2020-03-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://friedlander.io/19T2-406/notes/Non-linear_LS/</loc>
-     <lastmod>2020-03-20</lastmod>
+     <lastmod>2020-03-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://friedlander.io/19T2-406/notes/unconstrained/</loc>
-     <lastmod>2020-03-20</lastmod>
+     <lastmod>2020-03-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://friedlander.io/19T2-406/notes/Gradient_Descent/</loc>
-     <lastmod>2020-03-20</lastmod>
+     <lastmod>2020-03-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://friedlander.io/19T2-406/notes/Newtons_method/</loc>
-     <lastmod>2020-03-20</lastmod>
+     <lastmod>2020-03-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://friedlander.io/19T2-406/notes/Quasi_newton/</loc>
-     <lastmod>2020-03-20</lastmod>
+     <lastmod>2020-03-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://friedlander.io/19T2-406/notes/Linear_constraint/</loc>
-     <lastmod>2020-03-20</lastmod>
+     <lastmod>2020-03-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://friedlander.io/19T2-406/notes/Convex_set/</loc>
-     <lastmod>2020-03-20</lastmod>
+     <lastmod>2020-03-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://friedlander.io/19T2-406/notes/Constrained_optimization/</loc>
-     <lastmod>2020-03-20</lastmod>
+     <lastmod>2020-03-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://friedlander.io/19T2-406/notes/Convex_function/</loc>
-     <lastmod>2020-03-20</lastmod>
+     <lastmod>2020-03-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://friedlander.io/19T2-406/homework/</loc>
-     <lastmod>2020-03-20</lastmod>
+     <lastmod>2020-03-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://friedlander.io/19T2-406/homework/hw1/hw1/</loc>
-     <lastmod>2020-03-20</lastmod>
+     <lastmod>2020-03-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://friedlander.io/19T2-406/homework/hw2/hw2/</loc>
-     <lastmod>2020-03-20</lastmod>
+     <lastmod>2020-03-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://friedlander.io/19T2-406/homework/hw3/hw3/</loc>
-     <lastmod>2020-03-20</lastmod>
+     <lastmod>2020-03-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://friedlander.io/19T2-406/homework/hw4/hw4/</loc>
-     <lastmod>2020-03-20</lastmod>
+     <lastmod>2020-03-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://friedlander.io/19T2-406/homework/hw5/hw5/</loc>
+     <lastmod>2020-03-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://friedlander.io/19T2-406/InclassActivity/mlactivity/mlactivity/</loc>
-     <lastmod>2020-03-20</lastmod>
+     <lastmod>2020-03-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
