@@ -1,19 +1,6 @@
-# **CPSC 406: Homework 5 (Due March  25, 6pm)**
+# **CPSC 406: Homework 5**
 
-1. **Convex function**
-
-    1. Let $f_1$ and $f_2$ be two convex functions. Prove that the function $f(\vx) = \max\{f_1(\vx),f_2(\vx)\}$ is also convex.
-    
-    2. Let $f(w,x) = \sqrt{4+(w-x)^2} - (w+x)$. Prove that the function $f$ is jointly convex in $w$ and $x$.
-
-    3. Let $f(w,x) = \gamma(w,x) \left(\sqrt{4+(w-x)^2} - (w+x)\right)$, where
-
-        $$\gamma(w,x) = \left\{\begin{array}{ll}1 & \text{if }\sqrt{4+(w-x)^2} - (w+x)\leq 0, \\
-        2 & \text{otherwise.}\end{array}\right.$$
-
-        Prove that $f$ is jointly convex in $w$ and $x$. Hint: plot $f(w,x)$ and use (a) and (b).
-
-2. **Conversion to standard form** In this exercise we will convert the polytope
+1. **Conversion to standard form** In this exercise we will convert the polytope
 
     \begin{equation}\label{eq:polytope}
     \mathcal{P} = \{\vx : \mA\vx = \vb, \; \mC\vx \leq \vd\}
@@ -38,7 +25,7 @@
 
     3. Now put it all together to find $\tilde\mA$, $\tilde \vb$, and $\vz$ in \eqref{eq:standard_form} from \eqref{eq:polytope}.
 
-3. Consider the problem
+2. Consider the problem
 
     \begin{array}{ll}
     \min_{x_1,x_2} & -2x_1 - x_2
@@ -55,7 +42,7 @@
  
     3. Draw a graphical representation of the problem in terms of the original variables $x_1,x_2$, and indicate the path taken by the simplex algorithm.
 
-4. **Robust optimization** You are the owner of a factory that makes widgets and gadgets. For each widget and gadget, there is a set of feature measurements, e.g. the weight, dimensions, material composition, etc., packed in a vector $\vx$. For maximum profit, you want the combinations of these features to exactly match a set of gold standard specifications, e.g. $\mA\vx = \vb$ where $\mA$ dictates how the features are combined, and $\vb$ is the gold standard. However, realistically, it is too expensive to exactly satisfy $\mA\vx=\vb$, so you have to make some concessions. Instead, you can solve one of three optimization problems:
+3. **Robust optimization** You are the owner of a factory that makes widgets and gadgets. For each widget and gadget, there is a set of feature measurements, e.g. the weight, dimensions, material composition, etc., packed in a vector $\vx$. For maximum profit, you want the combinations of these features to exactly match a set of gold standard specifications, e.g. $\mA\vx = \vb$ where $\mA$ dictates how the features are combined, and $\vb$ is the gold standard. However, realistically, it is too expensive to exactly satisfy $\mA\vx=\vb$, so you have to make some concessions. Instead, you can solve one of three optimization problems:
 
     \begin{equation}
     \label{e-lasso}

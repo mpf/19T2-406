@@ -38,10 +38,10 @@ This is a tentative schedule. It will change often.
 | 28 | 18 Mar / Wed|     | | |
 | 29 | 20 Mar / Fri|   Linear programing    | | |
 | 30 | 23 Mar / Mon|   Linear programing    | | |
-| 31 | 25 Mar / Wed |  Simplex method     | | |
+| 31 | 25 Mar / Wed |  Simplex method     | | [hw5](homework/hw5/hw5.md) out |
 | 32 | 27 Mar / Fri |  Simplex method     | | |
 | 33 | 30 Mar / Mon |  Simplex method     | | |
 | 34 | 1 Apr / Wed|  Duality    | | |
 | 35 | 3 Apr / Fri|  Duality    | | |
 | 36 | 6 Apr / Mon|   Interior point methods   | | |
-| 37 | 8 Apr / Wed|   Interior point methods   | | |
+| 37 | 8 Apr / Wed|   Interior point methods   | | hw5 due at 6 pm|
