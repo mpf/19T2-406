@@ -1,4 +1,4 @@
-# **CPSC 406: Homework 5**
+# **CPSC 406: Homework 5 (Due date: April 8 at 6 pm)**
 
 1. **Conversion to standard form** In this exercise we will convert the polytope
 
