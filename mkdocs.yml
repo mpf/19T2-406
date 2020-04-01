@@ -72,6 +72,7 @@ nav:
       - Convex sets: notes/Convex_set.md
       - Constrained optimization: notes/Constrained_optimization.md
       - Convex function: notes/Convex_function.md
+      - Linear programming: notes/Linear_programming.md
   - Homework:
       - Submissions: homework/index.md
       - Homework 1: homework/hw1/hw1.md
