@@ -13,7 +13,7 @@
         <meta name="description" content="Home page for CPSC406 Term 2 2019">
       
       
-        <link rel="canonical" href="https://friedlander.io/19T2-406/notes/Least_squares/">
+        <link rel="canonical" href="https://friedlander.io/19T2-406/notes/Linear_programming/">
       
       
         <meta name="author" content="Michael P. Friedlander and Babhru Joshi">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Least squares - CPSC406 &mdash; Computational Optimization</title>
+        <title>Linear programming - CPSC406 &mdash; Computational Optimization</title>
       
     
     
@@ -106,7 +106,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#least-squares" tabindex="1" class="md-skip">
+      <a href="#linear-programming" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -132,7 +132,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Least squares
+                Linear programming
               
             </span>
           
@@ -333,63 +333,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Least squares
-      </label>
-    
-    <a href="./" title="Least squares" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../Least_squares/" title="Least squares" class="md-nav__link">
       Least squares
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#least-squares-for-data-fitting" class="md-nav__link">
-    Least squares for data fitting
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linear-systems" class="md-nav__link">
-    Linear systems
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#properties-of-linear-least-squares" class="md-nav__link">
-    Properties of linear least squares
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -529,11 +477,49 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../Linear_programming/" title="Linear programming" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Linear programming
+      </label>
+    
+    <a href="./" title="Linear programming" class="md-nav__link md-nav__link--active">
       Linear programming
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#extreme-points" class="md-nav__link">
+    Extreme points
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -695,22 +681,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#least-squares-for-data-fitting" class="md-nav__link">
-    Least squares for data fitting
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linear-systems" class="md-nav__link">
-    Linear systems
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#properties-of-linear-least-squares" class="md-nav__link">
-    Properties of linear least squares
+  <a href="#extreme-points" class="md-nav__link">
+    Extreme points
   </a>
   
 </li>
@@ -732,214 +704,72 @@
               
                 
                 
-                <h1 id="least-squares"><strong>Least Squares</strong><a class="headerlink" href="#least-squares" title="Permanent link">&para;</a></h1>
-<p>In this lecture, we will cover least squares for data fitting, linear systems, properties of least squares and QR factorization.</p>
-<h2 id="least-squares-for-data-fitting"><strong>Least squares for data fitting</strong><a class="headerlink" href="#least-squares-for-data-fitting" title="Permanent link">&para;</a></h2>
-<p>Consider the problem of fitting a line to observations <span><span class="MathJax_Preview">y_i</span><script type="math/tex">y_i</script></span> gven input <span><span class="MathJax_Preview">z_i</span><script type="math/tex">z_i</script></span> for <span><span class="MathJax_Preview">i = 1,\dots, n</span><script type="math/tex">i = 1,\dots, n</script></span>. </p>
-<p><center>
-<img alt="" src="../figures/Least_squares_2_1.png" /></p>
-<p></center></p>
-<p>In the figure above, the data points seem to follow a linear trend. One way to find the parameters <span><span class="MathJax_Preview">c,s \in \R</span><script type="math/tex">c,s \in \R</script></span> of the linear 
-model <span><span class="MathJax_Preview">f(z) = s\cdot z + c</span><script type="math/tex">f(z) = s\cdot z + c</script></span> that coresponds to a line of best fit is to minimize the following squared distance subject to a 
-linear constraint:</p>
+                <h1 id="linear-programming"><strong>Linear Programming</strong><a class="headerlink" href="#linear-programming" title="Permanent link">&para;</a></h1>
+<p>Linear programming solves the following minimization programm</p>
 <div>
-<div class="MathJax_Preview">
-\begin{align*}
-\min_{s,\,c,\,\hat{y}_i \in \R} &amp;\sum_{i=1}^n (y_i - \hat{y}_i)^2\\
- \text{subject to } &amp;s\cdot z_i+c = \hat{y}_i
-\end{align*}
+<div class="MathJax_Preview">\begin{equation}\label{non_stand_LP}
+\min_{\vx\in\R^n} \vc\trans\vx \text{ subject to } \mA\vx\leq \vb,
+\end{equation}</div>
+<script type="math/tex; mode=display">\begin{equation}\label{non_stand_LP}
+\min_{\vx\in\R^n} \vc\trans\vx \text{ subject to } \mA\vx\leq \vb,
+\end{equation}</script>
 </div>
-<script type="math/tex; mode=display">
-\begin{align*}
-\min_{s,\,c,\,\hat{y}_i \in \R} &\sum_{i=1}^n (y_i - \hat{y}_i)^2\\
- \text{subject to } &s\cdot z_i+c = \hat{y}_i
-\end{align*}
-</script>
-</div>
-<p>The above minimization program can be reformulated as a linear least squares problem:</p>
-<div>
-<div class="MathJax_Preview">
-\min_{\vx} \|\mA \vx - \vb\|_2^2 = \sum_{i=1}^n(\va_{i}^\intercal\vx-b_i)^2,
-</div>
-<script type="math/tex; mode=display">
-\min_{\vx} \|\mA \vx - \vb\|_2^2 = \sum_{i=1}^n(\va_{i}^\intercal\vx-b_i)^2,
-</script>
-</div>
-<p>where</p>
-<div>
-<div class="MathJax_Preview">
-\mA = \begin{bmatrix}z_1 &amp; 1\\ z_2 &amp; 1\\ \vdots&amp;\vdots\\z_n &amp; 1\end{bmatrix}, \ \vb = \begin{bmatrix}y_1\\y_2\\\vdots
-\\y_n\end{bmatrix}, \text{ and } \vx = \begin{bmatrix}s\\c\end{bmatrix}.
-</div>
-<script type="math/tex; mode=display">
-\mA = \begin{bmatrix}z_1 & 1\\ z_2 & 1\\ \vdots&\vdots\\z_n & 1\end{bmatrix}, \ \vb = \begin{bmatrix}y_1\\y_2\\\vdots
-\\y_n\end{bmatrix}, \text{ and } \vx = \begin{bmatrix}s\\c\end{bmatrix}.
-</script>
-</div>
-<p>Let </p>
-<div>
-<div class="MathJax_Preview">
-\begin{equation}\label{least_squares_problem}
-\func{f}(\vx):=\frac{1}{2}\|\mA\vx-\vb\|_2^2 = \frac{1}{2}\sum_{i=1}^n(\va_{i}^\intercal\vx-b_i)^2.
-\end{equation}
-</div>
-<script type="math/tex; mode=display">
-\begin{equation}\label{least_squares_problem}
-\func{f}(\vx):=\frac{1}{2}\|\mA\vx-\vb\|_2^2 = \frac{1}{2}\sum_{i=1}^n(\va_{i}^\intercal\vx-b_i)^2.
-\end{equation}
-</script>
-</div>
-<p>The gradient and hessian of <span><span class="MathJax_Preview">\func{f}(\vx)</span><script type="math/tex">\func{f}(\vx)</script></span> are:</p>
-<div>
-<div class="MathJax_Preview">
-\nabla\func{f}(\vx) = \mA^\intercal(\mA\vx-\vb), \text{ and } \nabla^2\func{f}(\vx) = \mA^\intercal\mA,
-</div>
-<script type="math/tex; mode=display">
-\nabla\func{f}(\vx) = \mA^\intercal(\mA\vx-\vb), \text{ and } \nabla^2\func{f}(\vx) = \mA^\intercal\mA,
-</script>
-</div>
-<p>respectively. The Hessian is positive semidefinite for every <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> (and is positive definite if <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> has full row rank). This 
-implies that the function <span><span class="MathJax_Preview">\func{f}(\vx)</span><script type="math/tex">\func{f}(\vx)</script></span> is convex. Additionally, <span><span class="MathJax_Preview">\vx = \vx^{*}</span><script type="math/tex">\vx = \vx^{*}</script></span> is a critical point if </p>
-<div>
-<div class="MathJax_Preview">
-\begin{equation}\label{least_square_normal_eqn}
-\mA^\intercal(\mA\vx^*-b) = \vzero.
-\end{equation}
-</div>
-<script type="math/tex; mode=display">
-\begin{equation}\label{least_square_normal_eqn}
-\mA^\intercal(\mA\vx^*-b) = \vzero.
-\end{equation}
-</script>
-</div>
-<p>Since <span><span class="MathJax_Preview">\func{f}(\vx)</span><script type="math/tex">\func{f}(\vx)</script></span> is convex, <span><span class="MathJax_Preview">\vx^{*}</span><script type="math/tex">\vx^{*}</script></span> is a global minimizer. Equation \eqref{least_square_normal_eqn} is called the normal 
-equations of the least squares problem \eqref{least_squares_problem}. Solving the normal equations, we get the following line of 
-best fit.</p>
-<p><center>
-<img alt="" src="../figures/Least_squares_4_1.png" /></p>
-<p></center></p>
-<h2 id="linear-systems"><strong>Linear systems</strong><a class="headerlink" href="#linear-systems" title="Permanent link">&para;</a></h2>
-<p>Consider the problem of solving a linear system of equations. For <span><span class="MathJax_Preview">\mA \in \R^{m\times n}</span><script type="math/tex">\mA \in \R^{m\times n}</script></span> and <span><span class="MathJax_Preview">\vb\in\R^{m}</span><script type="math/tex">\vb\in\R^{m}</script></span>, the linear system
- of equations <span><span class="MathJax_Preview">\mA\vx = \vb</span><script type="math/tex">\mA\vx = \vb</script></span> is:</p>
+<p>where <span><span class="MathJax_Preview">\mA \in \R^{m\times n}</span><script type="math/tex">\mA \in \R^{m\times n}</script></span>, <span><span class="MathJax_Preview">\vc \in \R^n</span><script type="math/tex">\vc \in \R^n</script></span>, and <span><span class="MathJax_Preview">\vb \in \R^m</span><script type="math/tex">\vb \in \R^m</script></span> are known a priori. In general, the optimization problem \eqref{non_stand_LP} has three possibilities:</p>
 <ol>
-<li>overdetermined if <span><span class="MathJax_Preview">m&gt;n</span><script type="math/tex">m>n</script></span>,</li>
-<li>underdetermined if <span><span class="MathJax_Preview">m&lt; n</span><script type="math/tex">m< n</script></span>, or</li>
-<li>square if <span><span class="MathJax_Preview">m = n</span><script type="math/tex">m = n</script></span>.</li>
+<li>
+<p>The problem is infeasible, i.e. there exist no such <span><span class="MathJax_Preview">\vx \in \R^n</span><script type="math/tex">\vx \in \R^n</script></span> such that <span><span class="MathJax_Preview">\mA\vx \leq \vb</span><script type="math/tex">\mA\vx \leq \vb</script></span>.</p>
+</li>
+<li>
+<p>The problem is unbounded from below, i.e. there exist some <span><span class="MathJax_Preview">\vx = \vx_0 +\alpha \vd</span><script type="math/tex">\vx = \vx_0 +\alpha \vd</script></span> where <span><span class="MathJax_Preview">\mA\vx \leq \vb</span><script type="math/tex">\mA\vx \leq \vb</script></span> for all <span><span class="MathJax_Preview">\alpha\geq 0</span><script type="math/tex">\alpha\geq 0</script></span>, and <span><span class="MathJax_Preview">\vc\trans \vx &lt; 0</span><script type="math/tex">\vc\trans \vx < 0</script></span>. In this case <span><span class="MathJax_Preview">\vd</span><script type="math/tex">\vd</script></span> is a direction that pushes the objective value to <span><span class="MathJax_Preview">-∞</span><script type="math/tex">-∞</script></span> while maintaining feasibility.</p>
+</li>
+<li>
+<p>The problem is feasible and has a finite minimum, i.e. there exist a point <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> such that <span><span class="MathJax_Preview">\mA\vx\leq \vb</span><script type="math/tex">\mA\vx\leq \vb</script></span> and the optimal value of \eqref{non_stand_LP} <span><span class="MathJax_Preview">p^* = \min\{\vc\trans\vx | \mA\vx\leq \vb\}</span><script type="math/tex">p^* = \min\{\vc\trans\vx | \mA\vx\leq \vb\}</script></span> satisfies <span><span class="MathJax_Preview">p^*&gt;-∞</span><script type="math/tex">p^*>-∞</script></span>.</p>
+</li>
 </ol>
+<p>In this lecture, we will assume the problem is always feasible and characterize the optimal points of \eqref{non_stand_LP}.</p>
+<h2 id="extreme-points"><strong>Extreme points</strong><a class="headerlink" href="#extreme-points" title="Permanent link">&para;</a></h2>
+<p>The constraint set in the linear program \eqref{non_stand_LP} is <span><span class="MathJax_Preview">\setP := \{x\in \R^n | \va_i\trans\vx \leq b_i,\ i = 1\,\dots, m\}</span><script type="math/tex">\setP := \{x\in \R^n | \va_i\trans\vx \leq b_i,\ i = 1\,\dots, m\}</script></span>. This set is the intersection of <span><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> half-spaces given by <span><span class="MathJax_Preview">\va_i\trans\vx \leq b_i</span><script type="math/tex">\va_i\trans\vx \leq b_i</script></span> and form a polyhedron (see figure below).</p>
 <p><center>
-<img src="../img/lec2/sizeA.png" width = "700">
+<img src="../figures/polyhedron.svg" width = "400">
 </center></p>
-<p>A linear system can have exactly one solution, many solutions, or no solutions:</p>
+<p>Extreme points can be studied in many equivalent ways. A definition of extreme point is:</p>
+<p><strong><em>Definition</em></strong> A point <span><span class="MathJax_Preview">\vx \in \setP</span><script type="math/tex">\vx \in \setP</script></span> is an extreme point of <span><span class="MathJax_Preview">\setP</span><script type="math/tex">\setP</script></span> if there does not exist two vectors <span><span class="MathJax_Preview">\vy,\vz \in \setP</span><script type="math/tex">\vy,\vz \in \setP</script></span> such that <span><span class="MathJax_Preview">\vx = \lambda \vy + (1-\lambda)\vz</span><script type="math/tex">\vx = \lambda \vy + (1-\lambda)\vz</script></span> for any <span><span class="MathJax_Preview">\lambda \in (0,1)</span><script type="math/tex">\lambda \in (0,1)</script></span>. </p>
+<p>This definition states that an extreme point can not be in the interior of any line segment contained in the polyhedron. Another geometric way to view extreme points is via vertices of a polyhedron. A point <span><span class="MathJax_Preview">\bar{\vx}</span><script type="math/tex">\bar{\vx}</script></span> is an extreme point of a polyhedron if and only if <span><span class="MathJax_Preview">\bar{\vx}</span><script type="math/tex">\bar{\vx}</script></span> is an vertex. The vertex of a polyhedron is defined as:</p>
+<p><strong><em>Definition</em></strong> A point <span><span class="MathJax_Preview">\vx \in \setP</span><script type="math/tex">\vx \in \setP</script></span> is a vertex of <span><span class="MathJax_Preview">\setP</span><script type="math/tex">\setP</script></span> if there exists a vector <span><span class="MathJax_Preview">\vc</span><script type="math/tex">\vc</script></span> such that <span><span class="MathJax_Preview">\vc\trans\vx &lt;\vc\trans\vy</span><script type="math/tex">\vc\trans\vx <\vc\trans\vy</script></span> for all <span><span class="MathJax_Preview">\vy\in\setP</span><script type="math/tex">\vy\in\setP</script></span> with <span><span class="MathJax_Preview">\vy\neq \vx</span><script type="math/tex">\vy\neq \vx</script></span>.</p>
 <p><center>
-<img src="../img/lec2/leastsquares_datafitting.png" width = "700">
+<img src="../figures/vertex.png" width = "400">
 </center></p>
-<p>In general, a linear system <span><span class="MathJax_Preview">\mA\vx=\vb</span><script type="math/tex">\mA\vx=\vb</script></span> has a solution if <span><span class="MathJax_Preview">\vb \in \text{range} (\mA)</span><script type="math/tex">\vb \in \text{range} (\mA)</script></span>.</p>
-<h2 id="properties-of-linear-least-squares"><strong>Properties of linear least squares</strong><a class="headerlink" href="#properties-of-linear-least-squares" title="Permanent link">&para;</a></h2>
-<p>Recall that the minimizer <span><span class="MathJax_Preview">\vx^*</span><script type="math/tex">\vx^*</script></span> to the linear least squares poblem satisfies the normal equations:</p>
+<p>We will consider yet another view of the extreme point that depends number of half-space constraints active as a strict equality. This will be useful when studying the simplex algorithm, which can be used to solve \eqref{non_stand_LP}. Let <span><span class="MathJax_Preview">\setB \subset \{1,\dots,m\}</span><script type="math/tex">\setB \subset \{1,\dots,m\}</script></span> be a set of row indices of the matrix <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span>. Let <span><span class="MathJax_Preview">\mA_\setB</span><script type="math/tex">\mA_\setB</script></span> be the sub-matrix of <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> containing the rows indexed in <span><span class="MathJax_Preview">\setB</span><script type="math/tex">\setB</script></span>. Consider a point <span><span class="MathJax_Preview">\vx \in \setP</span><script type="math/tex">\vx \in \setP</script></span>. Note that there exists an index set <span><span class="MathJax_Preview">\setB(\vx)\subset \{1,\dots,m\}</span><script type="math/tex">\setB(\vx)\subset \{1,\dots,m\}</script></span> such that </p>
 <div>
-<div class="MathJax_Preview">
-\mA^\intercal \mA \vx^* = \mA^\intercal\vb
+<div class="MathJax_Preview">\begin{align}
+&amp;\va_i\trans\vx = b_i \text{ for all } i\in \setB(\vx), \text{ and }\label{eq:boundary}\\
+&amp;\va_i\trans\vx &lt; b_i \text{ for all } i\in\setN :=\{1,\dots,m\}\backslash \setB(\vx). \label{eq:interior}
+\end{align}</div>
+<script type="math/tex; mode=display">\begin{align}
+&\va_i\trans\vx = b_i \text{ for all } i\in \setB(\vx), \text{ and }\label{eq:boundary}\\
+&\va_i\trans\vx < b_i \text{ for all } i\in\setN :=\{1,\dots,m\}\backslash \setB(\vx). \label{eq:interior}
+\end{align}</script>
 </div>
-<script type="math/tex; mode=display">
-\mA^\intercal \mA \vx^* = \mA^\intercal\vb
-</script>
-</div>
-<p>with the residual</p>
-<div>
-<div class="MathJax_Preview">
-\vr^* = \mA\vx^* -\vb, 
-</div>
-<script type="math/tex; mode=display">
-\vr^* = \mA\vx^* -\vb, 
-</script>
-</div>
-<p>satisfying <span><span class="MathJax_Preview">\mA^\intercal\vr^* = \vzero.</span><script type="math/tex">\mA^\intercal\vr^* = \vzero.</script></span> Here, <span><span class="MathJax_Preview">\mA \in \R^{m\times n}</span><script type="math/tex">\mA \in \R^{m\times n}</script></span>. The minimzer of the linear least squares problem is 
-unique if <span><span class="MathJax_Preview">\mA^\intercal\mA</span><script type="math/tex">\mA^\intercal\mA</script></span> is invertible. However, the vector in the range of <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> closest to <span><span class="MathJax_Preview">\vb</span><script type="math/tex">\vb</script></span> is unique, i.e. 
-<span><span class="MathJax_Preview">\vb^* = \mA\vx*</span><script type="math/tex">\vb^* = \mA\vx*</script></span> is unique. Recall that range space of <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> and the null space of <span><span class="MathJax_Preview">\mA^\intercal</span><script type="math/tex">\mA^\intercal</script></span> is:</p>
-<div>
-<div class="MathJax_Preview">
-\text{range}(\mA) = \set{R}(\mA) = \{\vy : \vy = \mA \vx \text{ for some } \vx \}\\
-\text{null}(\mA^\intercal)= \set{N}(\mA^\intercal) = \{\vz: \mA^\intercal\vz = \vzero\}
-</div>
-<script type="math/tex; mode=display">
-\text{range}(\mA) = \set{R}(\mA) = \{\vy : \vy = \mA \vx \text{ for some } \vx \}\\
-\text{null}(\mA^\intercal)= \set{N}(\mA^\intercal) = \{\vz: \mA^\intercal\vz = \vzero\}
-</script>
-</div>
-<p>By fundamental theorem of linear algebra, we have
-$$
-\begin{equation}\label{least_squares_FTLA}
-\set{R}(\mA) \oplus \set{N}(\mA^\intercal) = \R^m.
-\end{equation}
-$$
-Thus, for all <span><span class="MathJax_Preview">\vx \in \R^m</span><script type="math/tex">\vx \in \R^m</script></span>, we have</p>
-<div>
-<div class="MathJax_Preview">
-\vx = \vu + \vv, \quad \vu \in \set{R}(\mA), \quad \vv\in\set{N}(\mA^\intercal)
-</div>
-<script type="math/tex; mode=display">
-\vx = \vu + \vv, \quad \vu \in \set{R}(\mA), \quad \vv\in\set{N}(\mA^\intercal)
-</script>
-</div>
-<p>with <span><span class="MathJax_Preview">\vu</span><script type="math/tex">\vu</script></span> and <span><span class="MathJax_Preview">\vv</span><script type="math/tex">\vv</script></span> uniquely determined. This is illustrated in the figure below: </p>
-<p><center>
-<img src="../img/lec2/leastsquares-geometry.png" width = "400">
-</center></p>
-<p>Here, <span><span class="MathJax_Preview">\vx_{LS}</span><script type="math/tex">\vx_{LS}</script></span> is the least squares solution, <span><span class="MathJax_Preview">\mA = \begin{bmatrix}\va_1&amp;\va_2&amp;\dots&amp;\va_n\end{bmatrix}</span><script type="math/tex">\mA = \begin{bmatrix}\va_1&\va_2&\dots&\va_n\end{bmatrix}</script></span>, 
-with <span><span class="MathJax_Preview">\va_i \in \R^m</span><script type="math/tex">\va_i \in \R^m</script></span> for all <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>. Comparing with \eqref{least_squares_FTLA}, we get </p>
-<div>
-<div class="MathJax_Preview">
-\vb = \mA\vx_{LS}+r  \text{ with } 
-\mA\vx_{LS} \in \set{R}(\mA) \text{ and } \vr \in \set{N}(\mA^\intercal)
-</div>
-<script type="math/tex; mode=display">
-\vb = \mA\vx_{LS}+r  \text{ with } 
-\mA\vx_{LS} \in \set{R}(\mA) \text{ and } \vr \in \set{N}(\mA^\intercal)
-</script>
-</div>
-<p><span><span class="MathJax_Preview">\exa{1}</span><script type="math/tex">\exa{1}</script></span> What is the least-squares solution <span><span class="MathJax_Preview">\vx^*</span><script type="math/tex">\vx^*</script></span> for the problem</p>
-<div>
-<div class="MathJax_Preview">
-\min_{\vx} \frac{1}{2} \|\mA\vx - \vb\|_2^2,
-</div>
-<script type="math/tex; mode=display">
-\min_{\vx} \frac{1}{2} \|\mA\vx - \vb\|_2^2,
-</script>
-</div>
-<p>where </p>
-<div>
-<div class="MathJax_Preview">
-\mA = \begin{bmatrix} 1 \\ \vdots \\ 1 \end{bmatrix} = \ve \in \R^m \quad \text{ and } \quad 
-\vb = \begin{bmatrix} b_1 \\ \vdots \\ b_m \end{bmatrix}.
-</div>
-<script type="math/tex; mode=display">
-\mA = \begin{bmatrix} 1 \\ \vdots \\ 1 \end{bmatrix} = \ve \in \R^m \quad \text{ and } \quad 
-\vb = \begin{bmatrix} b_1 \\ \vdots \\ b_m \end{bmatrix}.
-</script>
-</div>
-<p><span><span class="MathJax_Preview">\text{Solution:}</span><script type="math/tex">\text{Solution:}</script></span> First setup the normal equations:</p>
-<div>
-<div class="MathJax_Preview">
-\mA^\intercal\mA\vx = \begin{bmatrix}1&amp;\dots&amp;1\end{bmatrix} \begin{bmatrix} 1 \\ \vdots \\ 1 \end{bmatrix}\vx = m\vx
-\quad \text {and} \quad \mA^\intercal\vb = \begin{bmatrix}1&amp;\dots&amp;1\end{bmatrix} \begin{bmatrix} b_1 \\ \vdots \\ b_m 
-\end{bmatrix} =\ve^\intercal\vb
-</div>
-<script type="math/tex; mode=display">
-\mA^\intercal\mA\vx = \begin{bmatrix}1&\dots&1\end{bmatrix} \begin{bmatrix} 1 \\ \vdots \\ 1 \end{bmatrix}\vx = m\vx
-\quad \text {and} \quad \mA^\intercal\vb = \begin{bmatrix}1&\dots&1\end{bmatrix} \begin{bmatrix} b_1 \\ \vdots \\ b_m 
-\end{bmatrix} =\ve^\intercal\vb
-</script>
-</div>
-<p>Solving the normal equations, we get </p>
-<div>
-<div class="MathJax_Preview">
-\mA^\intercal\mA\vx^* = \mA^\intercal\vb \iff m\vx^* = \ve^\intercal\vb \iff \vx^* = \frac{1}{m}\ve^\intercal\vb
-</div>
-<script type="math/tex; mode=display">
-\mA^\intercal\mA\vx^* = \mA^\intercal\vb \iff m\vx^* = \ve^\intercal\vb \iff \vx^* = \frac{1}{m}\ve^\intercal\vb
-</script>
-</div>
-<p>So, the least squares solution <span><span class="MathJax_Preview">\vx^*</span><script type="math/tex">\vx^*</script></span> is the mean value of the elements in <span><span class="MathJax_Preview">\vb</span><script type="math/tex">\vb</script></span>.</p>
+<p>The index set <span><span class="MathJax_Preview">\setB</span><script type="math/tex">\setB</script></span> is called the active set and <span><span class="MathJax_Preview">\setN</span><script type="math/tex">\setN</script></span> is called the inactive set (if <span><span class="MathJax_Preview">\setB(\vx)</span><script type="math/tex">\setB(\vx)</script></span> is empty, then <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> is in the interior of the polyhedron). </p>
+<p><strong><em>Definition</em></strong> A point <span><span class="MathJax_Preview">\vx \in \setP</span><script type="math/tex">\vx \in \setP</script></span> is called a basic feasible solution if the vectors <span><span class="MathJax_Preview">\va_i</span><script type="math/tex">\va_i</script></span> for <span><span class="MathJax_Preview">i \in \setB(\vx)</span><script type="math/tex">i \in \setB(\vx)</script></span> are linearly independent and rank(<span><span class="MathJax_Preview">\mA_{\setB(\bar{\vx})}) = n</span><script type="math/tex">\mA_{\setB(\bar{\vx})}) = n</script></span>.</p>
+<p>We now state a theorem that relates extreme points, vertices and basic feasible solutions.</p>
+<p><strong><em>Theorem</em></strong> The following are equivalent:</p>
+<ol>
+<li>
+<p><span><span class="MathJax_Preview">\vx^*</span><script type="math/tex">\vx^*</script></span> is an extreme point.</p>
+</li>
+<li>
+<p><span><span class="MathJax_Preview">\vx^*</span><script type="math/tex">\vx^*</script></span> is a vertex.</p>
+</li>
+<li>
+<p><span><span class="MathJax_Preview">\vx^*</span><script type="math/tex">\vx^*</script></span> is a basic feasible solution.</p>
+</li>
+</ol>
+<p>We now state an interesting property of every feasible Linear program that characterizes its optimal points.</p>
+<p><strong><em>Theorem</em></strong> Let <span><span class="MathJax_Preview">p^*</span><script type="math/tex">p^*</script></span> be the optimal value of the LP \eqref{non_stand_LP}. There exists a feasible extreme point <span><span class="MathJax_Preview">\vx^*</span><script type="math/tex">\vx^*</script></span> where <span><span class="MathJax_Preview">\vc\trans\vx^* = p^*</span><script type="math/tex">\vc\trans\vx^* = p^*</script></span>.</p>
+<p><strong><em>Proof</em></strong> Suppose <span><span class="MathJax_Preview">\vc\trans\hat{\vx} = p^*</span><script type="math/tex">\vc\trans\hat{\vx} = p^*</script></span>, but <span><span class="MathJax_Preview">\hat{\vx}</span><script type="math/tex">\hat{\vx}</script></span> is not an extreme point. Then the basic set <span><span class="MathJax_Preview">\setB(\hat{\vx}) = \{ i \ |\ \va_i\trans\hat{\vx} = b_i\}</span><script type="math/tex">\setB(\hat{\vx}) = \{ i \ |\ \va_i\trans\hat{\vx} = b_i\}</script></span> has few than <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> indices. So, the sub-matrix <span><span class="MathJax_Preview">\mA_{\setB(\hat{\vx})}</span><script type="math/tex">\mA_{\setB(\hat{\vx})}</script></span> has a non-trivial null-space. Pick some <span><span class="MathJax_Preview">\vv</span><script type="math/tex">\vv</script></span> in that null-space. Then either <span><span class="MathJax_Preview">\vc\trans\vv = 0</span><script type="math/tex">\vc\trans\vv = 0</script></span> or <span><span class="MathJax_Preview">\vc\trans\vv \neq 0</span><script type="math/tex">\vc\trans\vv \neq 0</script></span>. </p>
+<p>We will now proceed by considering possible cases. Suppose <span><span class="MathJax_Preview">\vc\trans\vv &lt;0</span><script type="math/tex">\vc\trans\vv <0</script></span> and consider <span><span class="MathJax_Preview">\tilde{\vx} = \hat{\vx} + \alpha \vv</span><script type="math/tex">\tilde{\vx} = \hat{\vx} + \alpha \vv</script></span>.  Note that for all <span><span class="MathJax_Preview">\alpha&gt;0</span><script type="math/tex">\alpha>0</script></span>, we have <span><span class="MathJax_Preview">\vc\trans\hat{\vx} &gt;\vc\trans\tilde{\vx}</span><script type="math/tex">\vc\trans\hat{\vx} >\vc\trans\tilde{\vx}</script></span> and <span><span class="MathJax_Preview">\mA_{\setB(\hat{\vx})}\hat{\vx} = \mA_{\setB(\hat{\vx})}\tilde{\vx}</span><script type="math/tex">\mA_{\setB(\hat{\vx})}\hat{\vx} = \mA_{\setB(\hat{\vx})}\tilde{\vx}</script></span>. Additionally, since we have <span><span class="MathJax_Preview">\mA_{\setN(\hat{\vx})}\hat{\vx} &lt; \vb_{\setN(\hat{\vx})}</span><script type="math/tex">\mA_{\setN(\hat{\vx})}\hat{\vx} < \vb_{\setN(\hat{\vx})}</script></span>, there exists an <span><span class="MathJax_Preview">\alpha &gt;0</span><script type="math/tex">\alpha >0</script></span> such that <span><span class="MathJax_Preview">\mA_{\setN(\hat{\vx})}\tilde{\vx} \leq \vb_{\setN(\hat{\vx})}</span><script type="math/tex">\mA_{\setN(\hat{\vx})}\tilde{\vx} \leq \vb_{\setN(\hat{\vx})}</script></span>. Thus, <span><span class="MathJax_Preview">\hat{\vx}</span><script type="math/tex">\hat{\vx}</script></span> is not an optimal point, which is a contradiction. The case with <span><span class="MathJax_Preview">\vc\trans\vv &gt;0</span><script type="math/tex">\vc\trans\vv >0</script></span> is similar.</p>
+<p>Lastly, suppose <span><span class="MathJax_Preview">\vc\trans\vv = 0</span><script type="math/tex">\vc\trans\vv = 0</script></span>. Then any adjacent extreme point is equally optimal (why?).</p>
                 
                   
                 
@@ -961,7 +791,7 @@ with <span><span class="MathJax_Preview">\va_i \in \R^m</span><script type="math
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../background/" title="Mathematical background" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../Convex_function/" title="Convex function" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -970,19 +800,19 @@ with <span><span class="MathJax_Preview">\va_i \in \R^m</span><script type="math
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Mathematical background
+                Convex function
               </span>
             </div>
           </a>
         
         
-          <a href="../QR_factorization/" title="QR factorization" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../homework/" title="Submissions" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                QR factorization
+                Submissions
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
