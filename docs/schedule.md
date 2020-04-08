@@ -14,7 +14,7 @@ This is a tentative schedule. It will change often.
 | 7 | 22 Jan / Wed| [Unconstrained optimization](notes/unconstrained.md#UnconstrainedOptimization) | | |
 | 8 | 24 Jan / Fri| Quadratic functions | | |
 | 9 | 27 Jan / Mon| [Descent methods](notes/Gradient_Descent.md#GradientDescent) | [notebook](https://nbviewer.jupyter.org/github/mpf/19T2-406/blob/master/docs/notebooks/Gradient_descent.ipynb) |hw2 due at 6pm |
-| 9 | 27 Jan / Mon| [Descent methods](notes/Gradient_Descent.md#GradientDescent) | |hw2 due at 6pm |
+| 10 | 29 Jan / Wed| [Descent methods](notes/Gradient_Descent.md#GradientDescent) | |
 | 11 | 31 Jan / Fri| [Descent methods](notes/Gradient_Descent.md#GradientDescent) | | [hw3](homework/hw3/hw3.md) out|
 | 12 | 3 Feb / Mon | [Newton's Method](notes/Newtons_method.md#NewtonsMethod) | | |
 | 13 | 5 Feb / Wed|  Cholesky Factorization| | |
