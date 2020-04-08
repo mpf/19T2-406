@@ -110,10 +110,37 @@ where $\mB$ is a nonsingular matrix. Let $\bar{\mA} = \begin{bmatrix}\mB & \mN\\
 
 which implies that the basic solution satifes $\mB\bar{\vx}_B = \vb$ and $\bar{\vx}_N = \vzero$.
 
+## **Simplex method**
 
+In this section, we will develop the simplex algorithm for a Linear Program in standard-form \eqref{standard_form}, where $\mA \in \R^{\m\times n}$. Throughout this section. we will assume that 
 
+1. $\mA$ has full row rank (no redundant rows).
 
+2. the LP is feasible
 
+3. all basic feasible solution (i.e. extreme points) are nondegenerate.
+
+Let $\vx \in \setP = \{\vx\ |\ \mA\vx = \vb, \vx\geq \vzero\}$ be a feasible point. We say a direction $\vd$ is feasible at $\vx$ if there exists a scalar $\alpha>0$ such that $\vx+\alpha\vd \in \setP$. The following subsections will outline the process for choosing a feasible direction and appropriate stepsize $\alpha$. The simple algorithm initializes at a basic feasible solution. We will also look at how to choose such an initialization.
+
+### **Construction feasible direction**
+
+The goal of finding a feasible direction is to find a vector $\vd$ such that given $\vx \in \setP$, we have that $\vx+\alpha\vd$ is also in the polyhedron $\setP$ for some $\alpha> 0$. Precisely, this implies 
+
+\begin{equation}
+\vb = \mA(\vx+\alpha\vd) = \mA\vx + \alpha\mA\vd = b =\alpha \mA\vd.
+\end{equation}
+
+Thus, the feasible direction must be in the null space of $\mA$ and satisfy $\mA\vd =\vzero$. Let $\vx$ be a basic feasible solution. So, after some permutation, the following relation holds: $\mA\vx = \begin{bmatrix}\mB&\mN\end{bmatrix}\begin{bmatrix}\vx_B\\ \vx_N\end{bmatrix} = \vb$. Correspondintly, we also have
+
+\begin{equation}
+\vzero = \mA \vd = \begin{bmatrix}\mB&\mN\end{bmatrix}\begin{bmatrix}\vd_B\\ \vd_N\end{bmatrix}  = \mB\vd_B + \mN\vd_N.
+\end{equation}
+
+Thus, we have $\mB\vd_B = -\mN\vd_N$. Note that here $\mB \in \R^{m\times m}$ is non-singular and $N \in \R^{m\times (n-m)$. We can now choose a search direction my fixing an index $\eta_k \in N$, which determines a single nonbasic direction to move along. So, the feasible direction $\vd$ corresponding to a nonbasic variable with index $\eta_k$ satisfies:
+
+\begin{equation}
+\vd_N = \ve_k \text{ and } \mB\vd_b = -\mB\vd_N = -\va_{\eta_k}.
+\end{equation}
 
 
 
