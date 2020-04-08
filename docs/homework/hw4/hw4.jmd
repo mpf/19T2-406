@@ -1,4 +1,4 @@
-# **CPSC 406: Homework 4 (Due March  16, 6pm)**
+# **CPSC 406: Homework 4 (Due March  16, 6pm), [solution](hw4_soln.md)**
 
 1. Prove that the intersection of convex sets 
 

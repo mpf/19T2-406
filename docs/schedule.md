@@ -31,17 +31,17 @@ This is a tentative schedule. It will change often.
 | 21 |  2 Mar / Mon|   [Convex sets](notes/Convex_set.md#Convexset)  | | |
 | 22 | 4 Mar / Wed |   [Constrained optimization](notes/Constrained_optimization.md#Constrainedoptimization)   | | |
 | 23 | 6 Mar / Fri |   [Constrained optimization](notes/Constrained_optimization.md#Constrainedoptimization) | | |
-| 24 | 9 Mar / Mon |  [Convex functions](notes/Convex_function.md#Convexfunctions)    | | [hw4](homework/hw4/hw4.md) out|
+| 24 | 9 Mar / Mon |  [Convex functions](notes/Convex_function.md#Convexfunctions)    | | [hw4](homework/hw4/hw4.md) out, [solution](homework/hw4/hw4_soln.md)|
 | 25 | 11 Mar / Wed | [Convex functions](notes/Convex_function.md#Convexfunctions)    | | |
 | 26 | 13 Mar / Fri | Linear programming applications    | | |
-| 27 | 16 Mar / Mon|   [Extreme points](notes/Linear_programming.md#Extremepoints)   | | hw4 due at 6pm|
+| 27 | 16 Mar / Mon|   [Extreme points](notes/Linear_programming.md#Extremepoints)   | | hw4 due at 6pm |
 | 28 | 18 Mar / Wed|   [Extreme points](notes/Linear_programming.md#Extremepoints)  | | |
-| 29 | 20 Mar / Fri|   Standard form    | | |
-| 30 | 23 Mar / Mon|   Standard form    | | |
-| 31 | 25 Mar / Wed |  Simplex method     | | [hw5](homework/hw5/hw5.md) out |
-| 32 | 27 Mar / Fri |  Simplex method     | | |
-| 33 | 30 Mar / Mon |  Simplex method     | | |
+| 29 | 20 Mar / Fri|   [Standard form](notes/Linear_programming.md#standard-form-polyhedra)    | | |
+| 30 | 23 Mar / Mon|   [Standard form](notes/Linear_programming.md#standard-form-polyhedra)    | | |
+| 31 | 25 Mar / Wed |  [Simplex method](notes/Linear_programming.md#simplex-method)     | | [hw5](homework/hw5/hw5.md) out |
+| 32 | 27 Mar / Fri |  [Simplex method](notes/Linear_programming.md#simplex-method)     | | |
+| 33 | 30 Mar / Mon |  [Simplex method](notes/Linear_programming.md#simplex-method)     | | |
 | 34 | 1 Apr / Wed|  Duality    | | |
 | 35 | 3 Apr / Fri|  Duality    | | |
-| 36 | 6 Apr / Mon|   Interior point methods   | | |
+| 36 | 6 Apr / Mon|   Duality   | | |
 | 37 | 8 Apr / Wed|   Interior point methods   | | hw5 due at 6 pm|
