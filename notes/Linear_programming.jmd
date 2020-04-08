@@ -112,7 +112,7 @@ which implies that the basic solution satifes $\mB\bar{\vx}_B = \vb$ and $\bar{\
 
 ## **Simplex method**
 
-In this section, we will develop the simplex algorithm for a Linear Program in standard-form \eqref{standard_form}, where $\mA \in \R^{\m\times n}$. Throughout this section. we will assume that 
+In this section, we will develop the simplex algorithm for a Linear Program in standard-form \eqref{standard_form}, where $\mA \in \R^{m\times n}$. Throughout this section. we will assume that 
 
 1. $\mA$ has full row rank (no redundant rows).
 
@@ -127,22 +127,87 @@ Let $\vx \in \setP = \{\vx\ |\ \mA\vx = \vb, \vx\geq \vzero\}$ be a feasible poi
 The goal of finding a feasible direction is to find a vector $\vd$ such that given $\vx \in \setP$, we have that $\vx+\alpha\vd$ is also in the polyhedron $\setP$ for some $\alpha> 0$. Precisely, this implies 
 
 \begin{equation}
-\vb = \mA(\vx+\alpha\vd) = \mA\vx + \alpha\mA\vd = b =\alpha \mA\vd.
+\vb = \mA(\vx+\alpha\vd) = \mA\vx + \alpha\mA\vd = b +\alpha \mA\vd.
 \end{equation}
 
-Thus, the feasible direction must be in the null space of $\mA$ and satisfy $\mA\vd =\vzero$. Let $\vx$ be a basic feasible solution. So, after some permutation, the following relation holds: $\mA\vx = \begin{bmatrix}\mB&\mN\end{bmatrix}\begin{bmatrix}\vx_B\\ \vx_N\end{bmatrix} = \vb$. Correspondintly, we also have
+Thus, the feasible direction must be in the null space of $\mA$ and satisfy $\mA\vd =\vzero$. Let $\vx$ be a basic feasible solution. So, after some permutation, the following relation holds: $\mA\vx = \begin{bmatrix}\mB&\mN\end{bmatrix}\begin{bmatrix}\vx_B\\ \vx_N\end{bmatrix} = \vb$. Correspondingly, we also have
 
 \begin{equation}
 \vzero = \mA \vd = \begin{bmatrix}\mB&\mN\end{bmatrix}\begin{bmatrix}\vd_B\\ \vd_N\end{bmatrix}  = \mB\vd_B + \mN\vd_N.
 \end{equation}
 
-Thus, we have $\mB\vd_B = -\mN\vd_N$. Note that here $\mB \in \R^{m\times m}$ is non-singular and $N \in \R^{m\times (n-m)$. We can now choose a search direction my fixing an index $\eta_k \in N$, which determines a single nonbasic direction to move along. So, the feasible direction $\vd$ corresponding to a nonbasic variable with index $\eta_k$ satisfies:
+Thus, we have 
 
-\begin{equation}
-\vd_N = \ve_k \text{ and } \mB\vd_b = -\mB\vd_N = -\va_{\eta_k}.
+\begin{equation}\label{feasible_direction}
+\mB\vd_B = -\mN\vd_N.
 \end{equation}
 
+Note that here $\mB \in \R^{m\times m}$ is non-singular and $N \in \R^{m\times (n-m)}$. We can now choose a feaible direction by fixing an index $\eta_k \in N$, which determines a single nonbasic direction to move along. So, the feasible direction $\vd$ corresponding to a nonbasic variable with index $\eta_k$ satisfies:
 
+\begin{equation}
+\vd_N = \ve_k \quad\text{ and } \quad\mB\vd_b = -\mN\vd_N = -\va_{\eta_k},
+\end{equation}
+
+where $\va_{\eta_k}$ is a column of $\mA = \begin{bmatrix}\mB & \mN\end{bmatrix}$ corresponding to index $\eta_k \in N$.
+
+### **Reduced cost**
+
+The goal is to choose a feasible direction $\vd$ in such a way that it reduces the cost function (objective) $\phi(\vx) : = \vc\trans(\vx)$. Let $\bar{\vx} = \vx +\alpha \vd$, where $\vx$ is some basic feasible solution and $\alpha>0$. Consider the objective value at the next iterate $\vx + \alpha \vd$ given by
+
+$$
+\begin{align}
+\phi(\vx + \alpha \vx) & = \vc\trans\bar{\vx}\nonumber\\
+& = \vc\trans(\vx + \alpha \vd)\nonumber\\
+& = \vc\trans\vx + \alpha \vc\trans\vd\nonumber\\
+& = \phi(\vx) + \alpha (\underbrace{\vc\trans\vd_B + \vc\trans \vd_N}_{=: I})\label{obj_decrease}
+\end{align}.
+$$
+
+The term $I$ in the above equation is related to the reduced cost. Recall that the feasible direction satfies \eqref{feasible_direction}. So if feasible direction does note move along an index in the nonbasic set, i.e. $\vd_N = \vzero$ then this necessarily means that $\vd_B = 0$. This is beacause $\vd_N = \vzero$ implies $\mB\vd_B = 0$. Since $\mB$ is invertible, the null space of $\mB$ is trivial and, consequently, $\mB\vd_B = 0$ necessarily imples $\vd$ is the zero vector. So, the term $I= \vc\trans\vd_B + \vc\trans \vd_N$ in any feasible direction not aligned with a nonbasic variable is zero. This leads to the following notion of reduced cost where we only consider directions along the nonbasic variable.
+
+For $j \in N$, let 
+
+$$z_j = \vc_B\trans\vd_B + \vc_N\trans \ve_j = \vc_B\trans\vd_B + c_j.$$ 
+
+Additionally, \eqref{feasible_direction} implies that $\vd_B = -\mB^{-1} \va_j$. So, we have $z_j = -\vc \mB^{-1} \va_j + c_j$. Recall from \eqref{obj_decrease}, the objective function decrease with $\vd = \begin{bmatrix}\vd_B\\ \vd_N\end{bmatrix} = \begin{bmatrix}\vzero\\ \ve_j\end{bmatrix}$ as a descent direction if $z_j < 0$. We gather $z_j$ for all $j \in N$ and call this vector the reduced cost. So the reduced cost vector is $\vz \in \R^{|N|}$ with 
+
+$$z_j = -\vc \mB^{-1} \va_j + c_j$$
+
+and $|N|$ is the cardinality of the nonbasic set. We can now state the Theorem for optimality of a basic feasible point.
+
+**_Theorem_** Consider a basic feasible solution $\vx$ with a reduced cost $\vz$. The following holds true:
+
+1. If $\vz \geq 0$ then $\vx$ is optimal.
+
+2. If $\vx$ is optimal and nondegenerate then $\vz \geq \vzero$.
+
+### **Choosing a stepsize**
+
+Let $\vz$ be the reduced cost at a basic feasible solution $\vx$. Note that the change objective for moving in the $p$the nonbasic variable with index $\eta_p\in N$ is
+
+$$\bar{\phi} = \phi + \alpha z_{\eta_p},$$
+
+where $\bar{\phi} is the objective value at the next iterate and $\phi$ is the objective value at the current iterate. We will assume atleast one of the $z_i$'s satisfy $z_i <0$ (otherwise, the basic feasible solution is the optimal point). The idea for choosing a stepsize is to find 
+
+$$\alpha^* = \max\{\alpha\geq 0 \ | \vx + \alpha\vd \geq 0\}$$
+
+There are two possible cases:
+
+1. If $\vd\geq \vzero$, then $\vd$ is an unbounded feasible direction of descent, i.e.
+
+    $$ x+\alpha\vd \geq \text{ for all } \alpha\geq 0.$$
+
+    In this case, the optimal value for the LP is unbounded.
+
+2. If $d_j \leq 0$ for some $j$, then $\vx+\alpha\vd \geq \vzero$ only if 
+
+    $$ \alpha -\frac{x_j}{d_j} \text{ for every } d_j <0.$$
+
+    If we choose $\alpha^*$ acording to the following ratio test
+
+    $$ \alpha^* = \min_{j\in \{j\in B| d_j<0\}} -\frac{x_j}{d_j},$$
+
+    then $\vx+\alpha^*\vd \geq \vzero$ is satisfed and $\alpha^*$ is the largest stepsize that can be used without violating the feasiblity condition.
 
 
 

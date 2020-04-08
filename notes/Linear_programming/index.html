@@ -435,6 +435,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#simplex-method" class="md-nav__link">
+    Simplex method
+  </a>
+  
+    <nav class="md-nav" aria-label="Simplex method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#construction-feasible-direction" class="md-nav__link">
+    Construction feasible direction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reduced-cost" class="md-nav__link">
+    Reduced cost
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-a-stepsize" class="md-nav__link">
+    Choosing a stepsize
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -637,6 +671,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#simplex-method" class="md-nav__link">
+    Simplex method
+  </a>
+  
+    <nav class="md-nav" aria-label="Simplex method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#construction-feasible-direction" class="md-nav__link">
+    Construction feasible direction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reduced-cost" class="md-nav__link">
+    Reduced cost
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-a-stepsize" class="md-nav__link">
+    Choosing a stepsize
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -771,6 +839,134 @@
 \end{equation}</script>
 </div>
 <p>which implies that the basic solution satifes <span><span class="MathJax_Preview">\mB\bar{\vx}_B = \vb</span><script type="math/tex">\mB\bar{\vx}_B = \vb</script></span> and <span><span class="MathJax_Preview">\bar{\vx}_N = \vzero</span><script type="math/tex">\bar{\vx}_N = \vzero</script></span>.</p>
+<h2 id="simplex-method"><strong>Simplex method</strong><a class="headerlink" href="#simplex-method" title="Permanent link">&para;</a></h2>
+<p>In this section, we will develop the simplex algorithm for a Linear Program in standard-form \eqref{standard_form}, where <span><span class="MathJax_Preview">\mA \in \R^{m\times n}</span><script type="math/tex">\mA \in \R^{m\times n}</script></span>. Throughout this section. we will assume that </p>
+<ol>
+<li>
+<p><span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> has full row rank (no redundant rows).</p>
+</li>
+<li>
+<p>the LP is feasible</p>
+</li>
+<li>
+<p>all basic feasible solution (i.e. extreme points) are nondegenerate.</p>
+</li>
+</ol>
+<p>Let <span><span class="MathJax_Preview">\vx \in \setP = \{\vx\ |\ \mA\vx = \vb, \vx\geq \vzero\}</span><script type="math/tex">\vx \in \setP = \{\vx\ |\ \mA\vx = \vb, \vx\geq \vzero\}</script></span> be a feasible point. We say a direction <span><span class="MathJax_Preview">\vd</span><script type="math/tex">\vd</script></span> is feasible at <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> if there exists a scalar <span><span class="MathJax_Preview">\alpha&gt;0</span><script type="math/tex">\alpha>0</script></span> such that <span><span class="MathJax_Preview">\vx+\alpha\vd \in \setP</span><script type="math/tex">\vx+\alpha\vd \in \setP</script></span>. The following subsections will outline the process for choosing a feasible direction and appropriate stepsize <span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span>. The simple algorithm initializes at a basic feasible solution. We will also look at how to choose such an initialization.</p>
+<h3 id="construction-feasible-direction"><strong>Construction feasible direction</strong><a class="headerlink" href="#construction-feasible-direction" title="Permanent link">&para;</a></h3>
+<p>The goal of finding a feasible direction is to find a vector <span><span class="MathJax_Preview">\vd</span><script type="math/tex">\vd</script></span> such that given <span><span class="MathJax_Preview">\vx \in \setP</span><script type="math/tex">\vx \in \setP</script></span>, we have that <span><span class="MathJax_Preview">\vx+\alpha\vd</span><script type="math/tex">\vx+\alpha\vd</script></span> is also in the polyhedron <span><span class="MathJax_Preview">\setP</span><script type="math/tex">\setP</script></span> for some <span><span class="MathJax_Preview">\alpha&gt; 0</span><script type="math/tex">\alpha> 0</script></span>. Precisely, this implies </p>
+<div>
+<div class="MathJax_Preview">\begin{equation}
+\vb = \mA(\vx+\alpha\vd) = \mA\vx + \alpha\mA\vd = b +\alpha \mA\vd.
+\end{equation}</div>
+<script type="math/tex; mode=display">\begin{equation}
+\vb = \mA(\vx+\alpha\vd) = \mA\vx + \alpha\mA\vd = b +\alpha \mA\vd.
+\end{equation}</script>
+</div>
+<p>Thus, the feasible direction must be in the null space of <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> and satisfy <span><span class="MathJax_Preview">\mA\vd =\vzero</span><script type="math/tex">\mA\vd =\vzero</script></span>. Let <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> be a basic feasible solution. So, after some permutation, the following relation holds: <span><span class="MathJax_Preview">\mA\vx = \begin{bmatrix}\mB&amp;\mN\end{bmatrix}\begin{bmatrix}\vx_B\\ \vx_N\end{bmatrix} = \vb</span><script type="math/tex">\mA\vx = \begin{bmatrix}\mB&\mN\end{bmatrix}\begin{bmatrix}\vx_B\\ \vx_N\end{bmatrix} = \vb</script></span>. Correspondingly, we also have</p>
+<div>
+<div class="MathJax_Preview">\begin{equation}
+\vzero = \mA \vd = \begin{bmatrix}\mB&amp;\mN\end{bmatrix}\begin{bmatrix}\vd_B\\ \vd_N\end{bmatrix}  = \mB\vd_B + \mN\vd_N.
+\end{equation}</div>
+<script type="math/tex; mode=display">\begin{equation}
+\vzero = \mA \vd = \begin{bmatrix}\mB&\mN\end{bmatrix}\begin{bmatrix}\vd_B\\ \vd_N\end{bmatrix}  = \mB\vd_B + \mN\vd_N.
+\end{equation}</script>
+</div>
+<p>Thus, we have </p>
+<div>
+<div class="MathJax_Preview">\begin{equation}\label{feasible_direction}
+\mB\vd_B = -\mN\vd_N.
+\end{equation}</div>
+<script type="math/tex; mode=display">\begin{equation}\label{feasible_direction}
+\mB\vd_B = -\mN\vd_N.
+\end{equation}</script>
+</div>
+<p>Note that here <span><span class="MathJax_Preview">\mB \in \R^{m\times m}</span><script type="math/tex">\mB \in \R^{m\times m}</script></span> is non-singular and <span><span class="MathJax_Preview">N \in \R^{m\times (n-m)}</span><script type="math/tex">N \in \R^{m\times (n-m)}</script></span>. We can now choose a feaible direction by fixing an index <span><span class="MathJax_Preview">\eta_k \in N</span><script type="math/tex">\eta_k \in N</script></span>, which determines a single nonbasic direction to move along. So, the feasible direction <span><span class="MathJax_Preview">\vd</span><script type="math/tex">\vd</script></span> corresponding to a nonbasic variable with index <span><span class="MathJax_Preview">\eta_k</span><script type="math/tex">\eta_k</script></span> satisfies:</p>
+<div>
+<div class="MathJax_Preview">\begin{equation}
+\vd_N = \ve_k \quad\text{ and } \quad\mB\vd_b = -\mN\vd_N = -\va_{\eta_k},
+\end{equation}</div>
+<script type="math/tex; mode=display">\begin{equation}
+\vd_N = \ve_k \quad\text{ and } \quad\mB\vd_b = -\mN\vd_N = -\va_{\eta_k},
+\end{equation}</script>
+</div>
+<p>where <span><span class="MathJax_Preview">\va_{\eta_k}</span><script type="math/tex">\va_{\eta_k}</script></span> is a column of <span><span class="MathJax_Preview">\mA = \begin{bmatrix}\mB &amp; \mN\end{bmatrix}</span><script type="math/tex">\mA = \begin{bmatrix}\mB & \mN\end{bmatrix}</script></span> corresponding to index <span><span class="MathJax_Preview">\eta_k \in N</span><script type="math/tex">\eta_k \in N</script></span>.</p>
+<h3 id="reduced-cost"><strong>Reduced cost</strong><a class="headerlink" href="#reduced-cost" title="Permanent link">&para;</a></h3>
+<p>The goal is to choose a feasible direction <span><span class="MathJax_Preview">\vd</span><script type="math/tex">\vd</script></span> in such a way that it reduces the cost function (objective) <span><span class="MathJax_Preview">\phi(\vx) : = \vc\trans(\vx)</span><script type="math/tex">\phi(\vx) : = \vc\trans(\vx)</script></span>. Let <span><span class="MathJax_Preview">\bar{\vx} = \vx +\alpha \vd</span><script type="math/tex">\bar{\vx} = \vx +\alpha \vd</script></span>, where <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> is some basic feasible solution and <span><span class="MathJax_Preview">\alpha&gt;0</span><script type="math/tex">\alpha>0</script></span>. Consider the objective value at the next iterate <span><span class="MathJax_Preview">\vx + \alpha \vd</span><script type="math/tex">\vx + \alpha \vd</script></span> given by</p>
+<div>
+<div class="MathJax_Preview">
+\begin{align}
+\phi(\vx + \alpha \vx) &amp; = \vc\trans\bar{\vx}\nonumber\\
+&amp; = \vc\trans(\vx + \alpha \vd)\nonumber\\
+&amp; = \vc\trans\vx + \alpha \vc\trans\vd\nonumber\\
+&amp; = \phi(\vx) + \alpha (\underbrace{\vc\trans\vd_B + \vc\trans \vd_N}_{=: I})\label{obj_decrease}
+\end{align}.
+</div>
+<script type="math/tex; mode=display">
+\begin{align}
+\phi(\vx + \alpha \vx) & = \vc\trans\bar{\vx}\nonumber\\
+& = \vc\trans(\vx + \alpha \vd)\nonumber\\
+& = \vc\trans\vx + \alpha \vc\trans\vd\nonumber\\
+& = \phi(\vx) + \alpha (\underbrace{\vc\trans\vd_B + \vc\trans \vd_N}_{=: I})\label{obj_decrease}
+\end{align}.
+</script>
+</div>
+<p>The term <span><span class="MathJax_Preview">I</span><script type="math/tex">I</script></span> in the above equation is related to the reduced cost. Recall that the feasible direction satfies \eqref{feasible_direction}. So if feasible direction does note move along an index in the nonbasic set, i.e. <span><span class="MathJax_Preview">\vd_N = \vzero</span><script type="math/tex">\vd_N = \vzero</script></span> then this necessarily means that <span><span class="MathJax_Preview">\vd_B = 0</span><script type="math/tex">\vd_B = 0</script></span>. This is beacause <span><span class="MathJax_Preview">\vd_N = \vzero</span><script type="math/tex">\vd_N = \vzero</script></span> implies <span><span class="MathJax_Preview">\mB\vd_B = 0</span><script type="math/tex">\mB\vd_B = 0</script></span>. Since <span><span class="MathJax_Preview">\mB</span><script type="math/tex">\mB</script></span> is invertible, the null space of <span><span class="MathJax_Preview">\mB</span><script type="math/tex">\mB</script></span> is trivial and, consequently, <span><span class="MathJax_Preview">\mB\vd_B = 0</span><script type="math/tex">\mB\vd_B = 0</script></span> necessarily imples <span><span class="MathJax_Preview">\vd</span><script type="math/tex">\vd</script></span> is the zero vector. So, the term <span><span class="MathJax_Preview">I= \vc\trans\vd_B + \vc\trans \vd_N</span><script type="math/tex">I= \vc\trans\vd_B + \vc\trans \vd_N</script></span> in any feasible direction not aligned with a nonbasic variable is zero. This leads to the following notion of reduced cost where we only consider directions along the nonbasic variable.</p>
+<p>For <span><span class="MathJax_Preview">j \in N</span><script type="math/tex">j \in N</script></span>, let </p>
+<div>
+<div class="MathJax_Preview">z_j = \vc_B\trans\vd_B + \vc_N\trans \ve_j = \vc_B\trans\vd_B + c_j.</div>
+<script type="math/tex; mode=display">z_j = \vc_B\trans\vd_B + \vc_N\trans \ve_j = \vc_B\trans\vd_B + c_j.</script>
+</div>
+<p>Additionally, \eqref{feasible_direction} implies that <span><span class="MathJax_Preview">\vd_B = -\mB^{-1} \va_j</span><script type="math/tex">\vd_B = -\mB^{-1} \va_j</script></span>. So, we have <span><span class="MathJax_Preview">z_j = -\vc \mB^{-1} \va_j + c_j</span><script type="math/tex">z_j = -\vc \mB^{-1} \va_j + c_j</script></span>. Recall from \eqref{obj_decrease}, the objective function decrease with <span><span class="MathJax_Preview">\vd = \begin{bmatrix}\vd_B\\ \vd_N\end{bmatrix} = \begin{bmatrix}\vzero\\ \ve_j\end{bmatrix}</span><script type="math/tex">\vd = \begin{bmatrix}\vd_B\\ \vd_N\end{bmatrix} = \begin{bmatrix}\vzero\\ \ve_j\end{bmatrix}</script></span> as a descent direction if <span><span class="MathJax_Preview">z_j &lt; 0</span><script type="math/tex">z_j < 0</script></span>. We gather <span><span class="MathJax_Preview">z_j</span><script type="math/tex">z_j</script></span> for all <span><span class="MathJax_Preview">j \in N</span><script type="math/tex">j \in N</script></span> and call this vector the reduced cost. So the reduced cost vector is <span><span class="MathJax_Preview">\vz \in \R^{|N|}</span><script type="math/tex">\vz \in \R^{|N|}</script></span> with </p>
+<div>
+<div class="MathJax_Preview">z_j = -\vc \mB^{-1} \va_j + c_j</div>
+<script type="math/tex; mode=display">z_j = -\vc \mB^{-1} \va_j + c_j</script>
+</div>
+<p>and <span><span class="MathJax_Preview">|N|</span><script type="math/tex">|N|</script></span> is the cardinality of the nonbasic set. We can now state the Theorem for optimality of a basic feasible point.</p>
+<p><strong><em>Theorem</em></strong> Consider a basic feasible solution <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> with a reduced cost <span><span class="MathJax_Preview">\vz</span><script type="math/tex">\vz</script></span>. The following holds true:</p>
+<ol>
+<li>
+<p>If <span><span class="MathJax_Preview">\vz \geq 0</span><script type="math/tex">\vz \geq 0</script></span> then <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> is optimal.</p>
+</li>
+<li>
+<p>If <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> is optimal and nondegenerate then <span><span class="MathJax_Preview">\vz \geq \vzero</span><script type="math/tex">\vz \geq \vzero</script></span>.</p>
+</li>
+</ol>
+<h3 id="choosing-a-stepsize"><strong>Choosing a stepsize</strong><a class="headerlink" href="#choosing-a-stepsize" title="Permanent link">&para;</a></h3>
+<p>Let <span><span class="MathJax_Preview">\vz</span><script type="math/tex">\vz</script></span> be the reduced cost at a basic feasible solution <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span>. Note that the change objective for moving in the <span><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span>the nonbasic variable with index <span><span class="MathJax_Preview">\eta_p\in N</span><script type="math/tex">\eta_p\in N</script></span> is</p>
+<div>
+<div class="MathJax_Preview">\bar{\phi} = \phi + \alpha z_{\eta_p},</div>
+<script type="math/tex; mode=display">\bar{\phi} = \phi + \alpha z_{\eta_p},</script>
+</div>
+<p>where $\bar{\phi} is the objective value at the next iterate and <span><span class="MathJax_Preview">\phi</span><script type="math/tex">\phi</script></span> is the objective value at the current iterate. We will assume atleast one of the <span><span class="MathJax_Preview">z_i</span><script type="math/tex">z_i</script></span>'s satisfy <span><span class="MathJax_Preview">z_i &lt;0</span><script type="math/tex">z_i <0</script></span> (otherwise, the basic feasible solution is the optimal point). The idea for choosing a stepsize is to find </p>
+<div>
+<div class="MathJax_Preview">\alpha^* = \max\{\alpha\geq 0 \ | \vx + \alpha\vd \geq 0\}</div>
+<script type="math/tex; mode=display">\alpha^* = \max\{\alpha\geq 0 \ | \vx + \alpha\vd \geq 0\}</script>
+</div>
+<p>There are two possible cases:</p>
+<ol>
+<li>
+<p>If <span><span class="MathJax_Preview">\vd\geq \vzero</span><script type="math/tex">\vd\geq \vzero</script></span>, then <span><span class="MathJax_Preview">\vd</span><script type="math/tex">\vd</script></span> is an unbounded feasible direction of descent, i.e.</p>
+<div>
+<div class="MathJax_Preview"> x+\alpha\vd \geq \text{ for all } \alpha\geq 0.</div>
+<script type="math/tex; mode=display"> x+\alpha\vd \geq \text{ for all } \alpha\geq 0.</script>
+</div>
+<p>In this case, the optimal value for the LP is unbounded.</p>
+</li>
+<li>
+<p>If <span><span class="MathJax_Preview">d_j \leq 0</span><script type="math/tex">d_j \leq 0</script></span> for some <span><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span>, then <span><span class="MathJax_Preview">\vx+\alpha\vd \geq \vzero</span><script type="math/tex">\vx+\alpha\vd \geq \vzero</script></span> only if </p>
+<div>
+<div class="MathJax_Preview"> \alpha -\frac{x_j}{d_j} \text{ for every } d_j &lt;0.</div>
+<script type="math/tex; mode=display"> \alpha -\frac{x_j}{d_j} \text{ for every } d_j <0.</script>
+</div>
+<p>If we choose <span><span class="MathJax_Preview">\alpha^*</span><script type="math/tex">\alpha^*</script></span> acording to the following ratio test</p>
+<div>
+<div class="MathJax_Preview"> \alpha^* = \min_{j\in \{j\in B| d_j&lt;0\}} -\frac{x_j}{d_j},</div>
+<script type="math/tex; mode=display"> \alpha^* = \min_{j\in \{j\in B| d_j<0\}} -\frac{x_j}{d_j},</script>
+</div>
+<p>then <span><span class="MathJax_Preview">\vx+\alpha^*\vd \geq \vzero</span><script type="math/tex">\vx+\alpha^*\vd \geq \vzero</script></span> is satisfed and <span><span class="MathJax_Preview">\alpha^*</span><script type="math/tex">\alpha^*</script></span> is the largest stepsize that can be used without violating the feasiblity condition.</p>
+</li>
+</ol>
                 
               
               
