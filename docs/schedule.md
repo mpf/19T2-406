@@ -31,7 +31,7 @@ This is a tentative schedule. It will change often.
 | 21 |  2 Mar / Mon|   [Convex sets](notes/Convex_set.md#Convexset)  | | |
 | 22 | 4 Mar / Wed |   [Constrained optimization](notes/Constrained_optimization.md#Constrainedoptimization)   | | |
 | 23 | 6 Mar / Fri |   [Constrained optimization](notes/Constrained_optimization.md#Constrainedoptimization) | | |
-| 24 | 9 Mar / Mon |  [Convex functions](notes/Convex_function.md#Convexfunctions)    | | [hw4](homework/hw4/hw4.md) out, [solution](homework/hw4/hw4_soln.md)|
+| 24 | 9 Mar / Mon |  [Convex functions](notes/Convex_function.md#Convexfunctions)    | | [hw4](homework/hw4/hw4.md) out|
 | 25 | 11 Mar / Wed | [Convex functions](notes/Convex_function.md#Convexfunctions)    | | |
 | 26 | 13 Mar / Fri | Linear programming applications    | | |
 | 27 | 16 Mar / Mon|   [Extreme points](notes/Linear_programming.md#Extremepoints)   | | hw4 due at 6pm |

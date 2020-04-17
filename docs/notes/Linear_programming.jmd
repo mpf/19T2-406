@@ -92,7 +92,7 @@ The steps for converting to $\setP$, where $\mA$ is some $m$ by $n$ matrix with 
 
 3. **Surplus and Slack:** After the right hand side of the inequality constarint satisfy nonnegativity constraint, these need to be converted to equality constraints. This is done by adding a surplus or slack variable. For inequality constrains of the form $\tilde{\vc}_i\trans\tilde{\vx}_i \leq \tilde{\vd}_i$, we introduce a new slack variable $s_i$ and replace the inequality with the following two constraints:  $\tilde{\vc}_i\trans\tilde{\vx}_i + s_i = \tilde{\vd}_i$ and $s_i\geq 0$. Similarly, if $\tilde{\vc}_i\trans\tilde{\vx}_i \geq \tilde{\vd}_i$, we introduce a surplus variable.
 
-## **Basic solution in standard form**
+### **Basic solution in standard form**
 
 Recall that $\vx^* \in \R^n$ is a basic solution if the vectors $\va_i$ for $i \in \setB(\vx^*)$ are linearly indenpendent and rank$(\mA_{\setB(\vx^*)}) = n$. In standard form, there are $n$ variables, i.e. $x_1,\dots,x_n$, $m$ equality constraints, and $n$ inequality constraints. Since the basic set $\setB(\vx^*)$ for any basic solution $\vx^*$ must have exactly n elements, exactly n of the $m+n$ constraints are active at $\vx^*$. The $m$ equality constraints are always satisfied, thus exactly $n-m$ of the $n$ inequality constraints $x_i\geq 0$ should be active at $\vx^*$. This corresponds to eleminating $n-m$ columns of $\mA$ and choosing the remaining $m$ columnns.
 
@@ -159,21 +159,21 @@ $$
 \phi(\vx + \alpha \vx) & = \vc\trans\bar{\vx}\nonumber\\
 & = \vc\trans(\vx + \alpha \vd)\nonumber\\
 & = \vc\trans\vx + \alpha \vc\trans\vd\nonumber\\
-& = \phi(\vx) + \alpha (\underbrace{\vc\trans\vd_B + \vc\trans \vd_N}_{=: I})\label{obj_decrease}
+& = \phi(\vx) + \alpha (\underbrace{\vc_B\trans\vd_B + \vc_N\trans \vd_N}_{=: I})\label{obj_decrease}
 \end{align}.
 $$
 
-The term $I$ in the above equation is related to the reduced cost. Recall that the feasible direction satfies \eqref{feasible_direction}. So if feasible direction does note move along an index in the nonbasic set, i.e. $\vd_N = \vzero$ then this necessarily means that $\vd_B = 0$. This is beacause $\vd_N = \vzero$ implies $\mB\vd_B = 0$. Since $\mB$ is invertible, the null space of $\mB$ is trivial and, consequently, $\mB\vd_B = 0$ necessarily imples $\vd$ is the zero vector. So, the term $I= \vc\trans\vd_B + \vc\trans \vd_N$ in any feasible direction not aligned with a nonbasic variable is zero. This leads to the following notion of reduced cost where we only consider directions along the nonbasic variable.
+The term $I$ in the above equation is related to the reduced cost. Recall that the feasible direction satfies \eqref{feasible_direction}. So if feasible direction does note move along an index in the nonbasic set, i.e. $\vd_N = \vzero$ then this necessarily means that $\vd_B = 0$. This is beacause $\vd_N = \vzero$ implies $\mB\vd_B = 0$. Since $\mB$ is invertible, the null space of $\mB$ is trivial and, consequently, $\mB\vd_B = 0$ necessarily imples $\vd$ is the zero vector. So, the term $I= \vc_B\trans\vd_B + \vc_N\trans \vd_N$ is zero for any feasible direction not aligned with a nonbasic variable. This leads to the following notion of reduced cost where we only consider directions along the nonbasic variable.
 
 For $j \in N$, let 
 
 $$z_j = \vc_B\trans\vd_B + \vc_N\trans \ve_j = \vc_B\trans\vd_B + c_j.$$ 
 
-Additionally, \eqref{feasible_direction} implies that $\vd_B = -\mB^{-1} \va_j$. So, we have $z_j = -\vc \mB^{-1} \va_j + c_j$. Recall from \eqref{obj_decrease}, the objective function decrease with $\vd = \begin{bmatrix}\vd_B\\ \vd_N\end{bmatrix} = \begin{bmatrix}\vzero\\ \ve_j\end{bmatrix}$ as a descent direction if $z_j < 0$. We gather $z_j$ for all $j \in N$ and call this vector the reduced cost. So the reduced cost vector is $\vz \in \R^{|N|}$ with 
+Additionally, \eqref{feasible_direction} implies that $\vd_B = -\mB^{-1} \va_j$. So, we have $z_j = -\vc_B \mB^{-1} \va_j + c_j$. Recall from \eqref{obj_decrease}, the objective function decrease with $\vd = \begin{bmatrix}\vd_B\\ \vd_N\end{bmatrix} = \begin{bmatrix}\vzero\\ \ve_j\end{bmatrix}$ as a descent direction if $z_j < 0$. We gather $z_j$ for all $j \in N$ and call this vector the reduced cost. So the reduced cost vector is $\vz \in \R^{|N|}$ with 
 
-$$z_j = -\vc \mB^{-1} \va_j + c_j$$
+$$z_j = -\vc_B \mB^{-1} \va_j + c_j$$
 
-and $|N|$ is the cardinality of the nonbasic set. We can now state the Theorem for optimality of a basic feasible point.
+and $|N|$ is the cardinality of the nonbasic set. We now state the Theorem for optimality of a basic feasible point.
 
 **_Theorem_** Consider a basic feasible solution $\vx$ with a reduced cost $\vz$. The following holds true:
 
@@ -187,7 +187,7 @@ Let $\vz$ be the reduced cost at a basic feasible solution $\vx$. Note that the 
 
 $$\bar{\phi} = \phi + \alpha z_{\eta_p},$$
 
-where $\bar{\phi} is the objective value at the next iterate and $\phi$ is the objective value at the current iterate. We will assume atleast one of the $z_i$'s satisfy $z_i <0$ (otherwise, the basic feasible solution is the optimal point). The idea for choosing a stepsize is to find 
+where $\bar{\phi}$ is the objective value at the next iterate and $\phi$ is the objective value at the current iterate. We will assume atleast one of the $z_i$'s satisfy $z_i <0$ (otherwise, the basic feasible solution is the optimal point). The idea for choosing a stepsize is to find 
 
 $$\alpha^* = \max\{\alpha\geq 0 \ | \vx + \alpha\vd \geq 0\}$$
 
@@ -208,6 +208,7 @@ There are two possible cases:
     $$ \alpha^* = \min_{j\in \{j\in B| d_j<0\}} -\frac{x_j}{d_j},$$
 
     then $\vx+\alpha^*\vd \geq \vzero$ is satisfed and $\alpha^*$ is the largest stepsize that can be used without violating the feasiblity condition.
+
 
 
 
