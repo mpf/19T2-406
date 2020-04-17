@@ -426,12 +426,18 @@
     Standard-form polyhedra
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Standard-form polyhedra">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#basic-solution-in-standard-form" class="md-nav__link">
     Basic solution in standard form
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -662,12 +668,18 @@
     Standard-form polyhedra
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Standard-form polyhedra">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#basic-solution-in-standard-form" class="md-nav__link">
     Basic solution in standard form
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -818,7 +830,7 @@
 <p><strong>Surplus and Slack:</strong> After the right hand side of the inequality constarint satisfy nonnegativity constraint, these need to be converted to equality constraints. This is done by adding a surplus or slack variable. For inequality constrains of the form <span><span class="MathJax_Preview">\tilde{\vc}_i\trans\tilde{\vx}_i \leq \tilde{\vd}_i</span><script type="math/tex">\tilde{\vc}_i\trans\tilde{\vx}_i \leq \tilde{\vd}_i</script></span>, we introduce a new slack variable <span><span class="MathJax_Preview">s_i</span><script type="math/tex">s_i</script></span> and replace the inequality with the following two constraints:  <span><span class="MathJax_Preview">\tilde{\vc}_i\trans\tilde{\vx}_i + s_i = \tilde{\vd}_i</span><script type="math/tex">\tilde{\vc}_i\trans\tilde{\vx}_i + s_i = \tilde{\vd}_i</script></span> and <span><span class="MathJax_Preview">s_i\geq 0</span><script type="math/tex">s_i\geq 0</script></span>. Similarly, if <span><span class="MathJax_Preview">\tilde{\vc}_i\trans\tilde{\vx}_i \geq \tilde{\vd}_i</span><script type="math/tex">\tilde{\vc}_i\trans\tilde{\vx}_i \geq \tilde{\vd}_i</script></span>, we introduce a surplus variable.</p>
 </li>
 </ol>
-<h2 id="basic-solution-in-standard-form"><strong>Basic solution in standard form</strong><a class="headerlink" href="#basic-solution-in-standard-form" title="Permanent link">&para;</a></h2>
+<h3 id="basic-solution-in-standard-form"><strong>Basic solution in standard form</strong><a class="headerlink" href="#basic-solution-in-standard-form" title="Permanent link">&para;</a></h3>
 <p>Recall that <span><span class="MathJax_Preview">\vx^* \in \R^n</span><script type="math/tex">\vx^* \in \R^n</script></span> is a basic solution if the vectors <span><span class="MathJax_Preview">\va_i</span><script type="math/tex">\va_i</script></span> for <span><span class="MathJax_Preview">i \in \setB(\vx^*)</span><script type="math/tex">i \in \setB(\vx^*)</script></span> are linearly indenpendent and rank<span><span class="MathJax_Preview">(\mA_{\setB(\vx^*)}) = n</span><script type="math/tex">(\mA_{\setB(\vx^*)}) = n</script></span>. In standard form, there are <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> variables, i.e. <span><span class="MathJax_Preview">x_1,\dots,x_n</span><script type="math/tex">x_1,\dots,x_n</script></span>, <span><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> equality constraints, and <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> inequality constraints. Since the basic set <span><span class="MathJax_Preview">\setB(\vx^*)</span><script type="math/tex">\setB(\vx^*)</script></span> for any basic solution <span><span class="MathJax_Preview">\vx^*</span><script type="math/tex">\vx^*</script></span> must have exactly n elements, exactly n of the <span><span class="MathJax_Preview">m+n</span><script type="math/tex">m+n</script></span> constraints are active at <span><span class="MathJax_Preview">\vx^*</span><script type="math/tex">\vx^*</script></span>. The <span><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> equality constraints are always satisfied, thus exactly <span><span class="MathJax_Preview">n-m</span><script type="math/tex">n-m</script></span> of the <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> inequality constraints <span><span class="MathJax_Preview">x_i\geq 0</span><script type="math/tex">x_i\geq 0</script></span> should be active at <span><span class="MathJax_Preview">\vx^*</span><script type="math/tex">\vx^*</script></span>. This corresponds to eleminating <span><span class="MathJax_Preview">n-m</span><script type="math/tex">n-m</script></span> columns of <span><span class="MathJax_Preview">\mA</span><script type="math/tex">\mA</script></span> and choosing the remaining <span><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> columnns.</p>
 <p>Additionally, these <span><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> columns corresponding to a basic solution <span><span class="MathJax_Preview">\vx^*</span><script type="math/tex">\vx^*</script></span> are linearly independent. So, there exists a permutation matrix <span><span class="MathJax_Preview">\mP</span><script type="math/tex">\mP</script></span> such that</p>
 <div>
@@ -899,7 +911,7 @@
 \phi(\vx + \alpha \vx) &amp; = \vc\trans\bar{\vx}\nonumber\\
 &amp; = \vc\trans(\vx + \alpha \vd)\nonumber\\
 &amp; = \vc\trans\vx + \alpha \vc\trans\vd\nonumber\\
-&amp; = \phi(\vx) + \alpha (\underbrace{\vc\trans\vd_B + \vc\trans \vd_N}_{=: I})\label{obj_decrease}
+&amp; = \phi(\vx) + \alpha (\underbrace{\vc_B\trans\vd_B + \vc_N\trans \vd_N}_{=: I})\label{obj_decrease}
 \end{align}.
 </div>
 <script type="math/tex; mode=display">
@@ -907,22 +919,22 @@
 \phi(\vx + \alpha \vx) & = \vc\trans\bar{\vx}\nonumber\\
 & = \vc\trans(\vx + \alpha \vd)\nonumber\\
 & = \vc\trans\vx + \alpha \vc\trans\vd\nonumber\\
-& = \phi(\vx) + \alpha (\underbrace{\vc\trans\vd_B + \vc\trans \vd_N}_{=: I})\label{obj_decrease}
+& = \phi(\vx) + \alpha (\underbrace{\vc_B\trans\vd_B + \vc_N\trans \vd_N}_{=: I})\label{obj_decrease}
 \end{align}.
 </script>
 </div>
-<p>The term <span><span class="MathJax_Preview">I</span><script type="math/tex">I</script></span> in the above equation is related to the reduced cost. Recall that the feasible direction satfies \eqref{feasible_direction}. So if feasible direction does note move along an index in the nonbasic set, i.e. <span><span class="MathJax_Preview">\vd_N = \vzero</span><script type="math/tex">\vd_N = \vzero</script></span> then this necessarily means that <span><span class="MathJax_Preview">\vd_B = 0</span><script type="math/tex">\vd_B = 0</script></span>. This is beacause <span><span class="MathJax_Preview">\vd_N = \vzero</span><script type="math/tex">\vd_N = \vzero</script></span> implies <span><span class="MathJax_Preview">\mB\vd_B = 0</span><script type="math/tex">\mB\vd_B = 0</script></span>. Since <span><span class="MathJax_Preview">\mB</span><script type="math/tex">\mB</script></span> is invertible, the null space of <span><span class="MathJax_Preview">\mB</span><script type="math/tex">\mB</script></span> is trivial and, consequently, <span><span class="MathJax_Preview">\mB\vd_B = 0</span><script type="math/tex">\mB\vd_B = 0</script></span> necessarily imples <span><span class="MathJax_Preview">\vd</span><script type="math/tex">\vd</script></span> is the zero vector. So, the term <span><span class="MathJax_Preview">I= \vc\trans\vd_B + \vc\trans \vd_N</span><script type="math/tex">I= \vc\trans\vd_B + \vc\trans \vd_N</script></span> in any feasible direction not aligned with a nonbasic variable is zero. This leads to the following notion of reduced cost where we only consider directions along the nonbasic variable.</p>
+<p>The term <span><span class="MathJax_Preview">I</span><script type="math/tex">I</script></span> in the above equation is related to the reduced cost. Recall that the feasible direction satfies \eqref{feasible_direction}. So if feasible direction does note move along an index in the nonbasic set, i.e. <span><span class="MathJax_Preview">\vd_N = \vzero</span><script type="math/tex">\vd_N = \vzero</script></span> then this necessarily means that <span><span class="MathJax_Preview">\vd_B = 0</span><script type="math/tex">\vd_B = 0</script></span>. This is beacause <span><span class="MathJax_Preview">\vd_N = \vzero</span><script type="math/tex">\vd_N = \vzero</script></span> implies <span><span class="MathJax_Preview">\mB\vd_B = 0</span><script type="math/tex">\mB\vd_B = 0</script></span>. Since <span><span class="MathJax_Preview">\mB</span><script type="math/tex">\mB</script></span> is invertible, the null space of <span><span class="MathJax_Preview">\mB</span><script type="math/tex">\mB</script></span> is trivial and, consequently, <span><span class="MathJax_Preview">\mB\vd_B = 0</span><script type="math/tex">\mB\vd_B = 0</script></span> necessarily imples <span><span class="MathJax_Preview">\vd</span><script type="math/tex">\vd</script></span> is the zero vector. So, the term <span><span class="MathJax_Preview">I= \vc_B\trans\vd_B + \vc_N\trans \vd_N</span><script type="math/tex">I= \vc_B\trans\vd_B + \vc_N\trans \vd_N</script></span> is zero for any feasible direction not aligned with a nonbasic variable. This leads to the following notion of reduced cost where we only consider directions along the nonbasic variable.</p>
 <p>For <span><span class="MathJax_Preview">j \in N</span><script type="math/tex">j \in N</script></span>, let </p>
 <div>
 <div class="MathJax_Preview">z_j = \vc_B\trans\vd_B + \vc_N\trans \ve_j = \vc_B\trans\vd_B + c_j.</div>
 <script type="math/tex; mode=display">z_j = \vc_B\trans\vd_B + \vc_N\trans \ve_j = \vc_B\trans\vd_B + c_j.</script>
 </div>
-<p>Additionally, \eqref{feasible_direction} implies that <span><span class="MathJax_Preview">\vd_B = -\mB^{-1} \va_j</span><script type="math/tex">\vd_B = -\mB^{-1} \va_j</script></span>. So, we have <span><span class="MathJax_Preview">z_j = -\vc \mB^{-1} \va_j + c_j</span><script type="math/tex">z_j = -\vc \mB^{-1} \va_j + c_j</script></span>. Recall from \eqref{obj_decrease}, the objective function decrease with <span><span class="MathJax_Preview">\vd = \begin{bmatrix}\vd_B\\ \vd_N\end{bmatrix} = \begin{bmatrix}\vzero\\ \ve_j\end{bmatrix}</span><script type="math/tex">\vd = \begin{bmatrix}\vd_B\\ \vd_N\end{bmatrix} = \begin{bmatrix}\vzero\\ \ve_j\end{bmatrix}</script></span> as a descent direction if <span><span class="MathJax_Preview">z_j &lt; 0</span><script type="math/tex">z_j < 0</script></span>. We gather <span><span class="MathJax_Preview">z_j</span><script type="math/tex">z_j</script></span> for all <span><span class="MathJax_Preview">j \in N</span><script type="math/tex">j \in N</script></span> and call this vector the reduced cost. So the reduced cost vector is <span><span class="MathJax_Preview">\vz \in \R^{|N|}</span><script type="math/tex">\vz \in \R^{|N|}</script></span> with </p>
+<p>Additionally, \eqref{feasible_direction} implies that <span><span class="MathJax_Preview">\vd_B = -\mB^{-1} \va_j</span><script type="math/tex">\vd_B = -\mB^{-1} \va_j</script></span>. So, we have <span><span class="MathJax_Preview">z_j = -\vc_B \mB^{-1} \va_j + c_j</span><script type="math/tex">z_j = -\vc_B \mB^{-1} \va_j + c_j</script></span>. Recall from \eqref{obj_decrease}, the objective function decrease with <span><span class="MathJax_Preview">\vd = \begin{bmatrix}\vd_B\\ \vd_N\end{bmatrix} = \begin{bmatrix}\vzero\\ \ve_j\end{bmatrix}</span><script type="math/tex">\vd = \begin{bmatrix}\vd_B\\ \vd_N\end{bmatrix} = \begin{bmatrix}\vzero\\ \ve_j\end{bmatrix}</script></span> as a descent direction if <span><span class="MathJax_Preview">z_j &lt; 0</span><script type="math/tex">z_j < 0</script></span>. We gather <span><span class="MathJax_Preview">z_j</span><script type="math/tex">z_j</script></span> for all <span><span class="MathJax_Preview">j \in N</span><script type="math/tex">j \in N</script></span> and call this vector the reduced cost. So the reduced cost vector is <span><span class="MathJax_Preview">\vz \in \R^{|N|}</span><script type="math/tex">\vz \in \R^{|N|}</script></span> with </p>
 <div>
-<div class="MathJax_Preview">z_j = -\vc \mB^{-1} \va_j + c_j</div>
-<script type="math/tex; mode=display">z_j = -\vc \mB^{-1} \va_j + c_j</script>
+<div class="MathJax_Preview">z_j = -\vc_B \mB^{-1} \va_j + c_j</div>
+<script type="math/tex; mode=display">z_j = -\vc_B \mB^{-1} \va_j + c_j</script>
 </div>
-<p>and <span><span class="MathJax_Preview">|N|</span><script type="math/tex">|N|</script></span> is the cardinality of the nonbasic set. We can now state the Theorem for optimality of a basic feasible point.</p>
+<p>and <span><span class="MathJax_Preview">|N|</span><script type="math/tex">|N|</script></span> is the cardinality of the nonbasic set. We now state the Theorem for optimality of a basic feasible point.</p>
 <p><strong><em>Theorem</em></strong> Consider a basic feasible solution <span><span class="MathJax_Preview">\vx</span><script type="math/tex">\vx</script></span> with a reduced cost <span><span class="MathJax_Preview">\vz</span><script type="math/tex">\vz</script></span>. The following holds true:</p>
 <ol>
 <li>
@@ -938,7 +950,7 @@
 <div class="MathJax_Preview">\bar{\phi} = \phi + \alpha z_{\eta_p},</div>
 <script type="math/tex; mode=display">\bar{\phi} = \phi + \alpha z_{\eta_p},</script>
 </div>
-<p>where $\bar{\phi} is the objective value at the next iterate and <span><span class="MathJax_Preview">\phi</span><script type="math/tex">\phi</script></span> is the objective value at the current iterate. We will assume atleast one of the <span><span class="MathJax_Preview">z_i</span><script type="math/tex">z_i</script></span>'s satisfy <span><span class="MathJax_Preview">z_i &lt;0</span><script type="math/tex">z_i <0</script></span> (otherwise, the basic feasible solution is the optimal point). The idea for choosing a stepsize is to find </p>
+<p>where <span><span class="MathJax_Preview">\bar{\phi}</span><script type="math/tex">\bar{\phi}</script></span> is the objective value at the next iterate and <span><span class="MathJax_Preview">\phi</span><script type="math/tex">\phi</script></span> is the objective value at the current iterate. We will assume atleast one of the <span><span class="MathJax_Preview">z_i</span><script type="math/tex">z_i</script></span>'s satisfy <span><span class="MathJax_Preview">z_i &lt;0</span><script type="math/tex">z_i <0</script></span> (otherwise, the basic feasible solution is the optimal point). The idea for choosing a stepsize is to find </p>
 <div>
 <div class="MathJax_Preview">\alpha^* = \max\{\alpha\geq 0 \ | \vx + \alpha\vd \geq 0\}</div>
 <script type="math/tex; mode=display">\alpha^* = \max\{\alpha\geq 0 \ | \vx + \alpha\vd \geq 0\}</script>
